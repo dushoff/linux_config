@@ -2,6 +2,18 @@
 
 Files I maintain for my linux setup
 
+rstudio
+=======
 * Started because of rstudio config -- but can't find good info!
 * There is a big hidden folder: ~/.rstudio-desktop
-	* Managing now using ~/Desktop/rstudio
+	* Managing now using ~/Dropbox/rstudio – but not very much
+	* Got pissed at rstudio right after I decided I finally liked it.
+
+installation
+============
+
+I want to migrate the information in my Dropbox logs here
+
+extras.log: miscellaneous installs
+
+

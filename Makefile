@@ -18,6 +18,8 @@ $(ms)/Makefile:
 
 Sources += README.md
 
+Sources += $(wildcard *.log)
+
 ######################################################################
 
 ### Makestuff rules

@@ -1,0 +1,9 @@
+
+## Adobe acrobat reader acroread
+sudo gdebi ~dushoff/Dropbox/extras/AdbeRdr9.5.5-1_i386linux_enu.deb
+sudo apt install libxml2:i386 libstdc++6:i386
+
+## If acroread hijacks your defaults, go to /etc/gnome/defaults.list, search pdf and change thing(s) back to evince.desktop
+
+## canberra error
+sudo apt-get install libcanberra-gtk-module:i386
