@@ -26,6 +26,8 @@ subdirs += bin
 linkbin:
 	cd ~ && echo $(CURDIR)
 
+Ignore += $(subdirs)
+
 ### Makestuff rules
 
 -include $(ms)/git.mk
