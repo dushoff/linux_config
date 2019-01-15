@@ -18,7 +18,11 @@ $(ms)/Makefile:
 
 Sources += README.md
 
+## Logs of how I install things
 Sources += $(wildcard *.log)
+
+## Stuff for bin
+subdirs += bin
 
 ######################################################################
 
