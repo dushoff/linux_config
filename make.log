@@ -2833,3 +2833,73 @@ make[5]: Leaving directory '/home/dushoff/gitroot/linux_config'
 Reaping winning child 0x55a03a884760 PID 6616 
 git add -f Makefile README.md extras.log make.log
 Live child 0x55a03a884760 (commit.time) PID 6622 
+Reaping winning child 0x55a03a884760 PID 6622 
+echo "Autocommit (linux_config)" > commit.time
+Live child 0x55a03a884760 (commit.time) PID 6623 
+Reaping winning child 0x55a03a884760 PID 6623 
+!(git commit --dry-run >> commit.time) || (perl -pi -e 's/^/#/ unless /Autocommit/' commit.time && gvim -f commit.time)
+Live child 0x55a03a884760 (commit.time) PID 6624 
+Reaping winning child 0x55a03a884760 PID 6624 
+git diff-index --quiet HEAD -- || (perl -ne 'print unless /#/' commit.time | git commit -F -)
+Live child 0x55a03a884760 (commit.time) PID 6644 
+[master 00db083] Bailing (not clean yet)
+ 2 files changed, 2839 insertions(+)
+ create mode 100644 make.log
+Reaping winning child 0x55a03a884760 PID 6644 
+date >> commit.time
+Live child 0x55a03a884760 (commit.time) PID 6650 
+Reaping winning child 0x55a03a884760 PID 6650 
+Removing child 0x55a03a884760 PID 6650 from chain.
+    Successfully remade target file 'commit.time'.
+   Finished prerequisites of target file 'up.time'.
+   Prerequisite 'commit.time' is newer than target 'up.time'.
+  Must remake target 'up.time'.
+git pull
+Putting child 0x55a03a885620 (up.time) PID 6655 on the chain.
+Live child 0x55a03a885620 (up.time) PID 6655 
+Already up to date.
+Reaping winning child 0x55a03a885620 PID 6655 
+git push -u origin master
+Live child 0x55a03a885620 (up.time) PID 6677 
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Reaping winning child 0x55a03a885620 PID 6677 
+touch up.time
+Live child 0x55a03a885620 (up.time) PID 6705 
+Reaping winning child 0x55a03a885620 PID 6705 
+Removing child 0x55a03a885620 PID 6705 from chain.
+  Successfully remade target file 'up.time'.
+ Finished prerequisites of target file 'all.time'.
+ Prerequisite 'bin.all' of target 'all.time' does not exist.
+ Prerequisite 'makestuff.all' of target 'all.time' does not exist.
+ Prerequisite 'exclude' of target 'all.time' does not exist.
+ Prerequisite 'up.time' is newer than target 'all.time'.
+Must remake target 'all.time'.
+touch all.time
+Putting child 0x55a03a889540 (all.time) PID 6706 on the chain.
+Live child 0x55a03a889540 (all.time) PID 6706 
+Reaping winning child 0x55a03a889540 PID 6706 
+git status
+Live child 0x55a03a889540 (all.time) PID 6707 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   make.log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	bin/base16-gnome-terminal
+	bin/dropbox.py
+	bin/mailwin
+	bin/make2graph
+	bin/tmp.scr
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Reaping winning child 0x55a03a889540 PID 6707 
+Removing child 0x55a03a889540 PID 6707 from chain.
+Successfully remade target file 'all.time'.
+make[4]: Leaving directory '/home/dushoff/gitroot/linux_config'
