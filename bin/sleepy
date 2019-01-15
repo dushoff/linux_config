@@ -1,0 +1,10 @@
+#!/bin/sh
+## ~/bin/jumpy
+
+/usr/bin/xdotool search --limit 1 --onlyvisible --classname "gnome-terminal" windowfocus
+sleep 0.1
+/usr/bin/xdotool search --limit 1 --onlyvisible --classname "gnome-terminal" windowraise windowfocus
+
+screen -S main -p 0 -X exec ~/bin/wakey $1
+screen -S main -p 0 -X select 0
+sleep 4181

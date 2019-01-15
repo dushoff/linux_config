@@ -1,0 +1,12 @@
+#!/bin/sh
+vim $1
+sleep 1
+ps x | grep sleep | grep 4181 | grep -v grep | perl -pe 's/([0-9]) .*/$1/' | xargs kill;
+
+/usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
+sleep 0.2
+/usr/bin/xdotool search --onlyvisible --name "gmail.*gmail" windowraise windowfocus
+
+## export DISPLAY=:1 && /usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
+## sleep 0.2
+## export DISPLAY=:1 && /usr/bin/xdotool search --onlyvisible --name "gmail.*gmail" windowraise windowfocus
