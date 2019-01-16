@@ -19,12 +19,14 @@ $(ms)/Makefile:
 Sources += README.md
 
 ## Logs of how I install things
-Sources += $(wildcard *.log)
+Sources += $(wildcard log/*.log)
 
 ## Stuff for bin
 subdirs += bin
+linkbin:
+	cd ~ && echo $(CURDIR)
 
-######################################################################
+Ignore += $(subdirs)
 
 ### Makestuff rules
 
