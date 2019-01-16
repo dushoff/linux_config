@@ -53,8 +53,73 @@ Updating makefiles....
  No recipe for 'Makefile' and no prerequisites actually changed.
  No need to remake target 'Makefile'.
 Updating goal targets....
-Considering target file 'pull'.
- File 'pull' does not exist.
+Considering target file 'sync'.
+ File 'sync' does not exist.
+ Finished prerequisites of target file 'sync'.
+Must remake target 'sync'.
+rm -f up.time
+Putting child 0x55c0ed8539c0 (sync) PID 20777 on the chain.
+Live child 0x55c0ed8539c0 (sync) PID 20777 
+Reaping winning child 0x55c0ed8539c0 PID 20777 
+make up.time
+Live child 0x55c0ed8539c0 (sync) PID 20778 
+GNU Make 4.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
+Reading makefile 'Makefile'...
+Reading makefile 'target.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/os.mk' (search path) (don't care) (no ~ expansion)...
+make[5]: Entering directory '/home/dushoff/gitroot/linux_config'
+Reading makefile 'makestuff/linux.mk' (search path) (no ~ expansion)...
+Reading makefile 'makestuff/unix.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/git.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/visual.mk' (search path) (don't care) (no ~ expansion)...
+Updating makefiles....
+ Considering target file 'makestuff/visual.mk'.
+  Looking for an implicit rule for 'makestuff/visual.mk'.
+  No implicit rule found for 'makestuff/visual.mk'.
+  Finished prerequisites of target file 'makestuff/visual.mk'.
+ No need to remake target 'makestuff/visual.mk'.
+ Considering target file 'makestuff/git.mk'.
+  Looking for an implicit rule for 'makestuff/git.mk'.
+  No implicit rule found for 'makestuff/git.mk'.
+  Finished prerequisites of target file 'makestuff/git.mk'.
+ No need to remake target 'makestuff/git.mk'.
+ Considering target file 'makestuff/unix.mk'.
+  Looking for an implicit rule for 'makestuff/unix.mk'.
+  No implicit rule found for 'makestuff/unix.mk'.
+  Finished prerequisites of target file 'makestuff/unix.mk'.
+ No need to remake target 'makestuff/unix.mk'.
+ Considering target file 'makestuff/linux.mk'.
+  Looking for an implicit rule for 'makestuff/linux.mk'.
+  No implicit rule found for 'makestuff/linux.mk'.
+  Finished prerequisites of target file 'makestuff/linux.mk'.
+ No need to remake target 'makestuff/linux.mk'.
+ Considering target file 'makestuff/os.mk'.
+  Looking for an implicit rule for 'makestuff/os.mk'.
+  No implicit rule found for 'makestuff/os.mk'.
+  Finished prerequisites of target file 'makestuff/os.mk'.
+ No need to remake target 'makestuff/os.mk'.
+ Considering target file 'target.mk'.
+  Finished prerequisites of target file 'target.mk'.
+ No need to remake target 'target.mk'.
+ Considering target file 'Makefile'.
+  Looking for an implicit rule for 'Makefile'.
+  No implicit rule found for 'Makefile'.
+   Considering target file 'makestuff/Makefile'.
+    Finished prerequisites of target file 'makestuff/Makefile'.
+   No need to remake target 'makestuff/Makefile'.
+  Finished prerequisites of target file 'Makefile'.
+  Prerequisite 'makestuff/Makefile' is older than target 'Makefile'.
+ No recipe for 'Makefile' and no prerequisites actually changed.
+ No need to remake target 'Makefile'.
+Updating goal targets....
+Considering target file 'up.time'.
+ File 'up.time' does not exist.
   Considering target file 'commit.time'.
     Pruning file 'Makefile'.
     Considering target file 'README.md'.
@@ -79,8 +144,8 @@ Considering target file 'pull'.
    Prerequisite 'make.log' is newer than target 'commit.time'.
   Must remake target 'commit.time'.
 make exclude
-Putting child 0x55cbbc33abc0 (commit.time) PID 20656 on the chain.
-Live child 0x55cbbc33abc0 (commit.time) PID 20656 
+Putting child 0x55b8810fbcc0 (commit.time) PID 20782 on the chain.
+Live child 0x55b8810fbcc0 (commit.time) PID 20782 
 GNU Make 4.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2014 Free Software Foundation, Inc.
@@ -91,7 +156,7 @@ Reading makefiles...
 Reading makefile 'Makefile'...
 Reading makefile 'target.mk' (search path) (don't care) (no ~ expansion)...
 Reading makefile 'makestuff/os.mk' (search path) (don't care) (no ~ expansion)...
-make[5]: Entering directory '/home/dushoff/gitroot/linux_config'
+make[6]: Entering directory '/home/dushoff/gitroot/linux_config'
 Reading makefile 'makestuff/linux.mk' (search path) (no ~ expansion)...
 Reading makefile 'makestuff/unix.mk' (search path) (don't care) (no ~ expansion)...
 Reading makefile 'makestuff/git.mk' (search path) (don't care) (no ~ expansion)...
@@ -162,15 +227,15 @@ Considering target file 'exclude'.
    Prerequisite 'make.log' is newer than target '.git/info/exclude'.
   Must remake target '.git/info/exclude'.
 perl -wf makestuff/ignore.pl > .git/info/exclude
-Putting child 0x55fd26a9dc80 (.git/info/exclude) PID 20660 on the chain.
-Live child 0x55fd26a9dc80 (.git/info/exclude) PID 20660 
-Reaping winning child 0x55fd26a9dc80 PID 20660 
-Removing child 0x55fd26a9dc80 PID 20660 from chain.
+Putting child 0x55d81f8a2d10 (.git/info/exclude) PID 20786 on the chain.
+Live child 0x55d81f8a2d10 (.git/info/exclude) PID 20786 
+Reaping winning child 0x55d81f8a2d10 PID 20786 
+Removing child 0x55d81f8a2d10 PID 20786 from chain.
   Successfully remade target file '.git/info/exclude'.
  Finished prerequisites of target file 'exclude'.
 Must remake target 'exclude'.
 Successfully remade target file 'exclude'.
-make[5]: Leaving directory '/home/dushoff/gitroot/linux_config'
-Reaping winning child 0x55cbbc33abc0 PID 20656 
+make[6]: Leaving directory '/home/dushoff/gitroot/linux_config'
+Reaping winning child 0x55b8810fbcc0 PID 20782 
 git add -f Makefile README.md extras.log make.log
-Live child 0x55cbbc33abc0 (commit.time) PID 20662 
+Live child 0x55b8810fbcc0 (commit.time) PID 20788 
