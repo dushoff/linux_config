@@ -21,10 +21,16 @@ Sources += README.md
 ## Logs of how I install things
 Sources += $(wildcard log/*.log)
 
+######################################################################
+
 ## Stuff for bin
-subdirs += bin screen
+subdirs += bin 
 linkbin:
 	cd ~ && echo $(CURDIR)
+
+######################################################################
+
+Sources += tilde.mk
 
 Ignore += $(subdirs)
 
