@@ -22,7 +22,7 @@ Sources += README.md
 Sources += $(wildcard log/*.log)
 
 ## Stuff for bin
-subdirs += bin
+subdirs += bin screen
 linkbin:
 	cd ~ && echo $(CURDIR)
 
