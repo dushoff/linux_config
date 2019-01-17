@@ -1,0 +1,11 @@
+## Focus
+mailwin <Shift><Alt>m
+chromewin <Shift><Alt>w
+voicewin <Shift><Alt>v
+focus <Shift><Alt>f
+term <Shift><Alt>t
+
+## Trackpad (could be laptop only)
+opad <Alt>o
+nopad <Alt>n
+
