@@ -52,6 +52,7 @@ Ignore += *.conf
 
 ## New (hotness)
 .PRECIOUS: %.conf
+Ignore += .conf
 %.conf: %.keys keys.pl
 	$(PUSH)
 
