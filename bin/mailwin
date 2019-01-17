@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
+sleep 0.1
+/usr/bin/xdotool search --onlyvisible --name "gmail.*gmail" windowraise windowfocus
