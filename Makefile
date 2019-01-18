@@ -28,7 +28,7 @@ Sources += $(wildcard log/*.log)
 ## Stuff for bin
 subdirs += bin 
 linkbin:
-	cd ~ && ln -s $(CURDIR)/bin
+	cd ~ && ln -fs $(CURDIR)/bin
 
 ######################################################################
 
@@ -50,7 +50,6 @@ Ignore += *.conf
 %.load:  %.conf
 	dconf load / < $<
 
-## New (hotness)
 .PRECIOUS: %.conf
 Ignore += .conf
 %.conf: %.keys keys.pl

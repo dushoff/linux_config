@@ -1,9 +1,13 @@
 -include target.mk
 
-main:
-	screen -x main || (screen -c .escreenrc -dm main && screen -x main)
+main: main.start
+	screen -S $@ -p 0 -X exec make $@.screens
+	screen -x main
 
-main.start: 
+main.start:
+	! screen -x main && screen -c .escreenrc -dm main
+
+main.screens: 
 	$(MAKE) ..subscreen gitroot.subscreen Dropbox.subscreen
 	$(MAKE) gitroot/3SS.subscreen
 	$(MAKE) gitroot/708.subscreen
@@ -38,6 +42,18 @@ screen_session:
 	screen -S $(notdir $*) -p 0 -X exec make screen_session
 
 ## Stopping in the middle; be more thoughtful about this.
-## Also, this is a linked file; edit it at home
 chyun.newscreen:
 	cd gitroot && screen -dm chyun
+
+######################################################################
+
+test: test.start
+	screen -S $@ -p 0 -X exec make test.screens
+	screen -x test
+
+test.start:
+	screen -dm test
+
+test.screens:
+	cd Dropbox && screen -t Dropbox
+	bash -cl "sd gitroot"
