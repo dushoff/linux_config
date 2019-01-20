@@ -2,6 +2,7 @@
 mailwin <Shift><Alt>m
 chromewin <Shift><Alt>w
 voicewin <Shift><Alt>v
+hangwin <Shift><Alt>v
 focus <Shift><Alt>f
 term <Shift><Alt>t
 
