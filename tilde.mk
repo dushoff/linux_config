@@ -26,9 +26,10 @@ now: gitroot/708.subscreen
 %.makescreen:
 	screen -S $(notdir $*) -p 0 -X select 0 || $(MAKE) $*.newscreen
 
-## Where are we with deskstart?
+## bash -cl "deskstart" ## Does not work in this context
+## Trying something else 2019 Jan 21 (Mon)
 screen_session:
-	bash -cl "deskstart"
+	echo deskstart | bash -l
 	screen -t run
 	cd R && screen -t R
 	screen tcsh
