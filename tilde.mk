@@ -1,5 +1,7 @@
 -include target.mk
 
+## Aim to move $@.screens into .start; if main exists don't assume screens don't
+## This should eventually work like generic ones below, but with .escreenrc
 main: main.start
 	screen -S $@ -p 0 -X exec make $@.screens
 	screen -x main
@@ -13,8 +15,6 @@ main.screens:
 	$(MAKE) gitroot/708.subscreen
 	$(MAKE) gitroot/Workshops.subscreen
 
-now: gitroot/708.subscreen
-
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
@@ -26,14 +26,10 @@ now: gitroot/708.subscreen
 %.makescreen:
 	screen -S $(notdir $*) -p 0 -X select 0 || $(MAKE) $*.newscreen
 
-## bash -cl "deskstart" ## Does not work in this context
-## Trying something else 2019 Jan 21 (Mon)
-screen_session:
-	echo deskstart | bash -l
-	screen -t run
-	cd R && screen -t R
-	screen tcsh
-	screen -t sudo sudo su
+######################################################################
+
+## Make a screen following rules in its directory
+## Should be called dirscreen and merged with rules below
 
 ## Make a new screen and fill in its windows
 ## Picks up subshell if run from inside vim!
@@ -42,11 +38,31 @@ screen_session:
 	cd $* && screen -dm $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X exec make screen_session
 
+######################################################################
+
+## Make a screen following rules here
+
 ## Stopping in the middle; be more thoughtful about this.
-chyun.newscreen:
-	cd gitroot && screen -dm chyun
+## chyun.gitscreen:
+%.gitscreen: %.gitstart
+	echo ssx $* | bash -l
+
+%.gitstart:
+	! screen -x $* && cd gitroot && screen -dm $*
+	screen -S $* -p 0 -X exec make $*.screens
 
 ######################################################################
+
+## screen_session rules (for the screen formerly known as local, based here)
+
+## bash -cl "deskstart" ## Does not work in this context
+## Trying something else 2019 Jan 21 (Mon)
+screen_session:
+	echo deskstart | bash -l
+	screen -t run
+	cd R && screen -t R
+	screen tcsh
+	screen -t sudo sudo su
 
 test: test.start
 	screen -S $@ -p 0 -X exec make test.screens

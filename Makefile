@@ -16,6 +16,9 @@ $(ms)/Makefile:
 
 -include $(ms)/perl.def
 
+vim_session:
+	vim Makefile target.mk tilde.mk
+
 ######################################################################
 
 Sources += README.md
