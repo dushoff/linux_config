@@ -41,6 +41,7 @@ main.screens:
 ######################################################################
 
 ## Make a screen following rules here
+## gitscreens are made in ~, but populated using rules in gitroot
 
 ## Stopping in the middle; be more thoughtful about this.
 ## chyun.gitscreen:
@@ -48,8 +49,7 @@ main.screens:
 	echo ssx $* | bash -l
 
 %.gitstart:
-	! screen -x $* && cd gitroot && screen -dm $*
-	screen -S $* -p 0 -X exec make $*.screens
+	screen -S $* -p 0 -X exec ls || (cd gitroot && screen -dm $* && screen -S $* -p 0 -X exec make $*.screens)
 
 ######################################################################
 
