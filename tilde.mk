@@ -58,11 +58,11 @@ main.screens:
 ## bash -cl "deskstart" ## Does not work in this context
 ## Trying something else 2019 Jan 21 (Mon)
 screen_session:
-	echo deskstart | bash -l
 	screen -t run
 	cd R && screen -t R
 	screen tcsh
 	screen -t sudo sudo su
+	google-chrome & firefox & text-aid-too --editor sleepy &
 
 test: test.start
 	screen -S $@ -p 0 -X exec make test.screens
