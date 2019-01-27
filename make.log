@@ -1,0 +1,113 @@
+GNU Make 4.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
+Reading makefile 'Makefile'...
+Reading makefile 'target.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/os.mk' (search path) (don't care) (no ~ expansion)...
+make[4]: Entering directory '/home/dushoff/gitroot/linux_config'
+Reading makefile 'makestuff/linux.mk' (search path) (no ~ expansion)...
+Reading makefile 'makestuff/unix.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/perl.def' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/git.mk' (search path) (don't care) (no ~ expansion)...
+Reading makefile 'makestuff/visual.mk' (search path) (don't care) (no ~ expansion)...
+Updating makefiles....
+ Considering target file 'makestuff/visual.mk'.
+  Looking for an implicit rule for 'makestuff/visual.mk'.
+  No implicit rule found for 'makestuff/visual.mk'.
+  Finished prerequisites of target file 'makestuff/visual.mk'.
+ No need to remake target 'makestuff/visual.mk'.
+ Considering target file 'makestuff/git.mk'.
+  Looking for an implicit rule for 'makestuff/git.mk'.
+  No implicit rule found for 'makestuff/git.mk'.
+  Finished prerequisites of target file 'makestuff/git.mk'.
+ No need to remake target 'makestuff/git.mk'.
+ Considering target file 'makestuff/perl.def'.
+  Looking for an implicit rule for 'makestuff/perl.def'.
+  No implicit rule found for 'makestuff/perl.def'.
+  Finished prerequisites of target file 'makestuff/perl.def'.
+ No need to remake target 'makestuff/perl.def'.
+ Considering target file 'makestuff/unix.mk'.
+  Looking for an implicit rule for 'makestuff/unix.mk'.
+  No implicit rule found for 'makestuff/unix.mk'.
+  Finished prerequisites of target file 'makestuff/unix.mk'.
+ No need to remake target 'makestuff/unix.mk'.
+ Considering target file 'makestuff/linux.mk'.
+  Looking for an implicit rule for 'makestuff/linux.mk'.
+  No implicit rule found for 'makestuff/linux.mk'.
+  Finished prerequisites of target file 'makestuff/linux.mk'.
+ No need to remake target 'makestuff/linux.mk'.
+ Considering target file 'makestuff/os.mk'.
+  Looking for an implicit rule for 'makestuff/os.mk'.
+  No implicit rule found for 'makestuff/os.mk'.
+  Finished prerequisites of target file 'makestuff/os.mk'.
+ No need to remake target 'makestuff/os.mk'.
+ Considering target file 'target.mk'.
+  Finished prerequisites of target file 'target.mk'.
+ No need to remake target 'target.mk'.
+ Considering target file 'Makefile'.
+  Looking for an implicit rule for 'Makefile'.
+  No implicit rule found for 'Makefile'.
+   Considering target file 'makestuff/Makefile'.
+    Finished prerequisites of target file 'makestuff/Makefile'.
+   No need to remake target 'makestuff/Makefile'.
+  Finished prerequisites of target file 'Makefile'.
+  Prerequisite 'makestuff/Makefile' is older than target 'Makefile'.
+ No recipe for 'Makefile' and no prerequisites actually changed.
+ No need to remake target 'Makefile'.
+Updating goal targets....
+Considering target file 'pull'.
+ File 'pull' does not exist.
+  Considering target file 'commit.time'.
+    Pruning file 'Makefile'.
+    Considering target file 'README.md'.
+     Finished prerequisites of target file 'README.md'.
+    No need to remake target 'README.md'.
+    Considering target file 'log/extras.log'.
+     Looking for an implicit rule for 'log/extras.log'.
+     Trying pattern rule with stem 'extras'.
+     Found an implicit rule for 'log/extras.log'.
+     Finished prerequisites of target file 'log/extras.log'.
+    No need to remake target 'log/extras.log'.
+    Considering target file 'tilde.mk'.
+     Looking for an implicit rule for 'tilde.mk'.
+     No implicit rule found for 'tilde.mk'.
+     Finished prerequisites of target file 'tilde.mk'.
+    No need to remake target 'tilde.mk'.
+    Considering target file 'main.keys'.
+     Looking for an implicit rule for 'main.keys'.
+     No implicit rule found for 'main.keys'.
+     Finished prerequisites of target file 'main.keys'.
+    No need to remake target 'main.keys'.
+    Considering target file 'keys.pl'.
+     Looking for an implicit rule for 'keys.pl'.
+     No implicit rule found for 'keys.pl'.
+     Finished prerequisites of target file 'keys.pl'.
+    No need to remake target 'keys.pl'.
+   Finished prerequisites of target file 'commit.time'.
+   Prerequisite 'Makefile' is older than target 'commit.time'.
+   Prerequisite 'README.md' is older than target 'commit.time'.
+   Prerequisite 'log/extras.log' is older than target 'commit.time'.
+   Prerequisite 'tilde.mk' is older than target 'commit.time'.
+   Prerequisite 'main.keys' is older than target 'commit.time'.
+   Prerequisite 'keys.pl' is older than target 'commit.time'.
+  No need to remake target 'commit.time'.
+ Finished prerequisites of target file 'pull'.
+Must remake target 'pull'.
+git pull
+Putting child 0x5607d00937c0 (pull) PID 10055 on the chain.
+Live child 0x5607d00937c0 (pull) PID 10055 
+Updating e693930..65b61ad
+Fast-forward
+ tilde.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Reaping winning child 0x5607d00937c0 PID 10055 
+touch commit.time
+Live child 0x5607d00937c0 (pull) PID 10067 
+Reaping winning child 0x5607d00937c0 PID 10067 
+Removing child 0x5607d00937c0 PID 10067 from chain.
+Successfully remade target file 'pull'.
+make[4]: Leaving directory '/home/dushoff/gitroot/linux_config'

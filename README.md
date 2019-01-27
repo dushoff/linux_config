@@ -14,5 +14,8 @@ installation
 
 I want to migrate the information in my Dropbox logs here
 
-extras.log: miscellaneous installs
+extras.log: miscellaneous installs ## Forgot to add this? Look on alishan
+
+R.log: R and rstudio stuff
+
 

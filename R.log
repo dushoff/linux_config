@@ -1,0 +1,32 @@
+Pre
+===
+
+Not sure why this one is here particularly
+
+sudo apt-get install -y libcurl4-openssl-dev
+
+Upgrade
+=======
+
+## Better in terminal
+sudo add-apt-repository ppa:marutter/rrutter3.5
+sudo add-apt-repository ppa:marutter/c2d4u
+sudo apt-get update
+sudo apt upgrade
+sudo apt autoremove
+
+## Why necessary?
+apt install r-base-core
+
+Packages
+--------
+
+## Not checked recently
+Go to R directory
+sudo make update.Ver.sub
+
+## Bolker
+update.packages(checkBuilt=TRUE, ask=FALSE)
+
+Studio
+======
