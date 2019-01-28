@@ -30,3 +30,11 @@ update.packages(checkBuilt=TRUE, ask=FALSE)
 
 Studio
 ======
+
+https://www.rstudio.com/products/rstudio/download/#download
+
+sudo apt -y install gdebi-core
+
+sudo gdebi ~dushoff/Downloads/rstudio*.deb
+
+
