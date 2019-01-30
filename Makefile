@@ -23,6 +23,8 @@ vim_session:
 
 Sources += README.md
 
+## Installation logs (see README.md)
+
 ## Logs of how I install things
 Sources += $(wildcard log/*.log)
 
@@ -44,11 +46,6 @@ Ignore += $(subdirs)
 
 ######################################################################
 
-## Installation logs (see README.md)
-
-Sources += $(wildcard *.log)
-
-######################################################################
 
 ## Keyboard shortcuts
 
