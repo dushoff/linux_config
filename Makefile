@@ -44,6 +44,12 @@ Ignore += $(subdirs)
 
 ######################################################################
 
+## Installation logs (see README.md)
+
+Sources += $(wildcard *.log)
+
+######################################################################
+
 ## Keyboard shortcuts
 
 Sources += main.keys keys.pl
