@@ -5,6 +5,7 @@ voicewin <Shift><Alt>v
 hangwin <Shift><Alt>h
 focus <Shift><Alt>f
 term <Shift><Alt>t
+pdfwin <Shift><Alt>p
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
