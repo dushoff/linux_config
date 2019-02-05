@@ -6,6 +6,9 @@ hangwin <Shift><Alt>h
 focus <Shift><Alt>f
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
+calwin <Shift><Alt>c
+
+## /bin/cp bin/mailwin bin/calwin
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
