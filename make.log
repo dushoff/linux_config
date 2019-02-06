@@ -117,8 +117,8 @@ Considering target file 'pull'.
    Prerequisite 'keys.pl' is older than target 'commit.time'.
   Must remake target 'commit.time'.
 make exclude
-Putting child 0x55f3a2e01be0 (commit.time) PID 5963 on the chain.
-Live child 0x55f3a2e01be0 (commit.time) PID 5963 
+Putting child 0x558882e26be0 (commit.time) PID 6016 on the chain.
+Live child 0x558882e26be0 (commit.time) PID 6016 
 GNU Make 4.1
 Built for x86_64-pc-linux-gnu
 Copyright (C) 1988-2014 Free Software Foundation, Inc.
@@ -238,15 +238,15 @@ Considering target file 'exclude'.
    Prerequisite 'keys.pl' is older than target '.git/info/exclude'.
   Must remake target '.git/info/exclude'.
 perl -wf makestuff/ignore.pl > .git/info/exclude
-Putting child 0x55cc2b3c9b10 (.git/info/exclude) PID 5967 on the chain.
-Live child 0x55cc2b3c9b10 (.git/info/exclude) PID 5967 
-Reaping winning child 0x55cc2b3c9b10 PID 5967 
-Removing child 0x55cc2b3c9b10 PID 5967 from chain.
+Putting child 0x557700f17b10 (.git/info/exclude) PID 6020 on the chain.
+Live child 0x557700f17b10 (.git/info/exclude) PID 6020 
+Reaping winning child 0x557700f17b10 PID 6020 
+Removing child 0x557700f17b10 PID 6020 from chain.
   Successfully remade target file '.git/info/exclude'.
  Finished prerequisites of target file 'exclude'.
 Must remake target 'exclude'.
 Successfully remade target file 'exclude'.
 make[5]: Leaving directory '/home/dushoff/gitroot/linux_config'
-Reaping winning child 0x55f3a2e01be0 PID 5963 
+Reaping winning child 0x558882e26be0 PID 6016 
 git add -f Makefile README.md log/extras.log tilde.mk patch.log R.log make.log main.keys keys.pl
-Live child 0x55f3a2e01be0 (commit.time) PID 5969 
+Live child 0x558882e26be0 (commit.time) PID 6022 
