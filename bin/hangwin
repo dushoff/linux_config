@@ -3,3 +3,4 @@
 /usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
 sleep 0.1
 /usr/bin/xdotool search --onlyvisible --name "Hangouts" windowraise windowfocus
+/usr/bin/xdotool xdotool getactivewindow click --window %1 1
