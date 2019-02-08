@@ -46,7 +46,6 @@ Ignore += $(subdirs)
 
 ######################################################################
 
-
 ## Keyboard shortcuts
 
 Sources += main.keys keys.pl
