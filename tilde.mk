@@ -19,9 +19,6 @@ main.screens:
 	$(MAKE) gitroot/708.subscreen
 	$(MAKE) gitroot/Workshops.subscreen
 
-vimtest:
-	vim make.log target.mk
-
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
