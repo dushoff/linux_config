@@ -2,6 +2,10 @@
 
 ## Aim to move $@.screens into .start; if main exists don't assume screens don't
 ## This should eventually work like generic ones below, but with .escreenrc
+
+config:
+	cd gitroot/linux_config && make pull
+
 main: main.start
 	screen -S $@ -p 0 -X exec make $@.screens
 	screen -x main
@@ -14,9 +18,6 @@ main.screens:
 	$(MAKE) gitroot/3SS.subscreen
 	$(MAKE) gitroot/708.subscreen
 	$(MAKE) gitroot/Workshops.subscreen
-
-vimtest:
-	vim make.log target.mk
 
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
