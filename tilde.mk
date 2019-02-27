@@ -2,6 +2,10 @@
 
 ## Aim to move $@.screens into .start; if main exists don't assume screens don't
 ## This should eventually work like generic ones below, but with .escreenrc
+
+config:
+	cd gitroot/linux_config && make pull
+
 main: main.start
 	screen -S $@ -p 0 -X exec make $@.screens
 	screen -x main
@@ -15,16 +19,15 @@ main.screens:
 	$(MAKE) gitroot/708.subscreen
 	$(MAKE) gitroot/Workshops.subscreen
 
+## Not sure if sdirscreen works
 now.screens:
 	$(MAKE) 708.sdirscreen
-
-vimtest:
-	vim make.log target.mk
 
 ## Make a gitroot-based subscreen (make sure the directory is there)
 %.sdirscreen:
 	cd $(dir $*) && $(MAKE) $(notdir $*)
 	cd $(dir $*) && $(MAKE) $*.subscreen
+
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
