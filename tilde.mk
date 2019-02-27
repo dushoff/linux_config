@@ -15,9 +15,16 @@ main.screens:
 	$(MAKE) gitroot/708.subscreen
 	$(MAKE) gitroot/Workshops.subscreen
 
+now.screens:
+	$(MAKE) 708.sdirscreen
+
 vimtest:
 	vim make.log target.mk
 
+## Make a gitroot-based subscreen (make sure the directory is there)
+%.sdirscreen:
+	cd $(dir $*) && $(MAKE) $(notdir $*)
+	cd $(dir $*) && $(MAKE) $*.subscreen
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
