@@ -6,6 +6,9 @@
 config:
 	cd gitroot/linux_config && make pull
 
+psync:
+	cd gitroot/Planning && make pull
+
 main: main.start
 	screen -S $@ -p 0 -X exec make $@.screens
 	screen -x main
