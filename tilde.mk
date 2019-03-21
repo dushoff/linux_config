@@ -4,6 +4,7 @@
 ## This should eventually work like generic ones below, but with .escreenrc
 
 config:
+	cd gitroot && make pull
 	cd gitroot/linux_config && make pull
 
 psync:
