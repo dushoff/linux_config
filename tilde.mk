@@ -6,6 +6,7 @@
 start: config psync main
 
 config:
+	cd gitroot && make pull
 	cd gitroot/linux_config && make pull
 
 psync:
