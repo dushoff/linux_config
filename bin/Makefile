@@ -26,7 +26,7 @@ resting = cpdf csv2html/ k2pdfopt pad/
 
 links = base16-gnome-terminal dropbox.py make2graph
 
-scripts = focus jumpy n17 nono nopad noscreen o17 opad oscreen pado screeno sdir ship sleepy tat.pl term vi wakey voicewin chromewin mailwin hangwin calwin pdfwin
+scripts = focus jumpy n17 nono nopad noscreen o17 opad oscreen pado screeno sdir ship sleepy tat.pl term vi wakey voicewin chromewin mailwin hangwin calwin pdfwin compwin
 
 Sources += $(scripts)
 
