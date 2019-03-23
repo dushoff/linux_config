@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/xdotool search --onlyvisible --classname "evince" windowraise windowfocus
+sleep 0.1
+/usr/bin/xdotool search --onlyvisible --classname "evince" windowraise windowfocus

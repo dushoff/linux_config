@@ -6,7 +6,8 @@ hangwin <Shift><Alt>h
 focus <Shift><Alt>f
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
-calwin <Shift><Alt>c
+## calwin <Shift><Alt>c
+compwin <Shift><Alt>c
 
 google-chrome <Ctrl><Alt>w
 
