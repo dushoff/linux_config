@@ -37,6 +37,7 @@ now.screens:
 
 ## Find a screen with this name or make a new one
 %.makescreen:
+	cd $(dir $*) && $(MAKE) $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X select 0 || $(MAKE) $*.newscreen
 
 ######################################################################
