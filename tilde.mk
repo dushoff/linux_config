@@ -94,4 +94,5 @@ test.start:
 
 test.screens:
 	cd Dropbox && screen -t Dropbox
-	bash -cl "sd gitroot"
+	screen -t run
+	screen -S test -p 2 -X stuff "deskstart"
