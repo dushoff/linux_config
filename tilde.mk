@@ -23,7 +23,7 @@ main.screens:
 	$(MAKE) ..subscreen gitroot.subscreen Dropbox.subscreen
 	$(MAKE) gitroot/3SS.subscreen
 	$(MAKE) gitroot/708.subscreen
-	$(MAKE) gitroot/Workshops.subscreen
+	## $(MAKE) gitroot/Workshops.subscreen
 
 ## Not sure if sdirscreen works
 now.screens:
