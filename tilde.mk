@@ -77,12 +77,13 @@ now.screens:
 
 ## bash -cl "deskstart" ## Does not work in this context
 ## Trying something else 2019 Jan 21 (Mon)
+## Trying something else 2019 Apr 01 (Mon)
 screen_session:
 	screen -t run
 	cd R && screen -t R
 	screen tcsh
 	screen -t sudo sudo su
-	google-chrome & firefox & text-aid-too --editor sleepy &
+	screen -t deskstart bash -cl "deskstart" ## Does not work in this context
 
 test: test.start
 	screen -S $@ -p 0 -X exec make test.screens
