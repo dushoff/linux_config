@@ -19,6 +19,14 @@ $(ms)/Makefile:
 vim_session:
 	vim Makefile target.mk tilde.mk
 
+## Move windows.pl some day to bin and bind it to a key
+## It finds the mail window even if it's hiding.
+## You can reverse the loop to make it less jumpy
+Sources += windows.pl
+Ignore += windows.out
+windows.out: windows.pl
+	$(PUSH)
+
 ######################################################################
 
 Sources += README.md
