@@ -3,19 +3,22 @@
 ## usage findTab appName tabName
 use strict;
 
-my $maxTabs=12;
+my ($appName, $tabName, $maxTabs) = @ARGV;
 
-my ($app, $tab) = @ARGV;
+$maxTabs = 0 unless defined $maxTabs;
 
-my @wins = split /\s+/, `xdotool search --desktop 0 --name $app`;
+my @wins = split /\s+/, `xdotool search --desktop 0 --name $appName`;
 
 foreach my $win (@wins){
 	my $title;
 	for (my $i=0;$i<$maxTabs;$i++){
+		## print `xwininfo -id $win`;
+		last if `xwininfo -id $win | grep $tabName`;
 		system ("xdotool windowactivate $win");
-		$title = `xwininfo -id $win | grep $tab`;
-		last if $title;
-		system("xdotool key --window $win ctrl+Page_Down");
+		system("xdotool key --window $win ctrl+Tab");
 	}
-	last if $title;
+	if (`xwininfo -id $win | grep $tabName`){
+		system ("xdotool windowactivate $win");
+		last;
+	}
 }
