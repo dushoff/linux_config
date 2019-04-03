@@ -1,15 +1,19 @@
+#! /usr/bin/perl
+## findTab.pl
+## usage findTab appName tabName
 use strict;
-use 5.10.0;
 
 my $maxTabs=12;
 
-my @wins = split /\s+/, `xdotool search --name Chrome`;
+my ($app, $tab) = @ARGV;
 
-for (my $i=0;$i<$maxTabs;$i++){
+my @wins = split /\s+/, `xdotool search --desktop 0 --name $app`;
+
+foreach my $win (@wins){
 	my $title;
-	foreach my $win (@wins) {
+	for (my $i=0;$i<$maxTabs;$i++){
 		system ("xdotool windowactivate $win");
-		$title = `xwininfo -id $win | grep Gmail`;
+		$title = `xwininfo -id $win | grep $tab`;
 		last if $title;
 		system("xdotool key --window $win ctrl+Page_Down");
 	}
