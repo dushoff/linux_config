@@ -23,7 +23,7 @@ main.screens:
 	$(MAKE) ..subscreen gitroot.subscreen Dropbox.subscreen
 	$(MAKE) gitroot/3SS.subscreen
 	$(MAKE) gitroot/708.subscreen
-	$(MAKE) gitroot/Workshops.subscreen
+	## $(MAKE) gitroot/Workshops.subscreen
 
 ## Not sure if sdirscreen works
 now.screens:
@@ -77,12 +77,13 @@ now.screens:
 
 ## bash -cl "deskstart" ## Does not work in this context
 ## Trying something else 2019 Jan 21 (Mon)
+## Trying something else 2019 Apr 01 (Mon)
 screen_session:
 	screen -t run
 	cd R && screen -t R
 	screen tcsh
 	screen -t sudo sudo su
-	google-chrome & firefox & text-aid-too --editor sleepy &
+	screen -t deskstart bash -cl "deskstart" ## Does not work in this context
 
 test: test.start
 	screen -S $@ -p 0 -X exec make test.screens
@@ -93,4 +94,5 @@ test.start:
 
 test.screens:
 	cd Dropbox && screen -t Dropbox
-	bash -cl "sd gitroot"
+	screen -t run
+	screen -S test -p 2 -X stuff "deskstart"

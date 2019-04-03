@@ -13,3 +13,7 @@ sudo apt-get install libcanberra-gtk-module:i386
 ## https://community.coherentpdf.com/
 ## downhere  ##
 
+## Big issues of installing npm/node; needed experimental versions
+sudo npm install -g codedown
+
+## Imagemagick weirdness
