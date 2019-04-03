@@ -10,7 +10,7 @@ while(<>){
 	next if /^#/;
 	next if /^\s*$/;
 	chomp;
-	my ($name, $binding) = split;
+	my ($name, $binding) = /(.*) (.*)/;
 	$bindings{$name} = $binding
 }
 
