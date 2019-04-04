@@ -25,15 +25,8 @@ main.screens:
 	$(MAKE) gitroot/708.subscreen
 	## $(MAKE) gitroot/Workshops.subscreen
 
-## Not sure if sdirscreen works
-now.screens:
-	$(MAKE) 708.sdirscreen
-
-## Make a gitroot-based subscreen (make sure the directory is there)
-%.sdirscreen:
-	cd $(dir $*) && $(MAKE) $(notdir $*)
-	cd $(dir $*) && $(MAKE) $*.subscreen
-
+## What's the difference between subscreen and gitscreen?
+## gitscreen is gitroot based, which ic confusing
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?

@@ -1,5 +1,6 @@
 ## Focus
 findTab Chrome Gmail <Shift><Alt>m
+findTab Chrome Gmail 12 <Ctrl><Alt>m
 chromewin <Shift><Alt>w
 voicewin <Shift><Alt>v
 hangwin <Shift><Alt>h
