@@ -20,9 +20,10 @@ main.start:
 	! screen -x main && screen -c .escreenrc -dm main
 
 main.screens: 
-	$(MAKE) ..subscreen gitroot.subscreen Dropbox.subscreen
+	$(MAKE) local.subscreen gitroot.subscreen Dropbox.subscreen
 	$(MAKE) gitroot/3SS.subscreen
 	$(MAKE) gitroot/708.subscreen
+	screen -S local -p 0 -X stuff "deskstart"
 	## $(MAKE) gitroot/Workshops.subscreen
 
 ## What's the difference between subscreen and gitscreen?
@@ -31,6 +32,8 @@ main.screens:
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
 ## Also, what about making the directory?
+
+## Make a screen if necessary and attach as a subscreen to ctrl-e-screeen
 %.subscreen: %.makescreen
 	screen -t $(notdir $*) screen -x $(notdir $*)
 
@@ -39,16 +42,20 @@ main.screens:
 	cd $(dir $*) && $(MAKE) $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X select 0 || $(MAKE) $*.newscreen
 
+local:
+	@echo pretend to make local directory
+
 ######################################################################
 
 ## Make a screen following rules in its directory
 ## Should be called dirscreen and merged with rules below
 
 ## Make a new screen and fill in its windows
-## Picks up subshell if run from inside vim!
-## Is first line necessary at all?
+## Picks up subshell if run from inside vim! Should fix somehow
+## Change to directory name but stay here if local
 %.newscreen:
-	cd $* && screen -dm $(notdir $*)
+	-cd $* 
+	screen -dm $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X exec make screen_session
 
 ######################################################################
@@ -76,7 +83,6 @@ screen_session:
 	cd R && screen -t R
 	screen tcsh
 	screen -t sudo sudo su
-	screen -t deskstart bash -cl "deskstart" ## Does not work in this context
 
 test: test.start
 	screen -S $@ -p 0 -X exec make test.screens
