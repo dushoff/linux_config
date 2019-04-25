@@ -63,8 +63,7 @@ local:
 ## Picks up subshell if run from inside vim! Should fix somehow
 ## Change to directory name but stay here if local
 %.newscreen:
-	-cd $* 
-	screen -dm $(notdir $*)
+	(cd $* ||:)  && screen -dm $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X exec make screen_session
 
 ######################################################################
