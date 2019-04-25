@@ -1,3 +1,8 @@
+## NO makestuff (what to do??)
+## This file is the Makefile for ~dushoff, but is curated in linux_config
+
+PUSH = perl -wf $(filter %.pl, $^) $(filter-out %.pl, $^) > $@
+
 -include target.mk
 
 ## Aim to move $@.screens into .start; if main exists don't assume screens don't
@@ -26,12 +31,16 @@ main.screens:
 	screen -S local -p 0 -X stuff "deskstart"
 	## $(MAKE) gitroot/Workshops.subscreen
 
+
+######################################################################
+
 ## What's the difference between subscreen and gitscreen?
 ## gitscreen is gitroot based, which ic confusing
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
 ## Also, what about making the directory?
+## Also, how to get auto-focus? Seems hard
 
 ## Make a screen if necessary and attach as a subscreen to ctrl-e-screeen
 %.subscreen: %.makescreen
@@ -70,6 +79,11 @@ local:
 
 %.gitstart:
 	screen -S $* -p 0 -X exec ls || (cd gitroot && screen -dm $* && screen -S $* -p 0 -X exec make $*.screens)
+
+## Does making this file allow us to auto-complete
+include gitscreen.mk
+gitscreen.mk: gitroot/screen.mk gg.pl
+	$(PUSH)
 
 ######################################################################
 
