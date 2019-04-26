@@ -62,8 +62,9 @@ local:
 ## Make a new screen and fill in its windows
 ## Picks up subshell if run from inside vim! Should fix somehow
 ## Change to directory name but stay here if local
+sdm = screen -dm $(notdir $*)
 %.newscreen:
-	(cd $* ||:)  && screen -dm $(notdir $*)
+	(cd $* && $(sdm)) || $(sdm)
 	screen -S $(notdir $*) -p 0 -X exec make screen_session
 
 ######################################################################
