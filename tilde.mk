@@ -82,7 +82,7 @@ sdm = screen -dm $(notdir $*)
 
 ## Does making this file allow us to auto-complete
 include gitscreen.mk
-gitscreen.mk: gitroot/screen.mk gg.pl
+gitscreen.mk: gitroot/screen.mk gitroot/linux_config/gg.pl
 	$(PUSH)
 
 ######################################################################
