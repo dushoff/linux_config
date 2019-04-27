@@ -41,7 +41,7 @@ linkbin:
 ######################################################################
 
 ## Root directory Makefile
-Sources += tilde.mk
+Sources += tilde.mk gg.pl
 linkmake:
 	cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
 
