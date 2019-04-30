@@ -75,7 +75,7 @@ sdm = screen -dm $(notdir $*)
 ## Stopping in the middle; be more thoughtful about this.
 ## chyun.gitscreen:
 %.gitscreen: %.gitstart
-	echo ssx $* | bash -l
+	screen -t $* screen -x $*
 
 %.gitstart:
 	screen -S $* -p 0 -X exec ls || (cd gitroot && screen -dm $* && screen -S $* -p 0 -X exec make $*.screens)
