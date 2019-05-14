@@ -1,4 +1,4 @@
-## NO makestuff (what to do??)
+## NO makestuff
 ## This file is the Makefile for ~dushoff, but is curated in linux_config
 
 PUSH = perl -wf $(filter %.pl, $^) $(filter-out %.pl, $^) > $@
@@ -75,7 +75,7 @@ sdm = screen -dm $(notdir $*)
 ## Stopping in the middle; be more thoughtful about this.
 ## chyun.gitscreen:
 %.gitscreen: %.gitstart
-	echo ssx $* | bash -l
+	screen -t $* screen -x $*
 
 %.gitstart:
 	screen -S $* -p 0 -X exec ls || (cd gitroot && screen -dm $* && screen -S $* -p 0 -X exec make $*.screens)
