@@ -26,10 +26,10 @@ main.start:
 
 main.screens: 
 	$(MAKE) local.subscreen gitroot.subscreen Dropbox.subscreen
-	$(MAKE) gitroot/3SS.subscreen
-	$(MAKE) gitroot/708.subscreen
+	## $(MAKE) gitroot/3SS.subscreen
+	## $(MAKE) gitroot/708.subscreen
+	$(MAKE) gitroot/Workshops.subscreen
 	screen -S local -p 0 -X stuff "deskstart"
-	## $(MAKE) gitroot/Workshops.subscreen
 
 
 ######################################################################
