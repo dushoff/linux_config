@@ -1,0 +1,11 @@
+" <pre>
+
+" Basic parameters
+
+source ~/.vimrc.basic
+source ~/.vimrc.iat
+source ~/.vimrc.break
+" source ~/.vimrc.make
+source ~/.vimrc.personal
+
+" </pre>

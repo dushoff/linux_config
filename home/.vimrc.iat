@@ -1,0 +1,40 @@
+" Working wiki tags
+
+" We want to be able to type tags in shorthand, and to jump past them using ctrl-c.
+
+" To use ab, you need to end with a non-word character which is typed.  Thus, for example, you can type: 'ssrc"filename...' to make a source tag.  It's not so clear that it's a good idea to have the "display" part in there, but I figured it was easier to delete it when you don't want it, than to add it when you do.
+
+" You use ctrl-c to jump like this: 'the value of ccde>x<ctrl-c>controls the robot's anger levels'
+
+" The weird typos and extra commands in the source- and project- tags are extraneous for vim; they're there to avoid confusing the working wiki
+ab mmth <math</math><ESC>F<i
+ab lltx <latex</latex><ESC>F<i
+ab ccde <code</code><ESC>F<i
+ab bbull <bullet></bullet><ESC>F<i<C-M><ESC>kA
+ab ssrc ssource-file filename=" display="source"><C-M></xource-file><ESC>Fxrsk0r<f"i
+ab pprj pproject-file filename="/><ESC>2Br<f"i
+imap <C-C> <ESC>f>a 
+
+vmap ccde <ESC>`>a</code><ESC>`<i<code><ESC>
+nmap <C-E> yyo<ESC>p2f"c$.errors" /><ESC>
+nmap <C-D> yyo<ESC>p2f"c$.make.log" make=false /><ESC>
+
+nmap dm O<C-M>__DISABLE_MAKE__<ESC>o<ESC>{
+nmap dvm ggV/__DISABLE_MAKE__<C-M>d
+
+" -----------------------------------------------------------------
+" Saving
+
+" F3 is an alias for ctrl-^; it saves and switches to another file.  Use sparingly; you will lose your edit history (or at least easy access to it)
+map <F3> 
+map! <F3> <ESC><F3>
+
+" Use F7 to save and exit.  This automatically saves a copy of the file somewhere else, in case you mess up your browser editing.  Files are also findable through your .mozilla directory in an emergency
+map <F7> :w<C-M>:w!~/.lastvim<C-M>:x<C-M>
+map! <F7> <ESC><F7>
+
+" Use F9 to save without exiting
+map <F9> :w<C-M>
+map! <F9> <ESC><F9>
+
+" -----------------------------------------------------------------

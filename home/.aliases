@@ -1,0 +1,228 @@
+alias q exit
+alias squirrel '(sleep \!*; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) &'
+
+alias vpn   'sudo vpnc McMasterVPN'
+alias fnr	'firefox -ProfileManager -no-remote'
+alias miriam	'firefox -no-remote -P miriam'
+
+alias newrun 'google-chrome &; firefox &; dropbox.py start; text-aid-too &'
+alias browsers 'google-chrome &; firefox &'
+alias chrome 'google-chrome &'
+alias ff 'firefox &'
+
+alias spine '/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
+
+alias vanilla	'R --vanilla'
+alias svan	'screen -t vanilla R --vanilla'
+
+alias lalashan	'ssh lalashan.mcmaster.ca'
+alias yushan	'ssh yushan.mcmaster.ca'
+alias ms	'ssh ms.mcmaster.ca'
+alias alishan	'ssh alishan'
+
+alias ct	'crontab -e'
+
+alias dsn	'du -s * |sort -n'
+
+alias vm	'vim -u ~/.vimrc.make Makefile'
+alias vm	'vim Makefile'
+alias gm	'gvim -U ~/.gmvimrc Makefile \!* &'
+alias gam	'gvim -U ~/.gmvimrc A.mk'
+alias gvim	'gvim -f'
+alias gvv	'gvim ~/.vimrc'
+alias pgvim  'gvim -u ~/Dropbox/linux/home/.pvimrc -U ~/Dropbox/linux/home/.gpvimrc ~/drafts/gtmp &'
+alias pvim  'vim -u ~/Dropbox/linux/home/.pvimrc ~/drafts/ptmp'
+alias spvim  'screen -t pvim vim -u ~/Dropbox/linux/home/.pvimrc ~/drafts/ptmp'
+alias tvim  'gvim -u ~/Dropbox/linux/home/.tvimrc -U ~/Dropbox/linux/home/.tgvimrc ~/git/Planning/twitter.txt &'
+alias rgvim  '(cd /home/dushoff/git/Planning; make pull; gvim -U ~/Dropbox/linux/home/.rgvimrc Makefile calendar.mkd future.mkd &)'
+alias rvim  '(cd /home/dushoff/git/Planning; make pull; vim Makefile calendar.mkd future.mkd)'
+alias nrgvim  '(cd /home/dushoff/git/Planning; gvim -U ~/Dropbox/linux/home/.rgvimrc Makefile calendar.mkd future.mkd &)'
+alias nrvim  '(cd /home/dushoff/git/Planning; vim Makefile calendar.mkd future.mkd)'
+alias rot13	"tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias tdir	'ls -d ~/apache/td*'
+
+alias va	'vim ~/.aliases'
+alias ahash	'source ~/.aliases'
+alias ga	'grep -i \!* ~/.aliases'
+
+alias ch 				'cd ~/\!*'
+alias cd	'cd \!*;echo $cwd'
+alias cd..	'cd ..'
+
+alias cp	'cp -i'
+alias mv	'mv -i'
+alias rm	'rm -i'
+alias del	"'rm' "
+
+alias pwd	'echo $cwd'
+alias dir	'ls -Fas'
+alias ls	'ls -F'
+alias lsd	'ls \!* |grep "\/"'
+alias lsn	'ls |grep -v "\/" |grep -v "@"; ls |grep "@."'
+alias lsth	'ls -t |head -10'
+alias lsath	'ls -at |head -10'
+alias lst	'ls -t |more'
+
+alias vc	'vim ~/.cshrc'
+alias vv	'vim ~/.vimrc'
+alias vl	'vim ~/.login'
+
+alias cshrc 'source ~/.cshrc'
+alias login 'source ~/.login'
+
+alias cvim	'gvim -U ~/Dropbox/linux/home/.gcvimrc +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
+alias scvim  'screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
+
+alias gw	'grep -i "\!*" /usr/share/dict/words.pre-dictionaries-common'
+
+alias die	'exit'
+alias rjr	'echo "nabisco"'
+alias fargo	'echo "North Dakota"'
+
+# Finding files (use find, and compilation)
+alias fp	'nice find . -name "\!*" -print'
+alias fpt	'nice find ~ -name "\!*" -print'
+alias fpg	'nice find . -name "\!:1" -print |xargs grep "\!:2"'
+alias fpgt	'nice find . -name "\!:1" -print |xargs grep "\!:2" > gtmp'
+alias fpgl	'nice find . -name "\!:1" -print |xargs grep -l "\!:2"'
+alias fpv	'find . -name "\!:1" -print |xargs vim'
+alias fpx	'nice find . -name "\!:2" -print |xargs "\!:1"'
+alias fps	'find . -name "\!*" -print |& grep -v "^find:"'
+
+# Based on a file compiled by cron (currently?)
+alias ff	'filegrep.pl "\!:1" ${HOME}/bin/find/files.txt'
+alias ffg	'filegrep.pl "\!:1" ${HOME}/bin/find/files.txt |xargs grep "\!:2"'
+
+alias postup 'pstops -w8.5in -h10.5in "4:0@0.35R(0,1h)+1@0.35R(0.5w,1h)+2@0.35R(0,0.72h)+3@0.35R(0.5w,0.72h)"'
+
+
+# Always make screens in detached mode; does this help with dropping problems?
+alias w	'screen -xRR'
+alias ww	'screen -x main'
+alias sdr	'screen -d -r'
+
+alias sx	'screen -xRR'
+alias ssx	'screen -t \!* screen -xRR \!*'
+
+alias sr	'screen -r'
+
+alias sl	'screen -list'
+alias ssr	'screen -t \!* screen -r \!*'
+
+alias sS	'screen -S'
+alias ss	'screen -S'
+alias delscr	'del /tmp/screens/S-dushoff/*'
+
+alias newscreen	'screen -dm \!*'
+alias nxscreen	'screen -dm \!*; ssx \!*'
+alias dscreen	'(cd \!:1; screen -dm \!*)'
+alias dxscreen	'dscreen \!:1; ssx \!*'
+
+### dx is not a good use of your time!
+# alias dx '(echo \!:1 | perl -npe "s|/||;" | xargs -I@ echo @)' 
+# alias dx '(echo \!:1 | perl -npe "s|/||;" | xargs -I@ "cd @; screen -dm @; screen -t @ screen -xRR @"' 
+# alias dx '(echo \!:1 | perl -npe "s|/||;" | xargs -I@ cd @ && screen -dm @)' 
+
+alias plainscreen	'screen -dm default'
+alias mainscreen	'screen -c .escreenrc -dm main; screen -x main'
+alias escreen	'screen -c .escreenrc -dm \!:1; screen -x \!:1'
+alias groupscreen	'sudo su - \!* -c "screen -dm group"'
+
+alias sdm	'screen -dm \!*'
+alias sR	'sdm \!*; screen -x \!*'
+
+alias dsR	'cd \!*; sdm \!*; screen -x \!*'
+alias dssR	'cd \!*; screen -t \!:1 screen -dm \!*; screen -x \!*'
+
+alias sh	'screen -t \!:1 tcsh'
+alias sd	'screen -t \!* sdir \!*'
+alias sd	'screen -t "\!*" sdir "\!*"'
+
+alias msd	'mkdir \!:1; screen -t \!:1 sdir \!*'
+alias smd	'mkdir \!:1; screen -t \!:1 sdir \!*'
+
+alias dumb	'screen -t dumb env TERMCAP="" tcsh'
+
+alias lmake	'ln -s ~/.lmake/makefile_for_linking makefile; cat ~/.lmake/Makefile >> Makefile'
+
+# Don't need makefile anymore
+alias lmake	'cat ~/.lmake/Makefile >> Makefile'
+
+alias lamake	'ln -s ~/.lmake/makefile_for_linking makefile; cp ~/.lmake/Makefile A.mk'
+
+alias wmake	'cat ~/Dropbox/linux/generic/Makefile >> Makefile'
+alias wgmake	'cp -n ~/Dropbox/linux/generic/GNUmakefile .'
+alias wwmake	'wmake; wgmake'
+alias smake	'cp ~/Dropbox/linux/simple/* .'
+
+alias dropbox '~/.dropbox-dist/dropboxd &'
+alias pd	dirs
+alias po	popd
+alias pd	pushd
+
+alias +w	'chmod go+w'
+alias -w	'chmod go-w'
+alias +x	'chmod +x'
+alias plus	'chmod +x *.pl *.awk'
+
+alias psg	'ps -aux | grep \!* | grep -v grep'
+alias psx	'ps x'
+alias psj	'ps x | grep \!* | grep -v grep'
+
+alias pslist	'ps x | grep \!* | grep -v grep'
+alias psterm	"pslist \!:1 | awk -f ~/.mk | xargs kill; sleep 1; pslist \!:1"
+alias psnuke	"pslist \!:1 | awk -f ~/.mk | xargs kill -9"
+# alias pskill	"psterm \!:1; psnuke \!:1"
+alias tasklist	"pslist \!:1 | grep -v time | grep -v make | grep -v vim |grep -v csh |grep -v screen |grep -v ssh"
+alias taskterm	"tasklist \!:1 | awk -f ~/.mk | xargs kill"
+alias tasknuke	"tasklist \!:1 | awk -f ~/.mk | xargs kill -9"
+alias taskflush	"tasklist \!:1 | awk -f ~/.mk | xargs kill -18"
+alias back	"kill -20 \!*; sleep 1; kill -18 \!*"
+
+alias rc	'stty rows \!:1; stty cols \!:2'
+
+alias md	"mkdir \!*; cd \!*"
+alias mdd	"mkdir \!*; cd \!*; dsmake"
+alias msdd	"mkdir \!*; cd \!*; dsmake; screen -t \!:1"
+alias smdd	msdd
+alias tlog	'echo "\!*" >> tlog; (time \!*) >>&tlog; echo "" >>tlog'
+
+alias scl	'scp -r dushoff@lalashan.mcmaster.ca:\!*'
+alias sctl	'scp -r \!* dushoff@lalashan.mcmaster.ca:'
+
+alias scy	'scp -r dushoff@yushan.mcmaster.ca:\!*'
+alias scty	'scp -r \!* dushoff@yushan.mcmaster.ca:'
+
+alias scz	'scp dushoff@zebra.sharcnet.ca:\!*'
+alias sctz	'scp \!* dushoff@zebra.sharcnet.ca:'
+
+alias go	'gnome-open \!* &'
+alias last	'ls -t *.* | head -1 '
+alias gol	'ls -t *.* | head -1 | xargs -i go "{}" &'
+alias dell	'ls -t *.* | head -1 | xargs -i rm -f "{}"'
+alias stall	'ls -t *.* | head -1 | xargs -i mv "{}" store'
+alias lastdown	'ls -t ../*.* | head -1 | xargs -i mv "{}" .'
+alias lasthome	'ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
+alias lastmove	'ls -t *.* | head -1 | xargs -i mv "{}" \!*'
+alias downhere	'ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" .'
+alias downcall	'ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" \!*'
+alias ldo	'lastdown; last'
+alias lho	'lasthome; last'
+alias lastunzip	'ls -t | head -1 | xargs -i unzip "{}"'
+alias ldu 'lastdown; lastunzip'
+alias largo 'ls -t *.R | head -1 | xargs -i make "{}"out.go'
+alias lext 'ls -t *.\!:1 | head -1 | xargs -i make "{}".go'
+alias lpdf lext pdf
+
+alias sclg	'scp dushoff@lalashan.mcmaster.ca:\!* .; gol'
+
+alias newplot	'gnuplot -line2Color blue -line3Color orange -line4Color sienna -line5Color black'
+
+alias Miriam	'xv -smooth -maxpect -wl -wait 2.4 ${BASE}/media/wallpaper/pictures/*'
+
+alias twixt	'java -jar ~/bin/Jtwixt/Jtwixt.jar &'
+alias cmath	'cp -R /2/arc/mathserv/dushoff/\!*'
+
+alias zarc	'mkdir zzz; mv .* *; mv * \!*'
+
+source ~/.laliases

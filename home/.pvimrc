@@ -1,0 +1,3 @@
+source ~/.vimrc
+map <F7> gz
+colo morning

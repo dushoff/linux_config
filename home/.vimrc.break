@@ -1,0 +1,17 @@
+
+" -----------------------------------------------------------------
+" Display long lines in a nice way (with word breaks, but a signal that they are really single lines).  72 is a pretty low number; you might want to try 80.
+
+set textwidth=0 co=72
+
+set linebreak textwidth=0 display=lastline showbreak=+\ 
+
+" Use j and k for screen lines, and the arrows for logical lines
+nn j gj
+vn j gj
+nn k gk
+vn k gk
+nn Y yg$
+
+" Other commands work on logical lines, to make them work on screen lines, insert "g" in appropriate places (e.g., g0, g$)
+

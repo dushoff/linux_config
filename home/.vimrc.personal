@@ -1,0 +1,217 @@
+
+let $BASH_ENV = "~/.bashrc"
+
+" Open target using edited line (like gx, but less fragile for URLs)
+nmap gl :s/^[# \t*]*//<C-M>Vgxu:nohlsearch<C-M>
+nmap gL gm1G/https*:<C-M>gl
+
+" Execute edited line
+" nmap gE :s/^[%# \t*]*//<C-M>V!bash<C-M>:nohlsearch<C-M>k
+" nmap ge gEjyyuA ##<ESC>:s/##[ #]*$/##/<C-M>k
+
+" Execution
+nmap gX :s/^[%# \t*]*//<C-M>V!bash > ~/.cmdresult<C-M>:nohlsearch<C-M>
+nmap gE gXk:r ~/.cmdresult<C-M>
+nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
+nmap GE gEP
+
+nmap g# :s/[ #]*$//<C-M>H
+
+" Time and date
+nmap <C-T> :put=strftime('%H:%M')<C-M>
+nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
+
+imap <C-T> <ESC>mm<C-T>0"md$dd`m"mpa
+imap <C-D> <ESC>mm<C-D>0"md$dd`m"mpa
+
+" Files
+nmap <C-U> :files<C-M>
+
+" Copy paste
+nn gz ggVG"+x
+nn gy ggVG"+y
+nn gv a <ESC>"+gPx
+map <F10> gv
+
+" go Github?
+map gG :!make upstream<C-M>
+map gH :!make hupstream<C-M>
+
+nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q=/<C-M>:s/ /+/g<C-M>Vgxu:nohlsearch<C-M>
+
+map <F3> <C-^>
+
+" Inline R escape
+vmap r di`r `<ESC>P
+imap <LeftMouse> <nop>
+imap <2-LeftMouse> <nop>
+
+ab fuck $#@!
+ab fucker $#@!er
+ab fucking $#@!ing
+ab maclib .libaccess.lib.mcmaster.ca
+
+ab tyvm Thank you very much
+ab tyfm Thank you for your message
+ab tyfr Thank you for your reply
+ab tyfh Thanks for your help
+ab tfah Thanks for any help
+ab tyah Thanks for any help
+ab tyfa Thank you for your message.  I look forward to considering your application
+ab tyfs Thanks for your submission
+ab sfsr Sorry for slow response
+
+ab pubwik http://lalashan.mcmaster.ca/theobio/public/
+ab pubsen Please see the information at http://lalashan.mcmaster.ca/theobio/public/, and let me know if you have further questions.
+ab SJ Sincerely,<C-M><C-M>JD
+ab BBJ Best,<C-M><C-M>JD
+ab JJ Jonathan Dushoff
+ab Jj Jonathan
+ab hys 黃友森
+ab cfs 施群芳
+ab ba4 爸
+ab wsry 萬事如意
+
+nmap - O<C-M><ESC>70i-<ESC>
+nmap _ o<ESC>-
+nmap \ i\
+
+" Protect from instant erasure
+inoremap <c-u> <c-g>u<c-u>
+
+" Paren stuff
+imap {} {<C-M>}<ESC>O<TAB>
+imap () ( )<ESC>hs
+
+vmap G_ j/---------------<C-M>
+nmap G_ j/---------------<C-M>
+omap G_ j/---------------/+1<C-M>
+
+vmap g_ k?---------------<C-M>
+nmap g_ k?---------------<C-M>
+omap g_ k?---------------/-1<C-M>
+
+nmap d- Vg-d
+nmap d_ Vg_d
+
+nmap gc 'c
+nmap gC 'd
+
+" Vocab abbreviations
+ab dfe disease-free equilibrium
+ab eqa equilibria
+ab eqm equilibrium
+ab qeqa quasi-equilibria
+ab qeqm quasi-equilibrium
+ab eqn equation
+ab eqns equations
+
+ab Joanthan Jonathan
+ab ahve have
+ab taht that
+ab becuase because
+ab sned send
+ab teh the
+ab Bestm Best,
+
+vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
+nmap @@ VG@@
+vmap $$ :s/./> &/<C-M>:'<,'>!cat -s<C-M>H
+nmap $$ VG$$
+vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
+nmap >> VG>>
+
+vmap + :s/^[>  	]*//<C-M>
+nmap + VG+
+
+vmap & !~/bin/quote.pl 72<C-M>
+nmap & VG&
+
+ab ptp Power to the people
+
+nn Q gq
+nn gm 1<C-^>
+nn gc 2<C-^>
+
+com! Sv source ~/.vimrc
+com! Sc source ~/Dropbox/linux/chinese/.cvimrc.core
+com! Ss source ~/Dropbox/linux/chinese/.svimrc
+" Non-breaking space
+com! Space s/ / /g
+com! Pack %s/^\s\s*//
+
+nmap M :source ~/.vimrc.tat<C-M>gg@@<C-O>
+nmap LL gz
+nmap <C-P> "+gP1GM:source ~/.vimrc.break<C-M>
+
+
+" Title, subtitle, html paragraphing (!!!) and date
+nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
+nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
+nmap @h :%s/^$/<p>/
+nmap @d <C-D>@t
+
+" Clear space-only lines
+nmap @s :%s/^\s\s*$//<C-M>
+
+let g:netrw_browsex_viewer= "setsid xdg-open"
+
+" Use HTML Entity (decimal) code
+digraphs !? 8253 " interrobang ‽
+digraphs ?! 8253 " interrobang ‽
+" digraphs !, ☹
+digraphs h. 7717
+digraphs H. 7716
+digraphs  160 " non-breaking space
+digraphs *.   183 " · dot ·
+digraphs --  8211 " en-dash
+digraphs __  8212 " em-dash
+
+digraphs `   8216 " single left quote ‘
+digraphs '   8217 " single right quote ’
+digraphs ``  8220 " double left quote “
+digraphs ''  8221 " double right quote ”
+digraphs ,,  8222 " double bottom quote „
+
+digraphs **  8226 " bullet
+digraphs ..  8230 " horizontal ellipsis
+digraphs ql 12298 " Chinese left double quotation 《
+digraphs qr 12299 " Chinese right double quotation 》
+digraphs cp 12290 " Chinese full stop (period) 。
+digraphs c. 12290 " Chinese full stop (period) 。
+digraphs Re 8475 " Script R ℛ
+digraphs =- 8801 " Identical (equivalent) ≡
+
+digraphs <3  9829 " heart ♥
+digraphs oo 9917 " soccer ball ⚽
+digraphs :(  9785 " white frowning face ☹
+digraphs :)  9786 " white smiling face ☺
+digraphs ZZ  8484 " integer Z ℤ
+digraphs PP  182 " ¶ paragraph mark
+
+digraphs fm 9792 " female symbol ♀
+digraphs mm 9794 " male symbol ♂
+
+digraphs el 8467 " math cursive ell ℓ
+
+" Pre-existing things I want to remember
+" digraphs X* × multiplication
+" digraphs == ⇔ double left-right arrow
+" digraphs ?2 ≈ approximately equal
+
+vmap Y "+y
+vmap X "+x
+
+" execute pathogen#infect()
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" Set the filetype based on the file's extension
+" "setfiletype foo" is a wimpier version (respects some sort of pre-status)
+au BufRead,BufNewFile *.def set filetype=make
+
+" colo evening
+
+" </pre>

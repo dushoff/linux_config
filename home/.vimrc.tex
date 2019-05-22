@@ -1,0 +1,11 @@
+" Type '\ffrc{' to make a fraction and start filling in the numerator
+ab ffrc \frac}}<ESC>i{<ESC>Fca
+
+" Type 'beq<TAB>' or 'bdm<TAB>' to make an equation
+ab beq \begin{equation}<C-M>\end{equation}<ESC>O
+ab bdm \begin{displaymath}<C-M>\end{displaymath}<ESC>O
+
+ab ct \cite}<ESC>i
+
+com! Tsent :%s/\([a-z][a-z0-9"})]*\.\)  */\1<C-M>/g
+

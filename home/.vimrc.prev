@@ -1,0 +1,128 @@
+version 7.1
+
+set nocompatible
+
+set encoding=utf-8
+
+set guifont=Liberation\ Mono\ 20
+colo pablo
+
+set nosc tabstop=3 shiftwidth=3 autoindent backspace=2 autowriteall title history=100 incsearch textwidth=0
+
+map <F2> gr
+map <F3> 
+map <F4> :make<C-M>
+map <F5> :cn<C-M>
+map <F6> :cp<C-M>
+map <F7> :x<C-M>
+map <F8> <F9><F4>
+map <F9> :w<C-M>
+map <S-F7> gz
+
+" Always want my function keys.
+" This will break badly if scripts don't save before they change files
+map! <F1> <ESC><F1>
+map! <F2> <ESC><F2>
+map! <F3> <ESC><F3>
+map! <F4> <ESC><F4>
+map! <F5> <ESC><F5>
+map! <F6> <ESC><F6>
+map! <F7> <ESC><F7>
+map! <S-F7> <ESC><S-F7>
+map! <F9> <ESC><F9>
+map! <F10> <ESC><F10>
+map! <F11> <ESC><F11>
+map! <F12> <ESC><F12>
+
+nmap - O<C-M><ESC>70i-<ESC>
+nmap _ o<ESC>-
+nmap \ i\
+
+nmap  1"+gP@
+
+imap {} {<C-M>}<ESC>O<TAB>
+
+
+vmap g- j/---------------<C-M>
+nmap g- j/---------------<C-M>
+omap g- j/---------------/+1<C-M>
+
+vmap g_ k?---------------<C-M>
+nmap g_ k?---------------<C-M>
+omap g_ k?---------------/-1<C-M>
+
+nmap d- Vg-d
+nmap d_ Vg_d
+
+nmap gc 'c
+nmap gC 'd
+
+" Vocab abbreviations
+ab dfe disease-free equilibrium
+ab eqa equilibria
+ab eqm equilibrium
+ab qeqa quasi-equilibria
+ab qeqm quasi-equilibrium
+ab eqn equation
+ab eqns equations
+
+ab Joanthan Jonathan
+ab ahve have
+ab taht that
+ab becuase because
+ab sned send
+ab teh the
+
+ab fuck $#@!
+ab fucker $#@!er
+ab fuckers $#@!ers
+ab fucking $#@!ing
+
+nmap @ :%s/^[> ^I  ]*$//<C-M>
+
+ab ptp Power to the people
+
+nmap gf :e <cfile><C-M>
+nmap gr mg0f:B:let target=expand("<cfile>")<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:exe "%s/target:.*/target: " . target "/"<C-M>`g
+
+
+set linebreak
+set showbreak=+\ 
+set display=lastline
+
+set textwidth=0
+set co=72
+
+nn j gj
+vn j gj
+
+nn k gk
+vn k gk
+
+nn $ g$
+vn $ g$
+
+nn 0 g0
+vn 0 g0
+
+nn A g$a
+nn C cg$
+nn D dg$
+" nn I g0i
+nn Y yg$
+
+nn gz ggVG"+x
+nn gy ggVG"+y
+
+nn Q gq
+nn gd 1
+nn gm 1
+nn gc 2
+nn gt :exe "e " . target<C-M>
+nn gp :exe "e " . program<C-M>
+nn gi :exe "e " . input<C-M>
+
+nn  :wn
+
+com! Sv source ~/_vimrc
+com! Out setlocal textwidth=72 | colo pablo

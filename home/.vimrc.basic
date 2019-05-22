@@ -1,0 +1,17 @@
+" <pre>
+
+" Basic parameters
+
+set nocompatible
+set encoding=utf-8
+set tabstop=3 shiftwidth=3 autoindent backspace=2 autowrite title history=100 incsearch hlsearch hidden
+
+nohlsearch
+
+" autosave=240
+
+syntax on
+
+nmap H :nohlsearch<C-M>
+
+" </pre>

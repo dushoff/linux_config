@@ -1,0 +1,6 @@
+set filetype=mail
+nmap <F7> :w<C-M>
+1,$!perl -pnf ~/Dropbox/linux/bin/tat.pl
+nmap <F7> :w<C-M>
+map <F9> :wall<C-M>
+nmap LL :w!~/.lastvim<C-M>:%s/^/<br>/<C-M>:x<C-M>

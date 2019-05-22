@@ -1,0 +1,349 @@
+
+shopt -s expand_aliases
+
+## Moving windows to the Dumb TV
+alias left='wmctrl -r ":SELECT:" -e 0,0,0,3840,2160'
+alias right='wmctrl -r ":SELECT:" -e 0,3840,0,1280,800'
+
+alias nospace='rename "s/ /_/g" *.*'
+alias suspend='systemctl suspend'
+
+alias die='exit'
+alias q='exit'
+
+alias vpn='sudo vpnc McMasterVPN'
+alias fnr='firefox -ProfileManager -no-remote'
+alias miriam='firefox -no-remote -P miriam'
+
+alias browsers='google-chrome & firefox &'
+alias chrome='google-chrome &'
+alias ff='firefox &'
+alias cw='google-chrome &'
+
+alias hcache="git config --global credential.helper 'cache --timeout=999999'"
+
+alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
+
+alias gitroot='git clone https://github.com/dushoff/gitroot.git'
+
+alias sup='sup-mail'
+
+alias vanilla='R --vanilla'
+alias svan='screen -t vanilla R --vanilla'
+
+alias yushan='ssh yushan.mcmaster.ca'
+alias sjd='screen -t yushan ssh yushan.mcmaster.ca'
+
+alias ms='ssh ms.mcmaster.ca'
+alias sms='screen -t ms ssh ms.mcmaster.ca'
+
+alias mbx='ssh mbx.mcmaster.ca'
+alias sbx='screen -t mbx ssh mbx.mcmaster.ca'
+
+alias ct='crontab -e'
+
+alias dsn='du -s * |sort -n'
+
+## Vim sessions
+alias vmt='make vim_session || vi Makefile target.mk'
+alias vm='vi Makefile'
+alias vl='vim --serverlist'
+alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
+alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
+alias vdc="vsave; dclose; hclose"
+alias SYNC="vdc; sleep 1; (cd ~/gitroot && make all.time)"
+alias sink="SYNC"
+alias mat="make all.time"
+alias gas="go Dropbox/archive/swati.pdf"
+
+alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
+alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
+
+## gvim (none of this is active)
+alias gam='gvim -U ~/.gmvimrc A.mk'
+alias gvim='gvim -f'
+alias gvv='gvim ~/.vimrc'
+
+## alias rvim='nrvim'
+alias rvim='make pull && nvim'
+alias nvim='vm calendar.mkd org.mkd schedule.mkd projects.mkd flow.md'
+alias nrvim='nvim'
+
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias tdir='ls -d ~/apache/td*'
+
+alias va='vi ~/.baliases'
+alias ahash='source ~/.baliases'
+
+alias cd..='cd ..'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias del="'rm' "
+
+alias dir='ls -Fas'
+alias ls='ls -F'
+alias lsn='ls |grep -v "\/" |grep -v "@"; ls |grep "@."'
+alias lsth='clear; ls -t |head'
+alias lsath='clear; ls -at |head'
+alias lst='ls -t |more'
+alias lstm='lst'
+
+alias vc='vi ~/.cshrc'
+alias vv='vi ~/.vimrc'
+## alias vl='vi ~/.login'
+
+alias cshrc='source ~/.cshrc'
+alias login='source ~/.login'
+
+alias cvim='gvim -U ~/Dropbox/linux/home/.gcvimrc +"write" +"source ~/Dropbox/linux/chinese/.cvimrc" ~/ctmp &'
+alias scvim='screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
+
+alias w='screen -xRR'
+alias ww='screen -x main'
+alias sdr='screen -d -r'
+
+alias sx='screen -xRR'
+
+alias sr='screen -r'
+
+alias sl='screen -list'
+alias sld='screen -list | grep -i detached'
+
+alias sS='screen -S'
+alias ss='screen -S'
+alias delscr='del /tmp/screens/S-dushoff/*'
+
+alias plainscreen='screen -dm default'
+alias mainscreen='screen -c .escreenrc -dm main; screen -x main'
+
+## Different mstarts for different seasons
+alias mstart='ssx local; dxscreen gitroot; dxscreen Dropbox; dx gitroot/1M; dx gitroot/talks' 
+
+alias lstart='sh run; sd R; screen tcsh; sh sudo'
+alias gstart='sdn ~/gitroot/Planning Planning;'
+alias dbstart='sd ~/Downloads; sd current; sd article; sd linux/logs'
+alias Wstart='cd ~/gitroot/Workshops; sd statistics_talks; sd math_talks; sd disease_model_talks'
+alias Istart='cd ~/gitroot; sd MMED; sdn MMED/gh-pages pages; sd MMEDparticipants; sd ICI3D.github.io; sd coreFaculty'
+
+alias 3start='sd Lectures; (cd Lectures && sd web); (cd Lectures && sd wayback)'
+alias 1start='sd Lectures; (cd Lectures && sd web)'
+
+alias stx='text-aid-too --editor sleepy'
+
+## newstart has dropbox for machines where that doesn't work automatically
+alias deskstart='google-chrome & firefox & stx & '
+
+alias dropbox='~/.dropbox-dist/dropboxd &'
+alias pd=dirs
+alias po=popd
+alias pd=pushd
+
+alias plus='chmod +x *.pl *.awk'
+
+alias psx='ps x'
+
+alias smdd=msdd
+
+## Last and Downloads
+alias last='ls -t *.* | head -1 '
+alias lastvim='echo Not worth it, try gvim?'
+alias lastgvim='last | xargs -i gvim "{}" &'
+alias lastacr='ls -t *.pdf *.PDF | head -1 | xargs -i acroread "{}"'
+alias lastxzf='last | xargs -i tar xzf "{}"'
+alias lastfile='ls -t *.* | head -1 | xargs -i file "{}"'
+alias dell='last | xargs -i rm -f "{}"'
+alias lastdel='dell'
+alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
+
+alias first='ls -t *.* | tail -1 '
+alias firstdel='first | xargs -i rm -f "{}"'
+alias firstplay='first | xargs -i mplayer "{}"'
+
+alias pen='ls -t *.* | head -2 | tail -1 '
+
+alias gol='ls -t *.* | head -1 | xargs -i -0 go "{}" &'
+## Override with ~/.blocal
+alias gold='(cd ~/Downloads && gol)'
+
+alias lastdown='ls -t ../*.* | head -1 | xargs -i mv "{}" .'
+alias lasthome='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
+alias downhere='ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" .'
+alias ldo='lastdown; last'
+alias lho='lasthome; last'
+alias ldu='lastdown; lastunzip'
+alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
+
+lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
+downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
+downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
+lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
+pencall() { ls -t *.* | head -2 | tail -1 | xargs -i mv "{}" $@; }
+lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
+
+## This can be overridden in .blocal
+go() { gnome-open "$@" & }
+
+squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
+ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
+beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
+
+alias chunk="date; squirrel 1200; beaver 1444"
+alias sesh="echo '##' sesh '##' `date`; ice 484; squirrel 961; beaver 1444"
+alias sesh=" ice 484; squirrel 961; beaver 1444"
+
+alias nopix="killall sleep; sleep 1; killall eog"
+alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
+alias noship="echo '##' noship '##' `date`; shipminus"
+alias shipplus="shipminus; ship &"
+alias newship="echo '##' newship '##' `date`; shipplus"
+alias startship="echo '##' startship '##' `date`; ship &"
+
+alias TET="play 480"
+
+alias fpg='echo find . -name "$1" -print'
+alias fpg='nice find . -name "$1" -print |xargs grep "$2" 2> .error.log'
+
+play() { noship; echo arcs "$1"; date; echo `date` "$1" >> ~/gitroot/Planning/play.txt; squirrel "$1"; }
+ga() { grep -i $@ ~/.baliases ~/.blocal; }
+gm() { gvim -U ~/.gmvimrc Makefile $@ & }
+
+lsd() { ls $@ |grep "\/"; }
+gw() { grep -i "$@" /usr/share/dict/words.pre-dictionaries-common; }
+fp() { nice find . -name "$@" -print; }
+## Tests. I guess the current problem is that I can't quote further.
+ffpg() { echo find . -name '$1' -print |xargs grep '$2'; }
+ffpg() { echo find . -name "$1" -print; echo xargs grep "$2"; }
+ffpg() { nice find . -name "$1" -print |xargs grep "$2" 2> .error.log ; }
+
+fpgl() { nice find . -name "$1" -print |xargs grep -l "$2" 2> .error.log ; }
+
+## Older; update if you want them
+fpgt() { nice find . -name "$1" -print |xargs grep "$2" > gtmp; }
+fpv() { find . -name "$1" -print |xargs vim; }
+fpx() { nice find . -name "$2" -print |xargs "$1"; }
+
+# fps() { find . -name "$@" -print |& grep -v "^find:"; }
+# ff() { filegrep.pl "$1" ${HOME}/bin/find/files.txt; }
+# ffg() { filegrep.pl "$1" ${HOME}/bin/find/files.txt |xargs grep "$2"; }
+
+ssx() { screen -t $@ screen -xRR $@; }
+## ssvs() { screen -t "$1" && screen bash -cl "svs"; }
+
+ssr() { screen -t $@ screen -r $@; }
+newscreen() { screen -dm $@; }
+dscreen() { (cd $1; screen -dm $@); }
+dxscreen() { screen -dm $@; ssx $@; }
+dxscreen() { (cd $1; screen -dm $@; ssx $@); }
+gxscreen() { (cd ~/git/$1; screen -dm $@; ssx $@); }
+
+nxscreen() { (cd $2; screen -dm $1; ssx $1); }
+
+escreen() { screen -c .escreenrc -dm $1; screen -x $1; }
+groupscreen() { sudo su - $@ -c "screen -dm group"; }
+sdm() { screen -dm $@; }
+sR() { sdm $@; screen -x $@; }
+dsR() { cd $@; sdm $@; screen -x $@; }
+dssR() { cd $@; screen -t $1 screen -dm $@; screen -x $@; }
+sh() { screen -t $1 bash; }
+tsh() { screen tcsh; }
+
+# sd() { screen -t "$@" sdir "$@"; }
+# msd() { mkdir $1; screen -t $1 sdir $@; }
+
+sd() { (cd $@ && screen -t "$@"); }
+msd() { mkdir $1; sd $1; } 
+sdn() { (cd $1 && screen -t "$2"); }
+svn() { (cd $1 && screen -t "$2" bash -cl "vmt"); }
+
+vi(){
+	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')
+	vim --servername $d $*
+}
+
+## Working from https://stackoverflow.com/questions/13767252/ubuntu-bash-script-how-to-split-path-by-last-slash
+## Eventually learn about expansion and switch to "proper" method
+sds() { 
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=`dirname "$p"`
+	sub=`basename "$p"`
+	(cd $dir && make $sub)
+	sdn $dir/$sub $sub; 
+}
+
+## for branches: make Makefile one level up
+sbs() { 
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=`dirname "$p"`
+	sub=`basename "$p"`
+	(cd $dir && make $sub)
+	(cd $dir && make $sub/Makefile)
+	svn $dir/$sub $sub; 
+}
+
+svs() { 
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=`dirname "$p"`
+	sub=`basename "$p"`
+	(cd $dir && make $sub)
+	(cd $dir/sub && make Makefile)
+	svn $dir/$sub $sub; 
+}
+
+dx() {
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=$( echo $p | perl -pe 's|/[^/]*$||' );
+	sub=$( echo $p | perl -pe 's|.*/||' );
+	(cd $p && screen -dm $sub); ssx $sub; 
+} 
+
+oldship(){
+	xdg-open ~/Dropbox/courses/Lecture_images/ship.jpg;
+	sesh; sleep 1500; 
+	ship
+}
+
+basedir(){
+	p=$( echo $1 | perl -pe 's|(.*?)/*([^/]*)/*$|$1|' );
+	echo $p;
+}
+
+notbasedir(){
+	p=$( echo $1 | perl -pe 's|(.*?)/*([^/]*)/*$|$2|' );
+	echo $p;
+}
+
+
+# Processes; I usually use killall now
+psg() { ps -aux | grep $@ | grep -v grep; }
+psj() { ps x | grep $@ | grep -v grep; }
+pslist() { ps x | grep $@ | grep -v grep; }
+psterm() { pslist $1 | perl -pe 's/([0-9]) .*/$1/' | xargs kill; sleep 1; pslist $1; }
+psnuke() { pslist $1 | perl -pe 's/([0-9]) .*/$1/' | xargs kill -9; }
+# pskill() { psterm $1; psnuke $1; }
+tasklist() { pslist $1 | grep -v time | grep -v make | grep -v vim |grep -v csh |grep -v screen |grep -v ssh; }
+taskterm() { tasklist $1 | awk -f ~/.mk | xargs kill; }
+tasknuke() { tasklist $1 | awk -f ~/.mk | xargs kill -9; }
+taskflush() { tasklist $1 | awk -f ~/.mk | xargs kill -18; }
+back() { kill -20 $@; sleep 1; kill -18 $@; }
+rc() { stty rows $1; stty cols $2; }
+md() { mkdir $@; cd $@; }
+mdd() { mkdir $@; cd $@; dsmake; }
+msdd() { mkdir $@; cd $@; dsmake; screen -t $1; }
+
+scm() { scp -r dushoff@ms.mcmaster.ca:$@; }
+
+scl() { scp -r dushoff@lalashan.mcmaster.ca:$@; }
+sctl() { scp -r $@ dushoff@lalashan.mcmaster.ca:; }
+scy() { scp -r dushoff@yushan.mcmaster.ca:$@; }
+scty() { scp -r $@ dushoff@yushan.mcmaster.ca:; }
+scm() { scp -r dushoff@mathserv.mcmaster.ca:$@; }
+sctm() { scp -r $@ dushoff@mathserv.mcmaster.ca:; }
+scz() { scp dushoff@zebra.sharcnet.ca:$@; }
+sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
+
+
+cmath() { cp -R /2/arc/mathserv/dushoff/$@; }
+zarc() { mkdir zzz; mv .* *; mv * $@; }
+source ~/.blocal

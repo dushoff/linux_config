@@ -1,0 +1,4 @@
+source ~/.font.vimrc
+colo blue
+set ruler
+

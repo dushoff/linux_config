@@ -32,11 +32,20 @@ Sources += README.md
 Sources += $(wildcard log/*.log)
 
 ######################################################################
+## We can add a directory by giving it a Makefile and alling (bin)
+## Or by just sourcing from here (home)
 
 ## Stuff for bin
 subdirs += bin 
 linkbin:
 	cd ~ && ln -fs $(CURDIR)/bin
+
+## There are other files in linux/home that I haven't looked at
+## cp ~/Dropbox/linux/home/.??* home ##
+Ignore += home
+Sources += $(wildcard home/.??* home/*)
+linkhome:
+	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.*
 
 ######################################################################
 
