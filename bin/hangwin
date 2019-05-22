@@ -1,4 +1,5 @@
 #!/bin/sh
+## This is obviously meant to click, but doesn't seem to
 
 /usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
 sleep 0.1
