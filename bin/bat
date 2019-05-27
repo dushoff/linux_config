@@ -1,0 +1,9 @@
+#! /usr/bin/perl
+
+use strict; 
+use 5.10.0;
+
+while(<>){
+	last if /-{12,}/;
+	print;
+}
