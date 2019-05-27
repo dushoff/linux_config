@@ -51,6 +51,7 @@ main.screens:
 	cd $(dir $*) && $(MAKE) $(notdir $*)
 	screen -S $(notdir $*) -p 0 -X select 0 || $(MAKE) $*.newscreen
 
+## local removed 2019 May 25 (Sat). Will it come back?
 local:
 	@echo pretend to make local directory
 
