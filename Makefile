@@ -45,7 +45,7 @@ linkbin:
 Ignore += home
 Sources += $(wildcard home/.??* home/*)
 linkhome:
-	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.*
+	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
 
 ######################################################################
 
