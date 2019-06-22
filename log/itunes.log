@@ -1,0 +1,11 @@
+
+## Install some versions of libfaudio0
+~/Downloads/libfaudio0_19.06.07-0_bionic_i386.deb
+~/Downloads/libfaudio0_19.06.07-0_bionic_amd64.deb
+
+## Wine: there's a lot of confusion about 32 v 64
+sudo dpkg --add-architecture i386 ## did not run this yet ## Now tried it, because of package error. Did not help
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' ## There is something wrong with the repository (but not this afternoon)
+apt update ## Super-weird error (4.5 2019 Jun 22 (Sat))
+apt install winehq-devel

@@ -20,4 +20,5 @@ patch.log: things that need to be fixed. maybe merge with extras?
 
 R.log: R and rstudio stuff
 
+itunes.log: Insanity! Did not work at all on screenbox
 
