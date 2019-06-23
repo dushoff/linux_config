@@ -128,6 +128,7 @@ source /home/dushoff/.opam/opam-init/init.csh >& /dev/null || true
 export TEXT_AID_TOO_EDITOR="screen -S main -p 0 -X exec 'sleep 4372 &; vim"
 export TEXT_AID_TOO_EDITOR="~/bin/sleepy"
 export TEXT_AID_TOO_EDITOR="gvim -f"
+export VEDIT="gvim -f"
 
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
