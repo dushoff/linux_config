@@ -1,4 +1,3 @@
-
 current: target
 -include target.mk
 
