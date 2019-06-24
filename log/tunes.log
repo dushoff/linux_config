@@ -1,0 +1,41 @@
+
+## Install some versions of libfaudio0
+~/Downloads/libfaudio0_19.06.07-0_bionic_i386.deb
+~/Downloads/libfaudio0_19.06.07-0_bionic_amd64.deb
+
+## Wine: there's a lot of confusion about 32 v 64
+sudo dpkg --add-architecture i386 ## did not run this yet ## Now tried it, because of package error. Did not help
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' ## Transient errors! (4.5 2019 Jun 22 (Sat))
+apt update 
+apt install wine-devel winehq-devel
+wine ~/Downloads/iTunes64Setup.exe ## Click to install stuff after misunderstanding weird advice (popups don't seem to match their own links)
+
+go ~/Desktop ## Launch manually to accept permissions
+
+## Still black!!!!
+
+## Back to desktop
+## Try manually installing mono (via mono-complete package and an msi). Did not help
+
+## Now try WINEARCH with the new mono?
+export WINEARCH=win32
+wine uninstaller to install
+
+## STILL black; used tutorial to find the black place to log in …
+m6NDBN4VRH92JZs
+Logged in, but still basically impossible to navigate
+
+sudo add-apt-repository ppa:ubuntuhandbook1/apps 
+apt update
+apt install rhythmbox rhythmbox-plugins
+
+sudo apt install python3-pip 
+
+## Backing up (needed these unexpectedly before pip)
+apt install python3-libxml2  ## Based on error message, did not help?
+apt install libxml2-dev libxmlsec1-dev.
+
+## Do as self!!
+pip3 install https://github.com/phauer/migrate-itunes-to-rhythmbox/releases/download/1.0.3/migrate-itunes-to-rhythmbox-1.0.3.tar.gz --process-dependency-links --user 
+## Doesn't get any actual Music. That's a different (harder?) pathway.
