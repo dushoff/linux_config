@@ -78,6 +78,7 @@ nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C
 nmap gU gmgugs
 
 nn Q gq
+nn gk 5
 nn gj 4
 nn gd 3
 nn gm 1
