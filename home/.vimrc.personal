@@ -18,6 +18,7 @@ nmap GE gEP
 nmap g# :s/[ #]*$//<C-M>H
 
 " Time and date
+nmap <C-B> o<C-T><C-M><C-M>Break<ESC>
 nmap <C-T> :put=strftime('%H:%M')<C-M>
 nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
 
