@@ -5,6 +5,7 @@ chromewin <Shift><Alt>w
 voicewin <Shift><Alt>v
 hangwin <Shift><Alt>h
 focus <Shift><Alt>f
+report <Shift><Alt>k
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
 ## calwin <Shift><Alt>c
