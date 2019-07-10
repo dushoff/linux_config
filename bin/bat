@@ -1,5 +1,7 @@
 #! /usr/bin/perl
 
+## cat, but allow some things to be reserved (below a line)
+
 use strict; 
 use 5.10.0;
 
