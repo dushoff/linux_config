@@ -17,3 +17,11 @@ sudo apt-get install libcanberra-gtk-module:i386
 sudo npm install -g codedown
 
 ## Imagemagick weirdness
+policy.xml (searched from /etc/ is also allowed to be in /usr/
+  <!-- disable ghostscript format types -->
+  <!-- JD added read  27 Jun 2019; also consider write -->
+  <policy domain="coder" rights="read" pattern="PS" />
+  <policy domain="coder" rights="read" pattern="EPS" />
+  <policy domain="coder" rights="read" pattern="PDF" />
+  <policy domain="coder" rights="read" pattern="XPS" />
+
