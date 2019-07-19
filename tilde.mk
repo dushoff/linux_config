@@ -1,4 +1,4 @@
-## NO makestuff
+## NO makestuff here
 ## This file is the Makefile for ~dushoff, but is curated in linux_config
 
 PUSH = perl -wf $(filter %.pl, $^) $(filter-out %.pl, $^) > $@
