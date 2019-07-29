@@ -8,6 +8,7 @@ PUSH = perl -wf $(filter %.pl, $^) $(filter-out %.pl, $^) > $@
 ## Aim to move $@.screens into .start; if main exists don't assume screens don't
 ## This should eventually work like generic ones below, but with .escreenrc
 
+first: config psync
 start: config psync main
 
 config:
