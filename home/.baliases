@@ -186,6 +186,8 @@ lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 pencall() { ls -t *.* | head -2 | tail -1 | xargs -i mv "{}" $@; }
 lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 
+todown(){ touch $@; cp "$@" ~/Downloads; }
+
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
