@@ -1,4 +1,3 @@
-
 ## Adobe acrobat reader acroread
 sudo gdebi ~dushoff/Dropbox/extras/AdbeRdr9.5.5-1_i386linux_enu.deb
 sudo apt install libxml2:i386 libstdc++6:i386
@@ -22,6 +21,6 @@ policy.xml (searched from /etc/ is also allowed to be in /usr/
   <!-- JD added read  27 Jun 2019; also consider write -->
   <policy domain="coder" rights="read" pattern="PS" />
   <policy domain="coder" rights="read" pattern="EPS" />
-  <policy domain="coder" rights="read" pattern="PDF" />
+  <policy domain="coder" rights="read|write" pattern="PDF" />
   <policy domain="coder" rights="read" pattern="XPS" />
 
