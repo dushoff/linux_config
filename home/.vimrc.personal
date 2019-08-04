@@ -84,15 +84,15 @@ inoremap <c-u> <c-g>u<c-u>
 imap {} {<C-M>}<ESC>O<TAB>
 imap () ( )<ESC>hs
 
-vmap G_ j/---------------<C-M>
-nmap G_ j/---------------<C-M>
+vmap G_ j/---------------.*/e<C-M>
+nmap G_ j/---------------.*/e<C-M>
 omap G_ j/---------------/+1<C-M>
 
 vmap g_ k?---------------<C-M>
 nmap g_ k?---------------<C-M>
 omap g_ k?---------------/-1<C-M>
 
-nmap d- Vg-d
+nmap D_ VG_d
 nmap d_ Vg_d
 
 nmap gc 'c
@@ -136,7 +136,9 @@ nn gc 2<C-^>
 
 com! Sv source ~/.vimrc
 com! Sc source ~/Dropbox/linux/chinese/.cvimrc.core
+com! Sd source ~/Dropbox/linux/chinese/.cvimrc.fix
 com! Ss source ~/Dropbox/linux/chinese/.svimrc
+
 " Non-breaking space
 com! Space s/ / /g
 com! Pack %s/^\s\s*//
