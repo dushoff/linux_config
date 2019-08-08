@@ -5,10 +5,6 @@ let $BASH_ENV = "~/.bashrc"
 nmap gl :s/^[# \t*]*//<C-M>Vgxu:nohlsearch<C-M>
 nmap gL gm1G/https*:<C-M>gl
 
-" Execute edited line
-" nmap gE :s/^[%# \t*]*//<C-M>V!bash<C-M>:nohlsearch<C-M>k
-" nmap ge gEjyyuA ##<ESC>:s/##[ #]*$/##/<C-M>k
-
 " Execution
 nmap gX :s/^[%# \t*]*//<C-M>V!bash > ~/.cmdresult<C-M>:nohlsearch<C-M>
 nmap gE gXk:r ~/.cmdresult<C-M>
@@ -18,7 +14,6 @@ nmap GE gEP
 nmap g# :s/[ #]*$//<C-M>H
 
 " Time and date
-nmap <C-B> o<C-T><C-M><C-M>Break<ESC>
 nmap <C-T> :put=strftime('%H:%M')<C-M>
 nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
 
@@ -31,8 +26,10 @@ nmap <C-U> :files<C-M>
 " Copy paste
 nn gz ggVG"+x
 nn gy ggVG"+y
-nn gv a <ESC>"+gPx
-map <F10> gv
+nn gv "+gP
+imap <F10> a <ESC>gv
+nmap <F10> gv
+imap <F10> a <ESC>gv
 
 " go Github?
 map gG :!make upstream<C-M>
@@ -134,15 +131,23 @@ nn Q gq
 nn gm 1<C-^>
 nn gc 2<C-^>
 
+" Unknown and unused tweak
+" com! Ss source ~/Dropbox/linux/chinese/.svimrc
 com! Sv source ~/.vimrc
+
 com! Sc source ~/Dropbox/linux/chinese/.cvimrc.core
-com! Sd source ~/Dropbox/linux/chinese/.cvimrc.fix
-com! Ss source ~/Dropbox/linux/chinese/.svimrc
+nmap <C-C> :Sc<C-M>
+imap <C-C> <ESC>mm<C-C>`ma
+
+com! Sy source ~/Dropbox/linux/chinese/.cvimrc.fix
+nmap <C-Y> :Sy<C-M>
+imap <C-Y> <ESC>mm<C-Y>`ma
 
 " Non-breaking space
 com! Space s/ / /g
 com! Pack %s/^\s\s*//
 
+" current mail-trading text-aid-too
 nmap M :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
 nmap <C-P> "+gP1GM:source ~/.vimrc.break<C-M>
@@ -214,7 +219,3 @@ augroup END
 " Set the filetype based on the file's extension
 " "setfiletype foo" is a wimpier version (respects some sort of pre-status)
 au BufRead,BufNewFile *.def set filetype=make
-
-" colo evening
-
-" </pre>
