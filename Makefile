@@ -41,7 +41,12 @@ linkbin:
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
+## Next time you see this, make home into an alling directory 2019 Aug 10 (Sat)
 Ignore += home
+homelist = .addressbook .aliases* .baliases* .bashrc .blocal.ubuntu .cshrc .escreenrc .gcvimrc .gmvimrc .gpvimrc .gvimfont .gvimrc .pinerc .pvimrc .rgvimrc .screenrc .tgvimrc .tvimrc .vimrc .vimrc.basic .vimrc.break .vimrc.iat .vimrc.jdiat .vimrc.make .vimrc.nomake .vimrc.personal .vimrc.prev .vimrc.tat .vimrc.tex .vimrc.twitter .vimrc.windows
+homefiles = $(home:%=homelist/%)
+Sources += $(homefiles)
+
 Sources += $(wildcard home/.??* home/*)
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .

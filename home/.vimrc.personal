@@ -27,9 +27,8 @@ nmap <C-U> :files<C-M>
 nn gz ggVG"+x
 nn gy ggVG"+y
 nn gv "+gP
-imap <F10> a <ESC>gv
 nmap <F10> gv
-imap <F10> a <ESC>gv
+imap <F10>  <ESC>gva
 
 " go Github?
 map gG :!make upstream<C-M>
