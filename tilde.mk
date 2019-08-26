@@ -32,7 +32,6 @@ main.screens:
 	$(MAKE) gitroot/Workshops.subscreen
 	screen -S local -p 0 -X stuff "deskstart"
 
-
 ######################################################################
 
 ## What's the difference between subscreen and gitscreen?
