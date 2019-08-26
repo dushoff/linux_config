@@ -179,6 +179,7 @@ alias lho='lasthome; last'
 alias ldu='lastdown; lastunzip'
 alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
 
+downput() { touch $@; cp $@ ~/Downloads/; }
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }

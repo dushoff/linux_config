@@ -41,8 +41,9 @@ linkbin:
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-Ignore += home
-Sources += $(wildcard home/.??* home/*)
+## Next time you see this, make home into an alling directory 2019 Aug 10 (Sat)
+subdirs += home
+
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
 
