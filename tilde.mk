@@ -35,7 +35,7 @@ main.screens:
 ######################################################################
 
 ## What's the difference between subscreen and gitscreen?
-## gitscreen is gitroot based, which ic confusing
+## gitscreen is gitroot based, which is confusing
 ## Attach a screen as a subscreen of this one
 ## "makes" it exist first
 ## Should probably make sure we're in a screen – but how?
