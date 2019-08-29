@@ -156,6 +156,7 @@ nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
 nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
+nmap @k G?^%%%%%<C-M>H{{}<C-T>
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
