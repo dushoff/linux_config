@@ -156,6 +156,7 @@ nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
 nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
+nmap @k G?^%%%%%<C-M>H{{}<C-T>
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
@@ -201,6 +202,7 @@ digraphs mm 9794 " male symbol ♂
 digraphs el 8467 " math cursive ell ℓ
 
 " Pre-existing things I want to remember
+" This is stupid; I should make them into good things. If it's easy to get numbers.
 " digraphs X* × multiplication
 " digraphs == ⇔ double left-right arrow
 " digraphs ?2 ≈ approximately equal
