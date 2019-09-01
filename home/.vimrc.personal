@@ -59,6 +59,7 @@ ab tyah Thanks for any help
 ab tyfa Thank you for your message.  I look forward to considering your application
 ab tyfs Thanks for your submission
 ab sfsr Sorry for slow response
+ab wdyt What do you think
 
 ab pubwik http://lalashan.mcmaster.ca/theobio/public/
 ab pubsen Please see the information at http://lalashan.mcmaster.ca/theobio/public/, and let me know if you have further questions.
@@ -129,6 +130,9 @@ nn Q gq
 nn gm 1<C-^>
 nn gc 2<C-^>
 
+" com! W :w<C-M>:bd<C-M>
+
+""""""""""""""" Chinese
 " Unknown and unused tweak
 " com! Ss source ~/Dropbox/linux/chinese/.svimrc
 com! Sv source ~/.vimrc
@@ -141,7 +145,7 @@ com! Sy source ~/Dropbox/linux/chinese/.cvimrc.fix
 nmap <C-Y> :Sy<C-M>
 imap <C-Y> <ESC>mm<C-Y>`ma
 
-" Non-breaking space
+""""""""""""""" " Non-breaking space stuff (combine with other ascii…)
 com! Space s/ / /g
 com! Pack %s/^\s\s*//
 
@@ -149,7 +153,6 @@ com! Pack %s/^\s\s*//
 nmap M :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
 nmap <C-P> "+gP1GM:source ~/.vimrc.break<C-M>
-
 
 " Title, subtitle, html paragraphing (!!!) and date
 nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
@@ -167,7 +170,7 @@ let g:netrw_browsex_viewer= "setsid xdg-open"
 digraphs !? 8253 " interrobang ‽
 digraphs ?! 8253 " interrobang ‽
 " digraphs !, ☹
-digraphs h. 7717
+digraphs h. 7717 " ḥ (for hebrew)
 digraphs H. 7716
 digraphs  160 " non-breaking space
 digraphs *.   183 " · dot ·

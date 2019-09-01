@@ -17,10 +17,14 @@ map! O1;6S <C-S-F4>
 map [1;6S <C-S-F4>
 map! [1;6S <C-S-F4>
 map [15;5~ <C-F5>
-map! [15;5~ <C-F5>
+map [15;5~ <C-F5>
+map [15;6~ <C-S-F5>
+map! [15;6~ <C-S-F5>
 
 map [19;2~ <S-F8>
 map! [19;2~ <S-F8>
+map [20;2~ <S-F9>
+map! [20;2~ <S-F9>
 map [21~ <F10>
 map! [21~ <F10>
 map [21;5~ <C-F10>
@@ -37,12 +41,14 @@ map <C-S-F4> :!make pdftarget<C-M>
 map <C-F4> :make -dr sync > make.log && git status<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make -dr all.time > make.log && git status<C-M>
+map <C-S-F5> :make -dr newSource all.time > make.log && git status<C-M>
 map <F6> :cp<C-M>
 map <F7> :x<C-M>
 map <S-F7> gz
 map <F8> :w<F4>
 map <S-F8> gi<F8>
 map <F9> :wall<C-M>
+map <S-F9> :wall<C-M>:bd<C-M>
 
 map! <F1> <ESC><F1>
 map! <F2> <ESC><F2>
@@ -59,6 +65,7 @@ map! <S-F7> <ESC><S-F7>
 map! <F8> <ESC><F8>
 map! <S-F8> <ESC><S-F8>
 map! <F9> <ESC><F9>
+map! <S-F9> <ESC><S-F9>
 map! <F10> <ESC><F10>
 map! <F11> <ESC><F11>
 map! <F12> <ESC><F12>
