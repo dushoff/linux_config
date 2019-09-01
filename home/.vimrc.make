@@ -41,7 +41,7 @@ map <C-S-F4> :!make pdftarget<C-M>
 map <C-F4> :make -dr sync > make.log && git status<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make -dr all.time > make.log && git status<C-M>
-map <C-S-F5> :make -dr newSource all.time > make.log && git status<C-M>
+map <C-S-F5> :make -dr newSource tsync all.time > make.log && git status<C-M>
 map <F6> :cp<C-M>
 map <F7> :x<C-M>
 map <S-F7> gz
