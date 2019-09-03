@@ -35,7 +35,8 @@ Sources += $(wildcard log/*.log)
 ## Or by just sourcing from here (home)
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
-relink: linkbin linkhome linkmake
+## ~/Makefile is now "pushed" – consider for other files? Don't want them to just disappear.
+relink: linkbin linkhome
 
 ## Stuff for bin
 subdirs += bin 
@@ -53,9 +54,15 @@ linkhome:
 ######################################################################
 
 ## Root directory Makefile
-Sources += tilde.mk gg.pl
-linkmake:
-	cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
+Sources += tilde.mk 
+
+pushmake:
+	$(CPF) tilde.mk ~/Makefile
+	chmod a-w ~/Makefile
+
+## I like this syntax for linking, but I'm not going to use this particular rule
+linkmake: cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
+
 
 Ignore += $(subdirs)
 
