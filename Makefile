@@ -36,7 +36,7 @@ Sources += $(wildcard log/*.log)
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
 ## ~/Makefile is now "pushed" – consider for other files? Don't want them to just disappear.
-relink: linkbin linkhome
+relink: linkmake linkbin linkhome
 
 ## Stuff for bin
 subdirs += bin 
@@ -56,13 +56,14 @@ linkhome:
 ## Root directory Makefile
 Sources += tilde.mk 
 
+## I'm preferring link now, because it allows me to edit the copy when I feel like.
+## relink should solve any problem -- unless we delete _all_ versions of this repo before successfully installing a new location
+
+linkmake: cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
+
 pushmake:
 	$(CPF) tilde.mk ~/Makefile
 	chmod a-w ~/Makefile
-
-## I like this syntax for linking, but I'm not going to use this particular rule
-linkmake: cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
-
 
 Ignore += $(subdirs)
 

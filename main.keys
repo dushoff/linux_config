@@ -9,7 +9,7 @@ report <Shift><Alt>k
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
 ## calwin <Shift><Alt>c
-compwin <Shift><Alt>c
+textcal <Shift><Alt>c
 
 google-chrome <Ctrl><Alt>w
 
