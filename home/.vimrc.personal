@@ -162,9 +162,8 @@ nmap @d <C-D>@t
 
 
 " Reporting
-" nmap @k G?^%%%%%<C-M>H{{}<C-T> " From when I was over-using report
 nmap @k gkGp<F3>
-vmap @k d@k
+vmap @k c<ESC>@k
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
