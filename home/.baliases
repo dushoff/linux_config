@@ -49,7 +49,8 @@ alias ct='crontab -e'
 alias dsn='du -s * |sort -n'
 
 ## Vim sessions
-alias vmt='make vim_session || vi Makefile target.mk'
+alias vvs='make vim_session || vi Makefile target.mk'
+alias vmt='vi Makefile target.mk'
 alias vm='vi Makefile'
 alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
