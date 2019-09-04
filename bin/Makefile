@@ -24,9 +24,11 @@ $(ms)/Makefile:
 
 resting = cpdf csv2html/ k2pdfopt pad/
 
+## Source scripts, Ignore links
+## Make sure to notice the gaps!
 links = base16-gnome-terminal dropbox.py make2graph
 
-scripts = focus jumpy n17 nono nopad noscreen o17 opad oscreen pado screeno sdir ship sleepy tat.pl term vi wakey voicewin chromewin mailwin hangwin calwin pdfwin cpdf findTab bat report
+scripts = focus jumpy n17 nono nopad noscreen o17 opad oscreen pado screeno sdir ship sleepy tat.pl term vi wakey voicewin chromewin mailwin hangwin calwin pdfwin cpdf findTab bat report textcal
 
 Sources += $(scripts)
 
