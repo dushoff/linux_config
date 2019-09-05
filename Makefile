@@ -59,7 +59,8 @@ Sources += tilde.mk
 ## I'm preferring link now, because it allows me to edit the copy when I feel like.
 ## relink should solve any problem -- unless we delete _all_ versions of this repo before successfully installing a new location
 
-linkmake: cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
+linkmake:
+	cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
 
 pushmake:
 	$(CPF) tilde.mk ~/Makefile
