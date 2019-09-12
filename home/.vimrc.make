@@ -78,9 +78,15 @@ nmap d_ Vg_d
 
 nmap gM :make <cfile><C-M>
 nmap gf :e <cfile><C-M>
-nmap gr mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:exe "%s@target:.*@target: " . target "@"<C-M>`g
+
+" Old (pre F2) makefile navigation stuff. Maybe?
+" nmap gr mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:exe "%s@target:.*@target: " . target "@"<C-M>`g
 " nmap gs mg0f:B:let target=expand("<cfile>")<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>1mh:exe "%s/target:.*/target: " . target "/"<C-M>`h`g
+
+" current F2 engine; old idea of gs for <go script> seems tromped
+" could change this to gS and do navigation to rebuild gs
 nmap gs mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:e target.mk<C-M>mh:exe "%s/target.*=.*/target = " . target "/"<C-M>`h`g
+
 nmap gF :let ff=expand("<cfile>")<C-M>:let ff=substitute(ff,"Rout","R", "")<C-M>:exe "e ".ff<C-M>
 
 " nmap gu gmgg/target.*:<C-M>f:wvE"sy:let @s=escape(@s,'/')<C-M>:exe "/" .@s. ".*:"<C-M>
