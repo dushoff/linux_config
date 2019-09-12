@@ -83,12 +83,13 @@ inoremap <c-u> <c-g>u<c-u>
 imap {} {<C-M>}<ESC>O<TAB>
 imap () ( )<ESC>hs
 
+" 2019 Sep 12 (Thu) Hacking at nmap; not really in touch with older uses
 vmap G_ j/---------------.*/e<C-M>
-nmap G_ j/---------------.*/e<C-M>
+nmap G_ /---------------.*/e<C-M>H
 omap G_ j/---------------/+1<C-M>
 
 vmap g_ k?---------------<C-M>
-nmap g_ k?---------------<C-M>
+nmap g_ ?---------------<C-M>H
 omap g_ k?---------------/-1<C-M>
 
 nmap D_ VG_d
