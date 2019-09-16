@@ -1,4 +1,5 @@
 ## This file is the Makefile for ~dushoff, curated in linux_config
+## It should be a link, not a copy. Use `make relink` (there) to fix
 
 PUSH = perl -wf $(filter %.pl, $^) $(filter-out %.pl, $^) > $@
 
