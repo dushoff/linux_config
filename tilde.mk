@@ -8,7 +8,7 @@ screens:
 	git clone https://github.com/dushoff/screens.git
 
 update:
-	(cd */linux_config || cd */*/linux_config) && make pull
+	(cd */linux_config && make pull) || (cd */*/linux_config && make pull)
 
 start:
 	cd screens && make start
