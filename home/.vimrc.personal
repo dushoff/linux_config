@@ -16,7 +16,7 @@ nmap gb VygCV:!bc -l<C-M>I## <ESC>PJ
 nmap g# :s/[ #]*$//<C-M>H
 
 " Time and date
-nmap <C-T> :put=strftime('%H:%M')<C-M>
+nmap <C-T> :put=strftime('%H:%M')<C-M>Ea#<ESC>
 nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
 
 imap <C-T> <ESC>mm<C-T>0"md$dd`m"mpa
