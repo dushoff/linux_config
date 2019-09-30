@@ -32,6 +32,9 @@ Sources += $(files)
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/.??* $(CURDIR)/*.* .
 
+ubuntu:
+	cd ~ && ln -fs $(CURDIR)/.blocal.ubuntu .blocal
+
 ######################################################################
 
 ### Makestuff

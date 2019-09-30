@@ -1,5 +1,7 @@
 
+## WHAT is this? 2019 Sep 19 (Thu)
 shopt -s expand_aliases
+
 
 ## Moving from flow 2019 Jul 14 (Sun)
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
@@ -210,8 +212,12 @@ alias startship="echo '##' startship '##' `date`; ship &"
 
 alias TET="play 480"
 
+## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
 alias fpg='nice find . -name "$1" -print |xargs grep "$2" 2> .error.log'
+
+## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
+## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
 
 play() { noship; echo arcs "$1"; date; echo `date` "$1" >> ~/gitroot/Planning/play.txt; squirrel "$1"; }
 ga() { grep -i $@ ~/.baliases ~/.blocal; }

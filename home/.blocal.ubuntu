@@ -1,3 +1,6 @@
+## See also ~/Dropbox/linux/.blocal
+## Where are other copies?
+
 go() { xdg-open "$@" & }
 
 ## alias go='gnome-open' doesn't work at all
