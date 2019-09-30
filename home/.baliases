@@ -295,7 +295,7 @@ svs() {
 	dir=`dirname "$p"`
 	sub=`basename "$p"`
 	(cd $dir && make $sub)
-	(cd $dir/sub && make Makefile)
+	(cd $dir/$sub && make Makefile)
 	svn $dir/$sub $sub; 
 }
 
