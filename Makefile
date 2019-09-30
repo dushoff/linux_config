@@ -45,7 +45,6 @@ linkbin:
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-## Next time you see this, make home into an alling directory 2019 Aug 10 (Sat)
 subdirs += home
 
 linkhome:
