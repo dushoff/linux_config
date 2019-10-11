@@ -16,7 +16,7 @@ $(ms)/Makefile:
 -include $(ms)/perl.def
 
 vim_session:
-	vim Makefile target.mk tilde.mk home/.vimrc
+	vmt tilde.mk home/.vimrc
 
 findTab: bin/findTab
 	$@ Chrome Gmail 12
