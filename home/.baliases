@@ -42,6 +42,7 @@ alias sjd='screen -t yushan ssh yushan.mcmaster.ca'
 
 alias ms='ssh ms.mcmaster.ca'
 alias sms='screen -t ms ssh ms.mcmaster.ca'
+alias smb='screen -t mbx ssh mbx.mcmaster.ca'
 
 alias mbx='ssh mbx.mcmaster.ca'
 alias sbx='screen -t mbx ssh mbx.mcmaster.ca'
