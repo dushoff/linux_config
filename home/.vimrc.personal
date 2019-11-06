@@ -162,10 +162,9 @@ nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
-
 " Reporting
-nmap @k gkGp<F3>
-vmap @k c<ESC>@k
+nmap @k gkGp}{<C-T><ESC><C-^>
+vmap <C-K> c<ESC>@k
 nmap <C-K> <C-P>@k
 
 " Clear space-only lines

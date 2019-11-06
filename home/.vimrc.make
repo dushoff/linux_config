@@ -34,8 +34,7 @@ map! [21;5~ <C-F10>
 
 map <F2> gs
 map <S-F2> gr
-map <C-F3> :make -dr pull > make.log && git status<C-M>
-map <C-F3> :make -dr pull > make.log && make rup && git status<C-M>
+map <C-F3> :make -dr pull > make.log && make exclude && git status<C-M>
 map <F4> :make!<C-M>
 map <S-F4> :!make vtarget<C-M>
 map <S-F5> :!make pdftarget<C-M>
