@@ -163,9 +163,11 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
 " Reporting
-nmap @k gkGp}{<C-T><ESC><C-^>
+" nmap @k gkGp}{<C-T><ESC><C-^>
+" vmap @k c<Esc>@k
+nmap @k gkGp<C-^>
 vmap <C-K> c<ESC>@k
-nmap <C-K> <C-P>@k
+nmap <C-K> }{<C-T><C-P><C-K>
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
