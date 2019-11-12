@@ -1,6 +1,6 @@
 #!/bin/sh
 
 screen -S main -p 2 -X select 2
-screen -S admin -p 1 -X select 1
+screen -S planning -p 1 -X select 1
 
 exec ~/bin/term
