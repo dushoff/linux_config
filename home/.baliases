@@ -1,7 +1,5 @@
-
 ## WHAT is this? 2019 Sep 19 (Thu)
 shopt -s expand_aliases
-
 
 ## Moving from flow 2019 Jul 14 (Sun)
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
@@ -110,6 +108,7 @@ alias scvim='screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
 
 alias w='screen -xRR'
 alias ww='screen -x main'
+alias dd='exit'
 alias sdr='screen -d -r'
 
 alias sx='screen -xRR'
