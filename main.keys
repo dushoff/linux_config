@@ -13,9 +13,6 @@ textcal <Shift><Alt>c
 
 google-chrome <Ctrl><Alt>w
 
-## /bin/cp bin/mailwin bin/calwin
-## git rm bin/compwin ##
-
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
