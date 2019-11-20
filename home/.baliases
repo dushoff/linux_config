@@ -57,9 +57,8 @@ alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
-alias SYNC="vdc; sleep 1; gvim ~/.commitnow; make all.time; echo auto > ~/.commitnow"
-alias sink="SYNC"
-alias mat="make all.time"
+alias sink="vdc; sleep 1; mat"
+alias mat="gvim ~/.commitnow; make all.time; echo AUTO > ~/.commitnow"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
