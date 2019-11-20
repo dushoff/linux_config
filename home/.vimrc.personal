@@ -168,6 +168,7 @@ nmap @d <C-D>@t
 nmap @k gkGp<C-^>
 vmap <C-K> c<ESC>@k
 nmap <C-K> }{<C-T><C-P><C-K>
+nmap <C-V> <C-P><C-K>
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
