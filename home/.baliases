@@ -214,6 +214,7 @@ alias TET="play 480"
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
 alias fpg='nice find . -name "$1" -print |xargs grep "$2" 2> .error.log'
+alias fppg='nice find . -name "$1" -print |xargs pdfgrep "$2" 2> .error.log'
 
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
