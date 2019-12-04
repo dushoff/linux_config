@@ -163,10 +163,8 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
 " Reporting
-" nmap @k gkGp}{<C-T><ESC><C-^>
-" vmap @k c<Esc>@k
-nmap @k gkGp<C-^>
-vmap <C-K> c<ESC>@k
+nmap @r gkGp<C-^>
+vmap <C-K> c<ESC>@r
 nmap <C-K> }{<C-T><C-P><C-K>
 nmap <C-V> <C-P><C-K>
 
