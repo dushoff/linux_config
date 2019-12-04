@@ -48,6 +48,7 @@ alias sbx='screen -t mbx ssh mbx.mcmaster.ca'
 alias ct='crontab -e'
 
 alias dsn='du -s * |sort -n'
+alias dsna='du -s * .??* |sort -n'
 
 ## Vim sessions
 alias vvs='make vim_session || vi Makefile target.mk'
