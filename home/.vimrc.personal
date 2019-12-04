@@ -153,7 +153,7 @@ com! Pack %s/^\s\s*//
 " current mail-trading text-aid-too
 nmap M :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
-" nmap <C-P> "+gP1GM:source ~/.vimrc.break<C-M>
+" select a paragraph
 nmap <C-P> }{V}
 
 " Title, subtitle, html paragraphing (!!!) and date
