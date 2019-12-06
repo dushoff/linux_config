@@ -162,6 +162,9 @@ nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
+" paragraph paragraphing
+nmap @c :1,$!cat -s
+
 " Reporting
 nmap @r gkGp<C-^>
 vmap <C-K> c<ESC>@r
