@@ -88,6 +88,7 @@ alias fpgl	'nice find . -name "\!:1" -print |xargs grep -l "\!:2"'
 alias fpv	'find . -name "\!:1" -print |xargs vim'
 alias fpx	'nice find . -name "\!:2" -print |xargs "\!:1"'
 alias fps	'find . -name "\!*" -print |& grep -v "^find:"'
+alias fpgv	'nice find . -name "\!:1" -print |xargs grep -l "\!:2" | xargs gvim'
 
 # Based on a file compiled by cron (currently?)
 alias ff	'filegrep.pl "\!:1" ${HOME}/bin/find/files.txt'
