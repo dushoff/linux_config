@@ -22,3 +22,9 @@ R.log: R and rstudio stuff
 
 itunes.log: Insanity! Did not work at all on screenbox
 
+imageMagick pdf policy
+/etc/.../policy.xml needs fiddling
+sudo gvim /etc/Image*/policy.xml ##
+## Tried ghostscript category none ⇒ read
+
+
