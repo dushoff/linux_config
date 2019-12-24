@@ -168,7 +168,7 @@ nmap @c :1,$!cat -s
 " Reporting
 nmap @r gkGp<C-^>
 vmap <C-K> c<ESC>@r
-nmap <C-K> }{<C-T><C-P><C-K>
+nmap <C-K> }k<C-T><C-P><C-K>
 nmap <C-V> <C-P><C-K>
 
 " Clear space-only lines
