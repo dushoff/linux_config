@@ -1,3 +1,2 @@
 #!/bin/bash
-xinput set-prop 15 "Device Enabled" 0
-
+xinput set-prop `xinput | grep Touchpad | sed -e "s/.*id=//; s/\s.*//"` "Device Enabled" 0
