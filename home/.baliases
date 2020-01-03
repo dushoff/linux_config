@@ -208,7 +208,7 @@ alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
 alias noship="echo '##' noship '##' `date`; shipminus"
 alias shipplus="shipminus; ship &"
-alias newship="echo '##' newship '##' `date`; shipplus"
+alias newship="echo newship '##' `date +"%H:%M"`; shipplus"
 alias startship="echo '##' startship '##' `date`; ship &"
 
 alias TET="play 480"
