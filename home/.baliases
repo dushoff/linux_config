@@ -208,6 +208,8 @@ alias sesh=" ice 484; squirrel 961; beaver 1444"
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
 alias shipplus="shipminus; ship &"
+
+## Craziness; this version is evaluated at shell launch, not ship launch! Try single quotes.
 alias newship="echo '##' `date +"%H:%M"`; shipplus"
 alias noship="echo '##' `date +"%H:%M"`; shipminus"
 
