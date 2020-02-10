@@ -197,23 +197,13 @@ todown(){ touch $@; cp "$@" ~/Downloads; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
-squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
-ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
-beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
-
-alias chunk="date; squirrel 1200; beaver 1444"
-alias sesh="echo '##' sesh '##' `date`; ice 484; squirrel 961; beaver 1444"
-alias sesh=" ice 484; squirrel 961; beaver 1444"
-
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
 alias shipplus="shipminus; ship &"
 
 ## Craziness; this version is evaluated at shell launch, not ship launch! Try single quotes.
-alias newship="echo '##' `date +"%H:%M"`; shipplus"
-alias noship="echo '##' `date +"%H:%M"`; shipminus"
-
-alias TET="play 480"
+alias newship='echo "##" `date +"%H:%M"`; shipplus'
+alias noship='echo "##" `date +"%H:%M"`; shipminus'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
@@ -223,7 +213,6 @@ alias fppg='nice find . -name "$1" -print |xargs pdfgrep "$2" 2> .error.log'
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
 
-play() { noship; echo arcs "$1"; date; echo `date` "$1" >> ~/gitroot/Planning/play.txt; squirrel "$1"; }
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gm() { gvim -U ~/.gmvimrc Makefile $@ & }
 
@@ -316,12 +305,6 @@ dx() {
 	(cd $p && screen -dm $sub); ssx $sub; 
 } 
 
-oldship(){
-	xdg-open ~/Dropbox/courses/Lecture_images/ship.jpg;
-	sesh; sleep 1500; 
-	ship
-}
-
 basedir(){
 	p=$( echo $1 | perl -pe 's|(.*?)/*([^/]*)/*$|$1|' );
 	echo $p;
@@ -331,7 +314,6 @@ notbasedir(){
 	p=$( echo $1 | perl -pe 's|(.*?)/*([^/]*)/*$|$2|' );
 	echo $p;
 }
-
 
 # Processes; I usually use killall now
 psg() { ps -aux | grep $@ | grep -v grep; }
@@ -360,7 +342,6 @@ scm() { scp -r dushoff@mathserv.mcmaster.ca:$@; }
 sctm() { scp -r $@ dushoff@mathserv.mcmaster.ca:; }
 scz() { scp dushoff@zebra.sharcnet.ca:$@; }
 sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
-
 
 cmath() { cp -R /2/arc/mathserv/dushoff/$@; }
 zarc() { mkdir zzz; mv .* *; mv * $@; }
