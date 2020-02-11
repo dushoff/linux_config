@@ -91,6 +91,7 @@ nmap gF :let ff=expand("<cfile>")<C-M>:let ff=substitute(ff,"Rout","R", "")<C-M>
 " nmap gu gmgg/target.*:<C-M>f:wvE"sy:let @s=escape(@s,'/')<C-M>:exe "/" .@s. ".*:"<C-M>
 nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C-M>:exe "/\\<" .@s. ".*:"<C-M>
 nmap gU gmgugs
+autocmd * VimEnter gU
 
 nn Q gq
 nn go 7
