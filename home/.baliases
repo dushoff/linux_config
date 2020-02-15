@@ -110,6 +110,8 @@ alias scvim='screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
 
 alias w='screen -xRR'
 alias ww='screen -x main'
+alias 12='ww'
+alias 21='ww'
 alias dd='exit'
 alias sdr='screen -d -r'
 
