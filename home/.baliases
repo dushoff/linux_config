@@ -60,7 +60,7 @@ alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instan
 alias vdc="vsave; dclose; hclose"
 alias sink="vdc; sleep 1; math"
 alias vsink="vclose; sleep 1; math"
-alias math="gvim ~/.commitnow; make all.time; echo AUTO > ~/.commitnow"
+alias math="gvim ~/.commitnow; make all.time"
 alias mat="make all.time"
 alias gas="go Dropbox/archive/swati.pdf"
 
