@@ -13,3 +13,6 @@ update:
 
 start:
 	cd screens && make start
+
+build: 
+	cd screens && make buildscreen
