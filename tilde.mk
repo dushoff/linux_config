@@ -8,6 +8,3 @@ screens:
 
 start screenstart setup buildscreen:
 	cd screens && make $@
-
-update:
-	(cd screens/linux_config && make pull) || (cd screens/*/linux_config && make pull)
