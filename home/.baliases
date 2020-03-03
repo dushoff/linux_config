@@ -202,7 +202,7 @@ go() { gnome-open "$@" & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
-alias sesh=" ice 484; squirrel 961; beaver 1444"
+alias sesh="noship; ice 484; squirrel 961; beaver 1444"
 
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
