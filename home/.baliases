@@ -216,6 +216,7 @@ alias noship='echo "##" `date +"%H:%M"`; shipminus'
 alias fpg='echo find . -name "$1" -print'
 alias fpg='nice find . -name "$1" -print |xargs grep "$2" 2> .error.log'
 alias fppg='nice find . -name "$1" -print |xargs pdfgrep "$2" 2> .error.log'
+alias lsd="ls --group-directories-first | more"
 
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
@@ -223,7 +224,6 @@ alias fppg='nice find . -name "$1" -print |xargs pdfgrep "$2" 2> .error.log'
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gm() { gvim -U ~/.gmvimrc Makefile $@ & }
 
-lsd() { ls $@ |grep "\/"; }
 gw() { grep -i "$@" /usr/share/dict/words.pre-dictionaries-common; }
 fp() { nice find . -name "$@" -print; }
 ## Tests. I guess the current problem is that I can't quote further.
