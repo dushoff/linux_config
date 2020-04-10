@@ -8,12 +8,15 @@ focus <Shift><Alt>f
 report <Shift><Alt>k
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
-## calwin <Shift><Alt>c
 textcal <Shift><Alt>c
+downloads <Shift><Alt>d
 
+## Open
 google-chrome <Ctrl><Alt>w
+gol <Shift><Alt>l
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
 
+## calwin <Shift><Alt>c
