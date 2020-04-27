@@ -204,7 +204,8 @@ go() { gnome-open "$@" & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
-alias sesh="noship; ice 484; squirrel 961; beaver 1444"
+alias sesh="ice 484; squirrel 961; beaver 1444"
+alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
 
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
@@ -349,6 +350,8 @@ scm() { scp -r dushoff@mathserv.mcmaster.ca:$@; }
 sctm() { scp -r $@ dushoff@mathserv.mcmaster.ca:; }
 scz() { scp dushoff@zebra.sharcnet.ca:$@; }
 sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
+
+lsh() { clear; ls -t $1 |head; }
 
 cmath() { cp -R /2/arc/mathserv/dushoff/$@; }
 zarc() { mkdir zzz; mv .* *; mv * $@; }
