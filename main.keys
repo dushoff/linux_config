@@ -1,11 +1,19 @@
 ## Focus
 findTab Chrome Gmail <Shift><Alt>m
 findTab Chrome Gmail 12 <Ctrl><Shift>m
-chromewin <Shift><Alt>w
+
+## chromewin <Shift><Alt>w
+findTab Chrome <Shift><Alt>w
+
+## Needs debugging
+## findTab Chrome Voice <Shift><Alt>v
 voicewin <Shift><Alt>v
+
+## Not working!! ☹
+findTab Chrome Facebook 12 <Ctrl><Shift>k
+
 hangwin <Shift><Alt>h
 focus <Shift><Alt>f
-report <Shift><Alt>k
 term <Shift><Alt>t
 pdfwin <Shift><Alt>p
 textcal <Shift><Alt>c
