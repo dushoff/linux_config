@@ -5,8 +5,8 @@ use strict;
 
 my ($appName, $tabName, $maxTabs) = @ARGV;
 
-## Not sure why this is good; I always use 12
 $maxTabs = 0 unless defined $maxTabs;
+$tabName = "." unless defined $tabName;
 
 my @wins = split /\s+/, `xdotool search --desktop 0 --name $appName`;
 
