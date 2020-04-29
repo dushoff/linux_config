@@ -1,0 +1,20 @@
+#! /usr/bin/perl
+## findTab.pl
+## usage findTab appName tabName maxTabs
+use strict;
+
+my ($appName, $tabName, $maxTabs) = @ARGV;
+
+$maxTabs = 12 unless defined $maxTabs;
+
+my @wins = split /\s+/, `xdotool search --desktop 0 --name $appName`;
+
+foreach my $win (@wins){
+	print $win;
+	my %tabs;
+	for (my $i=0;$i<$maxTabs;$i++){
+		my $tab = `xwininfo -id $win`;
+		$tabs{$tab} = 0;
+	}
+	print join ", ", keys %tabs;
+}
