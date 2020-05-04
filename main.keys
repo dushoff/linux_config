@@ -10,7 +10,7 @@ findTab Chrome <Shift><Alt>w
 voicewin <Shift><Alt>v
 
 ## Not working!! ☹
-findTab Chrome Facebook 12 <Ctrl><Shift>k
+findTab Chrome Twitter 12 <Ctrl><Shift>k
 
 hangwin <Shift><Alt>h
 focus <Shift><Alt>f
