@@ -8,6 +8,7 @@ findTab Chrome <Shift><Alt>w
 ## Needs debugging
 ## findTab Chrome Voice <Shift><Alt>v
 voicewin <Shift><Alt>v
+gnome-control-center sound  <Shift><Alt>s
 
 ## Not working!! ☹
 findTab Chrome Twitter 12 <Ctrl><Shift>k
