@@ -1,7 +1,7 @@
 #!/bin/sh
 
 screen -S main -X select 2
-screen -S planning -X select 1
-screen -S planning -X stuff "^[gcg_"
+screen -S org -X select 1
+screen -S org -X stuff "^[gcg_"
 
 exec ~/bin/term
