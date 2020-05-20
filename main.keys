@@ -1,28 +1,32 @@
 ## Focus
+##### Chrome
 findTab Chrome Gmail <Shift><Alt>m
 findTab Chrome Gmail 12 <Ctrl><Shift>m
-
 ## chromewin <Shift><Alt>w
 findTab Chrome <Shift><Alt>w
-
 ## Needs debugging
 ## findTab Chrome Voice <Shift><Alt>v
 voicewin <Shift><Alt>v
+findTab Chrome Twitter 12 <Ctrl><Shift>k
+hangwin <Shift><Alt>h
+
+#### Other
+pdfwin <Shift><Alt>p
 gnome-control-center sound  <Shift><Alt>s
 
-## Not working!! ☹
-findTab Chrome Twitter 12 <Ctrl><Shift>k
-
-hangwin <Shift><Alt>h
+#### Terminal
 focus <Shift><Alt>f
 term <Shift><Alt>t
-pdfwin <Shift><Alt>p
 textcal <Shift><Alt>c
 downloads <Shift><Alt>d
 
 ## Open
 google-chrome <Ctrl><Alt>w
 gol <Shift><Alt>l
+
+## Could not easily control screenshot behaviour from CL !
+## gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/dushoff/Downloads/" ##
+gnome-screenshot -a <Ctrl><Alt>a
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
