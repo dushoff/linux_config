@@ -147,6 +147,7 @@ alias stx='text-aid-too --editor sleepy'
 
 ## newstart has dropbox for machines where that doesn't work automatically
 alias deskstart='google-chrome & firefox & stx & '
+alias textstart='stx & '
 
 alias dropbox='~/.dropbox-dist/dropboxd &'
 alias pd=dirs
