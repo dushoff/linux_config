@@ -1,0 +1,7 @@
+#!/bin/sh
+
+screen -S main -X select $1
+screen -S $1 -X select $2
+## ifdef $3 screen -S org -X stuff "^[gcg_"
+
+exec ~/bin/term
