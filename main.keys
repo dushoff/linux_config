@@ -15,10 +15,13 @@ pdfwin <Shift><Alt>p
 gnome-control-center sound  <Shift><Alt>s
 
 #### Terminal
-focus <Shift><Alt>f
+## focus <Shift><Alt>f
 term <Shift><Alt>t
 textcal <Shift><Alt>c
 downloads <Shift><Alt>d
+pickscreen tech tilde <Shift><Alt>r
+pickscreen org Planning <Shift><Alt>f
+## focus <Shift><Alt>f
 
 ## Open
 google-chrome <Ctrl><Alt>w
