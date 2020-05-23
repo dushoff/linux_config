@@ -1,7 +1,7 @@
 #!/bin/sh
 ## This is obviously meant to click, but doesn't seem to
 
-/usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
+/usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus windowactivate
 sleep 0.1
 /usr/bin/xdotool search --onlyvisible --name "Hangouts" windowraise windowfocus windowactivate
 /usr/bin/xdotool xdotool getactivewindow click --window %1 1
