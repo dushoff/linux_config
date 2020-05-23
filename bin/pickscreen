@@ -1,7 +1,10 @@
 #!/bin/sh
+## usage pickscreen topscreen subscreen [stufftext]
 
 screen -S main -X select $1
 screen -S $1 -X select $2
-## ifdef $3 screen -S org -X stuff "^[gcg_"
+if [ "$#" -eq 3 ]; then
+	screen -S $1 -X stuff "$3"
+fi
 
-exec ~/bin/term
+exec findwin term

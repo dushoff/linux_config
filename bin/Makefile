@@ -21,26 +21,26 @@ $(ms)/Makefile:
 ######################################################################
 
 ## Importing and linking from Dropbox 2019 Jan 15 (Tue)
-
-resting = cpdf csv2html/ k2pdfopt pad/
+resting = csv2html/ k2pdfopt pad/
 
 ## Source scripts, Ignore links
-## Make sure to notice the gaps!
 links = base16-gnome-terminal dropbox.py make2graph
 
-## pad
+## pad (not checked 2020 May 23 (Sat))
 scripts += n17 nono nopad noscreen o17 opad oscreen pado screeno 
 
 ## Commands
 scripts += sdir ship tat.pl vi pdfwin cpdf bat tat.pl
 
-## Glue
-scripts += sleepy wakey 
-## Special focus
-scripts += focus jumpy term voicewin chromewin mailwin hangwin textcal report 
+## Glue # make these scripts use General focus
+scripts += sleepy wakey
 
 ## General focus
-scripts += findTab windows pickscreen  findApp
+scripts += findTab windows pickscreen findApp findwin
+
+## Special focus (deprecate 2020 May 23 (Sat), careful with the first one)
+scripts += term
+scripts += focus jumpy voicewin chromewin mailwin hangwin textcal report 
 
 Sources += $(scripts)
 
