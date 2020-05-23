@@ -1,17 +1,21 @@
+
 ## Focus
 ##### Chrome
 findTab Chrome Gmail <Shift><Alt>m
 findTab Chrome Gmail 12 <Ctrl><Shift>m
-## chromewin <Shift><Alt>w
 findTab Chrome <Shift><Alt>w
-## Needs debugging
-## findTab Chrome Voice <Shift><Alt>v
-voicewin <Shift><Alt>v
 findTab Chrome Twitter 12 <Ctrl><Shift>k
+
+voicewin <Shift><Alt>v
 hangwin <Shift><Alt>h
+## These do not work!
+## findTab Chrome Voice <Shift><Alt>v
+## findTab Google-chrome Hangouts <Shift><Alt>h
 
 #### Other
-pdfwin <Shift><Alt>p
+## pdfwin <Shift><Alt>p
+findwin evince <Shift><Alt>p
+findwin zoom <Shift><Alt>z
 gnome-control-center sound  <Shift><Alt>s
 
 #### Terminal

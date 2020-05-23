@@ -83,6 +83,10 @@ Ignore += .conf
 %.conf: %.keys keys.pl
 	$(PUSH)
 
+Ignore += win.list
+win.list: listWins.pl
+	$(PUSH)
+
 ######################################################################
 
 ### Makestuff rules
