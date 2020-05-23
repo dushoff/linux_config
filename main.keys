@@ -1,42 +1,33 @@
 
-## Focus
-##### Chrome
-findTab Chrome Gmail <Shift><Alt>m
-findTab Chrome Gmail 12 <Ctrl><Shift>m
-findTab Chrome <Shift><Alt>w
-findTab Chrome Twitter 12 <Ctrl><Shift>k
-
-voicewin <Shift><Alt>v
-hangwin <Shift><Alt>h
-## These do not work!
-## findTab Chrome Voice <Shift><Alt>v
-## findTab Google-chrome Hangouts <Shift><Alt>h
-
-#### Other
-## pdfwin <Shift><Alt>p
-findwin evince <Shift><Alt>p
-findwin zoom <Shift><Alt>z
-gnome-control-center sound  <Shift><Alt>s
-
-#### Terminal
-## focus <Shift><Alt>f
-term <Shift><Alt>t
-textcal <Shift><Alt>c
-downloads <Shift><Alt>d
-pickscreen tech tilde <Shift><Alt>r
-pickscreen org Planning <Shift><Alt>f
-## focus <Shift><Alt>f
-
-## Open
-google-chrome <Ctrl><Alt>w
-gol <Shift><Alt>l
-
-## Could not easily control screenshot behaviour from CL !
-## gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/dushoff/Downloads/" ##
+## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
+gol <Ctrl><Alt>l
+gnome-control-center sound  <Ctrl><Alt>s
+## terminal <Ctrl><Alt>t (this is working, but not run by me)
+bash -cl voice <Ctrl><Alt>v
+google-chrome <Ctrl><Alt>w
+
+## Find (simple) <Shift><Alt>
+textcal <Shift><Alt>c
+pickscreen Dropbox 1 <Shift><Alt>d
+pickscreen org Planning <Shift><Alt>f
+findApp Hangouts <Shift><Alt>h
+findTab Chrome Gmail <Shift><Alt>m
+findwin evince <Shift><Alt>p
+pickscreen tech tilde <Shift><Alt>r
+findwin term <Shift><Alt>t
+findApp Voice <Shift><Alt>v
+findTab Chrome <Shift><Alt>w
+findwin zoom <Shift><Alt>z
+
+## Find (deep) <Ctrl><Shift>
+##### Chrome
+pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
+pickscreen tech linux_config "^[gcg_" <Ctrl><Shift>h
+findTab Chrome Gmail 12 <Ctrl><Shift>m
+pickscreen research 0 "^[gd" <Ctrl><Shift>r
+findTab Chrome Twitter 12 <Ctrl><Shift>t
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
-
-## calwin <Shift><Alt>c
