@@ -18,9 +18,6 @@ $(ms)/Makefile:
 vim_session:
 	bash -cl "vmt tilde.mk home/.vimrc"
 
-findTab: bin/findTab
-	$@ Chrome Gmail 12
-
 ######################################################################
 
 Sources += README.md
@@ -71,7 +68,9 @@ Ignore += $(subdirs)
 
 ## Keyboard shortcuts
 
-Sources += main.keys keys.pl
+Sources += $(wildcard $.pl)
+
+Sources += main.keys
 Ignore += *.conf
 
 ## main.load: main.keys
@@ -86,6 +85,8 @@ Ignore += .conf
 Ignore += win.list
 win.list: listWins.pl
 	$(PUSH)
+
+Ignore += $(subdirs)
 
 ######################################################################
 
