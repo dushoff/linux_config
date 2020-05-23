@@ -1,5 +1,4 @@
 #!/bin/sh
-## ~/bin/jumpy
 
 /usr/bin/xdotool search --limit 1 --onlyvisible --classname "gnome-terminal" windowfocus
 sleep 0.1

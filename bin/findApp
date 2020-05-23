@@ -2,4 +2,4 @@
 
 /usr/bin/xdotool search --onlyvisible --classname "google-chrome" windowraise windowfocus
 sleep 0.1
-/usr/bin/xdotool search --name "Calendar" windowraise windowfocus
+/usr/bin/xdotool search --onlyvisible --name "$1" windowraise windowfocus

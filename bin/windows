@@ -1,6 +1,4 @@
 #! /usr/bin/perl
-## findTab.pl
-## usage findTab appName tabName maxTabs
 use strict;
 
 my ($appName, $tabName, $maxTabs) = @ARGV;
