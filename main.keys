@@ -1,14 +1,13 @@
 
 ## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
-gol <Ctrl><Alt>l
+bash -cl dgol <Ctrl><Alt>l
 gnome-control-center sound  <Ctrl><Alt>s
 ## terminal <Ctrl><Alt>t (this is working, but not run by me)
 bash -cl voice <Ctrl><Alt>v
 google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
-textcal <Shift><Alt>c
 pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findApp Hangouts <Shift><Alt>h
@@ -18,12 +17,12 @@ pickscreen tech tilde <Shift><Alt>r
 findwin term <Shift><Alt>t
 findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
-findwin zoom <Shift><Alt>z
+findwin Zoom <Shift><Alt>z
 
 ## Find (deep) <Ctrl><Shift>
 ##### Chrome
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
-pickscreen tech linux_config "^[gcg_" <Ctrl><Shift>h
+pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
 pickscreen research 0 "^[gd" <Ctrl><Shift>r
 findTab Chrome Twitter 12 <Ctrl><Shift>t
