@@ -73,8 +73,6 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 alias gvim='gvim -f'
 
 alias vmake='(make vtarget || acorns) &'
-ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg
-acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
@@ -200,6 +198,7 @@ todown(){ touch $@; cp "$@" ~/Downloads; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
+acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
