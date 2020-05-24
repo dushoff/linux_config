@@ -108,7 +108,7 @@ nn gi :exe "e " . input<C-M>
 
 nn gT 1g0f:B:e <cfile><C-M>
 nn gP 1g$b:e <cfile><C-M>
-nn gI 1g0f:BW:e <cfile><C-M>
+nn gS 1g0f:BW:e <cfile><C-M>
 
 nn @p yyPi.PRECIOUS: <ESC>f:D<ESC>
 nn @i yyPiIgnore += <ESC>f:D<ESC>

@@ -56,6 +56,7 @@ alias dsna='du -s * .??* |sort -n'
 alias vvs='make vim_session || vi Makefile target.mk'
 alias vmt='vi Makefile target.mk'
 alias vm='vi Makefile'
+
 alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
@@ -69,18 +70,13 @@ alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 
-## gvim (none of this is active)
-alias gam='gvim -U ~/.gmvimrc A.mk'
 alias gvim='gvim -f'
-alias gvv='gvim ~/.vimrc'
 
-## alias rvim='nrvim'
-alias rvim='make pull && nvim'
-alias nvim='vm calendar.mkd org.mkd schedule.mkd projects.mkd flow.md'
-alias nrvim='nvim'
+alias vmake='(make vtarget || acorns) &'
+ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg
+acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
-alias tdir='ls -d ~/apache/td*'
 
 alias va='vi ~/.baliases'
 alias ahash='source ~/.baliases'
@@ -179,6 +175,7 @@ alias firstplay='first | xargs -i mplayer "{}"'
 alias pen='ls -t *.* | head -2 | tail -1 '
 
 alias gol='last | xargs -i gio open "{}" &'
+alias dgol='cd ~/Downloads; gol'
 alias gop='pen | xargs -i gio open "{}" &'
 alias lastpo='lastpdf | xargs -i gio open "{}" &'
 
@@ -338,16 +335,11 @@ tasknuke() { tasklist $1 | awk -f ~/.mk | xargs kill -9; }
 taskflush() { tasklist $1 | awk -f ~/.mk | xargs kill -18; }
 back() { kill -20 $@; sleep 1; kill -18 $@; }
 rc() { stty rows $1; stty cols $2; }
-md() { mkdir $@; cd $@; }
-mdd() { mkdir $@; cd $@; dsmake; }
-msdd() { mkdir $@; cd $@; dsmake; screen -t $1; }
 
-scm() { scp -r dushoff@ms.mcmaster.ca:$@; }
+md() { mkdir $@; cd $@; }
 
 scl() { scp -r dushoff@lalashan.mcmaster.ca:$@; }
 sctl() { scp -r $@ dushoff@lalashan.mcmaster.ca:; }
-scy() { scp -r dushoff@yushan.mcmaster.ca:$@; }
-scty() { scp -r $@ dushoff@yushan.mcmaster.ca:; }
 scm() { scp -r dushoff@mathserv.mcmaster.ca:$@; }
 sctm() { scp -r $@ dushoff@mathserv.mcmaster.ca:; }
 scz() { scp dushoff@zebra.sharcnet.ca:$@; }
@@ -355,6 +347,5 @@ sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
 
 lsh() { clear; ls -t $1 |head; }
 
-cmath() { cp -R /2/arc/mathserv/dushoff/$@; }
 zarc() { mkdir zzz; mv .* *; mv * $@; }
 source ~/.blocal
