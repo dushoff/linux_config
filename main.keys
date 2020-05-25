@@ -24,8 +24,8 @@ findwin Zoom <Shift><Alt>z
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
 pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
-pickscreen research 0 "^[gd" <Ctrl><Shift>r
 findTab Chrome Twitter 12 <Ctrl><Shift>t
+pickscreen research 0 "^[gd" <Ctrl><Shift>w
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
