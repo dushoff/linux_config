@@ -1,3 +1,2 @@
-source ~/.vimrc
-map <F7> gz
+map <F7> :colo default<C-M>:x<C-M>
 colo morning

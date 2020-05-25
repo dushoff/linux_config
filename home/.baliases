@@ -72,12 +72,9 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 
 alias gvim='gvim -f'
 
-alias vmake='(make vtarget || acorns) &'
-alias pmake='(make pdftarget || acorns) &'
-
 alias bark='ls ~/Downloads/*.png ~/Downloads/*/*.png | head -1 | xopen'
-
-alias vmake='(make vtarget || acorns) &'
+alias vmake='(make vtarget || bark) &'
+alias pmake='(make pdftarget || bark) &'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
@@ -106,8 +103,11 @@ alias vv='vi ~/.vimrc'
 alias cshrc='source ~/.cshrc'
 alias login='source ~/.login'
 
-alias cvim='gvim -U ~/Dropbox/linux/home/.gcvimrc +"write" +"source ~/Dropbox/linux/chinese/.cvimrc" ~/ctmp &'
-alias scvim='screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
+## 2020 May 24 (Sun) hard deprecate
+## alias cvim='gvim -U ~/Dropbox/linux/home/.gcvimrc +"write" +"source ~/Dropbox/linux/chinese/.cvimrc" ~/ctmp &'
+## alias scvim='screen -t cvim vim +"write" +"source ~/chinese/.cvimrc" ~/ctmp &'
+
+alias vb='vim +"source ~/.pvimrc" ~/.vimrc'
 
 alias w='screen -xRR'
 alias ww='screen -x main'
@@ -130,21 +130,7 @@ alias delscr='del /tmp/screens/S-dushoff/*'
 alias plainscreen='screen -dm default'
 alias mainscreen='screen -c .escreenrc -dm main; screen -x main'
 
-## Different mstarts for different seasons
-alias mstart='ssx local; dxscreen gitroot; dxscreen Dropbox; dx gitroot/1M; dx gitroot/talks' 
-
-alias lstart='sh run; sd R; screen tcsh; sh sudo'
-alias gstart='sdn ~/gitroot/Planning Planning;'
-alias dbstart='sd ~/Downloads; sd current; sd article; sd linux/logs'
-alias Wstart='cd ~/gitroot/Workshops; sd statistics_talks; sd math_talks; sd disease_model_talks'
-alias Istart='cd ~/gitroot; sd MMED; sdn MMED/gh-pages pages; sd MMEDparticipants; sd ICI3D.github.io; sd coreFaculty'
-
-alias 3start='sd Lectures; (cd Lectures && sd web); (cd Lectures && sd wayback)'
-alias 1start='sd Lectures; (cd Lectures && sd web)'
-
 alias stx='text-aid-too --editor sleepy'
-
-## newstart has dropbox for machines where that doesn't work automatically
 alias deskstart='google-chrome & firefox & stx & '
 alias textstart='stx & '
 

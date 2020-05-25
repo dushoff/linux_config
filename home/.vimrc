@@ -1,11 +1,10 @@
-" <pre>
 
-source ~/.vimrc.basic " very basic
+source ~/.vimrc.basic " very basic plus a bunch of keystroke nonsense
 " source ~/.vimrc.iat " iat and WW! ☹
 source ~/.vimrc.break " line breaking
-source ~/.vimrc.make " long, lots of F commands (e.g., saving stuff)
+source ~/.vimrc.make " 
 source ~/.vimrc.tex " almost empty
 source ~/.vimrc.personal
 source ~/.vimrc.local
 
-" </pre>
+" ~/.baliases does not belong here but it's convenient for my current weird work flow ☺
