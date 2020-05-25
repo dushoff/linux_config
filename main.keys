@@ -26,6 +26,7 @@ pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
 findTab Chrome Twitter 12 <Ctrl><Shift>t
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
+findTab Chrome Youtube <Ctrl><Shift>y
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
