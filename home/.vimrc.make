@@ -1,7 +1,7 @@
 map <F2> gs
 map <S-F2> gr
 map <C-F3> :make -dr pull > make.log && make exclude && git status<C-M>
-map <F4> :make target!<C-M>
+map <F4> :make target<C-M>
 map <S-F4> :!make vtarget<C-M>
 map <C-S-F4> :!make pdftarget<C-M>
 map <C-F4> :make -dr sync > make.log && git status<C-M>
