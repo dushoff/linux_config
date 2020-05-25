@@ -16,7 +16,7 @@ $(ms)/Makefile:
 -include $(ms)/perl.def
 
 vim_session:
-	bash -cl "vmt tilde.mk home/.vimrc"
+	bash -cl "vmt main.keys tilde.mk"
 
 ######################################################################
 

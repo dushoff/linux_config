@@ -13,7 +13,7 @@ pickscreen org Planning <Shift><Alt>f
 findApp Hangouts <Shift><Alt>h
 findTab Chrome Gmail <Shift><Alt>m
 findwin evince <Shift><Alt>p
-pickscreen tech tilde <Shift><Alt>r
+pickscreen tech run <Shift><Alt>r
 findwin term <Shift><Alt>t
 findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
@@ -24,8 +24,8 @@ findwin Zoom <Shift><Alt>z
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
 pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
-pickscreen research 0 "^[gd" <Ctrl><Shift>r
 findTab Chrome Twitter 12 <Ctrl><Shift>t
+pickscreen research 0 "^[gd" <Ctrl><Shift>w
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
