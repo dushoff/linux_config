@@ -1,10 +1,9 @@
 #!/bin/sh
-## usage pickscreen topscreen subscreen [stufftext]
+## usage exec topscreen subscreen exectext
+## NOT IMPLEMENTED 2020 May 27 (Wed)
 
 screen -S main -X select $1
 screen -S $1 -X select $2
-if [ "$#" -eq 3 ]; then
-	screen -S $1 -X stuff "$3"
-fi
+screen -S $1 -X stuff "$3"
 
 exec findwin term
