@@ -12,6 +12,7 @@ nmap gE gXk:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
 nmap gb VygCV:!bc -l<C-M>I## <ESC>PJ
+nmap gD :!downcall <cfile><C-M>
 
 nmap g# :s/[ #]*$//<C-M>H
 
