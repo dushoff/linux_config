@@ -5,7 +5,3 @@ start setup makescreen:
 
 relink:
 	cd */*/linux_config && $(MAKE) relink
-
-## Move this out to a run subdirectory? But should it be a repo?
-startscreen: 
-	bash -cl deskstart &
