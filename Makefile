@@ -68,7 +68,7 @@ Ignore += $(subdirs)
 
 ## Keyboard shortcuts
 
-Sources += $(wildcard $.pl)
+Sources += $(wildcard *.pl)
 
 Sources += main.keys
 Ignore += *.conf
