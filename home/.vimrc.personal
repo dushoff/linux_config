@@ -32,6 +32,8 @@ nn gy ggVG"+y
 nn gv "+gP
 nmap <F10> gv
 imap <F10> <ESC>a <ESC>gvs
+nmap <F12> gv
+imap <F12> <ESC>o<ESC>gv
 
 " go Github?
 map gG :!make upstream<C-M>
@@ -121,7 +123,7 @@ nmap >> VG>>
 vmap + :s/^[>  	]*//<C-M>
 nmap + VG+
 
-vmap & !~/bin/quote.pl 72<C-M>
+vmap & !~/bin/quote.pl<C-M>
 nmap & VG&
 
 ab ptp Power to the people
