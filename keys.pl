@@ -10,6 +10,7 @@ while(<>){
 	next if /^#/;
 	next if /^\s*$/;
 	chomp;
+	s/ ##.*//;
 	my ($name, $binding) = /(.*) (.*)/;
 	$bindings{$name} = $binding
 }
