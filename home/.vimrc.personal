@@ -32,8 +32,8 @@ nn gy ggVG"+y
 nn gv "+gP
 nmap <F10> gv
 imap <F10> <ESC>a <ESC>gvs
-nmap <F12> gv
-imap <F12> <ESC>o<ESC>gv
+nmap <F12> o<ESC>gv
+imap <F12> <ESC><F12>
 
 " go Github?
 map gG :!make upstream<C-M>
