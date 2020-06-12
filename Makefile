@@ -47,6 +47,10 @@ subdirs += home
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
 
+Sources += ssh.Makefile
+linkssh:
+	cd ~ && ln -fs $(CURDIR)/ssh.Makefile/.??* .ssh/Makefile
+
 ######################################################################
 
 ## Root directory Makefile
