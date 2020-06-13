@@ -1,3 +1,4 @@
+## Comment with initial # or ##
 
 ## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
@@ -11,6 +12,7 @@ google-chrome <Ctrl><Alt>w
 pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findApp Hangouts <Shift><Alt>h
+findTab Chrome Meet <Shift><Alt>g
 findTab Chrome Gmail <Shift><Alt>m
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
