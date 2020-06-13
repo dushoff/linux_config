@@ -49,7 +49,7 @@ linkhome:
 
 Sources += ssh.Makefile
 linkssh:
-	cd ~ && ln -fs $(CURDIR)/ssh.Makefile/.??* .ssh/Makefile
+	cd ~ && ln -fs $(CURDIR)/ssh.Makefile .ssh/Makefile
 
 ######################################################################
 
