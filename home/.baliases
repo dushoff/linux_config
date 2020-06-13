@@ -215,7 +215,7 @@ alias lsd="ls --group-directories-first | more"
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
 
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
-gm() { gvim -U ~/.gmvimrc Makefile $@ & }
+gvm() { gvim -U ~/.gmvimrc Makefile $@ & }
 
 gw() { grep -i "$@" /usr/share/dict/words.pre-dictionaries-common; }
 fp() { nice find . -name "$@" -print; }
