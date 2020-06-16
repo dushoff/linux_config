@@ -48,8 +48,14 @@ linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
 
 Sources += ssh.Makefile
-linkssh:
+linkssh: ~/.ssh ~/.ssh/authorized_keys
 	cd ~ && ln -fs $(CURDIR)/ssh.Makefile .ssh/Makefile
+
+~/.ssh:
+	cd ~ && $(MD) .ssh && chmod 700 .ssh
+
+~/.ssh/authorized_keys:
+	cd $(dir $@) && touch $(notdir $@)  && chmod 640 $(notdir $@) 
 
 ######################################################################
 
