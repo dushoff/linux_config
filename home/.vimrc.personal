@@ -73,9 +73,10 @@ ab cfs 施群芳
 ab ba4 爸
 ab wsry 萬事如意
 
-nmap - O<C-M><ESC>70i-<ESC>
-nmap _ o<ESC>-
+nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
+nmap - mmG_dd'm_
 nmap \ i\
+nmap dl :.g/^$/d<C-M>
 
 " Protect from instant erasure
 inoremap <c-u> <c-g>u<c-u>
