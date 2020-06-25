@@ -9,6 +9,7 @@ bash -cl voice <Ctrl><Alt>v
 google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
+pickscreen org Planning "^[gc" <Shift><Alt>c
 pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findApp Hangouts <Shift><Alt>h
