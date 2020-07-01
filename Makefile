@@ -32,7 +32,6 @@ Sources += $(wildcard log/*.log)
 ## Or by just sourcing from here (home)
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
-## ~/Makefile is now "pushed" – consider for other files? Don't want them to just disappear.
 relink: linkmake linkbin linkhome
 
 ## Stuff for bin
