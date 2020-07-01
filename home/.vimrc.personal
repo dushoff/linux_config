@@ -225,6 +225,9 @@ digraphs el 8467 " math cursive ell ℓ
 vmap Y "+y
 vmap X "+x
 
+" pull an email address from a formatted list
+nmap ym f<lvt>Y
+
 " execute pathogen#infect()
 augroup markdown
     au!
