@@ -202,8 +202,8 @@ alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
 alias shipplus="shipminus; ship &"
+alias noship='echo "## noship ##" `date +"%H:%M"`; shipminus'
 alias newship='echo "## newship ##" `date +"%H:%M"`; shipplus'
-alias noship='echo "##" noship ## `date +"%H:%M"`; shipminus'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
