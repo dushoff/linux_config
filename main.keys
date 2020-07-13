@@ -23,7 +23,7 @@ findTab Chrome <Shift><Alt>w
 findwin Zoom <Shift><Alt>z
 
 ## Find (deep) <Ctrl><Shift>
-#### Don't use c (save it for terminal copy)
+pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
 pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>n
