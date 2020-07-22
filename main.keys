@@ -24,6 +24,7 @@ findwin Zoom <Shift><Alt>z
 
 ## Find (deep) <Ctrl><Shift>
 ## pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
+findTab Chrome Docs 12 <Ctrl><Shift>d
 pickscreen tech linux_config <Ctrl><Shift>h
 findTab Chrome Gmail 12 <Ctrl><Shift>m
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>n
