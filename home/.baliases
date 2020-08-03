@@ -62,9 +62,8 @@ alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instanc
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
 alias sink="vdc; sleep 1; mat"
-alias vsink="vclose; sleep 1; mat"
-alias math="gvim ~/.commitnow; make all.time"
-alias mat="make all.time"
+alias csink="vclose; sleep 1; mat"
+alias mat="make all.time; wiss 0"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
@@ -192,6 +191,8 @@ todown(){ touch $@; cp "$@" ~/Downloads; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
+
+wiss() { (sleep $@; xdg-open ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
@@ -199,6 +200,7 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
 
+## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
 alias shipplus="shipminus; ship &"
