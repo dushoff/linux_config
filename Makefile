@@ -17,6 +17,14 @@ Sources += README.md
 Sources += $(wildcard log/*.log)
 
 ######################################################################
+
+## Editor calling?
+
+
+tarcon.simptak: /proc/uptime
+	vim $@
+
+######################################################################
 ## We can add a directory by giving it a Makefile and alling (bin)
 ## Or by just sourcing from here (home)
 
