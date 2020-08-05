@@ -6,6 +6,8 @@ source ~/.vimrc.tex " almost empty
 source ~/.vimrc.personal
 source ~/.vimrc.local
 
-" ~/.baliases does not belong here but it's convenient for my current weird work flow ☺
+" convenient for my current weird work flow ☺
+" ~/.bashrc
+" ~/.baliases
 
 " source ~/.vimrc.iat " iat and WW! ☹
