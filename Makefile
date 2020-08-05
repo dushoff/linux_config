@@ -1,17 +1,6 @@
 current: target
 -include target.mk
 
-## Makestuff setup
-Sources += Makefile 
-msrepo = https://github.com/dushoff
-ms = makestuff
--include makestuff/os.mk
-
-Ignore += makestuff
-Makefile: makestuff/Makefile
-makestuff/Makefile:
-	git clone $(msrepo)/makestuff
-	ls $@
 
 -include makestuff/perl.def
 
@@ -98,6 +87,18 @@ win.list: listWins.pl
 Ignore += $(subdirs)
 
 ######################################################################
+
+## Makestuff setup
+Sources += Makefile 
+msrepo = https://github.com/dushoff
+ms = makestuff
+-include makestuff/os.mk
+
+Ignore += makestuff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
+	ls $@
 
 ### Makestuff rules
 
