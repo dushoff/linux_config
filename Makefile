@@ -5,15 +5,15 @@ current: target
 Sources += Makefile 
 msrepo = https://github.com/dushoff
 ms = makestuff
--include $(ms)/os.mk
+-include makestuff/os.mk
 
-Ignore += $(ms)
-Makefile: $(ms)/Makefile
-$(ms)/Makefile:
-	git clone $(msrepo)/$(ms)
+Ignore += makestuff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
 	ls $@
 
--include $(ms)/perl.def
+-include makestuff/perl.def
 
 vim_session:
 	bash -cl "vmt main.keys tilde.mk"
@@ -101,6 +101,6 @@ Ignore += $(subdirs)
 
 ### Makestuff rules
 
--include $(ms)/git.mk
--include $(ms)/visual.mk
+-include makestuff/git.mk
+-include makestuff/visual.mk
 
