@@ -20,7 +20,7 @@ Sources += $(wildcard log/*.log)
 
 ## Editor calling?
 
-
+Ignore += tarcon.simptak
 tarcon.simptak: /proc/uptime
 	vim $@
 
