@@ -63,7 +63,7 @@ alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instan
 alias vdc="vsave; dclose; hclose"
 alias sink="vdc; sleep 1; mat"
 alias csink="vclose; sleep 1; mat"
-alias mat="make all.time; wiss 0"
+alias mat="make all.time && wiss 0"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
