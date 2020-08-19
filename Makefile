@@ -1,7 +1,6 @@
 current: target
 -include target.mk
 
-
 -include makestuff/perl.def
 
 vim_session:
