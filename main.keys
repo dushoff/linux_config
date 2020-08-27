@@ -15,6 +15,7 @@ pickscreen org Planning <Shift><Alt>f
 findApp Hangouts <Shift><Alt>h
 findTab Chrome Meet <Shift><Alt>g
 findTab Chrome Gmail <Shift><Alt>m
+pickscreen 0 0 <Shift><Alt>o
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
 findwin term <Shift><Alt>t
