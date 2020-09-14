@@ -207,7 +207,7 @@ alias shipplus="shipminus; ship &"
 
 alias noship='echo "## noship ##" `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus'
 alias newship='echo "## newship ##" `date +"%H:%M"` >> report.txt; shipplus'
-alias newday='echo "## newship ##" `date` >> report.txt; shipplus'
+alias newday='echo "########" `date` >> report.txt; shipplus'
 alias meetship='echo "## meetship ##" `date +"%H:%M"` >> report.txt; squirrel 1400; acorns 2800'
 
 ## This is obviously an old debug attempt ☹
