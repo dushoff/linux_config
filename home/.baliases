@@ -203,12 +203,14 @@ alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
-alias shipplus="shipminus; ship &"
+alias shipplus="acorns 0; shipminus; ship &"
 
-alias noship='echo "## noship ##" `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus'
-alias newship='echo "## newship ##" `date +"%H:%M"` >> report.txt; shipplus'
-alias newday='echo "########" `date` >> report.txt; shipplus'
-alias meetship='echo "## meetship ##" `date +"%H:%M"` >> report.txt; squirrel 1400; acorns 2800'
+alias now='pickscreen org Planning "^[gcg_"'
+
+alias noship='vsave; echo "## noship ##" `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now'
+alias newday='vsave; echo "########" `date` >> report.txt; shipplus'
+alias newship='vsave; echo "## newship ##" `date +"%H:%M"` >> report.txt; now; shipplus'
+alias meetship='vsave; echo "## meetship ##" `date +"%H:%M"` >> report.txt; shipminus; squirrel 1400; acorns 2800'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
