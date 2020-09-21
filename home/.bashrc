@@ -130,6 +130,7 @@ export TEXT_AID_TOO_EDITOR="~/bin/sleepy"
 export TEXT_AID_TOO_EDITOR="gvim -f"
 export VEDIT="gvim -f"
 export MSEDITOR="gvim -f"
+export BC_LINE_LENGTH=0
 
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
