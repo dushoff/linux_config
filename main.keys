@@ -10,6 +10,7 @@ bash -cl meetship <Super>t
 ## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
 bash -cl dgol <Ctrl><Alt>l
+gnome-control-center <Ctrl><Alt>c
 gnome-control-center sound  <Ctrl><Alt>s
 ## terminal <Ctrl><Alt>t (this is working, but not run by me)
 bash -cl voice <Ctrl><Alt>v
