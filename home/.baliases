@@ -207,10 +207,10 @@ alias shipplus="acorns 0; shipminus; ship &"
 
 alias now='pickscreen org Planning "^[gcg_"'
 
-alias noship='vsave; echo "## noship ##" `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now'
-alias newday='vsave; echo "########" `date` >> report.txt; shipplus'
-alias newship='vsave; echo "## newship ##" `date +"%H:%M"` >> report.txt; now; shipplus'
-alias meetship='vsave; echo "## meetship ##" `date +"%H:%M"` >> report.txt; shipminus; squirrel 1400; acorns 2800'
+alias newday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> report.txt; now'
+alias newship='vsave; echo "Work: " `date +"%H:%M"` >> report.txt; now; shipplus'
+alias meetship='vsave; echo "Meet: " `date +"%H:%M"` >> report.txt; shipminus; squirrel 1400; acorns 2800'
+alias noship='vsave; echo "Rest: " `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
