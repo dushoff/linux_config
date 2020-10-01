@@ -191,12 +191,13 @@ todown(){ touch $@; cp "$@" ~/Downloads; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
-
+lake() { (sleep $@; xdg-open ~/Dropbox/archive/lake.jpg) & }
 wiss() { (sleep $@; xdg-open ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
+
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
 
@@ -210,7 +211,7 @@ alias now='pickscreen org Planning "^[gcg_"'
 alias newday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> report.txt; now'
 alias newship='vsave; echo "Work: " `date +"%H:%M"` >> report.txt; now; shipplus'
 alias meetship='vsave; echo "Meet: " `date +"%H:%M"` >> report.txt; shipminus; squirrel 1400; acorns 2800'
-alias noship='vsave; echo "Rest: " `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now'
+alias noship='vsave; echo "Rest: " `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now; lake'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
