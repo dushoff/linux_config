@@ -1,6 +1,6 @@
 map <F2> gs
 map <S-F2> gr
-map <C-F3> :make -dr pull > make.log && make exclude && git status<C-M>
+map <C-F3> :make -dr pullup > make.log && make exclude && git status<C-M>
 map <F4> :make target<C-M>
 map <S-F4> :!make vtarget<C-M>
 map <C-S-F4> :!make pdftarget<C-M>
