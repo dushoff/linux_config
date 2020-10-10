@@ -79,8 +79,7 @@ ab hys 黃友森
 ab cfs 施群芳
 ab ba4 爸
 ab wsry 萬事如意
-
-nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
+ab mimi 米米
 nmap - mmG_dd'm_
 nmap \ i\
 nmap dl :.g/^$/d<C-M>
