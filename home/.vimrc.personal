@@ -26,9 +26,6 @@ nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
 imap <C-T> <ESC>mm<C-T>0"md$dd`m"mpa
 imap <C-D> <ESC>mm<C-D>0"md$dd`m"mpa
 
-" technical typing
-imap <C-G> %>%
-
 " Files
 nmap <C-U> :files<C-M>
 
@@ -79,7 +76,8 @@ ab hys 黃友森
 ab cfs 施群芳
 ab ba4 爸
 ab wsry 萬事如意
-ab mimi 米米
+
+nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
 nmap - mmG_dd'm_
 nmap \ i\
 nmap dl :.g/^$/d<C-M>
