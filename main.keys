@@ -5,7 +5,6 @@ bash -cl newday <Super>y
 bash -cl newship <Super>w
 bash -cl noship <Super>r
 bash -cl meetship <Super>t
-## This one is taken apparently
 
 ## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
