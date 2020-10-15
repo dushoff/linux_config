@@ -199,19 +199,23 @@ squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_s
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
 alias sesh="ice 484; squirrel 961; beaver 1444"
-alias newsesh="noship; ice 484; squirrel 961; beaver 1444"
+alias tesh="squirrel 1400; beaver 2800"
 
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
-alias shipminus="(killall ship; nopix) > /dev/null 2>&1"
+alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
 alias shipplus="acorns 0; shipminus; ship &"
+alias boatplus="acorns 0; shipminus; boat &"
 
 alias now='pickscreen org Planning "^[gcg_"'
 
-alias newday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> report.txt; now'
-alias newship='vsave; echo "Work: " `date +"%H:%M"` >> report.txt; now; shipplus'
-alias meetship='vsave; echo "Meet: " `date +"%H:%M"` >> report.txt; shipminus; squirrel 1400; acorns 2800'
-alias noship='vsave; echo "Rest: " `date +"%H:%M"` >> report.txt; echo >> report.txt; shipminus; now; lake'
+alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
+alias reportblank='vsave; echo >> ~/report.txt'
+
+alias newday='reportday; reportblank; newship'
+alias newship='reporttime Work; now; shipplus'
+alias meetship='reporttime Meet; now; boatplus'
+alias noship='reporttime Rest; reportblank; shipminus; now; lake'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
@@ -221,6 +225,8 @@ alias lsd="ls --group-directories-first | more"
 
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
+
+reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.txt; }
 
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gvm() { gvim -U ~/.gmvimrc Makefile $@ & }
