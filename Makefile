@@ -24,7 +24,7 @@ tarcon.simptak: /proc/uptime
 	vim $@
 
 ######################################################################
-## We can add a directory by giving it a Makefile and alling (bin)
+
 ## Or by just sourcing from here (home)
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
