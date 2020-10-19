@@ -5,8 +5,8 @@ let $BASH_ENV = "~/.bashrc"
 nmap gl :s/^[# \t>*]*//<C-M>Vgxu:nohlsearch<C-M>
 nmap gL gm1G/https*:<C-M>gl
 
-" last attempt!!
-com! -nargs=* Make make <args> | edit <args>
+" yay
+com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution
 nmap gC :s/^[%# \t*]*//<C-M>H
