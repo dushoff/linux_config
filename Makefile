@@ -31,13 +31,12 @@ tarcon.simptak: /proc/uptime
 relink: linkmake linkbin linkhome
 
 ## Stuff for bin
-subdirs += bin 
 linkbin:
 	cd ~ && ln -fs $(CURDIR)/bin
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-alldirs += home
+alldirs += home bin
 
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
