@@ -1,0 +1,3 @@
+#!/bin/bash
+text-aid-too --editor sleepy
+exec textdemon
