@@ -28,9 +28,9 @@ alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
 alias recache="uncache; hcache"
 
-alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
+## alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
 
-alias gitroot='git clone https://github.com/dushoff/gitroot.git'
+## alias gitroot='git clone https://github.com/dushoff/gitroot.git'
 
 alias sup='sup-mail'
 
