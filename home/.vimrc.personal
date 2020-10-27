@@ -126,6 +126,8 @@ nmap $$ VG$$
 vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
 nmap >> VG>>
 
+nmap @f gg/folders<C-M>
+
 vmap + :s/^[>  	]*//<C-M>
 nmap + VG+
 
