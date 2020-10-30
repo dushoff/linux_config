@@ -25,6 +25,7 @@ nmap <C-D> :put=strftime('%Y %b %d (%a)')<C-M>
 
 imap <C-T> <ESC>mm<C-T>0"md$dd`m"mpa
 imap <C-D> <ESC>mm<C-D>0"md$dd`m"mpa
+imap <C-G> %>%
 
 " Files
 nmap <C-U> :files<C-M>
