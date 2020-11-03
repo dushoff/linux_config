@@ -2,8 +2,14 @@
 let $BASH_ENV = "~/.bashrc"
 
 " Open target using edited line (like gx, but less fragile for URLs)
+" 2020 Nov 02 (Mon) Ubuntu 20 gx in visual mode is super weird
+" Old version
 nmap gl :s/^[# \t>*]*//<C-M>Vgxu:nohlsearch<C-M>
+" Just copy and open a new window
 nmap gl :s/^[# \t>*]*//<C-M>VYu:nohlsearch<C-M>:!cw<C-M>
+" Use execute
+nmap gl :s/^[# \t>*]*/go /<C-M>gXuu:nohlsearch<C-M>
+
 nmap gL gm1G/https*:<C-M>gl
 
 " yay
