@@ -70,6 +70,8 @@ Ignore += $(subdirs)
 
 alldirs += $(subdirs)
 
+malldirs.var:
+
 ######################################################################
 
 ## Keyboard shortcuts
