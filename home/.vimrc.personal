@@ -13,7 +13,6 @@ nmap gl :s/^[# \t>*]*/go /<C-M>gXu:nohlsearch<C-M>
 
 nmap gL gm1G/https*:<C-M>gl
 
-" yay
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution
@@ -128,17 +127,23 @@ ab sned send
 ab teh the
 ab Bestm Best,
 
+" Clear blank lines
 vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
 nmap @@ VG@@
+
+"Quote and reformat
 vmap $$ :s/./> &/<C-M>:'<,'>!cat -s<C-M>H
 nmap $$ VG$$
+
+" Unquoting (with tags)?
 vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
 nmap >> VG>>
 
-nmap @f gg/folders<C-M>
-
+" Unquoting?
 vmap + :s/^[>  	]*//<C-M>
 nmap + VG+
+
+nmap @f gg/folders<C-M>
 
 vmap & !~/bin/quote.pl<C-M>
 nmap & VG&
@@ -182,7 +187,7 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
 " paragraph paragraphing
-nmap @c :1,$!cat -s
+nmap @c :1,$!cat -s<C-M>
 
 " Reporting
 nmap @r gkGp<C-^>
