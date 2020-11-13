@@ -127,7 +127,7 @@ ab sned send
 ab teh the
 ab Bestm Best,
 
-" Clear quoted blank lines
+" Clear blank lines
 vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
 nmap @@ VG@@
 
