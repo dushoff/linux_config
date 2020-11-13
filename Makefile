@@ -36,7 +36,7 @@ linkbin:
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-alldirs += home bin
+subdirs += home bin
 
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
@@ -67,6 +67,8 @@ pushmake:
 	chmod a-w ~/Makefile
 
 Ignore += $(subdirs)
+
+alldirs += $(subdirs)
 
 ######################################################################
 
