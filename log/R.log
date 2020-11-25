@@ -1,3 +1,24 @@
+
+2020 Nov 22 (Sun)
+
+https://cran.r-project.org/bin/linux/ubuntu/
+
+sudo echo "deb https://cloud.r-project.org/bin/linux/ubuntu DISTRIB-cranVERSION/" >> /etc/apt/sources.list
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+## In sudo window
+sudo apt update
+sudo apt install r-base r-base-dev ## necessary when?
+
+sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+sudo apt update
+sudo apt upgrade
+
+And then what? Do I still use the makefile update.* rule?
+
+----------------------------------------------------------------------
+
 Pre
 ===
 

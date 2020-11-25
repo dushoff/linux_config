@@ -15,9 +15,14 @@ Sources += README.md
 ## Logs of how I install things
 Sources += $(wildcard log/*.log)
 
+Sources += log.md
+
+log.filemerge: log.md
+
 ######################################################################
 
 ## Editor calling?
+## Seems to work! Should be useful.
 
 Ignore += tarcon.simptak
 tarcon.simptak: /proc/uptime
