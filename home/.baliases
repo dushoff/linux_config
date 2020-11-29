@@ -90,12 +90,6 @@ alias del="'rm' "
 alias dir='ls -Fas'
 alias ls='ls -F'
 alias lsn='ls |grep -v "\/" |grep -v "@"; ls |grep "@."'
-alias lsth='clear; ls -t |head'
-alias lspdf='clear; ls -t *.pdf |head'
-alias lstpdf='ls -t *.pdf |more'
-alias lsath='clear; ls -at |head'
-alias lst='ls -t |more'
-alias lstm='lst'
 
 alias vc='vi ~/.cshrc'
 alias vv='vi ~/.vimrc'
@@ -168,6 +162,7 @@ alias gol='last | xargs -i gio open "{}" &'
 alias dgol='cd ~/Downloads; gol'
 alias gop='pen | xargs -i gio open "{}" &'
 alias lastpo='lastpdf | xargs -i gio open "{}" &'
+alias golp='lastpdf | xargs -i gio open "{}" &'
 alias xopen='xargs -i gio open "{}" &'
 
 alias rootdown='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
@@ -178,6 +173,14 @@ alias ldo='lastdown; last'
 alias lho='lasthome; last'
 alias ldu='lastdown; lastunzip'
 alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
+
+lsth() { clear; ls -t $@ |head -10; }
+alias lspdf='lsth *.pdf'
+
+alias lstpdf='ls -t *.pdf |more'
+alias lsath='clear; ls -at |head'
+alias lst='ls -t |more'
+alias lstm='lst'
 
 downput() { touch $@; cp $@ ~/Downloads/; }
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
@@ -211,7 +214,7 @@ alias boatplus="acorns 0; shipminus; boat &"
 alias now='pickscreen org Planning "^[gcg_"'
 
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
-alias reportblank='vsave; echo >> ~/report.txt'
+alias reportblank='echo >> ~/report.txt'
 
 alias newday='reportday; reportblank; newship'
 alias newship='reporttime Work; now; shipplus'

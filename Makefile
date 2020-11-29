@@ -15,9 +15,14 @@ Sources += README.md
 ## Logs of how I install things
 Sources += $(wildcard log/*.log)
 
+Sources += log.md
+
+log.filemerge: log.md
+
 ######################################################################
 
 ## Editor calling?
+## Seems to work! Should be useful.
 
 Ignore += tarcon.simptak
 tarcon.simptak: /proc/uptime
@@ -36,7 +41,7 @@ linkbin:
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-alldirs += home bin
+subdirs += home bin
 
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
@@ -67,6 +72,10 @@ pushmake:
 	chmod a-w ~/Makefile
 
 Ignore += $(subdirs)
+
+alldirs += $(subdirs)
+
+malldirs.var:
 
 ######################################################################
 

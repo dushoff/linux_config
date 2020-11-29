@@ -1,3 +1,4 @@
 vbell off
+zombie 'qr' onerror
 deflogin off
 escape a

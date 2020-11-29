@@ -2,11 +2,17 @@
 let $BASH_ENV = "~/.bashrc"
 
 " Open target using edited line (like gx, but less fragile for URLs)
-nmap gl :s/^[# \t>*]*//<C-M>Vgxu:nohlsearch<C-M>
-nmap gl :s/^[# \t>*]*//<C-M>VYu:nohlsearch<C-M>:!cw<C-M>
+" 2020 Nov 02 (Mon) Ubuntu 20 gx in visual mode is super weird
+" Old version
+" nmap gl :s/^[# \t>*]*//<C-M>Vgxu:nohlsearch<C-M>
+" Just copy and open a new window
+" nmap gl :s/^[# \t>*]*//<C-M>VYu:nohlsearch<C-M>:!cw<C-M>
+" Use execute (why is one u better, or is it? 2020 Nov 05 (Thu)
+" nmap gl :s/^[# \t>*]*/go /<C-M>gXuu:nohlsearch<C-M>
+nmap gl :s/^[# \t>*]*/go /<C-M>gXu:nohlsearch<C-M>
+
 nmap gL gm1G/https*:<C-M>gl
 
-" yay
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution
@@ -121,17 +127,23 @@ ab sned send
 ab teh the
 ab Bestm Best,
 
+" Clear blank lines
 vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
 nmap @@ VG@@
+
+"Quote and reformat
 vmap $$ :s/./> &/<C-M>:'<,'>!cat -s<C-M>H
 nmap $$ VG$$
+
+" Unquoting (with tags)?
 vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
 nmap >> VG>>
 
-nmap @f gg/folders<C-M>
-
+" Unquoting?
 vmap + :s/^[>  	]*//<C-M>
 nmap + VG+
+
+nmap @f gg/folders<C-M>
 
 vmap & !~/bin/quote.pl<C-M>
 nmap & VG&
@@ -175,7 +187,7 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
 " paragraph paragraphing
-nmap @c :1,$!cat -s
+nmap @c :1,$!cat -s<C-M>
 
 " Reporting
 nmap @r gkGp<C-^>
