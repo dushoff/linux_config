@@ -125,7 +125,9 @@ alias delscr='del /tmp/screens/S-dushoff/*'
 alias plainscreen='screen -dm default'
 alias mainscreen='screen -c .escreenrc -dm main; screen -x main'
 
+alias stx='text-aid-too --editor sleepy'
 alias textstart='textdemon & '
+alias deskstart='google-chrome & firefox & textstart'
 
 alias dropbox='~/.dropbox-dist/dropboxd &'
 alias pd=dirs
