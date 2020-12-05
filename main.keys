@@ -40,6 +40,8 @@ findTab Chrome Gmail 12 <Ctrl><Shift>m
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>n
 findTab Chrome meet 12 <Ctrl><Shift>t
 findTab Chrome Voice 12 <Ctrl><Shift>x
+
+corecarefamilyhealthteam@gmail.com
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
 findTab Chrome YouTube 12 <Ctrl><Shift>y
 
