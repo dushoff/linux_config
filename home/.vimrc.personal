@@ -190,7 +190,11 @@ nmap @d <C-D>@t
 nmap @c :1,$!cat -s<C-M>
 
 " Reporting
-nmap @r gkGp<C-^>
+nmap @r gkGp:w<C-M><C-^>
+nmap @k V@k
+vmap @k d@r
+
+" Older (paragraph based; has time stamps
 vmap <C-K> c<ESC>@r
 nmap <C-K> }k<C-T><C-P><C-K>
 nmap <C-V> <C-P><C-K>
