@@ -280,7 +280,7 @@ tsh() { screen tcsh; }
 sd() { (cd $@ && screen -t "$@"); }
 msd() { mkdir $1; sd $1; } 
 sdn() { (cd $1 && screen -t "$2"); }
-svn() { (cd $1 && screen -t "$2" bash -cl "vmt"); }
+svn() { (cd $1 && screen -t "$2" bash -cl "vvs"); }
 
 vi(){
 	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')
