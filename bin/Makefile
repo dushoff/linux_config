@@ -24,7 +24,7 @@ $(ms)/Makefile:
 resting = csv2html/ k2pdfopt pad/
 
 ## Source scripts, Ignore links
-links = base16-gnome-terminal dropbox.py make2graph
+links = base16-gnome-terminal dropbox.py
 
 ## pad (not checked 2020 May 23 (Sat))
 scripts += n17 nono nopad noscreen o17 opad oscreen pado screeno 
