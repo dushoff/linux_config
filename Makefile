@@ -59,9 +59,6 @@ linkssh: ~/.ssh ~/.ssh/authorized_keys
 
 ######################################################################
 
-## Root directory Makefile
-Sources += tilde.mk 
-
 ## I'm preferring link now, because it allows me to edit the copy when I feel like.
 ## relink should solve any problem -- unless we delete _all_ versions of this repo before successfully installing a new location
 
@@ -101,6 +98,16 @@ win.list: listWins.pl
 	$(PUSH)
 
 Ignore += $(subdirs)
+
+######################################################################
+
+## non-repo Makefiles
+Sources += tilde.mk 
+Sources += $(wildcard Dropbox/*.mk)
+
+Dropbox/%.mk:
+	cp makestuff/nogit.Makefile $@
+	cd ~/Dropbox/$* && ln -s $(CURDIR)/$@ Makefile
 
 ######################################################################
 
