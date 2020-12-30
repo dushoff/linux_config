@@ -188,6 +188,7 @@ downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
 lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 pencall() { ls -t *.* | head -2 | tail -1 | xargs -i mv "{}" $@; }
+pentouch() { ls -t *.* | head -2 | tail -1 | xargs -i touch "{}"; }
 lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 
 todown(){ touch $@; cp "$@" ~/Downloads; }
