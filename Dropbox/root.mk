@@ -12,6 +12,9 @@ makestuff/Makefile:
 
 ######################################################################
 
+vim_session:
+	bash -cl "vmt index.md"
+
 screen_session:
 	$(MAKE) ~/Downloads.rscreen
 
