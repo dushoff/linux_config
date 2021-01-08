@@ -43,6 +43,8 @@ scripts += term
 scripts += focus jumpy voicewin chromewin mailwin hangwin textcal report 
 scripts += textdemon
 
+scripts += remark
+
 Sources += $(scripts)
 
 Ignore += $(links)

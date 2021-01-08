@@ -1,0 +1,3 @@
+#!/bin/bash
+wine "/home/dushoff/.wine/drive_c/Program Files//reMarkable/reMarkable.exe"
+## gvim "/home/dushoff/.wine/drive_c/Program Files//reMarkable//" ##
