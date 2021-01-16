@@ -211,6 +211,7 @@ alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
 alias shipplus="acorns 0; shipminus; ship &"
 alias boatplus="acorns 0; shipminus; boat &"
+alias submarine="shipplus"
 
 alias now='pickscreen org Planning "^[gcg_"'
 
