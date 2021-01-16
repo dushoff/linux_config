@@ -1,4 +1,7 @@
 
+" set formatoptions=tcroql
+" set comments=l:#'
+
 source ~/.vimrc.basic " very basic plus a bunch of keystroke nonsense
 source ~/.vimrc.break " line breaking
 source ~/.vimrc.make " 

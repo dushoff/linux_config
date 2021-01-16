@@ -11,6 +11,9 @@ nohlsearch
 
 syntax on
 
+set formatoptions=tcroql
+set comments=l:#'
+
 nmap H :nohlsearch<C-M>
 
 " keystrokes (consider moving to a separate file)
