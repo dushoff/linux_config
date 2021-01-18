@@ -23,7 +23,6 @@ findTab Chrome Meet <Shift><Alt>g
 findApp Hangouts <Shift><Alt>h
 pickscreen org Planning "^[gkG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
-findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen 0 0 <Shift><Alt>o
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
@@ -37,9 +36,14 @@ findwin Zoom <Shift><Alt>z
 findTab Chrome Docs 12 <Ctrl><Shift>d
 pickscreen org Planning "^[gcgg/folders<C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
+## Something in Teams? <Ctrl><Shift>m
 pickscreen org Planning "^[gcg_" <Ctrl><Shift>n
 findTab Chrome meet 12 <Ctrl><Shift>t
 findTab Chrome Voice 12 <Ctrl><Shift>x
+
+## Find (deep) <Shift><Super>
+findTab Chrome Gmail 12 <Shift><Super>m
+## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
 
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
 findTab Chrome YouTube 12 <Ctrl><Shift>y
