@@ -36,8 +36,9 @@ findwin Zoom <Shift><Alt>z
 findTab Chrome Docs 12 <Ctrl><Shift>d
 pickscreen org Planning "^[gcgg/folders<C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
-## Something in Teams? <Ctrl><Shift>m
-pickscreen org Planning "^[gcg_" <Ctrl><Shift>n
+## Teams toggle <Ctrl><Shift>m
+## Teams toggle <Ctrl><Shift>n
+## pickscreen org Planning "^[gcg_" <Ctrl><Shift>n ## "now"
 findTab Chrome meet 12 <Ctrl><Shift>t
 findTab Chrome Voice 12 <Ctrl><Shift>x
 
