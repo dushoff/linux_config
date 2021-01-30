@@ -15,7 +15,7 @@ alias suspend='systemctl suspend'
 alias die='exit'
 alias q='exit'
 
-alias vpn='~/Dropbox/linux/install/anyconnect-linux64-4.9.04043/vpn/vpnui'  
+alias vpn='~/Dropbox/linux/install/anyconnect-linux64-4.9.04043/vpn/vpnui &'  
 alias fnr='firefox -ProfileManager -no-remote'
 alias miriam='firefox -no-remote -P miriam'
 
