@@ -61,7 +61,7 @@ eidm.pdf: eidm.txt
 
 ######################################################################
 
-2001.newDown:
+2101.newDown:
 %.newDown:
 	- cd ~/Dropbox/Download_files && mkdir $* && cp Makefile $*
 	ls ~/Dropbox/Download_files/$*
