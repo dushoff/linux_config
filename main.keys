@@ -20,7 +20,8 @@ pickscreen org Planning "^[gc" <Shift><Alt>c
 pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findTab Chrome Meet <Shift><Alt>g
-findApp Hangouts <Shift><Alt>h
+## findApp Hangouts <Shift><Alt>h
+findTab Chrome Hangouts <Shift><Alt>h
 pickscreen org Planning "^[gkG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
 pickscreen 0 0 <Shift><Alt>o
