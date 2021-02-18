@@ -34,6 +34,9 @@ imap <C-T> <ESC>mm<C-T>0"md$dd`m"mpa
 imap <C-D> <ESC>mm<C-D>0"md$dd`m"mpa
 imap <C-G> %>%
 
+" * indent and de-indent
+nmap <C-J> :s/^$//<C-M>Ji* <ESC>
+
 " Files
 nmap <C-U> :files<C-M>
 
@@ -189,7 +192,7 @@ nmap @d <C-D>@t
 " paragraph paragraphing
 nmap @c :1,$!cat -s<C-M>
 
-" Reporting
+" Reporting " Used by super-key scripts
 nmap @r gkGp:w<C-M><C-^>
 nmap <C-K> V<C-K>
 vmap <C-K> d@r

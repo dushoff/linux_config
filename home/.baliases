@@ -104,7 +104,6 @@ alias login='source ~/.login'
 
 alias vb='vim +"source ~/.pvimrc" ~/.vimrc'
 
-alias w='screen -xRR'
 alias ww='screen -x main'
 alias 12='ww'
 alias 21='ww'
@@ -112,6 +111,7 @@ alias dd='exit'
 alias sdr='screen -d -r'
 
 alias sx='screen -xRR'
+alias xx='screen -xRR'
 
 alias sr='screen -r'
 
