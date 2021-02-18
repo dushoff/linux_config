@@ -44,6 +44,7 @@ findTab Chrome meet 12 <Ctrl><Shift>t
 findTab Chrome Voice 12 <Ctrl><Shift>x
 
 ## Find (deep) <Shift><Super>
+findTab Chrome Hangouts 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
 
