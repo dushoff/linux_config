@@ -61,9 +61,9 @@ alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
-alias sink="vdc; sleep 1; mat"
-alias csink="vclose; sleep 1; mat"
-alias mat="make all.time && wiss 0"
+alias sink="vdc; sleep 1; ink"
+alias cink="vclose; sleep 1; ink"
+alias ink="make all.time && wiss 0"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
