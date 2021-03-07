@@ -209,12 +209,13 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 
+alias nopdf="killall evince"
+
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
 alias shipplus="acorns 0; shipminus; ship &"
 alias boatplus="acorns 0; shipminus; boat &"
-alias submarine="shipplus"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 
