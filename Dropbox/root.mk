@@ -25,6 +25,7 @@ vim_session:
 
 screen_session:
 	$(MAKE) ~/Downloads.rscreen
+	$(MAKE) money.rscreen
 
 all.time: ;
 
