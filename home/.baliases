@@ -218,6 +218,7 @@ alias shipplus="acorns 0; shipminus; ship &"
 alias boatplus="acorns 0; shipminus; boat &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
+alias now='pickscreen org Planning'
 
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
 alias reportblank='echo >> ~/report.txt'
