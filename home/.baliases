@@ -152,8 +152,9 @@ alias dell='last | xargs -i rm -f "{}"'
 alias lastdel='dell'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 
-alias send='ls -t *.send.* | tail -1 | xargs -i touch "{}" && gol'
-alias sent='ls -t *.send.* | head -1 | xargs -i rename "s/send/sent/" "{}"'
+alias sendable='ls -t *.send.*'
+alias send='sendable | tail -1 | xargs -i touch "{}" && gol'
+alias sent='sendable | head -1 | xargs -i rename "s/send/sent/" "{}"'
 
 alias first='ls -t *.* | tail -1 '
 alias firstdel='first | xargs -i rm -f "{}"'
