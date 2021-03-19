@@ -27,6 +27,7 @@ alias cw='google-chrome &'
 alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
 alias recache="uncache; hcache"
+alias hstore="git config --global credential.helper 'store'"
 
 ## alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
 
