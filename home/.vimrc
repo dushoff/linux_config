@@ -7,10 +7,8 @@ source ~/.vimrc.break " line breaking
 source ~/.vimrc.make " 
 source ~/.vimrc.tex " almost empty
 source ~/.vimrc.personal
+source ~/.vimrc.ab
+source ~/.vimrc.dig
 source ~/.vimrc.local
-
-" convenient for my current weird work flow ☺
-" ~/.bashrc
-" ~/.baliases
 
 " source ~/.vimrc.iat " iat and WW! ☹
