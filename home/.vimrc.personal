@@ -42,7 +42,7 @@ nmap >> VG>>
 vmap + :s/^[>  	]*//<C-M>
 nmap + VG+
 
-nmap @f gg/folder<C-M>
+nmap @f gg/\<folder<C-M>
 
 vmap & !~/bin/quote.pl<C-M>
 nmap & VG&
