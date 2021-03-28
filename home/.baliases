@@ -27,6 +27,7 @@ alias cw='google-chrome &'
 alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
 alias recache="uncache; hcache"
+alias hstore="git config --global credential.helper 'store'"
 
 ## alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
 
@@ -61,9 +62,9 @@ alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
-alias sink="vdc; sleep 1; mat"
-alias csink="vclose; sleep 1; mat"
-alias mat="make all.time && wiss 0"
+alias sink="vdc; sleep 1; ink"
+alias cink="vclose; sleep 1; ink"
+alias ink="make all.time && wiss 0"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
@@ -152,6 +153,10 @@ alias dell='last | xargs -i rm -f "{}"'
 alias lastdel='dell'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 
+alias sendable='ls -t *.send.*'
+alias send='sendable | tail -1 | xargs -i touch "{}" && gol'
+alias sent='sendable | head -1 | xargs -i rename "s/send/sent/" "{}"'
+
 alias first='ls -t *.* | tail -1 '
 alias firstdel='first | xargs -i rm -f "{}"'
 alias firstplay='first | xargs -i mplayer "{}"'
@@ -206,14 +211,16 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 
+alias nopdf="killall evince"
+
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
 alias shipplus="acorns 0; shipminus; ship &"
 alias boatplus="acorns 0; shipminus; boat &"
-alias submarine="shipplus"
 
-alias now='pickscreen org Planning "^[gcg_"'
+alias now='pickscreen org Planning "^[gcg_gk"'
+alias now='pickscreen org Planning'
 
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
 alias reportblank='echo >> ~/report.txt'

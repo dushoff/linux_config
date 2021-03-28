@@ -12,17 +12,24 @@ makestuff/Makefile:
 
 ######################################################################
 
+## Curation
+
+## index.md (not git tracked)
+
+notes += index.md
+
+######################################################################
+
 vim_session:
 	bash -cl "vmt index.md"
 
 screen_session:
 	$(MAKE) ~/Downloads.rscreen
+	$(MAKE) money.rscreen
 
 all.time: ;
 
 pull: ;
-
-notes += index.md
 
 ##################################################################
 
