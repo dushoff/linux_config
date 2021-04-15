@@ -9,7 +9,7 @@ let $BASH_ENV = "~/.bashrc"
 " nmap gl :s/^[# \t>*]*//<C-M>VYu:nohlsearch<C-M>:!cw<C-M>
 " Use execute (why is one u better, or is it? 2020 Nov 05 (Thu)
 " nmap gl :s/^[# \t>*]*/go /<C-M>gXuu:nohlsearch<C-M>
-nmap gl :s/^[# \t>*]*/go /<C-M>gXu:nohlsearch<C-M>
+nmap gl :s/^[# \t>*]*\s*\(.*\)/go "\1"/<C-M>gXu:nohlsearch<C-M>
 
 nmap gL gm1G/https*:<C-M>gl
 
