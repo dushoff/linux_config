@@ -162,6 +162,7 @@ vmap <C-K> d@r
 vmap @k c<ESC>@r
 nmap @k }kI* <ESC><C-T>kJV@k| " ¶ ⇒ line
 nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
+nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 nmap <C-V> <C-P>@k
 
 " Clear space-only lines
