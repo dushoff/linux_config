@@ -159,8 +159,9 @@ nmap <C-K> V<C-K>
 vmap <C-K> d@r
 
 " Time stamped dumping dev again 2021 Mar 21 (Sun)
+" Built to indent a one-line ¶ for some reason.
 vmap @k c<ESC>@r
-nmap @k }kI* <ESC><C-T>kJV@k| " ¶ ⇒ line
+nmap @k }kI* <ESC><C-T>kJV@k|
 nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
 nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 nmap <C-V> <C-P>@k
