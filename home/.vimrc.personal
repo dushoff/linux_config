@@ -91,7 +91,7 @@ imap <2-LeftMouse> <nop>
 " (S not in my repertoire right now 2021 Mar 21 (Sun)
 nmap S _kO
 nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
-nmap - mmG_dd'm_
+nmap - mm:g/^-----------------------------/d<C-M>H'm_
 nmap \ i\
 nmap dl :.g/^$/d<C-M>
 
