@@ -1,12 +1,12 @@
 map <F2> gs
 map <S-F2> gr
-map <C-F3> :make -dr pullup > make.log && make exclude && git status<C-M>
-map <F4> :make target<C-M>
-map <S-F4> :!make vtarget<C-M>
-map <C-S-F4> :!make pdftarget<C-M>
+map <C-F3> :make! -dr pullup > make.log && make exclude && git status<C-M>
+map <F4> :make! target<C-M>
+map <S-F4> :!make pdftarget<C-M>
+map <C-S-F4> :!make vtarget<C-M>
 map <C-F4> :make -dr sync > make.log && git status .<C-M>
 map <F5> :cn<C-M>
-map <C-F5> :make -dr all.time > make.log && git status .<C-M>
+map <C-F5> :make! -dr all.time > make.log && git status .<C-M>
 map <S-F5> :!make pdftarget<C-M>
 map <C-S-F5> :make -dr newSource tsync all.time > make.log && git status<C-M>
 map <F6> :cp<C-M>
@@ -23,7 +23,7 @@ map <C-F10> :!pmake > make.log<C-M>
 nmap d- Vg-d
 nmap d_ Vg_d
 
-nmap gM :make <cfile><C-M>
+nmap gM :make! <cfile><C-M>
 nmap gf :e <cfile><C-M>
 
 " current F2 engine; old idea of gs for <go script> seems tromped
