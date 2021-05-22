@@ -21,7 +21,7 @@ pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findTab Chrome Meet <Shift><Alt>g
 ## findApp Hangouts <Shift><Alt>h
-findTab Chrome Hangouts <Shift><Alt>h
+findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[gkG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
 pickscreen 0 0 <Shift><Alt>o
@@ -44,7 +44,7 @@ findTab Chrome meet 12 <Ctrl><Shift>t
 findTab Chrome Voice 12 <Ctrl><Shift>x
 
 ## Find (deep) <Shift><Super>
-findTab Chrome Hangouts 12 <Shift><Super>h
+findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Meet 12 <Shift><Super>t
 findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
