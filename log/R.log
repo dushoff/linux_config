@@ -4,6 +4,7 @@
 https://cran.r-project.org/bin/linux/ubuntu/
 
 sudo echo "deb https://cloud.r-project.org/bin/linux/ubuntu DISTRIB-cranVERSION/" >> /etc/apt/sources.list
+sudo echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" >> /etc/apt/sources.list
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 
@@ -19,24 +20,8 @@ And then what? Do I still use the makefile update.* rule?
 
 ----------------------------------------------------------------------
 
-Pre
-===
-
-Not sure why this one is here particularly
-
 sudo apt-get install -y libcurl4-openssl-dev
 
-Upgrade
-=======
-
-## Better in terminal
-sudo add-apt-repository ppa:marutter/rrutter3.5
-sudo add-apt-repository ppa:marutter/c2d4u
-sudo apt-get update
-sudo apt upgrade
-sudo apt autoremove
-
-## Why necessary?
 apt install r-base-core
 
 Packages
