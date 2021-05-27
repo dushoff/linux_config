@@ -32,6 +32,6 @@ for (my $i=0; $i<@bkeys; $i++){
 	say "[$pname$i]";
 	say "binding='$bindings{$name}'";
 	say "command='$name'";
-	say "name='$name'";
+	say "name='$name $i'";
 	say "";
 }

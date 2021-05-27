@@ -88,6 +88,10 @@ Ignore += *.conf
 %.load:  %.conf
 	dconf load / < $<
 
+## Bindings are hashed to commands, so we can only have one binding per command
+## Right now we have silent overrides
+## Solution is to have arrays of bindings,
+## but this requires a little bit of extra counting
 .PRECIOUS: %.conf
 Ignore += .conf
 %.conf: %.keys keys.pl
