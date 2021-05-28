@@ -1,2 +1,2 @@
 colo default
-source ~/.font.vimrc
+source ~/.gvimfont
