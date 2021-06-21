@@ -202,6 +202,7 @@ todown(){ touch $@; cp "$@" ~/Downloads; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
+fastlake() { (xdg-open ~/Dropbox/archive/lake.jpg) & }
 lake() { (sleep $@; xdg-open ~/Dropbox/archive/lake.jpg) & }
 wiss() { (sleep $@; xdg-open ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
