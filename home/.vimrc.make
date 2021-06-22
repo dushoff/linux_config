@@ -38,6 +38,7 @@ nmap gU gmgugs
 " autocmd VimEnter * normal gU " Finally works, but extra vims conflict now
 
 nn Q gq
+nn gr 8
 nn go 7
 nn gn 6
 nn gk 5

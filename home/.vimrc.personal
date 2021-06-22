@@ -154,16 +154,25 @@ nmap @d <C-D>@t
 nmap @c :1,$!cat -s<C-M>
 
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
-nmap @r gkGp:w<C-M><C-^>
+nmap @r grGp:w<C-M><C-^>
 nmap <C-K> V<C-K>
 vmap <C-K> d@r
 
 " Time stamped dumping dev again 2021 Mar 21 (Sun)
 " Built to indent a one-line ¶ for some reason.
-vmap @k c<ESC>@r
-nmap @k }kI* <ESC><C-T>kJV@k|
+vmap @k d<ESC>@r
+
+" Old ¶ checklist versions 
+nmap @k }kI* <ESC><C-T>kJV@k
 nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
 nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
+
+" New line-based checklist
+nmap @k I* <ESC><C-T>kJV@k
+nmap @K I* <ESC>A kk<ESC><C-T>kJV@k
+nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
+
+" Push a ¶
 nmap <C-V> <C-P>@k
 
 " Clear space-only lines
