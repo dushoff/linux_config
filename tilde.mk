@@ -4,7 +4,7 @@ target:
 	touch *.png
 	mv *.png Downloads
 
-start setup makescreen:
+start setup mainscreen:
 	cd screens && make $@
 
 relink:
