@@ -4,6 +4,7 @@ use strict;
 use 5.10.0;
 
 while(<>){
+	s/\s+colon$/: /;
 	s/\bdash\b/–/gi;
 	s/Pete/epiEstim/g;
 	s/Mac pan/MacPan/g;
