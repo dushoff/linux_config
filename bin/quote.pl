@@ -7,6 +7,7 @@ while(<>){
 	s/\s+colon$/: /;
 	s/\bdash\b/–/gi;
 	s/Pete/epiEstim/g;
+	s/ISIS/ICES/gi;
 	s/Kenyatta/Nkengafac/g;
 	s/Captain Awesome/Faikah/gc;
 	s/Mac pan/MacPan/g;
