@@ -12,3 +12,5 @@ log/tunes.log
 log/tex.log
 
 log/pandoc.log
+
+log/dell5.mac

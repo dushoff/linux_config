@@ -13,7 +13,7 @@ Sources += README.md
 # Installation logs (see README.md)
 
 ## Logs of how I install things
-Sources += $(wildcard log/*.log)
+Sources += $(wildcard log/*.log log/*.mac)
 
 Sources += log.md
 
