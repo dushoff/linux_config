@@ -4,6 +4,7 @@ use strict;
 use 5.10.0;
 
 while(<>){
+	s/Juliette/Juliet/g
 	s/\s+colon$/: /;
 	s/\bdash\b/–/gi;
 	s/Pete/epiEstim/g;
@@ -16,6 +17,8 @@ while(<>){
 	s/\bthis up\b/the supp/g;
 	s/a notated/annotated/g;
 	s/Marcia/Reshma/g;
+	s/Marsha/Reshma/g;
+	s/Nina's Mom/Cari/gi;
 	s/Manuel/manual/g;
 	s/Repose/repos/g;
 	s/Arnold/R0/g;
