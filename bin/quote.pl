@@ -4,13 +4,15 @@ use strict;
 use 5.10.0;
 
 while(<>){
-	s/Juliette/Juliet/g
+	s/Juliette/Juliet/g;
+	s/Loop in/loop in/g;
 	s/\s+colon$/: /;
 	s/\bdash\b/–/gi;
 	s/Pete/epiEstim/g;
 	s/ISIS/ICES/gi;
 	s/Kenyatta/Nkengafac/g;
-	s/Captain Awesome/Faikah/gc;
+	s/Captain Awesome/Faikah/gi;
+	s/paisan/Zinhle/gi;
 	s/Mac pan/MacPan/g;
 	s/champagne/MacPan/g;
 	s/ oh,/,/g;
