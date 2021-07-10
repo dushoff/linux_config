@@ -13,4 +13,8 @@ log/tex.log
 
 log/pandoc.log
 
+log/startup.log
+
+## "Machine files"
+
 log/dell5.mac
