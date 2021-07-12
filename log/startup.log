@@ -29,5 +29,7 @@ clone screens
 apt install xdotool
 
 https://www.dropbox.com/install-linux
+sudo apt install nautilus-dropbox
 
 sudo apt install imagemagick-6.q16
+
