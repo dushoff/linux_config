@@ -1,6 +1,33 @@
+Install linux:
+* third-party not added for V
+* didn't mess with nvidia drivers for V
+
+fn-esc for function lock in Dell
+
+Terminal
+* disable F10
+* choose fonts (tango dark 22 for V)
+
 Install chrome:
 * followed command-line instructions from web (wget; gdebi)
 
 run chrome and log in to google to get access to passwords
 
 install vim-gtk3
+
+Clone _this_ repo from web and open
+
+get the github token from token.github
+
+install screen
+
+clone screens
+* make pullall
+* make start
+* make linux_setup
+
+apt install xdotool
+
+https://www.dropbox.com/install-linux
+
+sudo apt install imagemagick-6.q16
