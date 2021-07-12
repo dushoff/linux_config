@@ -9,3 +9,6 @@ start setup mainscreen:
 
 relink:
 	cd */*/linux_config && $(MAKE) relink
+
+Downloads:
+	ln -s `ls -d ~/Dropbox/Download_files/[1-9]* | tail -1` $@
