@@ -30,6 +30,8 @@ apt install xdotool
 
 https://www.dropbox.com/install-linux
 sudo apt install nautilus-dropbox
+* dropbox.py is currently in bin, running under python2 OK?
+* 2021 Jul 12 (Mon): allow dropbox to call nautilus-dropbox, ignore .py for now
 
 sudo apt install imagemagick-6.q16
 
