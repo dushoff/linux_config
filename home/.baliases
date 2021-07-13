@@ -130,7 +130,7 @@ alias stx='text-aid-too --editor sleepy'
 alias textstart='textdemon & '
 alias deskstart='google-chrome & firefox & textstart'
 
-alias dropbox='~/.dropbox-dist/dropboxd &'
+alias dropboxd='~/.dropbox-dist/dropboxd &'
 alias pd=dirs
 alias po=popd
 alias pd=pushd
