@@ -33,7 +33,8 @@ findTab Chrome <Shift><Alt>w
 findwin Zoom <Shift><Alt>z
 
 ## Find (deep) <Ctrl><Shift>
-pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
+## pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
+## terminal copy
 findTab Chrome Docs 12 <Ctrl><Shift>d
 pickscreen org Planning "^[gcgg/folders<C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
