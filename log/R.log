@@ -1,16 +1,21 @@
 
-2020 Nov 22 (Sun)
-
 https://cran.r-project.org/bin/linux/ubuntu/
 
-sudo echo "deb https://cloud.r-project.org/bin/linux/ubuntu DISTRIB-cranVERSION/" >> /etc/apt/sources.list
-sudo echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" >> /etc/apt/sources.list
+Copied the following code 2021 Jul 13 (Tue)
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+# update indices
+apt update -qq
+
+# These were already there ## 2021 Jul 13 (Tue)
+apt install --no-install-recommends software-properties-common dirmngr
+
+# import the signing key and add repo
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
 ## In sudo window
 sudo apt update
-sudo apt install r-base r-base-dev ## necessary when?
+sudo apt install r-base r-base-dev ## 
 
 sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
 sudo apt update
