@@ -13,7 +13,8 @@ Install chrome:
 
 run chrome and log in to google to get access to passwords
 
-install vim-gtk3
+apt install vim-gtk3
+apt install tcsh
 
 Clone _this_ repo from web and open
 
@@ -34,4 +35,20 @@ sudo apt install nautilus-dropbox
 * 2021 Jul 12 (Mon): allow dropbox to call nautilus-dropbox, ignore .py for now
 
 sudo apt install imagemagick-6.q16
+
+try to sink (there will be symbolic links to make)
+
+## text-aid-too
+sudo apt-get -y install npm
+
+sudo npm install -g coffee-script
+
+## Not needed 2021 Jul 13 (Tue)
+## sudo ln -s /usr/bin/nodejs /usr/bin/node ## probably archaic
+
+sudo npm install -g text-aid-too
+
+log/R.log
+
+log/tex.log
 

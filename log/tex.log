@@ -1,4 +1,4 @@
-sudo apt-get -y install texlive texlive-bibtex-extra texlive-fonts-extra texlive-humanities texlive-latex-extra texlive-math-extra texlive-science texlive-publishers texlive-extra-utils texlive-xetex
+sudo apt -y install texlive texlive-bibtex-extra texlive-fonts-extra texlive-humanities texlive-latex-extra texlive-science texlive-publishers texlive-extra-utils texlive-xetex
 
 ## Consider: texlive-lang-cjk
 
