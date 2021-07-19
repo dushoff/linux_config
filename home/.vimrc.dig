@@ -14,6 +14,7 @@ digraphs '   8217 " single right quote ’
 digraphs ``  8220 " double left quote “
 digraphs ''  8221 " double right quote ”
 digraphs ,,  8222 " double bottom quote „
+digraphs !d  8740 " ∤ does not divide
 
 digraphs **  8226 " bullet
 digraphs ..  8230 " horizontal ellipsis
