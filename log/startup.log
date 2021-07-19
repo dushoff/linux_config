@@ -26,6 +26,7 @@ clone screens
 * make pullall
 * make start
 * make linux_setup
+* ln -s ~/.blocal.ubuntu ~/.blocal ##
 
 apt install xdotool
 
