@@ -10,7 +10,6 @@ source ~/.vimrc.personal
 source ~/.vimrc.ab
 source ~/.vimrc.dig
 source ~/.vimrc.au
-source ~/.vimrc.local
 
 " source ~/.vimrc.iat " iat and WW! ☹
 
