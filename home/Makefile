@@ -27,7 +27,7 @@ $(ms)/Makefile:
 ## Importing and linking from Dropbox 2019 Jan 15 (Tue)
 
 files = .addressbook .aliases .baliases .bashrc .blocal.ubuntu .cshrc .escreenrc .gcvimrc .gmvimrc .gpvimrc .gvimfont .gvimrc .pinerc .pvimrc .rgvimrc .screenrc .tgvimrc .tvimrc .vimrc .vimrc.basic .vimrc.break .vimrc.iat .vimrc.jdiat .vimrc.make .vimrc.nomake .vimrc.personal .vimrc.prev .vimrc.tat .vimrc.tex .vimrc.twitter .vimrc.windows
-files += .vimrc.ab .vimrc.dig
+files += .vimrc.ab .vimrc.dig .vimrc.au
 
 Sources += $(files)
 

@@ -1,0 +1,2 @@
+autocmd FileType markdown setlocal tabstop=16
+autocmd FileType markdown setlocal nowrap
