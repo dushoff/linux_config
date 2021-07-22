@@ -1,15 +1,10 @@
-go() { xdg-open "$@" & }
+go() { gio open "$@" & }
 
-## alias go='gnome-open' doesn't work at all
-## This always works, but we make it more modular below
-alias gol="ls -t *.* | head -1 | xargs -i gnome-open '{}' &"
+alias gol="last | xargs -i gio open '{}' &"
+alias gop="pen | xargs -i gio open '{}' &"
 
-
-## Not sure why this doesn't work with the function
+## BAD
+## Not sure why it doesn't work with the function
 alias god="ls -t *.* | head -1 | xargs -i go '{}' &"
 alias god="ls -t *.* | head -1 | xargs -i go('{}') &"
-
-## 
-alias gol="last | xargs -i gnome-open '{}' &"
-alias gop="pen | xargs -i gnome-open '{}' &"
 
