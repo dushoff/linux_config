@@ -1,2 +1,6 @@
 autocmd FileType markdown setlocal tabstop=16
 autocmd FileType markdown setlocal nowrap
+autocmd FileType markdown setlocal columns=80
+autocmd FileType conf setlocal tabstop=16
+autocmd FileType conf setlocal nowrap
+autocmd FileType conf setlocal columns=80
