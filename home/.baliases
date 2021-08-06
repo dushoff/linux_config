@@ -73,6 +73,7 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 alias gvim='gvim -f'
 
 alias bark='ls ~/Downloads/*.png ~/Downloads/*/*.png | head -1 | xopen'
+alias rld='ls -t Downloads/*.* | head -1'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
 
