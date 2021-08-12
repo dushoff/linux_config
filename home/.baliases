@@ -10,6 +10,7 @@ alias left='wmctrl -r ":SELECT:" -e 0,0,0,3840,2160'
 alias right='wmctrl -r ":SELECT:" -e 0,3840,0,1280,800'
 
 alias nospace='rename "s/ /_/g" *.*'
+alias pdfnames='rename "s/[ ,-]+/_/g" *.pdf'
 alias suspend='systemctl suspend'
 
 alias die='exit'
