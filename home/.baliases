@@ -187,7 +187,7 @@ alias ldu='lastdown; lastunzip'
 alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
 
 lsth() { clear; ls -t $@ |head -10; }
-alias lspdf='lsth *.pdf'
+alias lspdf='lsth "*.pdf"'
 
 alias lstpdf='ls -t *.pdf *.PDF |more'
 alias lsath='clear; ls -at |head'
