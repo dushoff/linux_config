@@ -25,9 +25,9 @@ And then what? Do I still use the makefile update.* rule?
 
 ----------------------------------------------------------------------
 
-sudo apt-get install -y libcurl4-openssl-dev
+apt install -y libcurl4-openssl-dev
 
-apt install r-base-core
+apt install -y r-base-core
 
 Packages
 --------

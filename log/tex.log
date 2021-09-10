@@ -1,8 +1,7 @@
-sudo apt -y install texlive texlive-bibtex-extra texlive-fonts-extra texlive-humanities texlive-latex-extra texlive-science texlive-publishers texlive-extra-utils texlive-xetex
+sudo apt install -y texlive texlive-bibtex-extra texlive-fonts-extra texlive-humanities texlive-latex-extra texlive-science texlive-publishers texlive-extra-utils texlive-xetex
 
-apt install biber
+apt install -y biber texinfo
 
-apt install texinfo
-
-## Consider: texlive-lang-cjk
+MAYBE 
+apt install -y texlive-lang-cjk
 

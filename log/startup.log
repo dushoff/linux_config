@@ -1,3 +1,6 @@
+
+Maybe start by opening this file in a browser, or c-p it to a file.
+
 ## Dell laptop
 
 Install linux:
@@ -21,26 +24,35 @@ apt install vim-gtk3
 apt install tcsh
 apt install screen
 
-Clone _this_ repo from web and open
+Start screen early for cp convenience
 
-get the github token from token.github
+Clone _this_ repo from web and open
+* do make relink from here (temporary version)
+
+get the github token from `vi token.github`
 
 clone screens
+* make the hstore stuff work (push until it doesn't ask)
 * make pullall
-* make start
 * make linux_setup
-* ln -s ~/.blocal.ubuntu ~/.blocal ##
 
-apt install xdotool
-
+apt install gdebi nautilus-dropbox
 https://www.dropbox.com/install-linux
-sudo apt install nautilus-dropbox
 * dropbox.py is currently in bin, running under python2 OK?
 * 2021 Jul 12 (Mon): allow dropbox to call nautilus-dropbox, ignore .py for now
 
-sudo apt install imagemagick-6.q16
+relink Downloads
+
+new terminal
+* ln -s ~/.blocal.ubuntu ~/.blocal ##
+* touch ~/.bashrc.ubuntu
+* make start
+
+apt install -y xdotool imagemagick-6.q16
+* make main.load
 
 try to sink (there will be symbolic links to make)
+* currently some yaml-pipeline stuff depends on R which is annoying
 
 ## text-aid-too
 sudo apt-get -y install npm
@@ -55,4 +67,5 @@ sudo npm install -g text-aid-too
 log/R.log
 
 log/tex.log
+
 
