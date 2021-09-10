@@ -1,3 +1,5 @@
+## Dell laptop
+
 Install linux:
 * third-party not added for V
 * didn't mess with nvidia drivers for V
@@ -8,6 +10,8 @@ Terminal
 * disable F10
 * choose fonts (tango dark 22 for V)
 
+----------------------------------------------------------------------
+
 Install chrome:
 * followed command-line instructions from web (wget; gdebi)
 
@@ -15,12 +19,11 @@ run chrome and log in to google to get access to passwords
 
 apt install vim-gtk3
 apt install tcsh
+apt install screen
 
 Clone _this_ repo from web and open
 
 get the github token from token.github
-
-install screen
 
 clone screens
 * make pullall
