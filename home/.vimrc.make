@@ -15,6 +15,7 @@ map <F7> :x<C-M>
 map <S-F7> gz
 map <F8> :w<F4>
 map <S-F8> gi<F8>
+map <C-S-F8> <S-F8><S-F4>
 map <F9> :wall<C-M>
 map <S-F9> :wall<C-M>:bd<C-M>
 map <S-F10> :!vmake > make.log<C-M>
