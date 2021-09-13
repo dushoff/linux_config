@@ -57,7 +57,8 @@ try to sink (there will be symbolic links to make)
 ## text-aid-too
 sudo apt-get -y install npm
 
-sudo npm install -g coffee-script
+sudo npm install -g coffeescript ## RECOMMENDED
+sudo npm install -g coffee-script ## USED previously 
 
 ## Not needed 2021 Jul 13 (Tue)
 ## sudo ln -s /usr/bin/nodejs /usr/bin/node ## probably archaic
@@ -68,4 +69,6 @@ log/R.log
 
 log/tex.log
 
+log/pandoc.log ???
 
+log/jekyll.log
