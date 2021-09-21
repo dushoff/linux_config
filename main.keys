@@ -32,6 +32,8 @@ findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
 findwin Zoom <Shift><Alt>z
 
+## FindTab not good for zoom because zoom not typically in tab title
+
 ## Find (deep) <Ctrl><Shift>
 ## pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
 ## terminal copy
