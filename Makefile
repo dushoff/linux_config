@@ -33,7 +33,9 @@ tarcon.simptak: /proc/uptime
 ## Remarkable config
 
 Sources += rmview.json
-## /home/dushoff/.config/rmview.json
+
+rmview.json.config:
+	cd ~/.config && ln -fs $(CURDIR)/rmview.json
 
 ######################################################################
 
