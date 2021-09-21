@@ -187,7 +187,7 @@ vmap X "+x
 " pull an email address from a formatted list
 nmap ym f<lvt>Y
 
-filetype plugin on
+" filetype plugin on
 
 " execute pathogen#infect()
 augroup markdown
