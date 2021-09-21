@@ -30,6 +30,15 @@ tarcon.simptak: /proc/uptime
 
 ######################################################################
 
+## Remarkable config
+
+Sources += rmview.json
+
+rmview.json.config:
+	cd ~/.config && ln -fs $(CURDIR)/rmview.json
+
+######################################################################
+
 ## Or by just sourcing from here (home)
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
