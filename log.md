@@ -15,6 +15,11 @@ log/pandoc.log
 
 log/startup.log
 
+log/jekyll.log
+
 ## "Machine files"
 
 log/dell5.mac
+
+## Bootstrapping stuff
+* log/token.github
