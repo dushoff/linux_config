@@ -44,6 +44,7 @@ nmap + VG+
 
 nmap @f gg/\<folder<C-M>
 
+" Voice recognition
 vmap & !~/bin/quote.pl<C-M>
 nmap & VG&
 
