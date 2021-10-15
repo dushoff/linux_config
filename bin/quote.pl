@@ -33,5 +33,8 @@ while(<>){
 	s/Georgian/Bayesian/g;
 	s/freakish/frequentist/g;
 	s/Massif/MSAF/gi;
+	s/vanadium/vareffects/g;
+	s/Elmer Fudd/lme4/g;
+	s/Steve Kenya/Bicko/g;
 	print;
 }
