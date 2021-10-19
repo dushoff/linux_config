@@ -5,6 +5,7 @@ use 5.10.0;
 
 while(<>){
 	s/Juliette/Juliet/g;
+	s/Benjamin Button/Bolker/g;
 	s/White'*s/Weitz/g;
 	s/Loop in/loop in/g;
 	s/\s+colon$/: /;
