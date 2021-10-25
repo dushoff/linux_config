@@ -21,9 +21,10 @@ alias fnr='firefox -ProfileManager -no-remote'
 alias miriam='firefox -no-remote -P miriam'
 
 alias browsers='google-chrome & firefox &'
-alias chrome='google-chrome &'
 alias ff='firefox &'
+alias chrome='google-chrome &'
 alias cw='google-chrome &'
+alias ncw='google-chrome --new-window'
 
 alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
