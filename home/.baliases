@@ -25,6 +25,7 @@ alias ff='firefox &'
 alias chrome='google-chrome &'
 alias cw='google-chrome &'
 alias ncw='google-chrome --new-window'
+alias nci='google-chrome --new-window --incognito'
 
 alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
