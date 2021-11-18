@@ -68,8 +68,8 @@ nmap <C-U> :files<C-M>
 nn gz ggVG"+x
 nn gy ggVG"+y
 nn gv "+gP
-nmap <F10> gv
-imap <F10> <ESC>a <ESC>gvs
+nmap <F11> gv
+imap <F11> <ESC>a <ESC>gvs
 nmap <F12> o<ESC>gv
 imap <F12> <ESC><F12>
 

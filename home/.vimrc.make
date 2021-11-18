@@ -18,6 +18,7 @@ map <S-F8> gi<F8>
 map <C-S-F8> <S-F8><S-F4>
 map <F9> :wall<C-M>
 map <S-F9> :wall<C-M>:bd<C-M>
+map <F10> :!tmake > make.log<C-M>
 map <S-F10> :!vmake > make.log<C-M>
 map <C-F10> :!pmake > make.log<C-M>
 
