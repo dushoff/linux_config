@@ -37,5 +37,6 @@ while(<>){
 	s/vanadium/vareffects/g;
 	s/Elmer Fudd/lme4/g;
 	s/Steve Kenya/Bicko/g;
+	s/Gothenburg/Gauteng/g;
 	print;
 }
