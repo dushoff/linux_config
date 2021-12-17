@@ -77,7 +77,7 @@ alias gvim='gvim -f'
 
 alias bark='ls ~/Downloads/*.png ~/Downloads/*/*.png | head -1 | xopen'
 alias rld='ls -t Downloads/*.* | head -1'
-alias tmake='((make vtarget > make.log || true) && bark) &'
+alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
 
