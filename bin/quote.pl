@@ -14,6 +14,7 @@ while(<>){
 	s/Pete/epiEstim/g;
 	s/ISIS/ICES/gi;
 	s/Kenyatta/Nkengafac/g;
+	s/beagle/Bicko/gi;
 	s/Captain Awesome/Faikah/gi;
 	s/paisan/Zinhle/gi;
 	s/Mac pan/MacPan/g;
