@@ -16,11 +16,10 @@ bash -cl voice <Ctrl><Alt>v
 google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
-pickscreen org Planning "^[gc" <Shift><Alt>c
+findTab Chrome Calendar <Shift><Alt>c
 pickscreen Dropbox 1 <Shift><Alt>d
 pickscreen org Planning <Shift><Alt>f
 findTab Chrome Meet <Shift><Alt>g
-## findApp Hangouts <Shift><Alt>h
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
@@ -35,19 +34,18 @@ findwin Zoom <Shift><Alt>z
 ## FindTab not good for zoom because zoom not typically in tab title
 
 ## Find (deep) <Ctrl><Shift>
-## pickscreen org Planning "^[gcg_" <Ctrl><Shift>c
-## terminal copy
+pickscreen org Planning "^[gc" <Ctrl><Shift>c
 findTab Chrome Docs 12 <Ctrl><Shift>d
 pickscreen org Planning "^[gcgg/folders<C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
 ## Teams toggle <Ctrl><Shift>m
 ## Teams toggle <Ctrl><Shift>n
-## pickscreen org Planning "^[gcg_" <Ctrl><Shift>n ## "now"
 ## Controlled by terminal <Ctrl><Shift>t
-findTab Chrome Voice 12 <Ctrl><Shift>x
+findTab Chrome Voice 12 <Ctrl><Shift>v
 
 ## Find (deep) <Shift><Super>
 findTab Chrome Meet 12 <Shift><Super>g
+findTab Chrome Calendar 12 <Shift><Super>c
 findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
