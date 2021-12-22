@@ -4,6 +4,7 @@ use strict;
 use 5.10.0;
 
 while(<>){
+	s/the I see you/the ICU/g;
 	s/Juliette/Juliet/g;
 	s/Ulysses/omicron/g;
 	s/Benjamin Button/Bolker/g;
