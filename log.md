@@ -20,6 +20,7 @@ log/jekyll.log
 ## "Machine files"
 
 log/dell5.mac
+log/tellurium.mac
 
 ## Bootstrapping stuff
 * log/token.github
