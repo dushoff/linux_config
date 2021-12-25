@@ -68,6 +68,12 @@ eidm.pdf: eidm.txt
 	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
 	cd ~/Downloads && $(MAKE) target.mk
 
+## 2101.newcomputer:
+%.newcomputer:
+	- mv ~/Downloads ~/tmpDownloads
+	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
+	cd ~/Downloads && $(MAKE) target.mk
+
 update_copies: .
 	rename -f "s/ *\([0-9]\)//" *\([0-9]\).*
 	touch $@

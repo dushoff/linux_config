@@ -21,23 +21,15 @@ sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
 sudo apt update
 sudo apt upgrade
 
-And then what? Do I still use the makefile update.* rule?
+Copy something to R.mk (see rinst Makefile)
+* make update.Ver.sub (not clear what this does; more useful if we upgrade)
+* make current (look for other targets)
 
 ----------------------------------------------------------------------
 
 apt install -y libcurl4-openssl-dev
 
 apt install -y r-base-core
-
-Packages
---------
-
-## Not checked recently
-Go to R directory
-sudo make update.Ver.sub
-
-## Bolker
-update.packages(checkBuilt=TRUE, ask=FALSE)
 
 Studio
 ======

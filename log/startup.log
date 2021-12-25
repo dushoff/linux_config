@@ -1,6 +1,5 @@
 
 Maybe start by opening this file in a browser, or c-p it to a file.
-* https://github.com/dushoff/linux_config.git
 
 ## Dell laptop
 
@@ -14,25 +13,31 @@ Terminal
 * disable F10
 * choose fonts (tango dark 22 for V)
 
-----------------------------------------------------------------------
+apt install vim-gtk3
+* Start supplemental log
 
-Install chrome:
-* followed command-line instructions from web (wget; gdebi)
+Install chrome (find link on web, I think):
+* wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+* apt install gdebi
+* gdebi the google
 
 run chrome and log in to google to get access to passwords
-
-apt install vim-gtk3
 apt install tcsh
 apt install screen
 apt install xclip
 apt install git
 
-
 Download _this_ repo (as zip) from web and open
 * https://github.com/dushoff/linux_config
 * do make relink from here (temporary version)
 
+Restart terminal
+* ln -s ~/.blocal.ubuntu ~/.blocal ##
+* touch ~/.bashrc.ubuntu
+
 Start screen early for cp convenience
+
+Close down supplementary (and elsewhere log) and edit temporary version on new computer
 
 get the github token from `vi token.github`
 
@@ -41,16 +46,14 @@ clone screens
 * make pullall
 * make linux_setup
 
-apt install gdebi nautilus-dropbox
-https://www.dropbox.com/install-linux
-* dropbox.py is currently in bin, running under python2 OK?
-* 2021 Jul 12 (Mon): allow dropbox to call nautilus-dropbox, ignore .py for now
+apt install nautilus-dropbox
+* This Just Works now (opens Dropbox for us)
 
-relink Downloads
+relink Downloads (make xxxx.newcomputer) from ~/Dropbox/Downloads
+
+Close down temporary version of this file (copy to new place)
 
 new terminal
-* ln -s ~/.blocal.ubuntu ~/.blocal ##
-* touch ~/.bashrc.ubuntu
 * make start
 
 apt install -y xdotool imagemagick-6.q16
@@ -63,8 +66,8 @@ try to sink (there will be symbolic links to make)
 sudo apt-get -y install npm
 
 sudo npm install -g coffeescript ## RECOMMENDED
-sudo npm install -g coffee-script ## USED previously 
 
+## sudo npm install -g coffee-script ## USED previously 
 ## Not needed 2021 Jul 13 (Tue)
 ## sudo ln -s /usr/bin/nodejs /usr/bin/node ## probably archaic
 
@@ -77,3 +80,4 @@ log/tex.log
 log/pandoc.log ???
 
 log/jekyll.log
+
