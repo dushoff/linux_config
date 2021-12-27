@@ -11,7 +11,7 @@ fn-esc for function lock in Dell
 
 Terminal
 * disable F10
-* choose fonts (tango dark 22 for V)
+* fonts (tango dark 22 for V; solarized light 22 for Te)
 
 apt install vim-gtk3
 * Start supplemental log
@@ -81,4 +81,10 @@ log/tex.log
 log/pandoc.log
 
 log/jekyll.log
+
+mouse keys / locate pointer on
+sudo apt install xkbset
+xkbset ma 60 10 10 5 2 ##
+
+gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/dushoff/Downloads"
 
