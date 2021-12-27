@@ -41,7 +41,6 @@ pickscreen tech linux_config <Ctrl><Shift>h
 ## Teams toggle <Ctrl><Shift>m
 ## Teams toggle <Ctrl><Shift>n
 ## Controlled by terminal <Ctrl><Shift>t
-findTab Chrome Voice 12 <Ctrl><Shift>v
 
 ## Find (deep) <Shift><Super>
 findTab Chrome Meet 12 <Shift><Super>g
@@ -49,6 +48,7 @@ findTab Chrome Calendar 12 <Shift><Super>c
 findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
+findTab Chrome Voice 12 <Shift><Super>v
 
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
 findTab Chrome YouTube 12 <Ctrl><Shift>y

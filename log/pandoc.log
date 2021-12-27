@@ -1,1 +1,3 @@
-
+apt install pandoc pandoc-citeproc
+sudo apt install python3-pip
+sudo pip install pandoc-xnos
