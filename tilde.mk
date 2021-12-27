@@ -12,3 +12,6 @@ relink:
 
 Downloads:
 	ln -s `ls -d ~/Dropbox/Download_files/[1-9]* | tail -1` $@
+
+inc:
+	ln -fs screens/org/Planning/inc
