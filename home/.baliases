@@ -29,8 +29,8 @@ alias nci='google-chrome --new-window --incognito'
 
 alias hcache="git config --global credential.helper 'cache --timeout=999999'"
 alias uncache="git config --global --unset credential.helper"
-alias recache="uncache; hcache"
 alias hstore="git config --global credential.helper 'store'"
+alias restore="uncache; hstore"
 
 ## alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
 
@@ -148,6 +148,7 @@ alias plus='chmod +x *.pl *.awk'
 alias psx='ps x'
 
 alias smdd=msdd
+alias fastmouse='xkbset ma 60 10 10 5 2'
 
 ## Last and Downloads
 alias last='ls -t *.* | head -1 '
@@ -224,6 +225,7 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
+alias work="date; sesh"
 
 alias nopdf="killall evince"
 
