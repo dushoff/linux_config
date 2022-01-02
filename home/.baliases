@@ -225,7 +225,9 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
 alias sesh="ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
-alias work="date; sesh"
+alias work="reporttime work; acorns 0; nopix; sesh"
+alias rest="reporttime rest; acorns 0; nopix; reportblank"
+alias fail="reporttime fail; acorns 0; nopix; reportblank"
 
 alias nopdf="killall evince"
 
