@@ -1,10 +1,13 @@
 ## Comment with initial # or ##
 
-## Workflow <Super>
-bash -cl newday <Super>y
-bash -cl newship <Super>w
-bash -cl noship <Super>r
-bash -cl meetship <Super>t
+## <Super>
+
+bash -cl rest <Super>f
+bash -cl rest <Super>r
+## bash -cl meetship <Super>t
+## GNOME <Super> v ## Notifications
+bash -cl work <Super>w
+## bash -cl newday <Super>y
 
 ## Launch <Ctrl><Alt>
 gnome-screenshot -a <Ctrl><Alt>a
