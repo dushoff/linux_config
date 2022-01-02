@@ -148,6 +148,7 @@ alias plus='chmod +x *.pl *.awk'
 alias psx='ps x'
 
 alias smdd=msdd
+## numlockx off/on
 alias fastmouse='xkbset ma 60 10 10 5 2'
 
 ## Last and Downloads
