@@ -2,7 +2,7 @@
 
 ## <Super>
 
-bash -cl rest <Super>f
+bash -cl fail <Super>f
 bash -cl rest <Super>r
 ## bash -cl meetship <Super>t
 ## GNOME <Super> v ## Notifications
