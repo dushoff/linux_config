@@ -1,12 +1,21 @@
+
+
 ## Adobe acrobat reader acroread
-sudo gdebi ~dushoff/Dropbox/extras/AdbeRdr9.5.5-1_i386linux_enu.deb
-sudo apt install libxml2:i386 libstdc++6:i386
+
+
+https://linuxconfig.org/how-to-install-adobe-acrobat-reader-on-ubuntu-20-04-focal-fossa-linux
+
+## Takes minutes (oops!)
+## wget -O ~/Dropbox/extras/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install libxml2:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386 libatk-adaptor:i386
+sudo dpkg -i ~dushoff/Dropbox/extras/adobe.deb
 
 ## If acroread hijacks your defaults, go to /etc/gnome/defaults.list, search pdf and change thing(s) back to evince.desktop
 
-## canberra error
-sudo apt-get install libcanberra-gtk-module:i386
-## Did something else, too
+######################################################################
 
 ## Working on cpdf. Where did it go??
 ## https://community.coherentpdf.com/
