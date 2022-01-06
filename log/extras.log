@@ -13,7 +13,11 @@ sudo apt update
 sudo apt install libxml2:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386 libatk-adaptor:i386
 sudo dpkg -i ~dushoff/Dropbox/extras/adobe.deb
 
-## If acroread hijacks your defaults, go to /etc/gnome/defaults.list, search pdf and change thing(s) back to evince.desktop
+## If acroread hijacks your defaults:
+## sudo vim /usr/share/applications/defaults.list
+## search pdf and change thing(s) back to evince.desktop
+## application/pdf=org.gnome.Evince.desktop
+## This file is sometimes linked to /etc/gnome/defaults.list
 
 ######################################################################
 

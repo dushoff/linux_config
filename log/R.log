@@ -38,5 +38,6 @@ https://www.rstudio.com/products/rstudio/download/#download
 
 sudo apt -y install gdebi-core
 
-sudo gdebi ~dushoff/Downloads/rstudio*.deb
+## Run from sudo window (gdebi is meant to be interactive)
+sudo gdebi ~dushoff/Downloads/rstudio*.deb ##
 
