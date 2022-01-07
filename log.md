@@ -5,8 +5,6 @@ log/R.log
 
 log/extras.log
 
-log/patch.log
-
 log/tunes.log
 
 log/tex.log

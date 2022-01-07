@@ -3,9 +3,9 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-developm
 apt -y install build-essential ruby ruby-dev ruby-bundler
 
 # Done with sudo on alishan 2021 Sep 13 (Mon)
+# Doing with sudo again on Te!
 gem install jekyll bundler 
+
 # This means I also had to use sudo (password) for bundle install
 # There's a way to do it with paths or something ...
-# May not be necessary with ruby-bundler above
-
 
