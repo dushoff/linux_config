@@ -15,6 +15,8 @@ log/startup.log
 
 log/jekyll.log
 
+log/python.log
+
 ## "Machine files"
 
 log/dell5.mac

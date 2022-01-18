@@ -1,0 +1,5 @@
+
+## Can't get Bio to work!!
+
+conda install -c bioconda biopython
+
