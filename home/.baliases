@@ -178,7 +178,7 @@ alias firstplay='first | xargs -i mplayer "{}"'
 alias pen='ls -t *.* | head -2 | tail -1 '
 
 alias gol='last | xargs -i gio open "{}" &'
-alias dgol='cd ~/Downloads && gol'
+alias dgol='cd ~/Downloads && (gol)'
 alias gop='pen | xargs -i gio open "{}" &'
 alias lastpo='lastpdf | xargs -i gio open "{}" &'
 alias pdflast='lastpdf | xargs -i touch "{}"'
