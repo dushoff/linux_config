@@ -1,8 +1,30 @@
 
+## Download_files Makefile
 ## A nogit Makefile for Download files
 ## When you archive a Downloads folder:
 ## update this file from the old-folder Makefile
 ## use the updated version for the new-folder Makefile
+
+2201.newDown:
+%.newDown:
+	- cd ~/Dropbox/Download_files && mkdir $* && cp Makefile $*
+	ls ~/Dropbox/Download_files/$*
+	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
+	cd ~/Downloads && $(MAKE) target.mk
+
+## 2201.newcomputer:
+%.newcomputer:
+	- mv ~/Downloads ~/tmpDownloads
+	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
+	cd ~/Downloads && $(MAKE) target.mk
+
+######################################################################
+
+## Downloads Makefile
+## This Downloads Makefile is a Dropbox file
+## the permanent version is revision-controlled in the parent directory
+
+######################################################################
 
 current: update_copies
 -include target.mk
@@ -10,79 +32,100 @@ current: update_copies
 vim_session: 
 	bash -cl "vmt"
 
-# -include makestuff/perl.def
-
-##################################################################
-
-## These images are not printable by our printer??
-## Is it the density?
-
-######################################################################
-
-%.grey.jpg: %.jpg Makefile
-	convert $< -grayscale rec709luma $@
-
-%.sharp.jpg: %.grey.jpg Makefile
-	convert $< -level 00%,75%,1.5 $@
-
-%.bw.jpg: %.jpg Makefile
-	convert $< -threshold 50% $@
-
-######################################################################
-
-pouyan.init.pdf: pouyan.pdf formDrop/jd.05.pdf
-	pdfjam $< 2 -o /dev/stdout | \
-	cpdf -stamp-on $(word 2, $^) -pos-left "363 122" \
-		-stdin -stdout | \
-	cat > $@
-
-pouyan.sign.pdf: pouyan.pdf name.pdf email.pdf text.pdf formDrop/jsig.20.pdf
-	pdfjam $< 4 -o /dev/stdout | \
-	cpdf -stamp-on $(word 2, $^) -pos-left "60 -453" \
-		-stdin -stdout | \
-	cpdf -stamp-on $(word 3, $^) -pos-left "180 -453" \
-		-stdin -stdout | \
-	cpdf -stamp-on $(word 4, $^) -pos-left "320 -453" \
-		-stdin -stdout | \
-	cpdf -stamp-on $(word 5, $^) -pos-left "420 312" \
-		-stdin -stdout | \
-	cat > $@
-
-pouyan.out.pdf: pouyan-0.pdf pouyan.init.pdf pouyan-2.pdf pouyan.sign.pdf
-	$(pdfcat)
-
-######################################################################
-
-canmod.pdf: canmod.txt
-	pdfroff $< | cpdf -crop "0.9in 10.8in 4.0in 0.25in" -stdin -o $@ 
-
-eidm.pdf: eidm.txt
-	pdfroff $< | cpdf -crop "0.9in 10.8in 3.2in 0.25in" -stdin -o $@ 
-
-######################################################################
-
-2101.newDown:
-%.newDown:
-	- cd ~/Dropbox/Download_files && mkdir $* && cp Makefile $*
-	ls ~/Dropbox/Download_files/$*
-	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
-	cd ~/Downloads && $(MAKE) target.mk
-
-## 2101.newcomputer:
-%.newcomputer:
-	- mv ~/Downloads ~/tmpDownloads
-	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
-	cd ~/Downloads && $(MAKE) target.mk
-
 update_copies: .
 	rename -f "s/ *\([0-9]\)//" *\([0-9]\).*
 	touch $@
 
+list_conflicts:
+	ls *confl*
+
 remove_conflicts:
 	$(RM) *confl*
 
-list_conflicts:
-	ls *confl*
+##################################################################
+
+tulio.highlight.png: tulio.png Makefile
+	convert -region 400x50+165+550 +level-colors black,gold $< $@
+
+moveon.highlight.png: moveon.png
+	convert -region 275x10+815+380 +level-colors black,gold $< $@
+
+######################################################################
+
+pouyan_submission_jd.pdf:  pouyan_submission.pdf formDrop/jsig.50.pdf date_2.0.pdf Makefile
+	cat $< | \
+	cpdf -stamp-on $(word 2, $^) -pos-left "050 300" \
+		-stdin -stdout | \
+	cpdf -stamp-on $(word 3, $^) -pos-left "130 -1240" \
+		-stdin -stdout | \
+	cat > $@
+
+abx.bw.jpg: abx.jpg Makefile
+	convert $< -threshold 45% $@
+
+DushoffLeavePacket.pdf: Dushoff-Leave-Application.docx.pdf DushoffLeaveDescription.pdf standard.pdf funkInvite.pdf hampsonInvite.pdf akhmetInvite.pdf
+	$(pdfcat)
+
+######################################################################
+
+htmldirs = $(wildcard *_files)
+hdirzip: $(htmldirs:_files=.html.tgz)
+%.html.tgz:
+	tar czf $@ $*.html $*_files
+	$(RMR) $*.html $*_files
+
+%.dir.tgz:
+	tar czf $@ $*
+	$(RMR) $*
+
+ccsign.pdf: cc.pdf formDrop/csig.40.pdf date_2.0.pdf 
+	pdfjam $< 4 -o /dev/stdout | \
+	cpdf -stamp-on $(word 2, $^) -pos-left "120 120" \
+		-stdin -stdout | \
+	cpdf -stamp-on $(word 3, $^) -pos-left "-20 -1470" \
+		-stdin -stdout | \
+	cat > $@
+
+cccombine.pdf: cc.pdf ccsign.pdf
+	pdfjam -o $@ $< 1-3 $(word 2, $^)
+
+######################################################################
+
+jdsquare.jpg: jdhead.jpg
+	convert -crop 1500x1500+460+135 $< $@
+
+pr.jpg: prbig.jpg
+	convert -crop 2000x2800+444+112 $< $@
+
+##################################################################
+
+fastpy = python3 $< > $@
+interpy = python3 $<
+inpy = python3 $(filter %.py, $^) < $(filter %.in, $^) > $@
+
+## Miriam's developing version of the culminating dice game
+sixdice.py.run: sixdice.py
+	$(interpy)
+
+## Try to get sound from the dancing babies video
+# ffmpeg -i PA090140.avi -vn -acodec copy jump.aac
+
+## Cribbing
+olddir = /home/dushoff/Dropbox/Download_files/XXXX/
+%: olddir/%
+	$(copy)
+
+######################################################################
+
+## Process downloaded zip files of pdfs
+
+grad.stage.pdf: 
+%.stage.pdf:
+	mkdir $*
+	cp `ls -t *.zip | head -1` $*
+	cd $* && unzip *.zip
+	pdfjam -o $@ $*/*.pdf
+	$(RMR) $*
 
 ##################################################################
 
@@ -140,6 +183,12 @@ rutgers_trans.pdf: reference.pdf formDrop/sig.100.pdf date_2.0.pdf
 
 ######################################################################
 
+## Quick and dirty
+
+autopipeR = defined
+
+######################################################################
+
 ## Secondary ghetto
 
 jdaz.pdf.zip:
@@ -159,6 +208,10 @@ Makefile: makestuff/Makefile
 	touch $@
 makestuff/Makefile:
 	ls $(BASE)/makestuff/Makefile && /bin/ln -s $(BASE)/makestuff 
+
+-include makestuff/pipeR.mk
+-include makestuff/pandoc.mk
+-include makestuff/forms.mk
 
 -include makestuff/os.mk
 -include makestuff/visual.mk
