@@ -10,13 +10,12 @@
 	- cd ~/Dropbox/Download_files && mkdir $* && cp Makefile $*
 	ls ~/Dropbox/Download_files/$*
 	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
-	cd ~/Downloads && $(MAKE) target.mk
+	cd ~/Downloads && $(MAKE) makestuff && $(MAKE) target.mk
 
 ## 2201.newcomputer:
 %.newcomputer:
 	- mv ~/Downloads ~/tmpDownloads
 	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
-	cd ~/Downloads && $(MAKE) target.mk
 
 ######################################################################
 
