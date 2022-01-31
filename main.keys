@@ -34,18 +34,17 @@ findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
 findwin Zoom <Shift><Alt>z
 
-## FindTab not good for zoom because zoom not typically in tab title
+## FindTab Chrome not good for zoom because zoom not typically in tab title
 
 ## Find (deep) <Ctrl><Shift>
 pickscreen org Planning "^[gc" <Ctrl><Shift>c
 findTab Chrome Docs 12 <Ctrl><Shift>d
-## pickscreen org Planning "^[gcgg/folders<C-M>" <Ctrl><Shift>f
 ## TERMINAL search! <C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
 ## TEAMS <Ctrl><Shift>m
 ## TEAMS <Ctrl><Shift>n
 ## CHROME Activate calendar checker <Ctrl><Shift>q
-## TERMINAL <Ctrl><Shift>t ## New subwindow
+## TERMINAL ## New subwindow <Ctrl><Shift>t
 
 ## Find (deep) <Shift><Super>
 findTab Chrome Meet 12 <Shift><Super>g
