@@ -1,21 +1,13 @@
 ## Comment with initial # or ##
+## Ctrl/Shift/Alt/Super
 
-## <Super>
-
-bash -cl fail <Super>f
-bash -cl rest <Super>r
-## bash -cl meetship <Super>t
-## GNOME <Super> v ## Notifications
-bash -cl work <Super>w
-## bash -cl newday <Super>y
-
-## Launch <Ctrl><Alt>
+## <Ctrl><Alt> Launch 
 gnome-screenshot -a <Ctrl><Alt>a
 bash -cl dgol <Ctrl><Alt>l
 gnome-control-center <Ctrl><Alt>c
 gnome-control-center sound  <Ctrl><Alt>s
 ## GNOME terminal <Ctrl><Alt>t 
-bash -cl voice <Ctrl><Alt>v
+## bash -cl voice <Ctrl><Alt>v
 google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
@@ -35,7 +27,6 @@ findTab Chrome <Shift><Alt>w
 findwin Zoom <Shift><Alt>z
 
 ## FindTab Chrome not good for zoom because zoom not typically in tab title
-
 ## Find (deep) <Ctrl><Shift>
 pickscreen org Planning "^[gc" <Ctrl><Shift>c
 findTab Chrome Docs 12 <Ctrl><Shift>d
@@ -45,6 +36,8 @@ pickscreen tech linux_config <Ctrl><Shift>h
 ## TEAMS <Ctrl><Shift>n
 ## CHROME Activate calendar checker <Ctrl><Shift>q
 ## TERMINAL ## New subwindow <Ctrl><Shift>t
+pickscreen research 0 "^[gd" <Ctrl><Shift>w
+findTab Chrome YouTube 12 <Ctrl><Shift>y
 
 ## Find (deep) <Shift><Super>
 findTab Chrome Meet 12 <Shift><Super>g
@@ -54,9 +47,14 @@ findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
 findTab Chrome Voice 12 <Shift><Super>v
 
-pickscreen research 0 "^[gd" <Ctrl><Shift>w
-findTab Chrome YouTube 12 <Ctrl><Shift>y
-
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
+
+## <Super>
+bash -cl fail <Super>f
+bash -cl rest <Super>r
+## bash -cl meetship <Super>t
+## GNOME <Super> v ## Notifications
+bash -cl work <Super>w
+## bash -cl newday <Super>y
