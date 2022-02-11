@@ -14,7 +14,7 @@
 -include local.mk
 
 ## place_jdserv.mcmaster.ca: Does not work
-## del  place_ms.mcmaster.ca ##
+## place_ms.mcmaster.ca ##
 ## place_mbx.mcmaster.ca: 
 place_%: id_rsa.pub
 	cat $< | ssh $(USER)@$* cat - ">>" .ssh/authorized_keys
