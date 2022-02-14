@@ -4,8 +4,9 @@ let $BASH_ENV = "~/.bashrc"
 " Open target using edited line (like gx, but less fragile for URLs)
 
 nmap gl :s/^[# \t>*]*\s*\(.*\)/go "\1"/<C-M>gXu:nohlsearch<C-M>
-nmap gN :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M>
 nmap gL gm1G/https*:<C-M>gl
+nmap gN :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M>
+nmap gK gm1G/https*:<C-M>gN
 
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
