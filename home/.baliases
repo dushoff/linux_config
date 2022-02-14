@@ -135,7 +135,7 @@ alias plainscreen='screen -dm default'
 alias mainscreen='screen -c .escreenrc -dm main; screen -x main'
 
 alias stx='text-aid-too --editor sleepy'
-alias textstart='textdemon & '
+alias textstart='psterm textdemon; psterm text-aid; textdemon & '
 alias deskstart='google-chrome & firefox & textstart'
 alias camstart='guvcview -m 960x720 & '
 alias rmvstart='rmview ~/./screens/tech/linux_config/rmview.json &'
