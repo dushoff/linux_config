@@ -57,13 +57,13 @@ new terminal
 
 apt install -y xdotool imagemagick-6.q16
 * make main.load
-* May need to restart or something for hot keys?
+* Hot keys will not work until restart. 
 
 try to sink (there will be symbolic links to make)
 * currently some yaml-pipeline stuff depends on R which is annoying
 * log/R.log
 
-## text-aid-too
+## text-aid-too (do this before restarting and trying to textdemon)
 sudo apt-get -y install npm
 
 sudo npm install -g coffeescript ## RECOMMENDED
@@ -86,5 +86,7 @@ mouse keys / locate pointer on
 sudo apt install xkbset
 xkbset ma 60 10 10 5 2 ##
 
-gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/dushoff/Downloads"
+gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/dushoff/Downloads" ##
 
+global exclude:
+* make ignore.config ##
