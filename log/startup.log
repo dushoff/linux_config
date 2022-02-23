@@ -16,10 +16,10 @@ Terminal
 apt install vim-gtk3
 * Start supplemental log
 
-Install chrome (find link on web, I think):
+Install chrome (find link on web is probably better than trying to type this):
 * wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 * apt install gdebi
-* gdebi the google
+* sudo gdebi 
 
 run chrome and log in to google to get access to passwords
 apt install tcsh
