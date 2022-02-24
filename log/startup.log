@@ -1,5 +1,7 @@
 
 Maybe start by opening this file in a browser, or c-p it to a file.
+* maybe this file should be somewhere where it is easy to access
+* open in parent (linux-config) after cloning
 
 ## Dell laptop
 
@@ -34,14 +36,11 @@ Download _this_ repo (as zip) from web and open
 * do make relink from here (temporary version)
 
 Restart terminal
-* ln -s ~/.blocal.ubuntu ~/.blocal ##
-* touch ~/.bashrc.ubuntu
-
-Start screen early for cp convenience
+* ln -s ~/.blocal.ubuntu ~/.bashrc.local
 
 Close down supplementary (and elsewhere log) and edit temporary version on new computer
-
-get the github token from `vi token.github`
+* Start screen early for cp convenience
+* get the github token from token.github
 
 clone screens
 * make the hstore stuff work (push until it doesn't ask)
@@ -49,9 +48,9 @@ clone screens
 * make linux_setup
 
 apt install nautilus-dropbox
-* This Just Works now (opens Dropbox for us)
+* dropbox start -i
 
-relink Downloads (make xxxx.newcomputer) from ~/Dropbox/Downloads
+relink Downloads (make xxxx.newcomputer) from ~/Dropbox/Download_files
 
 Close down temporary version of this file (copy to new place)
 
@@ -60,12 +59,13 @@ new terminal
 
 apt install -y xdotool imagemagick-6.q16
 * make main.load
-* May need to restart or something for hot keys?
+* Hot keys will not work until restart. 
 
 try to sink (there will be symbolic links to make)
 * currently some yaml-pipeline stuff depends on R which is annoying
+* log/R.log
 
-## text-aid-too
+## text-aid-too (do this before restarting and trying to textdemon)
 sudo apt-get -y install npm
 
 sudo npm install -g coffeescript ## RECOMMENDED
@@ -88,5 +88,7 @@ mouse keys / locate pointer on
 sudo apt install xkbset
 xkbset ma 60 10 10 5 2 ##
 
-gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/dushoff/Downloads"
+gsettings set org.gnome.gnome-screenshot auto-save-directory "/home/dushoff/Downloads" ##
 
+global exclude:
+* make ignore.config ##
