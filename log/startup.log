@@ -22,6 +22,8 @@ Install chrome (find link on web is probably better than trying to type this):
 * sudo gdebi 
 
 run chrome and log in to google to get access to passwords
+* may need to wait for sync??
+
 apt install tcsh
 apt install screen
 apt install xclip
