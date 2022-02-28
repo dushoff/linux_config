@@ -4,6 +4,7 @@ use strict;
 use 5.10.0;
 
 while(<>){
+	s/ Cohen$/:/;
 	s/you of tea/U of T/g;
 	s/the I see you/the ICU/g;
 	s/Fitzhugh/fits/g;
