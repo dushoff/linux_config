@@ -8,11 +8,12 @@ Maybe start by opening this file in a browser, or c-p it to a file.
 Install linux:
 * third-party not added for V
 * didn't mess with nvidia drivers for V
+* added third party for xiangshan
 
 fn-esc for function lock in Dell
 
 Terminal
-* disable F10
+* disable F10 and F11
 * fonts (tango dark 22 for V; solarized light 22 for Te)
 
 apt install vim-gtk3
