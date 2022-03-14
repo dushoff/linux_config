@@ -13,6 +13,8 @@ alias nospace='rename "s/ /_/g" *.*'
 alias pdfnames='rename "s/[ ,-]+/_/g" *.pdf'
 alias suspend='systemctl suspend'
 
+alias reboot='! sl && sudo /sbin/reboot'
+
 alias die='exit'
 alias q='exit'
 
