@@ -6,6 +6,7 @@ alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-
 alias nmr='sudo service network-manager restart'
 
 alias restart="! screen -list && reboot"
+alias shutnow="! screen -list && shutdown now"
 
 ## Moving windows to the Dumb TV
 alias left='wmctrl -r ":SELECT:" -e 0,0,0,3840,2160'
