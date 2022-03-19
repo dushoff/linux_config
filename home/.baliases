@@ -5,7 +5,7 @@ shopt -s expand_aliases
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
 alias nmr='sudo service network-manager restart'
 
-alias restart="! screen -list && reboot"
+alias renow="! screen -list && reboot"
 alias shutnow="! screen -list && shutdown now"
 
 ## Moving windows to the Dumb TV
