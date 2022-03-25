@@ -90,6 +90,7 @@ imap <2-LeftMouse> <nop>
 nmap S _kO
 nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
 nmap - mm:g/^-----------------------------/d<C-M>H'm_
+nmap - O<ESC>o<C-M><ESC>70i-<ESC>
 nmap \ i\
 nmap dl :.g/^$/d<C-M>
 
