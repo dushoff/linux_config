@@ -1,7 +1,10 @@
 
 let $BASH_ENV = "~/.bashrc"
 
-" Open target using edited line (like gx, but less fragile for URLs)
+" Put the first real history line into the git commit message
+nmap dl d/#	/e
+
+" Open location using edited line (like gx, but less fragile for URLs)
 
 nmap gl :s/^[# \t>*]*\s*\(.*\)/go "\1"/<C-M>gXu:nohlsearch<C-M>
 nmap gL gm1G/https*:<C-M>gl
@@ -92,7 +95,7 @@ nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
 nmap - mm:g/^-----------------------------/d<C-M>H'm_
 nmap - O<ESC>o<C-M><ESC>70i-<ESC>
 nmap \ i\
-nmap dl :.g/^$/d<C-M>
+" nmap dl :.g/^$/d<C-M>
 
 " 2019 Sep 12 (Thu) Hacking at nmap; not really in touch with older uses
 vmap G_ j/---------------.*/e<C-M>
