@@ -2,7 +2,7 @@
 let $BASH_ENV = "~/.bashrc"
 
 " Put the first real history line into the git commit message
-nmap dl d/#	/e
+nmap dl d/#	/e<C-M>
 
 " Open location using edited line (like gx, but less fragile for URLs)
 
