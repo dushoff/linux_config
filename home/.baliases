@@ -73,7 +73,7 @@ alias sink="vdc; vim ~/.commitnow && ink && wiss 0"
 alias rink="ink && wiss 0"
 alias cink="ink; inkcheck || wiss 0"
 alias ink="make all.time | tee make.log"
-alias inkcheck="(grep $'\t' make.log || grep 'git pull' make.log) && gvim make.log"
+alias inkcheck="(grep $'\t' make.log || grep 'git pull' make.log) && ice 0 && vim make.log"
 alias gas="go Dropbox/archive/swati.pdf"
 
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
