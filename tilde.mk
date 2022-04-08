@@ -1,8 +1,10 @@
 ## This file is the Makefile for ~dushoff, curated in linux_config
 
+glerbs = $(wildcard *.png Webcam/*.jpg)
+
 target:
-	touch *.png
-	mv *.png Downloads
+	touch $(glerbs)
+	mv $(glerbs) Downloads
 
 start setup mainscreen:
 	cd screens && make $@
