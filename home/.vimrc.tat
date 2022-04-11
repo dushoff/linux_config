@@ -4,3 +4,5 @@ nmap <F7> :w<C-M>
 nmap <F7> :w<C-M>
 map <F9> :wall<C-M>
 nmap LL :wall<C-M>1<C-^>:w!~/.lastvim<C-M>:%s/^/<br>/<C-M>:x<C-M>
+nunmap M
+nmap MM :wall<C-M>1<C-^>:w!~/.lastvim<C-M>:%s/^-- *$/--  /<C-M>:1,$!pandoc -t html<C-M>:x<C-M>
