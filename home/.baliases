@@ -348,7 +348,7 @@ svs() {
 	p=$( echo $1 | perl -pe 's|/*$||' );
 	dir=`dirname "$p"`
 	sub=`basename "$p"`
-	(cd $dir && make $sub)
+	(cd $dir && make $sub && make $sub/Makefile)
 	(cd $dir/$sub && make Makefile)
 	svn $dir/$sub $sub; 
 }
