@@ -5,6 +5,7 @@ use 5.10.0;
 
 while(<>){
 	s/ Cohen$/:/;
+	s/ Cullen$/:/;
 	s/you of tea/U of T/g;
 	s/the I see you/the ICU/g;
 	s/Fitzhugh/fits/g;
@@ -18,6 +19,7 @@ while(<>){
 	s/Pete/epiEstim/g;
 	s/ISIS/ICES/gi;
 	s/Kenyatta/Nkengafac/g;
+	s/sanatorium/Sana/gi;
 	s/beagles/Bicko's/gi;
 	s/beagle/Bicko/gi;
 	s/Captain Awesome/Faikah/gi;
