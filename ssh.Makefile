@@ -13,9 +13,10 @@
 ## Add USER variable (or target-specific variables USER variables?) if necessary
 -include local.mk
 
-## place_jdserv.mcmaster.ca: Does not work
+## No colons; use gM (no makestuff)
+## place_jdserv.mcmaster.ca Does not work off campus
 ## place_ms.mcmaster.ca ##
-## place_mbx.mcmaster.ca: 
+## place_mbx.mcmaster.ca 
 place_%: id_rsa.pub
 	cat $< | ssh $(USER)@$* cat - ">>" .ssh/authorized_keys
 	touch $@
