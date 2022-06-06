@@ -73,7 +73,7 @@ alias sink="vdc; vim ~/.commitnow && rink"
 alias rink="(inkcheck && ice 0) || fastlake"
 alias cink="(inkcheck && ice 0 && vim make.log) || fastlake"
 alias ink="make all.time | tee make.log"
-alias inkcheck="ink; (grep $'\t' make.log || grep 'git pull' make.log)"
+alias inkcheck="ink && (grep $'\t' make.log || grep 'git pull' make.log)"
 alias sinkcheck="(grep $'\t' make.log || grep 'git pull' make.log) && ice 0 && vim make.log"
 alias gas="go Dropbox/archive/swati.pdf"
 
