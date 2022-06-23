@@ -8,9 +8,9 @@ map <C-F4> :make -d sync > make.log && git status .<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make! -d all.time > make.log && git status .<C-M>
 map <S-F5> :!make pdftarget<C-M>
-map <C-S-F5> :make -d allsync > make.log && git status<C-M>
+map <C-S-F5> :make -d forcesync > make.log && git status<C-M>
 map <F6> :cp<C-M>
-map <C-S-F6> :!vsave; sleep 1<C-M>:make -d allsync > make.log && git status<C-M>
+map <C-S-F6> :!vsave; sleep 1<C-M>:make -d forcesync > make.log && git status<C-M>
 map <F7> :x<C-M>
 map <S-F7> gz
 map <F8> :w<F4>
