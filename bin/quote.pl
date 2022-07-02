@@ -10,7 +10,6 @@ while(<>){
 	s/the I see you/the ICU/g;
 	s/Fitzhugh/fits/g;
 	s/Juliette/Juliet/g;
-	s/Ulysses/omicron/g;
 	s/Benjamin Button/Bolker/g;
 	s/White'*s/Weitz/g;
 	s/Loop in/loop in/g;
