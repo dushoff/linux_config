@@ -184,6 +184,9 @@ let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
 vmap X "+x
 
+" markdown stuff 2022 Jul 04 (Mon)
+nmap ml I[<ESC>A]<ESC>jI(<ESC>A)<ESC>kJx
+
 " pull an email address from a formatted list
 nmap ym f<lvt>Y
 
