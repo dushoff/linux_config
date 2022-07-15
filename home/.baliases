@@ -271,6 +271,14 @@ alias lsd="ls --group-directories-first | more"
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
 
+######################################################################
+
+## The quoting is such a mess!
+gcq() { echo gcalcli --calendar jdushoff@gmail.com quick \"$@\" ; }
+gck() { gcalcli --calendar jdushoff@gmail.com quick "\"$@\"" ; }
+
+######################################################################
+
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.txt; }
 
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
