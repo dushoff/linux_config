@@ -70,6 +70,7 @@ alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instanc
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
 
+## Strongly deprecated 2022 Jul 27 (Wed)
 alias rink="(inkcheck && ice 0) || fastlake"
 alias cink="(inkcheck && ice 0 && vim make.log) || fastlake"
 alias inkcheck="ink && (grep $'\t' make.log || grep 'git pull' make.log)"
@@ -243,7 +244,7 @@ ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
-alias sesh="ice 484; squirrel 961; beaver 1444"
+alias sesh="date; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 alias work="reporttime work; acorns 0; nopix; sesh"
 alias rest="reporttime rest; acorns 0; nopix; reportblank"
