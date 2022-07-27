@@ -69,14 +69,20 @@ alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vdc="vsave; dclose; hclose"
-alias sink="vdc; vim ~/.commitnow && rink"
+
 alias rink="(inkcheck && ice 0) || fastlake"
 alias cink="(inkcheck && ice 0 && vim make.log) || fastlake"
-alias ink="make all.time | tee make.log"
 alias inkcheck="ink && (grep $'\t' make.log || grep 'git pull' make.log)"
 alias sinkcheck="(grep $'\t' make.log || grep 'git pull' make.log) && ice 0 && vim make.log"
-alias gas="go Dropbox/archive/swati.pdf"
 
+alias ink="((make all.time | tee make.log) || (ice 0 && false))"
+alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
+alias vml="vim make.log"
+alias rink="ink && ((logcheck && fastlake) || squirrel 0)"
+alias sink="vdc; vim ~/.commitnow && rink"
+alias cink="ink && ((logcheck && fastlake) || vml)"
+
+alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 
@@ -284,7 +290,7 @@ ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gvm() { gvim -U ~/.gmvimrc Makefile $@ & }
 
 gw() { grep -i "$@" /usr/share/dict/words.pre-dictionaries-common; }
-fp() { nice find . -name "$@" -print; }
+fp() { nice find . -name "$*" -print; }
 ## Tests. I guess the current problem is that I can't quote further.
 ffpg() { echo find . -name '$1' -print |xargs grep '$2'; }
 ffpg() { echo find . -name "$1" -print; echo xargs grep "$2"; }
