@@ -244,7 +244,7 @@ ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
-alias sesh="date; ice 484; squirrel 961; beaver 1444"
+alias sesh="date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 alias work="reporttime work; acorns 0; nopix; sesh"
 alias rest="reporttime rest; acorns 0; nopix; reportblank"
