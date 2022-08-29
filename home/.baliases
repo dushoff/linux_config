@@ -178,6 +178,8 @@ alias lasttotem='last | xargs -i totem "{}"'
 alias lastmp='last | xargs -i mplayer "{}"'
 alias lastfile='ls -t *.* | head -1 | xargs -i file "{}"'
 alias dell='last | xargs -i rm -f "{}"'
+alias lastcat='last | xargs -i cat "{}"'
+alias lastconv='last | xargs -i cat "{}" | convert -'
 alias lastdel='dell'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 
