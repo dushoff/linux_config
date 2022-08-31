@@ -1,12 +1,10 @@
 
-
 ## Adobe acrobat reader acroread
-
 
 https://linuxconfig.org/how-to-install-adobe-acrobat-reader-on-ubuntu-20-04-focal-fossa-linux
 
 ## Takes minutes (oops!)
-## wget -O ~/Dropbox/extras/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+## wget -O ~/Dropbox/extras/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb ##
 
 sudo dpkg --add-architecture i386
 sudo apt update
