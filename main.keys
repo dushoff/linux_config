@@ -28,7 +28,8 @@ findwin Zoom <Shift><Alt>z
 
 ## FindTab Chrome not good for zoom because zoom not typically in tab title
 ## Find (deep) <Ctrl><Shift>
-pickscreen org Planning "^[gc" <Ctrl><Shift>c
+## pickscreen org Planning "^[gc" <Ctrl><Shift>c
+## TERMINAL  <Ctrl><Shift>c
 findTab Chrome Docs 12 <Ctrl><Shift>d
 ## TERMINAL search! <C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
@@ -47,11 +48,15 @@ findTab Chrome Gmail 12 <Shift><Super>m
 ## findTab Chrome Microsoft 12 <Shift><Super>t ## Not working
 findTab Chrome Voice 12 <Shift><Super>v
 
+## <Ctrl><Super> not used! 2022 Sep 08 (Thu)
+bash -cl wiss <Ctrl><Super>w
+
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
 
 ## <Super>
+pickscreen org Planning "^[gc" <Super>c
 bash -cl fail <Super>f
 bash -cl rest <Super>r
 ## bash -cl meetship <Super>t
