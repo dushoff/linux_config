@@ -269,7 +269,7 @@ alias reportblank='echo >> ~/report.txt'
 alias newday='reportday; reportblank; newship'
 alias newship='reporttime Work; now; shipplus'
 alias meetship='reporttime Meet; now; boatplus'
-alias noship='reporttime Rest; reportblank; shipminus; now; lake'
+alias noship='reporttime Rest; reportblank; shipminus; now; wiss'
 
 ## This is obviously an old debug attempt ☹
 alias fpg='echo find . -name "$1" -print'
