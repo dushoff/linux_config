@@ -124,6 +124,14 @@ Dropbox/%.mk:
 
 ######################################################################
 
+## Window dev
+
+Ignore += winlist
+winlist: bin/listWins
+	$< > $@
+
+######################################################################
+
 ## Makestuff setup
 Sources += Makefile 
 msrepo = https://github.com/dushoff
