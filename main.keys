@@ -58,8 +58,10 @@ nopad <Alt>n
 ## <Super>
 pickscreen org Planning "^[gc" <Super>c
 bash -cl fail <Super>f
+### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
 ## bash -cl meetship <Super>t
 ## GNOME <Super> v ## Notifications
 bash -cl work <Super>w
+bash -cl play <Super>y
 ## bash -cl newday <Super>y
