@@ -45,6 +45,8 @@ scripts += textdemon
 
 scripts += remark
 
+scripts += remark
+
 Sources += $(scripts)
 
 Ignore += $(links)
