@@ -1,0 +1,11 @@
+#! /usr/bin/perl
+## Experimenting after Ubuntu 20 broke things;
+## abandoning for now; using Xorg by choosing it on login
+use strict;
+
+my @wins = split /\s+/, `xdotool search . `;
+
+foreach my $win (@wins){
+	print "winid: $win\n";
+	print `xwininfo -id $win`;
+}

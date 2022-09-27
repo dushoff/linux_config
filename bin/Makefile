@@ -36,7 +36,7 @@ scripts += sdir ship boat tat.pl vi pdfwin cpdf bat quote.pl
 scripts += sleepy wakey
 
 ## General focus
-scripts += findTab windows pickscreen findApp findwin
+scripts += listWins findTab windows pickscreen findApp findwin
 
 ## Special focus (deprecate 2020 May 23 (Sat), careful with the first one)
 scripts += term
