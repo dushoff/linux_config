@@ -60,7 +60,7 @@ pickscreen org Planning "^[gc" <Super>c
 bash -cl fail <Super>f
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
-## bash -cl meetship <Super>t
+bash -cl meet <Super>t
 ## GNOME <Super> v ## Notifications
 bash -cl work <Super>w
 bash -cl play <Super>y
