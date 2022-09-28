@@ -99,6 +99,7 @@ alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 alias va='vi ~/.baliases'
 alias ahash='source ~/.baliases'
+alias bhash='source ~/.bashrc'
 
 alias cd..='cd ..'
 
@@ -222,7 +223,8 @@ alias lsath='clear; ls -at |head'
 alias lst='ls -t |more'
 alias lstm='lst'
 
-downput() { touch $@; cp $@ ~/Downloads/; }
+todown() { touch $@; cp "$@" ~/Downloads; }
+alias downput=todown
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
@@ -230,8 +232,6 @@ lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 pencall() { ls -t *.* | head -2 | tail -1 | xargs -i mv "{}" $@; }
 pentouch() { ls -t *.* | head -2 | tail -1 | xargs -i touch "{}"; }
 lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
-
-todown(){ touch $@; cp "$@" ~/Downloads; }
 
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }

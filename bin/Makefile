@@ -36,14 +36,18 @@ scripts += sdir ship boat tat.pl vi pdfwin cpdf bat quote.pl
 scripts += sleepy wakey
 
 ## General focus
-scripts += findTab windows pickscreen findApp findwin
+scripts += listWins findTab windows pickscreen findApp findwin
 
 ## Special focus (deprecate 2020 May 23 (Sat), careful with the first one)
 scripts += term
 scripts += focus jumpy voicewin chromewin mailwin hangwin textcal report 
 scripts += textdemon
 
+## Do something with reMarkable via wine
 scripts += remark
+
+## Bolker moon script
+scripts += current_moon_phase.sh
 
 Sources += $(scripts)
 
