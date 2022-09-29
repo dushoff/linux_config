@@ -57,6 +57,7 @@ nopad <Alt>n
 
 ## <Super>
 pickscreen org Planning "^[gc" <Super>c
+bash -cl newday <Super>d
 bash -cl fail <Super>f
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
