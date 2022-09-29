@@ -248,11 +248,6 @@ beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 
 alias sesh="clear; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
-alias work="reporttime work; acorns 0; nopix; sesh"
-alias play="reporttime play; acorns 0; nopix; sesh"
-alias meet="reporttime meet; acorns 0; nopix; tesh"
-alias rest="reporttime rest; acorns 0; nopix; reportblank"
-alias fail="reporttime fail; acorns 0; nopix; reportblank"
 
 alias nopdf="killall evince"
 
@@ -268,15 +263,20 @@ alias now='pickscreen org Planning'
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
 alias reportblank='echo >> ~/report.txt'
 
-alias newday='reportday; reportblank; newship'
-alias newship='reporttime Work; now; shipplus'
-alias meetship='reporttime Meet; now; boatplus'
-alias noship='reporttime Rest; reportblank; shipminus; now; wiss'
+## Lighter weight stuff, any good?
+alias work="reporttime work; acorns 0; nopix; sesh"
+alias play="reporttime play; acorns 0; nopix; sesh"
+alias meet="reporttime meet; acorns 0; nopix; tesh"
+alias rest="reporttime rest; acorns 0; nopix; reportblank"
+alias fail="reporttime fail; acorns 0; nopix; reportblank"
 
-## This is obviously an old debug attempt ☹
-alias fpg='echo find . -name "$1" -print'
-alias fpg='nice find . -name "$1" -print |xargs grep "$2" 2> .error.log'
-alias fppg='nice find . -name "$1" -print |xargs pdfgrep "$2" 2> .error.log'
+alias newday='reportday; reportblank; newship'
+alias work='reporttime Work; now; shipplus'
+alias play='reporttime Play; now; shipplus'
+alias meet='reporttime Meet; now; boatplus'
+alias rest='reporttime Rest; reportblank; shipminus; now; wiss'
+alias fail='reporttime Fail; reportblank; shipminus; now; wiss'
+
 alias lsd="ls --group-directories-first | more"
 
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
