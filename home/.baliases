@@ -310,6 +310,8 @@ fpgt() { nice find . -name "$1" -print |xargs grep "$2" > gtmp; }
 fpv() { find . -name "$1" -print |xargs vim; }
 fpx() { nice find . -name "$2" -print |xargs "$1"; }
 
+qquote() { echo 1: '$1' 2: '$2'; }
+
 # fps() { find . -name "$@" -print |& grep -v "^find:"; }
 # ff() { filegrep.pl "$1" ${HOME}/bin/find/files.txt; }
 # ffg() { filegrep.pl "$1" ${HOME}/bin/find/files.txt |xargs grep "$2"; }
