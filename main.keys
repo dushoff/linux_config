@@ -58,7 +58,6 @@ nopad <Alt>n
 ## <Super>
 pickscreen org Planning "^[gc" <Super>c
 ## GNOME <Super>d (desktop something; failed to override)
-## bash -cl newday <Super>n
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
