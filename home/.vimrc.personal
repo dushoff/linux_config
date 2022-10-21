@@ -164,18 +164,18 @@ vmap <C-K> d@r
 " Built to indent a one-line ¶ for some reason.
 vmap @k d<ESC>@r
 
-" Old ¶ checklist versions 
-nmap @k }kI* <ESC><C-T>kJV@k
-nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
-nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
-
 " New line-based checklist
 nmap @k I* <ESC><C-T>kJV@k
-nmap @K I* <ESC>A kk<ESC><C-T>kJV@k
-nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
+nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓
+nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cp " Continuing …
 
-" Push a ¶
+" Push a ¶ to the report
 nmap <C-V> <C-P>@k
+
+" Old ¶-based checklist versions 
+" nmap @k }kI* <ESC><C-T>kJV@k
+" nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
+" nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
