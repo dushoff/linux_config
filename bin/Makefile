@@ -52,7 +52,7 @@ scripts += current_moon_phase.sh
 Sources += $(scripts)
 
 Ignore += $(links)
-Makefile: $(links)
+## Makefile: $(links)
 $(links):
 	ls ~/Dropbox/linux/bin/$@
 	/bin/ln -fs ~/Dropbox/linux/bin/$@ .
