@@ -74,7 +74,7 @@ alias vdc="vsave; dclose; hclose"
 
 ## <command> | tee out.txt ; test ${PIPESTATUS[0]} -eq 0
 alias ink="((make all.time | tee make.log) || (ice 0 && false))"
-alias ink="((make all.time | tee make.log test ${PIPESTATUS[0]} -eq 0) || (ice 0 && false))"
+alias ink="((make all.time | tee make.log ; test ${PIPESTATUS[0]} -eq 0) || (ice 0 && false))"
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias vml="vim make.log"
 alias rink="ink && ((logcheck && sinklake) || squirrel 0)"
