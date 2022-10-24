@@ -71,17 +71,15 @@ alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instan
 alias vdc="vsave; dclose; hclose"
 
 ## Strongly deprecated 2022 Jul 27 (Wed)
-alias rink="(inkcheck && ice 0) || sinklake"
-alias cink="(inkcheck && ice 0 && vim make.log) || sinklake"
-alias inkcheck="ink && (grep $'\t' make.log || grep 'git pull' make.log)"
-alias sinkcheck="(grep $'\t' make.log || grep 'git pull' make.log) && ice 0 && vim make.log"
 
+## <command> | tee out.txt ; test ${PIPESTATUS[0]} -eq 0
 alias ink="((make all.time | tee make.log) || (ice 0 && false))"
+alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias vml="vim make.log"
-alias rink="ink && ((logcheck && sinklake) || squirrel 0)"
+alias rink="ink && ((logcheck && fastlake) || squirrel 0)"
 alias sink="vdc; vim ~/.commitnow && rink"
-alias cink="ink && ((logcheck && sinklake) || vml)"
+alias cink="ink && ((logcheck && fastlake) || vml)"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
@@ -214,6 +212,8 @@ alias ldo='lastdown; last'
 alias lho='lasthome; last'
 alias ldu='lastdown; lastunzip'
 alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
+
+gcd() { git clone https://github.com/dushoff/$1 ; }
 
 lsth() { clear; ls -t $@ |head -10; }
 alias lspdf='lsth "*.pdf"'
