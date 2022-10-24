@@ -238,8 +238,8 @@ go() { gnome-open "$@" & }
 
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 fastlake() { (eog -f ~/Dropbox/archive/lake.jpg) & }
-plansync() { cd ~/screens/org/Planning && make sync ; }
-sinklake() { reporttime Sunk; plansync; fastlake; }
+plansync() { (cd ~/screens/org/Planning && make sync ); }
+sinklake() { reporttime Sunk; (plansync; fastlake; }
 lake() { (sleep $@; xdg-open ~/Dropbox/archive/lake.jpg) & }
 wiss() { (sleep $@; xdg-open ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
