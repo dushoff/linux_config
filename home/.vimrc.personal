@@ -167,7 +167,7 @@ vmap @k d<ESC>@r
 " New line-based checklist
 nmap @k I* <ESC><C-T>kJV@k
 nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓
-nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cp " Continuing …
+nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cP " Continuing …
 
 " Push a ¶ to the report
 nmap <C-V> <C-P>@k
