@@ -20,8 +20,10 @@ nmap gE gXk:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
 
+" What are these | things for?
 nmap gb VygCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
+nmap gO :!todown <cfile><C-M>| " focal file ⇒ last Download
 
 " Email quoting stuff
 " Clear blank lines
