@@ -181,6 +181,7 @@ alias lastcat='last | xargs -i cat "{}"'
 alias lastconv='last | xargs -i cat "{}" | convert -'
 alias lastdel='dell'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
+alias lastgunzip='ls -t *.gz *.GZ | head -1 | xargs -i gunzip "{}"'
 
 alias sendable='ls -t *.send.*'
 alias send='sendable | tail -1 | xargs -i touch "{}" && gol'
