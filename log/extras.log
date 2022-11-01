@@ -10,6 +10,7 @@ sudo dpkg --add-architecture i386
 sudo apt update
 sudo apt install libxml2:i386 libcanberra-gtk-module:i386 
 sudo apt install gtk2-engines-murrine:i386 libatk-adaptor:i386
+sudo apt install libgdk-pixbuf2.0-0:i386
 sudo dpkg -i ~dushoff/Dropbox/extras/adobe.deb
 
 ## 2022 Oct 30 (Sun) Just failed on newfiVe
