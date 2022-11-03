@@ -60,7 +60,7 @@ pickscreen org Planning "^[gc" <Super>c
 ## GNOME <Super>d (desktop something; failed to override)
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
-bash -cl rest <Super>r
+bash -cl rest; pickscreen org Planning "^[gr" <Super>r
 bash -cl meet <Super>t
 ## GNOME <Super> v ## Notifications
 bash -cl work <Super>w
