@@ -4,6 +4,10 @@ use strict;
 use 5.10.0;
 
 while(<>){
+	s/\s+comma\b/,/g;
+	s/\s+full stop\b/./g;
+	s/\s+question mark\b/?/g;
+	s/\s+new paragraph\b/\n\n/g;
 	s/ Cohen$/:/;
 	s/ Cullen$/:/;
 	s/you of tea/U of T/g;
@@ -13,7 +17,7 @@ while(<>){
 	s/Benjamin Button/Bolker/g;
 	s/White'*s/Weitz/g;
 	s/Loop in/loop in/g;
-	s/\s+colon$/: /;
+	s/\s+colon\b/: /;
 	s/\bdash\b/–/gi;
 	s/Pete/epiEstim/g;
 	s/ISIS/ICES/gi;
