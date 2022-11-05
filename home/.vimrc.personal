@@ -155,7 +155,7 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 
 " paragraph paragraphing
-nmap @c :1,$!cat -s<C-M>
+nmap @C :1,$!cat -s<C-M>
 
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
@@ -167,11 +167,11 @@ vmap <C-K> d@r
 vmap @k d<ESC>@r
 
 " New line-based checklist
-nmap @k I* <ESC><C-T>kJV@k
-nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓
-nmap @C "cyyI* <ESC>A …<ESC><C-T>kJV@k"cP " Continuing …
+nmap @c "cyyI* <ESC>A …<ESC><C-T>kJV@k"cP " Continuing …
+nmap @k "cyyI* <ESC><C-T>kJV@k"cP " Progress
+nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓ (and delete)
 
-" Push a ¶ to the report
+" Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
 
 " Old ¶-based checklist versions 
