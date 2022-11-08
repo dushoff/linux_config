@@ -167,9 +167,13 @@ vmap <C-K> d@r
 vmap @k d<ESC>@r
 
 " New line-based checklist
-nmap @c "cyyI* <ESC>A …<ESC><C-T>kJV@k"cP " Continuing …
-nmap @k "cyyI* <ESC><C-T>kJV@k"cP " Progress
+" Bailing out on @O (doesn't chain!) 2022 Nov 08 (Tue)
+nmap @O "cyy:s/^[* \t]*/* /<C-M>H " Craziness with \s!
+nmap @k "cyyI* <ESC><C-T>k0JV@k"cP " Progress
+nmap @c "cyyI* <ESC><C-T>k0JV@k"cP " Progress
+nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP " Continuing …
 nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓ (and delete)
+nmap @w nmap @k "cyyI* <ESC><C-T>kJV@k"cP " Progress
 
 " Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
@@ -186,8 +190,10 @@ let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
 vmap X "+x
 
-" markdown stuff 2022 Jul 04 (Mon)
-nmap ml I[<ESC>A]<ESC>jI(<ESC>A)<ESC>kJx
+" markdown stuff 2022 Jul 04 (Mon); using C-V to escape <C-M> (suppressed related work-around)
+nmap ml I[<ESC>A]<ESC>j:s/[*\s]*//<C-M>I(<ESC>A)<ESC>0kJxH
+nmap ms 0x:s/)\s*$//<C-M>:s/](/<C-V><C-M>* /<C-M>
+" nmap ms 0x:s/)\s*$//<C-M>/](<C-M>s<C-M>* <ESC>
 
 " pull an email address from a formatted list
 nmap ym f<lvt>Y
