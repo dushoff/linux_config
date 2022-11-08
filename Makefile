@@ -4,7 +4,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -cl "vmt main.keys tilde.mk ~/.vimrc ~/.baliases log.md"
+	bash -cl "vmt main.keys tilde.mk ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
 ######################################################################
 
