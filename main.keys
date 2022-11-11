@@ -52,12 +52,13 @@ nopad <Alt>n
 pickscreen org Planning "^[gc" <Super>c
 ## GNOME <Super>d (desktop something; failed to override)
 pickscreen org Planning "^[gj" <Super>j
+bash -cl work <Super>k
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
 bash -cl meet <Super>t
-## GNOME <Super> v ## Notifications
-bash -cl work <Super>w
+## GNOME notifications <Super> v
+## EVINCE fit width <Super> G
 bash -cl play <Super>y
 
 ## Find (deep) <Shift><Super> or extra planning?
