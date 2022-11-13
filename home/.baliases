@@ -274,7 +274,7 @@ alias meet="reporttime meet; acorns 0; nopix; tesh"
 alias rest="reporttime rest; acorns 0; nopix; reportblank"
 alias fail="reporttime fail; acorns 0; nopix; reportblank"
 
-alias newday='reportday; reportblank; work'
+alias newday='reportblank; reportday; reportblank; work'
 alias work='reporttime Work; now; shipplus'
 alias play='reporttime Play; now; shipplus'
 alias meet='reporttime Meet; now; boatplus'
