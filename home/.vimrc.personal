@@ -20,7 +20,7 @@ nmap gE gXk:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
 
-" What are these | pipes for? like a strong 0 I guess
+" pipe to delimit comments?
 nmap gb VygCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap gO :!todown <cfile><C-M>| " focal file ⇒ last Download
@@ -166,18 +166,23 @@ vmap <C-K> d@r
 " Built to indent a one-line ¶ for some reason.
 vmap @k d<ESC>@r
 
+" This is stupid, it should all be done as n ⇒ v
 " New line-based checklist 
 " vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
 nmap @O "cyy:s/^[\s*]*/* /<C-M>
-nmap @c @OA …<ESC><C-T>0kJV@k"cP " Continuing …
-nmap @O "cyy:s/^[* \t]*/* /<C-M>H " Craziness with \s!
-nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP " Continuing …
-nmap @k "cyyI* <ESC><C-T>k0JV@k"cP " Progress
-nmap @K I* <ESC>A kk<ESC><C-T>kJV@k " Finished ✓ (and delete)
+nmap @c @OA …<ESC><C-T>0kJV@k"cP
+nmap @O "cyy:s/^[* \t]*/* /<C-M>H |" Craziness with \s!
+nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP |" Continuing …
+nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
+nmap @K I* <ESC>A kk<ESC><C-T>kJV@k |" Finished ✓ (and delete)
+nmap @w @kgw
+nmap @W @kgW
 
 " Move things around index file
-vmap gw "wd/Tomorrow<C-M>}"wp<C-O>
+vmap gw "wdmn/Tomorrow<C-M>}"wp'n
 nmap gw Vgw
+vmap gW "wdmn/Next week<C-M>}"wp'n
+nmap gW VgW
 
 " Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
