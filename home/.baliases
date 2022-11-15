@@ -241,7 +241,7 @@ go() { gnome-open "$@" & }
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 fastlake() { (eog -f ~/Dropbox/archive/lake.jpg) & }
 plansync() { (cd ~/screens/org/Planning && make sync ); }
-rtouch() { (touch ~/screens/org/Planning/report.txt); }
+rtouch() { (touch ~/screens/org/Planning/report.md); }
 sinklake() { reporttime Sunk; plansync; fastlake; }
 lake() { (sleep $@; xdg-open ~/Dropbox/archive/lake.jpg) & }
 wiss() { (sleep $@; xdg-open ~/Dropbox/archive/old_road.jpg) & }
@@ -264,8 +264,8 @@ alias boatplus="acorns 0; shipminus; boat &"
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
 
-alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.txt'
-alias reportblank='echo >> ~/report.txt'
+alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
+alias reportblank='echo >> ~/report.md'
 
 ## Lighter weight stuff, any good?
 alias work="reporttime work; acorns 0; nopix; sesh"
@@ -296,7 +296,7 @@ agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d |
 
 ######################################################################
 
-reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.txt; }
+reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gvm() { gvim -U ~/.gmvimrc Makefile $@ & }
