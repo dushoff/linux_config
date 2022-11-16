@@ -179,7 +179,7 @@ nmap @w @kgw
 nmap @W @kgW
 
 " Move things around index file
-vmap gw "wdmn/Tomorrow<C-M>}"wp'n
+vmap gw "wdmn/^## <C-M>}"wp'n
 nmap gw Vgw
 vmap gW "wdmn/Next week<C-M>}"wp'n
 nmap gW VgW
