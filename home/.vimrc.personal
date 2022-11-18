@@ -181,7 +181,7 @@ nmap @W @kgW
 " Move things around index file
 vmap gw "wdmn/^## <C-M>}"wp'n
 nmap gw Vgw
-vmap gW "wdmn/Next week<C-M>}"wp'n
+vmap gW "wdmn/^## <C-M>n}"wp'n
 nmap gW VgW
 
 " Push a ¶ to the report (and delete)
