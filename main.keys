@@ -34,8 +34,9 @@ findTab Chrome Docs 12 <Ctrl><Shift>c
 ## GMAIL discard <Ctrl><Shift>d
 ## TERMINAL search! <C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
-## TEAMS <Ctrl><Shift>m
-## TEAMS <Ctrl><Shift>n
+## TEAMS <Ctrl><Shift>k ## hand up/down
+## TEAMS <Ctrl><Shift>m ## mike
+## TEAMS <Ctrl><Shift>o ## camera
 ## CHROME Activate calendar checker <Ctrl><Shift>q
 ## TERMINAL ## New subwindow <Ctrl><Shift>t
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
