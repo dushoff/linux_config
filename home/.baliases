@@ -37,8 +37,6 @@ alias restore="uncache; hstore"
 
 ## alias spine='/bin/cp -f ~/git/Planning/addressbook ~/.addressbook; screen alpine'
 
-## alias gitroot='git clone https://github.com/dushoff/gitroot.git'
-
 alias sup='sup-mail'
 
 alias vanilla='R --vanilla'
@@ -214,8 +212,6 @@ alias lho='lasthome; last'
 alias ldu='lastdown; lastunzip'
 alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
 
-gcd() { git clone https://github.com/dushoff/$1 ; }
-
 lsth() { clear; ls -t $@ |head -10; }
 alias lspdf='lsth "*.pdf"'
 
@@ -278,8 +274,8 @@ alias newday='reportblank; reportday; reportblank; work'
 alias work='reporttime Work; now; shipplus'
 alias play='reporttime Play; now; shipplus'
 alias meet='reporttime Meet; now; boatplus'
-alias rest='reporttime Rest; reportblank; shipminus; now; wiss'
-alias fail='reporttime Fail; reportblank; shipminus; now; wiss'
+alias rest='reporttime Rest; reportblank; shipminus; now'
+alias fail='reporttime Fail; reportblank; shipminus; now'
 
 alias lsd="ls --group-directories-first | more"
 
@@ -295,6 +291,8 @@ agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d ;
 agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d | awk 'BEGIN { FS = "\t"; OFS="\n" } ; { print $2, $5, $6, "" }' ; }
 
 ######################################################################
+
+germ() { git rm $1 || rm -f $1 ; }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
@@ -329,7 +327,6 @@ newscreen() { screen -dm $@; }
 dscreen() { (cd $1; screen -dm $@); }
 dxscreen() { screen -dm $@; ssx $@; }
 dxscreen() { (cd $1; screen -dm $@; ssx $@); }
-gxscreen() { (cd ~/git/$1; screen -dm $@; ssx $@); }
 
 nxscreen() { (cd $2; screen -dm $1; ssx $1); }
 
