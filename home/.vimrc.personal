@@ -1,4 +1,3 @@
-
 let $BASH_ENV = "~/.bashrc"
 
 " Put the first real history line into the git commit message

@@ -40,6 +40,7 @@ digraphs el 8467 " math cursive ell ℓ
 " Pre-existing things I want to remember
 " This is stupid; I should make them into good things. If it's easy to get numbers.
 " digraphs X* × multiplication
+" digraphs -: ÷ division
 " digraphs == ⇔ double left-right arrow
 " digraphs ?2 ≈ approximately equal
 
