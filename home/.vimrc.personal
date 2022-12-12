@@ -178,6 +178,8 @@ nmap @w @kgw
 nmap @W @kgW
 
 " Move things around index file
+vmap gD "wdmn/^## <C-M>{"wP'n
+nmap gD VgD
 vmap gw "wdmn/^## <C-M>}"wp'n
 nmap gw Vgw
 vmap gW "wdmn/^## <C-M>n}"wp'n
