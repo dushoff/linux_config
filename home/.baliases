@@ -254,8 +254,8 @@ alias nopdf="killall evince"
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 1; killall eog"
 alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
-alias shipplus="acorns 0; shipminus; ship &"
-alias boatplus="acorns 0; shipminus; boat &"
+alias shipplus="shipminus; ship &"
+alias boatplus="shipminus; boat &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
@@ -274,7 +274,7 @@ alias newday='reportblank; reportday; reportblank; work'
 alias work='reporttime Work; now; shipplus'
 alias play='reporttime Play; now; shipplus'
 alias meet='reporttime Meet; now; boatplus'
-alias rest='reporttime Rest; reportblank; shipminus; now'
+alias rest='reporttime Rest; reportblank; shipminus; now; acorns 0'
 alias fail='reporttime Fail; reportblank; shipminus; now'
 
 alias lsd="ls --group-directories-first | more"
