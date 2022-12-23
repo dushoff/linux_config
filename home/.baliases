@@ -292,7 +292,7 @@ agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d |
 
 ######################################################################
 
-germ() { (git rm $1 || rm -f $1) && echo $1: `date +"%H:%M"` >> deleted.md; }
+germ() { (git rm -f $1 || rm -f $1) && echo $1: `date +"%H:%M"` >> deleted.md; }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
