@@ -15,6 +15,7 @@ alias right='wmctrl -r ":SELECT:" -e 0,3840,0,1280,800'
 alias nospace='rename "s/ /_/g" *.*'
 alias pdfnames='rename "s/[ ,-]+/_/g" *.pdf'
 alias suspend='systemctl suspend'
+alias sound='gnome-control-center sound'
 
 alias die='exit'
 alias q='exit'
