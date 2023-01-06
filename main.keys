@@ -30,7 +30,8 @@ findwin Zoom <Shift><Alt>z
 ## Find (deep) <Ctrl><Shift>
 ## pickscreen org Planning "^[gc" <Ctrl><Shift>c
 ## TERMINAL  <Ctrl><Shift>c
-findTab Chrome Docs 12 <Ctrl><Shift>c
+## findTab Chrome Docs 12 <Ctrl><Shift>c
+## DOCS word count <Ctrl><Shift>c
 ## GMAIL discard <Ctrl><Shift>d
 ## TERMINAL search! <C-M>" <Ctrl><Shift>f
 pickscreen tech linux_config <Ctrl><Shift>h
