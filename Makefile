@@ -4,7 +4,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -cl "vmt main.keys tilde.mk ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
+	bash -cl "vmt main.keys tilde.mk ~/.vimrc ~/.baliases log.md"
 
 ######################################################################
 
@@ -33,9 +33,7 @@ tarcon.simptak: /proc/uptime
 ## Remarkable config
 
 Sources += rmview.json
-
-rmview.json.config:
-	cd ~/.config && ln -fs $(CURDIR)/rmview.json
+## /home/dushoff/.config/rmview.json
 
 ######################################################################
 
@@ -121,14 +119,6 @@ Sources += $(wildcard Dropbox/*.mk)
 Dropbox/%.mk:
 	cp makestuff/nogit.Makefile $@
 	cd ~/Dropbox/$* && ln -s $(CURDIR)/$@ Makefile
-
-######################################################################
-
-## Window dev
-
-Ignore += winlist
-winlist: bin/listWins
-	$< > $@
 
 ######################################################################
 
