@@ -128,11 +128,11 @@ nn gc 2<C-^>
 " com! Ss source ~/Dropbox/linux/chinese/.svimrc
 com! Sv source ~/.vimrc
 
-com! Sc source ~/Dropbox/linux/chinese/.cvimrc.core
+com! Sc source ~/.cvimrc
 nmap <C-C> :Sc<C-M>
 imap <C-C> <ESC>mm<C-C>`ma
 
-com! Sy source ~/Dropbox/linux/chinese/.cvimrc.fix
+com! Sy source ~/.ecvimrc
 nmap <C-Y> :Sy<C-M>
 imap <C-Y> <ESC>mm<C-Y>`ma
 
