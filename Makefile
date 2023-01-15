@@ -8,7 +8,7 @@ vim_session:
 
 ######################################################################
 
-Sources += README.md
+Sources += README.md TODO.md
 
 # Installation logs (see README.md)
 
