@@ -1,0 +1,43 @@
+map Gb <C-^>
+nmap Gv o<ESC>gv
+
+" n  gb            VygCV:!bc -l<CR>I## <Esc>PJ
+" n  gc          * 2<C-^>
+" n  gC            :s/^[%# \t*]*//<CR>H
+" n  gd          * 3<C-^>
+" n  gD            :!downcall <cfile><CR>
+" n  ge            gEuA ##<Esc>:r !grep bash: ~/.cmdresult || true<CR>:s/#
+" n  gE            gXk:r ~/.cmdresult<CR>
+" n  gf            :e <cfile><CR>
+" n  gF            :let ff=expand("<cfile>")<CR>:let ff=substitute(ff,".Ro
+" n  gG            :s/^[# \t*]*/https:\/\/www.google.ca\/search?q=/<CR>:s/
+" n  gi          * :exe "e " . input<CR>
+" n  gj          * 4<C-^>
+" n  gk          * 5<C-^>
+" n  gK            gm1G/https*:<CR>gN
+" n  gL            gm1G/https*:<CR>gl
+" n  gl            :s/^[# \t>*]*\s*\(.*\)/go "\1"/<CR>gXu:nohlsearch<CR>
+" n  gm          * 1<C-^>
+" n  gM            :make! <cfile><CR>
+" n  gn          * 6<C-^>
+" n  gN            :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<CR>gXu:nohlsearch<CR>
+" n  go          * 7<C-^>
+" n  gO            :!todown <cfile><CR>
+" n  gP          * 1<C-^>g$b:e <cfile><CR>
+" n  gp          * :exe "e " . program<CR>
+" n  gr          * 8<C-^>
+" n  g#            :s/[ #]*$//<CR>H
+" n  gS          * 1<C-^>g0f:BW:e <cfile><CR>
+" n  gs            mg0f:B:let target=expand("<cfile>")<CR>:let target=esca
+" n  gT          * 1<C-^>g0f:B:e <cfile><CR>
+" n  gt          * :exe "e " . target<CR>
+" n  gu            :e target.mk<CR>gg/target.*=<CR>f=wvE"sy1<C-^>:let @s=e
+" n  gU            gmgugs
+" n  gv          * "+gP
+" n  gV            VgV
+" n  gW            VgW
+" n  gw            Vgw
+" n  gX            gCV!bash > ~/.cmdresult<CR>:nohlsearch<CR>
+" n  gx            <Plug>NetrwBrowseX
+" n  gy          * ggVG"+y
+" n  gz          * ggVG"+x
