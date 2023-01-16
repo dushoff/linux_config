@@ -5,8 +5,10 @@ use 5.10.0;
 
 while(<>){
 	s/\s+comma\b/,/g;
+	s/\s+period full stop\b/./g;
 	s/\s+full stop\b/./g;
 	s/\s+question mark\b/?/g;
+	s/\s+exclamation point\b/!/g;
 	s/\s+new paragraph\b/\n\n/g;
 	s/ Cohen$/:/;
 	s/ Cullen$/:/;
