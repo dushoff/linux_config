@@ -1,5 +1,5 @@
 #!/bin/bash
 echo sesh | bash -login
-xdg-open ~/Dropbox/courses/Lecture_images/ship.jpg;
 sleep 1500
+xdg-open ~/Dropbox/courses/Lecture_images/ship.jpg;
 exec ship
