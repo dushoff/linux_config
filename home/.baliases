@@ -253,10 +253,11 @@ alias tesh="squirrel 1400; beaver 2800"
 alias nopdf="killall evince"
 
 ## ship is a script which does sesh in a loop showing the ship at the end
-alias nopix="killall sleep; sleep 1; killall eog"
+alias nopix="killall sleep; sleep 0.1; killall eog"
 alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
-alias shipplus="shipminus; ship &"
-alias boatplus="shipminus; boat &"
+## Deprecated 2023 Jan 18 (Wed)
+## alias shipplus="shipminus; ship &"
+## alias boatplus="shipminus; boat &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
@@ -264,16 +265,9 @@ alias now='pickscreen org Planning'
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 
-## Lighter weight stuff, any good?
-alias work="reporttime work; acorns 0; nopix; sesh"
-alias play="reporttime play; acorns 0; nopix; sesh"
-alias meet="reporttime meet; acorns 0; nopix; tesh"
-alias rest="reporttime rest; acorns 0; nopix; reportblank"
-alias fail="reporttime fail; acorns 0; nopix; reportblank"
-
 alias newday='reportblank; reportday; reportblank; work'
-alias work='reporttime Work; now; shipplus'
-alias play='reporttime Play; now; shipplus'
+alias work='reporttime Work; now; shipminus; ship & sleep 0.1; pickscreen org Planning "^[gj"'
+alias play='reporttime Play; now; shipminus; ship &'
 alias meet='reporttime Meet; now; boatplus'
 alias rest='reporttime Rest; reportblank; shipminus; now; acorns 0'
 alias fail='reporttime Fail; reportblank; shipminus; now'

@@ -1,4 +1,3 @@
-let $BASH_ENV = "~/.bashrc"
 
 " Put the first real history line into the git commit message
 nmap dl d/#	/e<C-M>
@@ -20,7 +19,7 @@ nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-
 nmap GE gEP
 
 " pipe to delimit comments?
-nmap gb VygCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
+nmap gB VygCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap gO :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
 
@@ -76,11 +75,23 @@ imap <F12> <ESC><F12>
 map gH :!make hupstream<C-M>
 
 " go to google (use whole line)
-nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q=/<C-M>:s/ /+/g<C-M>glH
+nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q= /<C-M>:s/ /+/g<C-M>glH
 
 nmap mac 0/[^\/][\/][^\/]/<C-M>a.libaccess.lib.mcmaster.ca<ESC>H
 
 map <F3> <C-^>
+
+nn Q gq
+
+nn gh <C-^>
+nn gr 8<C-^>
+nn go 7<C-^>
+nn gn 6<C-^>
+nn gk 5<C-^>
+nn gj 4<C-^>
+nn gd 3<C-^>
+nn gc 2<C-^>
+nn gm 1<C-^>
 
 " Inline R escape
 vmap r di`r `<ESC>P

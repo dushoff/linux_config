@@ -39,16 +39,6 @@ nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C
 nmap gU gmgugs
 " autocmd VimEnter * normal gU " Finally works, but extra vims conflict now
 
-nn Q gq
-nn gr 8
-nn go 7
-nn gn 6
-nn gk 5
-nn gj 4
-nn gd 3
-nn gc 2
-nn gm 1
-
 nn gt :exe "e " . target<C-M>
 nn gp :exe "e " . program<C-M>
 nn gi :exe "e " . input<C-M>
