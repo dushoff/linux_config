@@ -13,7 +13,7 @@ google-chrome <Ctrl><Alt>w
 ## Find (simple) <Shift><Alt>
 findTab Chrome Calendar <Shift><Alt>c
 pickscreen Dropbox 1 <Shift><Alt>d
-pickscreen org Planning <Shift><Alt>f
+pickscreen org Planning "^[" <Shift><Alt>f
 findTab Chrome Meet <Shift><Alt>g
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
@@ -43,7 +43,7 @@ pickscreen tech linux_config <Ctrl><Shift>h
 pickscreen research 0 "^[gd" <Ctrl><Shift>w
 findTab Chrome YouTube 12 <Ctrl><Shift>y
 
-## <Ctrl><Super> not used! 2022 Sep 08 (Thu)
+## <Ctrl><Super> not used! 2022 Sep 08 (Thu) and it works.
 bash -cl wiss <Ctrl><Super>w
 
 ## Trackpad (could be laptop only)
@@ -53,7 +53,8 @@ nopad <Alt>n
 ## <Super>
 pickscreen org Planning "^[gc" <Super>c
 ## GNOME <Super>d (desktop something; failed to override)
-pickscreen org Planning "^[gj" <Super>j
+pickscreen org Planning <Super>f
+pickscreen org Planning "^[gj" <Super>J
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
