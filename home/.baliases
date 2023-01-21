@@ -268,7 +268,7 @@ alias reportblank='echo >> ~/report.md'
 alias newday='reportblank; reportday; reportblank; work'
 alias work='reporttime Work; now; shipminus; ship & sleep 0.1; pickscreen org Planning "^[gj"'
 alias play='reporttime Play; now; shipminus; ship &'
-alias meet='reporttime Meet; now; boatplus'
+alias meet='reporttime Meet; now; shipminus; boat &'
 alias rest='reporttime Rest; reportblank; shipminus; now; acorns 0'
 alias fail='reporttime Fail; reportblank; shipminus; now'
 
