@@ -12,14 +12,14 @@ nmap gK gm1G/https*:<C-M>gN
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution from the command line
-nmap gC :s/^[%# \t*]*//<C-M>H
-nmap gX gCV!bash -l > ~/.cmdresult<C-M>:nohlsearch<C-M>
+nmap GC :s/^[%# \t*]*//<C-M>H
+nmap gX GCV!bash -l > ~/.cmdresult<C-M>:nohlsearch<C-M>
 nmap gE gXk:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
 
 " pipe to delimit comments?
-nmap gB VygCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
+nmap gB VyGCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap gO :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
 
@@ -76,6 +76,7 @@ map gH :!make hupstream<C-M>
 
 " go to google (use whole line)
 nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q= /<C-M>:s/ /+/g<C-M>glH
+nmap gC :s/^[# \t*]*/https:\/\/translate.google.com\/?sl=zh-TW&tl=en\&op=translate\&text=/<C-M><ESC>glH
 
 nmap mac 0/[^\/][\/][^\/]/<C-M>a.libaccess.lib.mcmaster.ca<ESC>H
 
@@ -210,6 +211,7 @@ nmap @s :%s/^\s\s*$//<C-M>
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
 vmap X "+x
+nmap Y v$Y
 
 " markdown stuff 2022 Jul 04 (Mon); using C-V to escape <C-M> (suppressed related work-around)
 nmap ml I[<ESC>A]<ESC>j:s/[*\s]*//<C-M>I(<ESC>A)<ESC>0kJxH
