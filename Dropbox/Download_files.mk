@@ -5,14 +5,14 @@
 ## update this file from the old-folder Makefile
 ## use the updated version for the new-folder Makefile
 
-2201.newDown:
+2301.newDown:
 %.newDown:
 	- cd ~/Dropbox/Download_files && mkdir $* && cp Makefile $*
 	ls ~/Dropbox/Download_files/$*
 	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
 	cd ~/Downloads && $(MAKE) makestuff && $(MAKE) target.mk
 
-## 2201.newcomputer:
+## 2301.newcomputer:
 %.newcomputer:
 	- mv ~/Downloads ~/tmpDownloads
 	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
@@ -41,29 +41,58 @@ list_conflicts:
 remove_conflicts:
 	$(RM) *confl*
 
+######################################################################
+
+%.filenames: 
+	rename "s/ /_/g; s/,//g; s/-//;" $*/*.*
+	
+%.ls: %.filenames
+	ls $*/*.* > $@
+
 ##################################################################
 
-tulio.highlight.png: tulio.png Makefile
-	convert -region 400x50+165+550 +level-colors black,gold $< $@
-
-moveon.highlight.png: moveon.png
-	convert -region 275x10+815+380 +level-colors black,gold $< $@
+## EPL service
+## https://www.espn.com/soccer/standings/_/league/eng.1
 
 ######################################################################
 
-pouyan_submission_jd.pdf:  pouyan_submission.pdf formDrop/jsig.50.pdf date_2.0.pdf Makefile
-	cat $< | \
-	cpdf -stamp-on $(word 2, $^) -pos-left "050 300" \
+Bicko_requisition.lpr.pdf: Bicko_requisition.pdf
+	lpr -P PDF < $<
+	sleep 2
+	$(MV) ~/PDF/*.* $@
+
+Bicko_test.pdf: Bicko_requisition.lpr.pdf
+	pdfjam $< 2 -o /dev/stdout | \
+	cat > $@
+
+Bicko_request.pdf: Bicko_requisition.lpr.pdf formDrop/jsig.50.pdf Makefile
+	pdfjam $< 2 -o /dev/stdout | \
+	cpdf -stamp-on $(word 2, $^) -pos-left "25 72" \
 		-stdin -stdout | \
-	cpdf -stamp-on $(word 3, $^) -pos-left "130 -1240" \
+	pdfjam /dev/stdin 1 $< 3 -o $@
+
+######################################################################
+
+sfu_page.pdf: sfu_form.pdf
+	pdfjam $< 3 -o $@
+
+sfu_signed.pdf: sfu_page.pdf formDrop/jsig.25.pdf name_1.3.pdf date_1.3.pdf
+	cat $< | \
+	cpdf -stamp-on $(word 2, $^) -pos-left "340 390" \
+		-stdin -stdout | \
+	cpdf -stamp-on $(word 3, $^) -pos-left "270 -630" \
+		-stdin -stdout | \
+	cpdf -stamp-on $(word 4, $^) -pos-left "270 -650" \
 		-stdin -stdout | \
 	cat > $@
 
+sfu_combined.pdf: sfu_form.pdf sfu_signed.pdf Makefile
+	pdfjam -o $@ $< 1,2 $(word 2, $^) 1 $< 4,5
+
+######################################################################
+
 abx.bw.jpg: abx.jpg Makefile
 	convert $< -threshold 45% $@
-
-DushoffLeavePacket.pdf: Dushoff-Leave-Application.docx.pdf DushoffLeaveDescription.pdf standard.pdf funkInvite.pdf hampsonInvite.pdf akhmetInvite.pdf
-	$(pdfcat)
 
 ######################################################################
 
@@ -77,17 +106,6 @@ hdirzip: $(htmldirs:_files=.html.tgz)
 	tar czf $@ $*
 	$(RMR) $*
 
-ccsign.pdf: cc.pdf formDrop/csig.40.pdf date_2.0.pdf 
-	pdfjam $< 4 -o /dev/stdout | \
-	cpdf -stamp-on $(word 2, $^) -pos-left "120 120" \
-		-stdin -stdout | \
-	cpdf -stamp-on $(word 3, $^) -pos-left "-20 -1470" \
-		-stdin -stdout | \
-	cat > $@
-
-cccombine.pdf: cc.pdf ccsign.pdf
-	pdfjam -o $@ $< 1-3 $(word 2, $^)
-
 ######################################################################
 
 jdsquare.jpg: jdhead.jpg
@@ -98,33 +116,41 @@ pr.jpg: prbig.jpg
 
 ##################################################################
 
-fastpy = python3 $< > $@
-interpy = python3 $<
-inpy = python3 $(filter %.py, $^) < $(filter %.in, $^) > $@
-
-## Miriam's developing version of the culminating dice game
-sixdice.py.run: sixdice.py
-	$(interpy)
-
 ## Try to get sound from the dancing babies video
 # ffmpeg -i PA090140.avi -vn -acodec copy jump.aac
 
-## Cribbing
+## Cribbing (broken? 2023 Jan 24 (Tue))
 olddir = /home/dushoff/Dropbox/Download_files/XXXX/
-%: olddir/%
+%: $(olddir)/%
 	$(copy)
 
 ######################################################################
 
 ## Process downloaded zip files of pdfs
 
-grad.stage.pdf: 
-%.stage.pdf:
-	mkdir $*
-	cp `ls -t *.zip | head -1` $*
-	cd $* && unzip *.zip
+fieldsApps2206.zipdir:
+regamrequest.zip:
+
+SACEMA2205.zipdir.filemerge: SACEMA2205.zipdir.md
+
+## This seems better; make last zipfile into a single pdf
+## olumide.lz.pdf: olumide.zip
+
+## mcheck.zipdir:
+%.zipdir:
+	mkdir $@
+	$(MAKE) $*.zipadd
+
+%.zipadd:
+	cp `ls -t *.zip | head -1` $*.zipdir
+	cd $*.zipdir && unzip *.zip && $(RM) *.zip
+
+%.dir.pdf: %
 	pdfjam -o $@ $*/*.pdf
-	$(RMR) $*
+
+## This one makes a zipdir (and drops that indicator)
+%.lz.pdf: %.zipdir
+	pdfjam -o $@ $</*.pdf
 
 ##################################################################
 
@@ -162,6 +188,18 @@ WallisMH.pdf: scan0001.pdf Makefile
 jd_init.jpg: init.jpg
 	convert $< -rotate 270 $@
 
+## Highlighting
+
+tulio.highlight.png: tulio.png Makefile
+	convert -region 400x50+165+550 +level-colors black,gold $< $@
+
+moveon.highlight.png: moveon.png
+	convert -region 275x10+815+380 +level-colors black,gold $< $@
+
+######################################################################
+
+## Signing
+
 up_date:
 
 sign: jsig.jpg
@@ -170,7 +208,7 @@ sign: jsig.jpg
 ## Multiply 800 by date size for range of starting negative offset? Maybe?
 date_100.pdf:
 
-rutgers_trans.pdf: reference.pdf formDrop/sig.100.pdf date_2.0.pdf 
+rutgers_trans.pdf: reference.pdf formDrop/jsig.100.pdf date_2.0.pdf 
 	cat $< | \
 	cpdf -stamp-on $(word 2, $^) -pos-left "50 228" \
 		-stdin -stdout | \
@@ -180,9 +218,21 @@ rutgers_trans.pdf: reference.pdf formDrop/sig.100.pdf date_2.0.pdf
 		-stdin -stdout | \
 	cat > $@
 
-######################################################################
+ccsign.pdf: cc.pdf formDrop/csig.40.pdf date_2.0.pdf 
+	pdfjam $< 4 -o /dev/stdout | \
+	cpdf -stamp-on $(word 2, $^) -pos-left "120 120" \
+		-stdin -stdout | \
+	cpdf -stamp-on $(word 3, $^) -pos-left "-20 -1470" \
+		-stdin -stdout | \
+	cat > $@
 
-## Quick and dirty
+cccombine.pdf: cc.pdf ccsign.pdf
+	pdfjam -o $@ $< 1-3 $(word 2, $^)
+
+Pictures:
+	/bin/ln -s ~/Pictures .
+
+######################################################################
 
 autopipeR = defined
 
@@ -197,11 +247,6 @@ jdaz.pdf.zip:
 
 ######################################################################
 
-makestuff.pull:
-	cd makestuff && git pull
-
-######################################################################
-
 BASE = ~/screens
 Makefile: makestuff/Makefile
 	touch $@
@@ -209,6 +254,7 @@ makestuff/Makefile:
 	ls $(BASE)/makestuff/Makefile && /bin/ln -s $(BASE)/makestuff 
 
 -include makestuff/pipeR.mk
+-include makestuff/rmd.mk
 -include makestuff/pandoc.mk
 -include makestuff/forms.mk
 
