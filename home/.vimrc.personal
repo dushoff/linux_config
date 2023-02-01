@@ -192,9 +192,9 @@ nmap @W @kgW
 " Move things around index file
 vmap gV "wdmn/^## <C-M>{"wP'n
 nmap gV VgV
-vmap gw "wdmn/^## <C-M>}"wp'n
+vmap gw "wdmn/^## <C-M>}}"wP'n
 nmap gw Vgw
-vmap gW "wdmn/^## <C-M>n}"wp'n
+vmap gW "wdmn/^## <C-M>n}}"wP'n
 nmap gW VgW
 
 " Push a ¶ to the report (and delete)
