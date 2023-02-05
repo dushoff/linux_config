@@ -1,16 +1,21 @@
 nmap Gv o<ESC>gv
+nmap Gs <F9>
+nmap Gh <S-F9>
 
+" n  gb UNUSED: batcat?
 " n  gB bc
 " n  gc * 2<C-^>
-" n  gC            :s/^[%# \t*]*//<CR>H
+" n  gC Translate from Chinese (google)
 " n  gd * 3<C-^>
 " n  gD            :!downcall <cfile><CR>
 " n  ge            gEuA ##<Esc>:r !grep bash: ~/.cmdresult || true<CR>:s/#
 " n  gE            gXk:r ~/.cmdresult<CR>
 " n  gf            :e <cfile><CR>
 " n  gF            :let ff=expand("<cfile>")<CR>:let ff=substitute(ff,".Ro
+" gg               [move to top, could be used]
 " n  gG            :s/^[# \t*]*/https:\/\/www.google.ca\/search?q=/<CR>:s/
 " n  gh go buffer
+" n  gH hupstream
 " n  gi          * :exe "e " . input<CR>
 " n  gj * 4<C-^>
 " n  gk * 5<C-^>
