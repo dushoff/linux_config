@@ -85,8 +85,6 @@ map <F3> <C-^>
 nn Q gq
 
 nn gh <C-^>
-nn gr 8<C-^>
-nn go 7<C-^>
 nn gn 6<C-^>
 nn gk 5<C-^>
 nn gj 4<C-^>

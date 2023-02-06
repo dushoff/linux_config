@@ -1,9 +1,12 @@
 map <F2> gs
-map <S-F2> gr
 map <C-F3> :make! -d pullup > make.log && make exclude && git status<C-M>
-map <F4> :make! target<C-M>
-map <S-F4> :!make pdftarget<C-M>
+
+map <F4> gr
+map gr :make! target<C-M>
+map gR :!make pdftarget<C-M>
+map <S-F4> gR
 map <C-S-F4> :!make vtarget<C-M>
+
 map <C-F4> :make -d sync > make.log && git status .<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make! -d all.time > make.log && git status .<C-M>
