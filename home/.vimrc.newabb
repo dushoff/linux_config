@@ -1,6 +1,11 @@
-nmap Gv o<ESC>gv
-nmap Gs <F9>
+" make go and gO for making?
+" GD for todown (parallel with gD)
+" keep gr for report (and move report to slot 7)
+" update this file
+" n GD todown
 nmap Gh <S-F9>
+nmap Gs <F9>
+nmap Gv o<ESC>gv
 
 " n  gb UNUSED: batcat?
 " n  gB bc
@@ -27,7 +32,7 @@ nmap Gh <S-F9>
 " n  gn * 6<C-^>
 " n  gN            :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<CR>gXu:nohlsearch<CR>
 " n  go * 7<C-^>
-" n  gO            :!todown <cfile><CR>
+" n  gO make pdftarget
 " n  gP          * 1<C-^>g$b:e <cfile><CR>
 " n  gp          * :exe "e " . program<CR>
 " n  gr * 8<C-^>
