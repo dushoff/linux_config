@@ -1,4 +1,4 @@
-map <F2> gs
+map <F2> Go
 map <C-F3> :make! -d pullup > make.log && make exclude && git status<C-M>
 
 map <F4> go
@@ -17,7 +17,7 @@ map <C-S-F6> :!vsave; sleep 1<C-M>:make -d forcesync > make.log && git status<C-
 map <F7> :x<C-M>
 map <S-F7> gz
 map <F8> :w<F4>
-map <S-F8> gi<F8>
+map <S-F8> gs<F8>
 map <C-S-F8> <S-F8><S-F4>
 map <F9> :wall<C-M>
 map <S-F9> :wall<C-M>:bd<C-M>
@@ -33,18 +33,18 @@ nmap gf :e <cfile><C-M>
 
 " current F2 engine; old idea of gs for <go script> seems tromped
 " could change this to gS and do navigation to rebuild gs
-nmap gs mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:e target.mk<C-M>mh:exe "%s/target.*=.*/target = " . target "/"<C-M>`h`g
+nmap Go mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C-M>W:let input=expand("<cfile>")<C-M>$b:let program=expand("<cfile>")<C-M>:e target.mk<C-M>mh:exe "%s/target.*=.*/target = " . target "/"<C-M>`h`g
 
 nmap gF :let ff=expand("<cfile>")<C-M>:let ff=substitute(ff,".Rout",".R", "")<C-M>:let ff=substitute(ff,".rda",".R", "")<C-M>:exe "e ".ff<C-M>
 
 " nmap gu gmgg/target.*:<C-M>f:wvE"sy:let @s=escape(@s,'/')<C-M>:exe "/" .@s. ".*:"<C-M>
 nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C-M>:exe "/\\<" .@s. ".*:"<C-M>
-nmap gU gmgugs
+nmap gU gmguGo
 " autocmd VimEnter * normal gU " Finally works, but extra vims conflict now
 
 nn gt :exe "e " . target<C-M>
 nn gp :exe "e " . program<C-M>
-nn gi :exe "e " . input<C-M>
+nn gs :exe "e " . input<C-M>
 
 nn gT 1g0f:B:e <cfile><C-M>
 nn gP 1g$b:e <cfile><C-M>
