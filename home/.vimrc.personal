@@ -17,7 +17,7 @@ nmap gX GCV!bash -l > ~/.cmdresult<C-M>:nohlsearch<C-M>
 nmap gE gXk:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
-nmap gb GsGCIbat <ESC>GE
+nmap gb GsVyGCIbat <ESC>GE
 
 " pipe to delimit comments?
 nmap gB VyGCV:!bc -l<C-M>I## <ESC>PJ| " run through bc

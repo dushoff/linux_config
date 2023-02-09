@@ -45,6 +45,7 @@ nmap gU gmguGo
 nn gt :exe "e " . target<C-M>
 nn gp :exe "e " . program<C-M>
 nn gs :exe "e " . input<C-M>
+nmap gi gs
 
 nn gT 1g0f:B:e <cfile><C-M>
 nn gP 1g$b:e <cfile><C-M>
