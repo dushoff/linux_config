@@ -1,8 +1,9 @@
 " n GD todown
+nn GG G
 nmap Gh <S-F9>
 " nmap Go set target
-" nmap GO set primary target? Not implemented
 nmap Gs <F9>
+" nmap GT touch focal file
 nmap Gv o<ESC>gv
 
 " n  gb batcat?
@@ -36,10 +37,10 @@ nmap Gv o<ESC>gv
 " n  g#            :s/[ #]*$//<CR>H
 " n  gS go script (local)
 " n  gs go script (target)
-" n  gT          * 1<C-^>g0f:B:e <cfile><CR>
-" n  gt          * :exe "e " . target<CR>
-" n  gu            :e target.mk<CR>gg/target.*=<CR>f=wvE"sy1<C-^>:let @s=e
-" n  gU  set target pointers to current target
+" n  gT go target (local)
+" n  gt go target
+" n  gu  find target line
+" n  gU  find target line; set target pointers to current target
 " n  gv          * "+gP
 " n  gV  Move tasks to end of period
 " n  gW  Move tasks to subsequent period
