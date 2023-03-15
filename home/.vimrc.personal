@@ -182,7 +182,6 @@ vmap @k d<ESC>@r
 " New line-based checklist 
 " vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
 nmap @O "cyy:s/^[\s*]*/* /<C-M>
-nmap @c @OA …<ESC><C-T>0kJV@k"cP
 nmap @O "cyy:s/^[* \t]*/* /<C-M>H |" Craziness with \s!
 nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP |" Continuing …
 nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
