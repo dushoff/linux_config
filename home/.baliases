@@ -286,8 +286,8 @@ alias lsd="ls --group-directories-first | more"
 ## Simple quoting finally solved!
 gcq() { gcalcli --calendar jdushoff@gmail.com quick "$*" ; }
 gcim() { gcalcli --calendar jdushoff@gmail.com import "$*" ; }
-agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d ; }
 agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d | awk 'BEGIN { FS = "\t"; OFS="\n" } ; { print $2, $5, $6, "" }' ; }
+Agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +7d | awk 'BEGIN { FS = "\t"; OFS="\n" } ; { print $1, $2, $5, $6, "" }' ; }
 
 ######################################################################
 
