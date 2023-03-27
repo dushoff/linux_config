@@ -8,7 +8,6 @@ nmap gL gm1G/https*:<C-M>gl
 nmap gN :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M>
 nmap gK gm1G/https*:<C-M>gN
 
-
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution from the command line
@@ -140,6 +139,7 @@ nn gc 2<C-^>
 " Unknown and unused tweak
 " com! Ss source ~/Dropbox/linux/chinese/.svimrc
 com! Sv source ~/.vimrc
+com! Rv read ~/.lastvim
 
 com! Sc source ~/.cvimrc
 nmap <C-C> :Sc<C-M>

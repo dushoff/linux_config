@@ -2,6 +2,7 @@
 nn GG G
 nmap Gh <S-F9>
 " nmap Go set target
+" nmap GO make pdftarget
 nmap Gs <F9>
 " nmap GT touch focal file
 nmap Gv o<ESC>gv

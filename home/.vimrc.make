@@ -1,12 +1,14 @@
+
+" Default target makign (see Go below as well)
 map <F2> Go
 map <C-F3> :make! -d pullup > make.log && make exclude && git status<C-M>
-
 map <F4> go
 map go :make! target<C-M>
 map gO :!make pdftarget<C-M>
 map <S-F4> gO
 map <C-S-F4> :!make vtarget<C-M>
 
+" Look at some of this craziness!
 map <C-F4> :make -d sync > make.log && git status .<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make! -d all.time > make.log && git status .<C-M>
@@ -21,6 +23,8 @@ map <S-F8> gs<F8>
 map <C-S-F8> <S-F8><S-F4>
 map <F9> :wall<C-M>
 map <S-F9> :wall<C-M>:bd<C-M>
+
+" Making in background
 map <F10> :!tmake > make.log<C-M>
 map <S-F10> :!vmake > make.log<C-M>
 map <C-F10> :!pmake > make.log<C-M>
