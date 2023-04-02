@@ -154,8 +154,15 @@ com! Space s/ / /g
 com! Pack %s/^\s\s*//
 
 " current mail-trading text-aid-too
-nmap M :source ~/.vimrc.tat<C-M>gg@@<C-O>
+nmap MM :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
+
+" More text manipulation
+com! HTML 1,$!pandoc -t html
+com! VIMBUF w!~/vimbuf.html
+
+nmap Mh :wall<C-M>:HTML:VIMBUF
+nmap Mt :wall<C-M>:1,$!pandoc -t plain<C-M>
 
 " select a paragraph
 nmap <C-P> }{V}
