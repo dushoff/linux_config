@@ -159,10 +159,11 @@ nmap LL gz
 
 " More text manipulation
 com! HTML 1,$!pandoc -t html
+com! HPLAIN 1,$!pandoc -t plain --wrap=none
 com! VIMBUF w!~/vimbuf.html
 
-nmap Mh :wall<C-M>:HTML:VIMBUF
-nmap Mt :wall<C-M>:1,$!pandoc -t plain<C-M>
+nmap Mh :wall<C-M>:HTML<C-M>:VIMBUF<C-M>
+nmap Mt :wall<C-M>:HPLAIN<C-M>
 
 " select a paragraph
 nmap <C-P> }{V}
