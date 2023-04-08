@@ -158,12 +158,13 @@ nmap MM :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
 
 " More text manipulation
-com! HTML 1,$!pandoc -t html
-com! HPLAIN 1,$!pandoc -t plain --wrap=none
+com! XHTML 1,$!pandoc -t html
+com! XPLAIN 1,$!pandoc -t plain --wrap=none
 com! VIMBUF w!~/vimbuf.html
+com! TAT 1,$!perl -pnf ~/bin/tat.pl
 
-nmap Mh :wall<C-M>:HTML<C-M>:VIMBUF<C-M>
-nmap Mt :wall<C-M>:HPLAIN<C-M>
+nmap Mh :wall<C-M>:XHTML<C-M>:VIMBUF<C-M>
+nmap Mt :wall<C-M>:XPLAIN<C-M>
 
 " select a paragraph
 nmap <C-P> }{V}
