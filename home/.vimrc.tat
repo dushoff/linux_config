@@ -1,5 +1,7 @@
 set filetype=mail
 nmap <F7> :w<C-M>
+" 1,$!perl -pnf ~/bin/tat.pl
+TAT
 nmap <F7> :w<C-M>
 map <F9> :wall<C-M>
 nmap LL :wall<C-M>1<C-^>:w!~/.lastvim<C-M>:%s/^/<br>/<C-M>:x<C-M>

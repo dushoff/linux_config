@@ -1,2 +1,2 @@
-colo default
+colo morning
 source ~/.gvimfont
