@@ -13,7 +13,7 @@ com! -nargs=* -complete=file Make make <args> | edit <args>
 " Execution from the command line
 nmap GC :s/^[%# \t*]*//<C-M>H
 nmap gX GCV!bash -l > ~/.cmdresult<C-M>:nohlsearch<C-M>
-nmap gE gXk:r ~/.cmdresult<C-M>
+nmap gE gXO<ESC>:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap GE gEP
 nmap gb GsVyGCIbat <ESC>GE
