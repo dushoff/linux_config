@@ -4,4 +4,4 @@ findwin term
 
 screen -S main -p 0 -X exec ~/bin/wakey $1
 screen -S main -X select 0
-sleep 4181
+sleep 4181m
