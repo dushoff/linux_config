@@ -20,6 +20,14 @@ notes += index.md
 
 ######################################################################
 
+jpgs.md: Makefile
+	find . -name *.jpg > $@
+	find . -name *.jpeg >> $@
+	find . -name *.JPG >> $@
+	find . -name *.JPEG >> $@
+
+######################################################################
+
 vim_session:
 	bash -cl "vmt index.md"
 
