@@ -258,7 +258,7 @@ alias nopdf="killall evince"
 
 ## ship is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 0.1; killall eog"
-alias shipminus="(killall ship; killall boat; nopix) > /dev/null 2>&1"
+alias shipminus="(killall ship; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 ## Deprecated 2023 Jan 18 (Wed)
 ## alias shipplus="shipminus; ship &"
 ## alias boatplus="shipminus; boat &"
@@ -273,7 +273,7 @@ alias newday='reportblank; reportday; reportblank; work'
 alias work='reporttime Work; now; shipminus; ship & sleep 0.1; pickscreen org Planning "^[gj"'
 alias play='reporttime Play; now; shipminus; ship &'
 alias meet='reporttime Meet; now; shipminus; boat &'
-alias rest='reporttime Rest; reportblank; shipminus; now; acorns 0'
+alias rest='reporttime Rest; reportblank; shipminus; now; balloon &'
 alias fail='reporttime Fail; reportblank; shipminus; now'
 
 alias gtag='git log | head -1 | sed -E "s/commit (......).*/\1/"'
