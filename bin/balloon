@@ -1,0 +1,4 @@
+#!/bin/bash
+xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg;
+sleep 99
+exec balloon
