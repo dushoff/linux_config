@@ -158,8 +158,12 @@ nmap MM :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap LL gz
 
 " More text manipulation
+" HTML to plain loses even bullets and markers
+" HTML to markdown by default keeps shit-tons of html
+" So using TAT (and sometimes typing XPLAIN) until we figure out something trickier
 com! XHTML 1,$!pandoc -t html
 com! XPLAIN 1,$!pandoc -t plain --wrap=none
+com! HTMLMD 1,$!pandoc -t markdown
 com! VIMBUF w!~/vimbuf.html
 com! TAT 1,$!perl -pnf ~/bin/tat.pl
 
