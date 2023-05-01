@@ -55,6 +55,8 @@ pickscreen org Planning "^[gj" <Super>j
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
+bash -cl stop <Super>s
+### Does not work (mystery) <Super>s
 bash -cl meet <Super>t
 ## GNOME notifications <Super> v
 bash -cl work <Super>w
@@ -66,5 +68,6 @@ findTab Chrome Meet 12 <Shift><Super>g
 findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen org Planning "^[gr" <Super><Shift>r
+bash -cl stop <Super><Shift>s
 findTab Chrome Voice 12 <Shift><Super>v
 bash -cl newday <Super><Shift>w
