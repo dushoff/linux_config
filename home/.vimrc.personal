@@ -103,7 +103,7 @@ imap <2-LeftMouse> <nop>
 
 " Sectioning
 " (S not in my repertoire right now 2021 Mar 21 (Sun)
-vmap gK J<ESC>a <ESC>60A#<ESC>0
+vmap gK J<ESC>A <ESC>60A#<ESC>0
 nmap gK VjgK
 nmap S _kO
 nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
