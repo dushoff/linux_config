@@ -42,7 +42,7 @@ nmap Go mg0f:B:let target=expand("<cfile>")<C-M>:let target=escape(target,'/')<C
 nmap gF :let ff=expand("<cfile>")<C-M>:let ff=substitute(ff,".Rout",".R", "")<C-M>:let ff=substitute(ff,".rda",".R", "")<C-M>:exe "e ".ff<C-M>
 
 " nmap gu gmgg/target.*:<C-M>f:wvE"sy:let @s=escape(@s,'/')<C-M>:exe "/" .@s. ".*:"<C-M>
-nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C-M>:exe "/\\<" .@s. ".*:"<C-M>
+nmap gu :e target.mk<C-M>gg/target.*=<C-M>f=wvE"sy1<C-^>:let @s=escape(@s,'/')<C-M>:exe "/\\<" .@s. ":"<C-M>
 nmap gU gmguGo
 " autocmd VimEnter * normal gU " Finally works, but extra vims conflict now
 
