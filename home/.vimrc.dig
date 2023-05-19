@@ -39,6 +39,10 @@ digraphs mm 9794 " male symbol ♂
 
 digraphs el 8467 " math cursive ell ℓ
 
+" Combining characters?
+digraphs ^^ 770
+digraphs ~~ 771
+
 " Pre-existing things I want to remember
 " This is stupid; I should make them into good things. If it's easy to get numbers.
 " digraphs X* × multiplication
