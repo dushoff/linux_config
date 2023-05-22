@@ -298,7 +298,7 @@ Agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +7d |
 
 germ() { (git rm -f $1 || rm -f $1) && echo $1: `date +"%F"` >> deleted.md; }
 germ() { (git rm -f $1 || rm -f $1); }
-archive() { (git mv $1 archive/); }
+archive() { make archive/$1; }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
