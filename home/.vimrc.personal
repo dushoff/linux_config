@@ -1,4 +1,3 @@
-
 " Put the first real history line into the git commit message
 nmap dl d/#	/e<C-M>
 
@@ -151,6 +150,8 @@ com! Sy source ~/.ecvimrc
 nmap <C-Y> :Sy<C-M>
 imap <C-Y> <ESC>mm<C-Y>`ma
 
+com! Sf source ~/.vimrc.focal
+
 """"""""""""""" " Non-breaking space stuff (combine with other ascii…)
 com! Space s/ / /g
 com! Pack %s/^\s\s*//
@@ -192,33 +193,6 @@ vmap <C-K> d@r
 " Time stamped dumping dev again 2021 Mar 21 (Sun)
 " Built to indent a one-line ¶ for some reason.
 vmap @k d<ESC>@r
-
-" This is stupid, it should all be done as n ⇒ v
-" New line-based checklist 
-" vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
-nmap @O "cyy:s/^[\s*]*/* /<C-M>
-nmap @O "cyy:s/^[* \t]*/* /<C-M>H |" Craziness with \s!
-nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP |" Continuing …
-nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
-nmap @K I* <ESC>A kk<ESC><C-T>kJV@k |" Finished ✓ (and delete)
-nmap @w @kgw
-nmap @W @kgW
-
-" Move things around index file
-vmap gV "wdmn/^## <C-M>{"wP'n
-nmap gV VgV
-vmap gw "wdmn/^## <C-M>}}"wP'n
-nmap gw Vgw
-vmap gW "wdmn/^## <C-M>n}}"wP'n
-nmap gW VgW
-
-" Push a ¶ to the report (and delete)
-nmap <C-V> <C-P>@k
-
-" Old ¶-based checklist versions 
-" nmap @k }kI* <ESC><C-T>kJV@k
-" nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
-" nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
