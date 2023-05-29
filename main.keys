@@ -55,7 +55,7 @@ pickscreen org Planning "^[gj" <Super>j
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
 bash -cl rest <Super>r
-bash -cl stop <Super>s
+### bash -cl stop <Super>s
 ### Does not work (mystery) <Super>s
 bash -cl meet <Super>t
 ## GNOME notifications <Super> v
