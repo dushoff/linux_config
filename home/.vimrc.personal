@@ -203,9 +203,13 @@ vmap X "+x
 nmap Y v$Y
 
 " markdown stuff 2022 Jul 04 (Mon); using C-V to escape <C-M> (suppressed related work-around)
+" make link; make spread
 nmap ml I[<ESC>A]<ESC>j:s/[*\s]*//<C-M>I(<ESC>A)<ESC>0kJxH
 nmap ms 0x:s/)\s*$//<C-M>:s/](/<C-V><C-M>* /<C-M>
 " nmap ms 0x:s/)\s*$//<C-M>/](<C-M>s<C-M>* <ESC>
+
+vmap S :s/^./* &/<C-M>H
+nmap mD ddjV}kS
 
 " pull an email address from a formatted list
 nmap ym f<lvt>Y
