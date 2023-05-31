@@ -9,6 +9,7 @@ digraphs *.   183 " · dot ·
 digraphs --  8211 " en-dash
 digraphs __  8212 " em-dash
 
+" The next two use <space>!
 digraphs `   8216 " single left quote ‘
 digraphs '   8217 " single right quote ’
 digraphs ``  8220 " double left quote “
