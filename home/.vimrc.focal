@@ -25,5 +25,6 @@ nmap <C-V> <C-P>@k
 " nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
 " nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 
+" Date navigation (e-vents)
 nmap mE /^202<C-M>H
 nmap me /^[0-9][0-9]:[0-9]<C-M>H
