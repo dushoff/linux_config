@@ -59,4 +59,3 @@ lconfig = ~/screens/tech/linux_config
 ######################################################################
 
 -include makestuff/visual.mk
-# -include makestuff/oldlatex.mk
