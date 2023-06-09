@@ -1,4 +1,4 @@
-" This is stupid, it should all be done as n ⇒ v
+" This is stupid, it should all be done with nmap pointing to vmap
 " New line-based checklist 
 " vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
 nmap @O "cyy:s/^[\s*]*/* /<C-M>
@@ -14,7 +14,7 @@ vmap gV "wdmn/^## <C-M>{"wP'n
 nmap gV VgV
 vmap gw "wdmn/^## <C-M>}}"wP'n
 nmap gw Vgw
-vmap gW "wdmn/^## <C-M>n}}"wP'n
+vmap gW "wdmn/Su\><C-M>"wkP'n
 nmap gW VgW
 
 " Push a ¶ to the report (and delete)
@@ -28,3 +28,4 @@ nmap <C-V> <C-P>@k
 " Date navigation (e-vents)
 nmap mE /^202<C-M>H
 nmap me /^[0-9][0-9]:[0-9]<C-M>H
+nmap cE ddjI* <ESC>
