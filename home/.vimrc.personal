@@ -5,7 +5,7 @@ nmap dl d/#	/e<C-M>
 nmap gl :s/^[# \t>*]*\s*\(.*\)/go "\1"/<C-M>gXu:nohlsearch<C-M>
 nmap gL gm1G/https*:<C-M>gl
 nmap Gx :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M>
-nmap GL gm1G/https*:<C-M>gN
+nmap GL gm1G/https*:<C-M>Gx
 
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
