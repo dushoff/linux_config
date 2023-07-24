@@ -67,17 +67,14 @@ alias vml='vi make.log'
 alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
-alias vdc="vsave; dclose; hclose"
+alias dropstatus="dropbox status > ~/.dropstatus"
+alias vdc="vsave; dclose; hclose; dropstatus"
 
-## Strongly deprecated 2022 Jul 27 (Wed)
-
-## <command> | tee out.txt ; test ${PIPESTATUS[0]} -eq 0
-alias ink="((make all.time | tee make.log) || (ice 0 && false))"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias vml="vim make.log"
 alias rink="ink && ((logcheck && sinklake) || squirrel 0)"
-alias sink="vdc; vim ~/.commitnow && rink"
+alias sink="vdc; vim ~/.dropstatus ~/.commitnow && rink"
 alias cink="ink && ((logcheck && sinklake) || vml)"
 
 alias gas="go Dropbox/archive/swati.pdf"
