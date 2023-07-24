@@ -281,7 +281,7 @@ alias gtag='git log | head -1 | sed -E "s/commit (......).*/\1/"'
 gcq() { gcalcli --calendar jdushoff@gmail.com quick "$*" ; }
 glast() { git log -- $* | head -1 | sed -E "s/commit (......).*/\1/" ;}
 
-alias lsd="ls --group-directories-first | more"
+alias lsd="ls -t --group-directories-first | more"
 
 ## alias pdflgrep='pdfgrep $1 | sed -e"s/:.*//"'
 ## pdfgrep -i rubella *.pdf | sed -e "s/:.*//" | sort -u
