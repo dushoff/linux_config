@@ -59,6 +59,7 @@ bash -cl rest <Super>r
 ### Does not work (mystery) <Super>s
 bash -cl meet <Super>t
 ## GNOME notifications <Super> v
+bash -cl here <Super>h
 bash -cl work <Super>w
 bash -cl play <Super>y
 
