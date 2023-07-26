@@ -4,4 +4,5 @@ findwin term
 
 screen -S main -p 0 -X exec ~/bin/wakey $1
 screen -S main -X select 0
+## pickscreen tech linux_config <Ctrl><Shift>h
 sleep 4181m
