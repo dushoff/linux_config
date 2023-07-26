@@ -273,6 +273,7 @@ alias meet='reporttime Meet; now; shipminus; boat &'
 alias rest='reporttime Rest; reportblank; shipminus; now; balloon &'
 alias stop='reporttime Stop; shipminus; '
 alias minus='shipminus; '
+alias here='cd ~/screens/org/Planning && make sync && work'
 alias fail='reporttime Fail; reportblank; shipminus; now'
 
 alias gtag='git log | head -1 | sed -E "s/commit (......).*/\1/"'
