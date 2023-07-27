@@ -51,6 +51,7 @@ nopad <Alt>n
 ## <Super>
 ## GNOME <Super>d (desktop something; failed to override)
 pickscreen org Planning <Super>f
+## Does not work on Dell (does something else) <Super>h
 pickscreen org Planning "^[gj" <Super>j
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
@@ -59,7 +60,6 @@ bash -cl rest <Super>r
 ### Does not work (mystery) <Super>s
 bash -cl meet <Super>t
 ## GNOME notifications <Super> v
-bash -cl here <Super>h
 bash -cl work <Super>w
 bash -cl play <Super>y
 
@@ -70,5 +70,6 @@ findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen org Planning "^[gr" <Super><Shift>r
 bash -cl stop <Super><Shift>s
+bash -cl here <Shift><Super>t
 findTab Chrome Voice 12 <Shift><Super>v
 bash -cl newday <Super><Shift>w
