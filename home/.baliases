@@ -62,7 +62,7 @@ alias dsna='du -s * .??* |sort -n'
 alias vvs='make vim_session || vi Makefile target.mk'
 alias vvs='(make runscreen && bash) || make vim_session || vi Makefile target.mk'
 alias vmt='vi Makefile target.mk'
-alias vproj='vi Makefile target.mk README.md notes.md todo.md'
+alias vproj='vi Makefile target.mk README.md notes.md TODO.md'
 alias vm='vi Makefile'
 alias vml='vi make.log'
 
