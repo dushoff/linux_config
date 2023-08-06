@@ -2,7 +2,8 @@
 
 findwin term
 
-screen -S main -p 0 -X exec ~/bin/wakey $1
-screen -S main -X select 0
+screen -S tech -p wakey -X exec ~/bin/wakey $1
+screen -S main -X select tech
+screen -S tech -X select wakey
 ## pickscreen tech linux_config <Ctrl><Shift>h
 sleep 4181m
