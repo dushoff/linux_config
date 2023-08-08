@@ -18,6 +18,7 @@ findTab Chrome Meet <Shift><Alt>g
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
+pickscreen tech wakey <Shift><Alt>n
 pickscreen 0 0 <Shift><Alt>o
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
