@@ -226,6 +226,7 @@ downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
 downlist() { ls -t Downloads/*.* | head -1 ; }
+downloadlist() { ls -t ~/Downloads/*.* | head -1 ; }
 ## Local- instead of download-focused
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
