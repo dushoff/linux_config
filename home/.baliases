@@ -260,8 +260,8 @@ alias nopdf="killall evince"
 alias nopix="killall sleep; sleep 0.1; killall eog"
 alias shipminus="(killall ship; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 ## Deprecated 2023 Jan 18 (Wed)
-## alias shipplus="shipminus; ship &"
-## alias boatplus="shipminus; boat &"
+alias shipplus="shipminus; ship &"
+alias boatplus="shipminus; boat &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
