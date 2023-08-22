@@ -1,13 +1,13 @@
 " n GD todown
 nn GG G
 nmap Gh <S-F9>
-" nmap GL gm1G/https*:<C-M>gN " Line URL in new window
+" nmap GL " Line URL in new window
 " nmap Go set target
 " nmap GO make pdftarget
 nmap Gs <F9>
 " nmap GT touch focal file
 nmap Gv o<ESC>gv
-" nmap Gx :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M> " URL in ew window
+nmap Gx :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M> " URL in ew window
 
 " n  gb batcat?
 " n  gB bc

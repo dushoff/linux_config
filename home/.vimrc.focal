@@ -29,4 +29,4 @@ nmap <C-V> <C-P>@k
 " Date navigation (e-vents)
 nmap mE /^202<C-M>H
 nmap me /^[0-9][0-9]:[0-9]<C-M>H
-nmap cE ddjI* <ESC>
+" nmap cE ddjI* <ESC>
