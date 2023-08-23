@@ -30,7 +30,7 @@ links = base16-gnome-terminal dropbox.py
 scripts += n17 nono nopad noscreen o17 opad oscreen pado screeno 
 
 ## Commands
-scripts += sdir ship boat tat.pl vi pdfwin cpdf bat quote.pl balloon
+scripts += sdir shiponly boatonly tat.pl vi pdfwin cpdf bat quote.pl balloon
 
 ## Glue # make these scripts use General focus
 scripts += sleepy wakey
