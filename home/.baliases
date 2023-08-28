@@ -188,6 +188,7 @@ alias sent='sendable | head -1 | xargs -i rename "s/send/sent/" "{}"; send'
 alias shots='ls -t Screen*.png'
 alias lastshot='(shots) && ((shots | head -1 | xargs -i touch "{}") || (ice && false)) && gol'
 alias delshot='lastdel && lastshot'
+alias newshots='mv ~/Pictures/Screenshots/*.png ~/Downloads'
 
 alias first='ls -t *.* | tail -1 '
 alias firstdel='first | xargs -i rm -f "{}"'
