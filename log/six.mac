@@ -1,7 +1,9 @@
-
-Ubuntu Dell XPS 15 9520 sound problems
-* Just normal unless I get a very recent kernel patch or something
-
+Ubuntu Dell XPS 15 9520 
 Ubuntu 22.04 installed 2023 Jul
-* Weird sound and gdm-glitch problems
-* gdm solved by upgrading to whatever I have now
+
+Sound problems
+* Just normal unless I get a very recent kernel patch or something
+* Use the headset
+
+gdm 
+* solved by upgrading to lunar
