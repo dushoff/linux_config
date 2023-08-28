@@ -227,6 +227,7 @@ downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
 downlist() { ls -t Downloads/*.* | head -1 ; }
+downloadlist() { ls -t ~/Downloads/*.* | head -1 ; }
 ## Local- instead of download-focused
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
@@ -256,12 +257,12 @@ alias tesh="squirrel 1400; beaver 2800"
 
 alias nopdf="killall evince"
 
-## ship is a script which does sesh in a loop showing the ship at the end
+## shiponly is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 0.1; killall eog"
-alias shipminus="(killall ship; killall boat; killall balloon; nopix) > /dev/null 2>&1"
+alias minus="(killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 ## Deprecated 2023 Jan 18 (Wed)
-## alias shipplus="shipminus; ship &"
-## alias boatplus="shipminus; boat &"
+alias ship="minus; shiponly &"
+alias boat="minus; boatonly &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
@@ -270,14 +271,13 @@ alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 
 alias newday='reportblank; reportday; reportblank; here'
-alias work='reporttime Work; now; shipminus; ship & sleep 0.1; pickscreen org Planning "^[gj"'
-alias play='reporttime Play; now; shipminus; ship &'
-alias meet='reporttime Meet; now; shipminus; boat &'
-alias rest='reporttime Rest; reportblank; shipminus; now; balloon &'
-alias stop='reporttime Stop; shipminus; '
-alias minus='shipminus; '
+alias work='reporttime Work; now; minus; shiponly & sleep 0.1; pickscreen org Planning "^[gj"'
+alias play='reporttime Play; now; minus; shiponly &'
+alias meet='reporttime Meet; now; minus; boat &'
+alias rest='reporttime Rest; reportblank; minus; now; balloon &'
+alias stop='reporttime Stop; minus; '
 alias here='cd ~/screens/org/Planning && make sync && work'
-alias fail='reporttime Fail; reportblank; shipminus; now'
+alias fail='reporttime Fail; reportblank; minus; now'
 alias mailbuffers='gvim /tmp/dushoff* &'
 
 alias gtag='git log | head -1 | sed -E "s/commit (......).*/\1/"'
