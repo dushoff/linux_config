@@ -62,6 +62,7 @@ bash -cl rest <Super>r
 bash -cl meet <Super>t
 ## GNOME notifications <Super> v
 bash -cl work <Super>w
+bash -cl minus <Super>x
 bash -cl play <Super>y
 
 ## <Shift><Super> Find (deep) or extra planning?
