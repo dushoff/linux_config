@@ -260,7 +260,6 @@ alias nopdf="killall evince"
 ## shiponly is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 0.1; killall eog"
 alias minus="(killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
-## Deprecated 2023 Jan 18 (Wed)
 alias ship="minus; shiponly &"
 alias boat="minus; boatonly &"
 
@@ -270,7 +269,7 @@ alias now='pickscreen org Planning'
 alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 
-alias newday='reportblank; reportday; reportblank; here'
+alias newday='here; reportblank; reportday; reportblank;'
 alias work='reporttime Work; now; minus; shiponly & sleep 0.1; pickscreen org Planning "^[gj"'
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boat &'
