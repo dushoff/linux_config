@@ -1,13 +1,13 @@
 " n GD todown
 nn GG G
 nmap Gh <S-F9>
-" nmap GL " Line URL in new window
+" Nmap Gl " gl in a new window
+" nmap GL " gL in a new window
 " nmap Go set target
 " nmap GO make pdftarget
 nmap Gs <F9>
 " nmap GT touch focal file
 nmap Gv o<ESC>gv
-nmap Gx :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M> " URL in ew window
 
 " n  gb batcat?
 " n  gB bc
@@ -26,8 +26,8 @@ nmap Gx :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M> " URL in ew win
 " n  gj * 4<C-^>
 " n  gk * 5<C-^>
 " n  gK            transform schedule line
-" n  gL            gm1G/https*:<CR>gl
-" n  gl            :s/^[# \t>*]*\s*\(.*\)/go "\1"/<CR>gXu:nohlsearch<CR>
+" n  gL            gl on the first hypertext url in the Makefile
+" n  gl            Try to interpret the whole line as a url
 " n  gm * 1<C-^>
 " n  gM            :make! <cfile><CR>
 " n  gn * 6<C-^>
