@@ -16,10 +16,10 @@ nmap gE gXO<ESC>:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap ge gXuA ##<ESC>mz:r !grep bash: ~/.cmdresult \|\| true<C-M>'z:s/##[ #]*$/##/<C-M>
 nmap GE gEP
-nmap gb GsVyGCIbat <ESC>GE
+nmap gB GsVyGCIbat <ESC>gE
 
 " pipe to delimit comments?
-nmap gB VyGCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
+nmap gb VyGCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap GD :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
 nmap GT :!touch <cfile><C-M>| " just touch focal file ⇒ last Download (touch)
