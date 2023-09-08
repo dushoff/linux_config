@@ -270,8 +270,8 @@ alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 
 alias work='reporttime Work; now; minus; shiponly & sleep 0.1; pickscreen org Planning "^[gj"'
-alias here='cd ~/screens/org/Planning && make sync && work'
-alias newday='reportday; reportblank; here;'
+alias here='plansync && work;'
+alias newday='plansync; reportday; reportblank; work;'
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
