@@ -8,7 +8,6 @@ Makefile: makestuff/Makefile
 makestuff/Makefile:
 	ls ~/screens/makestuff/Makefile && /bin/ln -s ~/screens/makestuff 
 
--include makestuff/os.mk
 
 ######################################################################
 
@@ -59,4 +58,4 @@ lconfig = ~/screens/tech/linux_config
 ######################################################################
 
 -include makestuff/visual.mk
--include makestuff/unix.mk
+-include makestuff/os.mk
