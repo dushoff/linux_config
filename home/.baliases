@@ -262,6 +262,7 @@ alias nopix="killall sleep; sleep 0.1; killall eog"
 alias minus="(killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 alias ship="minus; shiponly &"
 alias boat="minus; boatonly &"
+alias ball="minus; balloon &"
 
 alias now='pickscreen org Planning "^[gcg_gk"'
 alias now='pickscreen org Planning'
