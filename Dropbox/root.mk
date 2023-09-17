@@ -8,7 +8,6 @@ Makefile: makestuff/Makefile
 makestuff/Makefile:
 	ls ~/screens/makestuff/Makefile && /bin/ln -s ~/screens/makestuff 
 
-
 ######################################################################
 
 ## Curation
