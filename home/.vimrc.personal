@@ -216,6 +216,12 @@ nmap mD ddjV}kS
 " pull an email address from a formatted list
 nmap ym f<lvt>Y
 
+" Directory-specific stuff; exrc is not recommended
+if(getcwd() == "/home/dushoff/screens/org/Planning")
+	source ~/.vimrc.focal
+endif
+
+
 " filetype plugin on
 
 " execute pathogen#infect()
