@@ -2,4 +2,4 @@
 echo sesh | bash -login
 sleep 1500
 xdg-open ~/Dropbox/courses/Lecture_images/ship.jpg;
-exec ship
+exec shiponly
