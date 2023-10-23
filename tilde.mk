@@ -1,4 +1,4 @@
-## This file is the Makefile for ~dushoff, curated in linux_config
+# This file is the Makefile for ~dushoff, curated in linux_config
 
 glerbs = $(wildcard *.png Webcam/*.jpg)
 
