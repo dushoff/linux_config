@@ -30,8 +30,11 @@ vim_session:
 	bash -cl "vmt index.md"
 
 screen_session:
-	$(MAKE) ~/Downloads.vscreen
+	$(MAKE) Downloads.vscreen
 	$(MAKE) money.vscreen
+
+Downloads:
+	ls -dt Download*/* 
 
 all.time: ;
 
