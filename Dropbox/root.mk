@@ -36,8 +36,6 @@ screen_session:
 Downloads:
 	ls -dt Download*/* 
 
-all.time: ;
-
 pull: ;
 
 ##################################################################
@@ -60,4 +58,5 @@ lconfig = ~/screens/tech/linux_config
 ######################################################################
 
 -include makestuff/visual.mk
+-include makestuff/drop.mk
 -include makestuff/os.mk
