@@ -167,7 +167,7 @@ nmap LL gz
 " So using TAT (and sometimes typing XPLAIN) until we figure out something trickier
 com! XHTML 1,$!pandoc -t html
 com! XPLAIN 1,$!pandoc -t plain --wrap=none
-com! HTMLMD 1,$!pandoc -f html -t markdown
+com! HTMLMD 1,$!pandoc -f html -t markdown_strict
 com! VIMBUF w!~/vimbuf.html
 com! TAT 1,$!perl -pnf ~/bin/tat.pl
 
