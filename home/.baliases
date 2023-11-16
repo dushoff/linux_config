@@ -77,6 +77,7 @@ alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias vml="vim make.log"
 alias rink="ink && ((logcheck && fastlake) || squirrel 0)"
 alias sink="vdc; vim ~/.dropstatus ~/.commitnow && rink"
+alias tsink="vsave; vim ~/.dropstatus ~/.commitnow && rink"
 alias cink="ink && ((logcheck && fastlake) || vml)"
 
 alias gas="go Dropbox/archive/swati.pdf"
