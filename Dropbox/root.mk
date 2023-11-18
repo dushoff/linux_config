@@ -3,6 +3,8 @@
 
 -include target.mk
 
+runscreen: ;
+
 Makefile: makestuff/Makefile
 	touch $@
 makestuff/Makefile:
