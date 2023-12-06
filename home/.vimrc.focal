@@ -2,11 +2,16 @@
 " New line-based checklist 
 " vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
 colo darkblue
+
+com! Sf source ~/.vimrc.focal
+
 nmap @O "cyy:s/^[\s*]*/* /<C-M>
 nmap @O "cyy:s/^[* \t]*/* /<C-M>H |" Craziness with \s!
 nmap @c "cyyI* <ESC>A …<ESC><C-T>0kJV@k"cP |" Continuing …
 nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
-nmap @K I* <ESC>A kk<ESC><C-T>kJV@k |" Finished ✓ (and delete)
+nmap @K I* <ESC>A ✓<ESC><C-T>kJV@k |" Finished ✓ (and delete)
+nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
+nmap @n I* <ESC>A •<ESC><C-T>kJV@k " Null task (and delete)
 nmap @w @kgw
 nmap @W @kgW
 
