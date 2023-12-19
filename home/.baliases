@@ -106,7 +106,7 @@ alias rm='rm -i'
 alias del="'rm' "
 
 alias dir='ls -Fas'
-alias ls='ls -F'
+alias lsf='ls -F'
 alias lsn='ls |grep -v "\/" |grep -v "@"; ls |grep "@."'
 
 alias vc='vi ~/.cshrc'
