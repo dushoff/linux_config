@@ -122,7 +122,9 @@ alias login='source ~/.login'
 
 alias vb='vim +"source ~/.pvimrc" ~/.vimrc'
 
-alias ww='screen -x main || make mainscreen'
+alias ww='make mainscreen'
+alias www='screen -x main || make mainscreen'
+alias wwww='screen -x main || make start'
 alias 12='ww'
 alias 21='ww'
 alias dd='exit'
