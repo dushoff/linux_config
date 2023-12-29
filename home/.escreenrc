@@ -1,4 +1,4 @@
-vbell off
+vbell on
 zombie 'qr'
 deflogin off
 escape e

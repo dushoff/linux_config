@@ -18,7 +18,7 @@ alias suspend='systemctl suspend'
 alias sound='gnome-control-center sound'
 
 alias die='exit'
-alias q='exit'
+alias q='exit 0'
 
 alias vpn='~/Dropbox/linux/install/anyconnect*/vpn/vpnui &'  
 alias fnr='firefox -ProfileManager -no-remote'
