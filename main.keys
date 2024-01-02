@@ -67,6 +67,7 @@ bash -cl play <Super>y
 
 ## <Shift><Super> Find (deep) or extra planning?
 findTab Chrome Calendar 12 <Shift><Super>c
+bash -cl "plansync" <Shift><Super>d
 findTab Chrome Meet 12 <Shift><Super>g
 findTab Chrome Chat 12 <Shift><Super>h
 findTab Chrome Gmail 12 <Shift><Super>m
