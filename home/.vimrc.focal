@@ -12,6 +12,7 @@ nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
 nmap @K I* <ESC>A ✓<ESC><C-T>kJV@k |" Finished ✓ (and delete)
 nmap @k "cyyI* <ESC><C-T>k0JV@k"cP| " Progress
 nmap @n I* <ESC>A •<ESC><C-T>kJV@k " Null task (and delete)
+nmap @V @kgV
 nmap @w @kgw
 nmap @W @kgW
 
