@@ -75,7 +75,7 @@ alias vdc="vsave; dclose; hclose; dropstatus"
 alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
-alias lakecheck="(logcheck && fastlake) || squirrel 0"
+alias lakecheck="(logcheck && leave && fastlake) || squirrel 0"
 alias vcheck="ink && ((logcheck && fastlake) || vml)"
 
 alias rink="ink && (lakecheck)"
@@ -251,6 +251,7 @@ go() { gnome-open "$@" & }
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 fastlake() { (eog -f ~/Dropbox/archive/lake.jpg) & }
 wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
+dandy() { (eog -f ~/Dropbox/courses/Lecture_images/dandy_field.jpg) & }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
 plansync() { vsave && (cd ~/screens/org/Planning && make sync ); }
@@ -290,7 +291,7 @@ alias newday='plansync; reportblank; reportday; reportblank; work;'
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
 alias rest='reporttime Rest; reportblank; minus; now; balloon &'
-alias leave='(rest) && plansync && wiss'
+alias leave='(rest) && plansync && dandy'
 alias Leave='(rest) && allsync && wiss'
 alias allrest='leave'
 alias stop='reporttime Stop; minus; '
