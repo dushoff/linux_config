@@ -78,7 +78,7 @@ alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias lakecheck="(logcheck && leave && fastlake) || squirrel 0"
 alias vcheck="ink && ((logcheck && fastlake) || vml)"
 
-alias rink="ink && (lakecheck) && leave"
+alias rink="ink && (lakecheck)"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 
 alias qsink="presink && rink"
