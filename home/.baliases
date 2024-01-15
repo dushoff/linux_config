@@ -254,7 +254,8 @@ wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
 dandy() { (eog -f ~/Dropbox/courses/Lecture_images/dandy_field.jpg) & }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
-plansync() { vsave && (cd ~/screens/org/Planning && make sync ); }
+opsync() { vsave && (cd ~/screens/org/Planning && make sync ); }
+plansync() { (opsync) || (ice 0 && false) }
 allsync() { (cd ~/screens/ && sink ); }
 
 rtouch() { (touch ~/screens/org/Planning/report.md); }

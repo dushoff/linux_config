@@ -25,6 +25,8 @@ nmap GD :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
 nmap GT :!touch <cfile><C-M>| " just touch focal file ⇒ last Download (touch)
 
 " Email quoting stuff
+com! Rv read ~cat ~/.lastvim
+
 " Clear blank lines
 vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
 nmap @@ VG@@
@@ -141,7 +143,6 @@ nn gc 2<C-^>
 " Unknown and unused tweak
 " com! Ss source ~/Dropbox/linux/chinese/.svimrc
 com! Sv source ~/.vimrc
-com! Rv read ~/.lastvim
 
 com! Sc source ~/.cvimrc
 nmap <C-C> :Sc<C-M>
