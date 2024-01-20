@@ -75,6 +75,5 @@ bash -cl leave <Shift><Super>l
 findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen org Planning "^[gr" <Super><Shift>r
 bash -cl stop <Super><Shift>s
-bash -cl here <Shift><Super>t
 findTab Chrome Voice 12 <Shift><Super>v
 bash -cl newday <Super><Shift>w
