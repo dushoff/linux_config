@@ -204,7 +204,7 @@ let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
 vmap X "+x
 nmap Y v$Y
-nmap X v$hX
+" nmap X v$hX
 
 " markdown stuff 2022 Jul 04 (Mon); using C-V to escape <C-M> (suppressed related work-around)
 " make link; make spread
