@@ -64,7 +64,6 @@ alias vvs='(make runscreen && (bash || true)) || make vim_session || vi Makefile
 alias vmt='vi Makefile target.mk'
 alias vproj='vi Makefile target.mk README.md notes.md TODO.md'
 alias vm='vi Makefile'
-alias vml='vi make.log'
 
 ## alias vl='vim --serverlist'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
@@ -76,9 +75,10 @@ alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias lakecheck="(logcheck && leave && fastlake) || squirrel 0"
-alias vcheck="ink && ((logcheck && fastlake) || vml)"
+alias inkcheck="(logcheck && (ball) && sunk && fastlake) || squirrel 0"
+alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}"'
 
-alias rink="ink && (lakecheck)"
+alias rink="ink && (inkcheck)"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 
 alias qsink="presink && rink"
@@ -254,7 +254,7 @@ wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
 dandy() { (eog -f ~/Dropbox/courses/Lecture_images/dandy_field.jpg) & }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
-opsync() { vsave && (cd ~/screens/org/Planning && make sync ); }
+opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
 plansync() { (opsync) || (ice 0 && false) }
 allsync() { (cd ~/screens/ && sink ); }
 
@@ -291,7 +291,7 @@ alias newday='arrive; reportblank; reportday; reportblank'
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
 alias rest='reporttime Rest; reportblank; minus; now; balloon &'
-alias leave='(rest) && plansync && dandy'
+alias leave='(ball) && reporttime Leave && plansync && dandy'
 alias allrest='leave'
 alias stop='reporttime Stop; minus; '
 alias fail='reporttime Fail; reportblank; minus; now'
