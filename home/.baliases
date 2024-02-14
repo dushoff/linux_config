@@ -79,6 +79,7 @@ alias inkcheck="(logcheck && (ball) && sunk && fastlake) || squirrel 0"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}"'
 
 alias rink="ink && (inkcheck)"
+alias sin="rink"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 
 alias qsink="presink && rink"
