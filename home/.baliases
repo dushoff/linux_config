@@ -191,7 +191,7 @@ alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 alias lastgunzip='ls -t *.gz *.GZ | head -1 | xargs -i gunzip "{}"'
 
 alias sendable='ls -t *.send.*'
-alias send='sendable | tail -1 | xargs -i touch "{}" && gol'
+alias send='sendable | tail -1 | xargs -i touch "{}" && sendable && gol'
 alias sent='sendable | head -1 | xargs -i rename "s/send/sent/" "{}"; send'
 
 alias shots='ls -t Screen*.png'
