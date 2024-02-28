@@ -185,6 +185,8 @@ alias lasttotem='last | xargs -i totem "{}"'
 alias lastmp='last | xargs -i mplayer "{}"'
 alias lastfile='ls -t *.* | head -1 | xargs -i file "{}"'
 alias dell='last | xargs -i rm -f "{}"'
+alias lastright='last | xargs -i convert -rotate 270 "{}" right_"{}"'
+alias lastleft='last | xargs -i convert -rotate 90 "{}" left_"{}"'
 alias lastcat='last | xargs -i cat "{}"'
 alias lastconv='last | xargs -i cat "{}" | convert -'
 alias lastdel='dell'
@@ -232,6 +234,7 @@ alias lst='ls -t |more'
 alias lstm='lst'
 
 todown() { touch $@; cp "$@" ~/Downloads; }
+Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
 alias downput=todown
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }

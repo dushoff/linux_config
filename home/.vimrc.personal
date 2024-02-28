@@ -22,7 +22,7 @@ nmap gB GsVyGCIbat <ESC>gE
 nmap gb VyGCV:!bc -l<C-M>I## <ESC>PJ| " run through bc
 nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap GD :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
-nmap GT :!touch <cfile><C-M>| " just touch focal file ⇒ last Download (touch)
+nmap GT :!touch <cfile><C-M>| " just touch focal file
 
 " Email quoting stuff
 com! Rv read !cat ~/.lastvim
