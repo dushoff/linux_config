@@ -25,9 +25,9 @@ map <F9> :wall<C-M>
 map <S-F9> :wall<C-M>:bd<C-M>
 
 " Making in background
-map <F10> :!tmake > make.log<C-M>
-map <S-F10> :!vmake > make.log<C-M>
-map <C-F10> :!pmake > make.log<C-M>
+map <F10> :!tmake > background.log<C-M>
+map <S-F10> :!vmake > background.log<C-M>
+map <C-F10> :!pmake > background.log<C-M>
 
 nmap d- Vg-d
 nmap d_ Vg_d
