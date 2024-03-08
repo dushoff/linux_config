@@ -74,7 +74,7 @@ alias vdc="vsave; dclose; hclose; dropstatus"
 alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
-alias lakecheck="(logcheck && leave && echo lake && fastlake) || squirrel 0"
+alias lakecheck="(logcheck && leave && echo lake && fastlake) || squirrel 0; "
 alias inkcheck="(logcheck && (ball) && sunk && plansync && fastlake) || squirrel 0"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}"'
 
