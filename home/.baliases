@@ -291,7 +291,7 @@ alias reportblank='echo >> ~/report.md'
 
 alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
 alias arrive='plansync; wiss; plan; reporttime "Arrive ${HOSTNAME}"'
-alias newday='plansync; reportblank; reportday; reportblank'
+alias newday='(ball) && plansync; reportblank; reportday; reportblank'
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
