@@ -83,7 +83,7 @@ alias sin="rink"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 
 alias qsink="presink && rink"
-alias sink="dclose && hclose && qsink"
+alias sink="plansync && dclose && hclose && qsink"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
