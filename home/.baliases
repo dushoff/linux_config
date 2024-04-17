@@ -76,7 +76,7 @@ alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (i
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias lakecheck="(logcheck && leave && echo lake && fastlake) || squirrel 0; "
 alias inkcheck="(logcheck && (ball) && sunk && plansync && fastlake) || squirrel 0"
-alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}"'
+alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
 alias sin="rink"
