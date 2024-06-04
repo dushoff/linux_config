@@ -254,9 +254,9 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 go() { gnome-open "$@" & }
 
 ## eog -f ~/Dropbox/archive/lake.jpg ##
-fastlake() { (eog -f ~/Dropbox/archive/lake.jpg) & }
 wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
-dandy() { (eog -f ~/Dropbox/courses/Lecture_images/dandy_field.jpg) & }
+fastlake() { ls ~/Dropbox/lakes/* | shuf -n 1| xargs eog -f; }
+dandy() { ls ~/Dropbox/dandy/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
