@@ -197,8 +197,12 @@ alias sendable='ls -t *.send.*'
 alias send='sendable | tail -1 | xargs -i touch "{}" && sendable && gol'
 alias sent='sendable | head -1 | xargs -i rename "s/send/sent/" "{}"; send'
 
+alias scanned='ls -t Scanned*.pdf'
+alias lastscan='((scanned) && (scanned | head -1 | xargs -i touch "{}")) || (ice 0 && false) '
+alias delscan='lastdel && lastscan'
+
 alias shots='ls -t Screen*.png'
-alias lastshot='(shots) && ((shots | head -1 | xargs -i touch "{}") || (ice && false)) && gol'
+alias lastshot='((shots) && (shots | head -1 | xargs -i touch "{}")) || (ice 0 && false) '
 alias delshot='lastdel && lastshot'
 alias newshots='mv ~/Pictures/Screenshots/*.png ~/Downloads'
 
