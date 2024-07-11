@@ -5,14 +5,15 @@
 ## This is revision controlled for some reason; push and pull to 
 ## ~/screens/tech/linux_config/Dropbox/Download_files.mk
 
-2407.newDown:
+## 2407.newDown:
 %.newDown:
 	- cd ~/Dropbox/Download_files && mkdir $* && cp ~/Downloads/Makefile $*
 	ls ~/Dropbox/Download_files/$*
 	cd ~ && rm Downloads && ln -s ~/Dropbox/Download_files/$* Downloads
 	cd ~/Downloads && $(MAKE) makestuff && $(MAKE) target.mk
 
-## 2407.newcomputer:
+## Uncommented for bash apparency!
+2407.newcomputer:
 ## This should keep tmpDownloads if it's a real directory
 ## and ditch it if it's a symbolic link to the thing you're deprecating
 %.newcomputer:
