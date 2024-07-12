@@ -19,11 +19,8 @@
 %.newcomputer:
 	- mv ~/Downloads ~/tmpDownloads
 	cd ~ && ln -s ~/Dropbox/Download_files/$* Downloads
+	- $(RM) ~/tmpDownloads
 	- mv ~/tmpDownloads ~/Downloads/
-<<<<<<< HEAD
-=======
-	$(RM) ~/tmpDownloads
->>>>>>> d56ed4273a7592909052e595f5e66b6d2febc88a
 
 ######################################################################
 
