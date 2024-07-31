@@ -202,7 +202,7 @@ alias lastscan='((scanned) && (scanned | head -1 | xargs -i touch "{}")) || (ice
 alias delscan='lastdel && lastscan'
 
 alias shots='ls -t Screen*.png'
-alias lastshot='((shots) && (shots | head -1 | xargs -i touch "{}")) || (ice 0 && false) '
+alias lastshot='((shots | head -1 | xargs -i touch "{}") && gol) || (ice 0 && false) '
 alias delshot='lastdel && lastshot'
 alias newshots='mv ~/Pictures/Screenshots/*.png ~/Downloads'
 
@@ -453,6 +453,8 @@ scl() { scp -r dushoff@lalashan.mcmaster.ca:$@; }
 sctl() { scp -r $@ dushoff@lalashan.mcmaster.ca:; }
 scm() { scp -r dushoff@mathserv.mcmaster.ca:$@; }
 sctm() { scp -r $@ dushoff@mathserv.mcmaster.ca:; }
+scms() { scp -r dushoff@ms.mcmaster.ca:$@; }
+sctms() { scp -r $@ dushoff@ms.mcmaster.ca:; }
 scz() { scp dushoff@zebra.sharcnet.ca:$@; }
 sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
 
