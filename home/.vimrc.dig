@@ -41,7 +41,7 @@ digraphs mm 9794 " male symbol ♂
 
 digraphs el 8467 " math cursive ell ℓ
 
-" Combining characters?
+" Combining characters? accents; these feel weird in vim, but probably ok for copy-paste
 digraphs ^^ 770
 digraphs ~~ 771
 
