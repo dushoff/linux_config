@@ -19,10 +19,19 @@ nmap @W @kgW
 " Move things around index file
 vmap gV "wdmn/^## <C-M>{"wP'n
 nmap gV VgV
-vmap gw "wdmn/^## <C-M>}}"wP'n
+vmap gw "wdmn/^## <C-M>}"wP'n
 nmap gw Vgw
 vmap gW "wdmn/Su\><C-M>"wkP'n
 nmap gW VgW
+
+" Why am I having trouble with marks?
+nmap 1D /## Monday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 2D /## Tuesday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 3D /## Wednesday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 4D /## Thursday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 5D /## Friday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 6D /## Saturday/<C-M><C-O>ddn}P<C-O><C-O>
+nmap 7D /## Sunday/<C-M><C-O>ddn}P<C-O><C-O>
 
 " Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
