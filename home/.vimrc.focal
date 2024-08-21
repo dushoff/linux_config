@@ -33,6 +33,14 @@ nmap 5D /## Friday/<C-M><C-O>ddn}P<C-O><C-O>
 nmap 6D /## Saturday/<C-M><C-O>ddn}P<C-O><C-O>
 nmap 7D /## Sunday/<C-M><C-O>ddn}P<C-O><C-O>
 
+nmap 1C @k1D
+nmap 2C @k2D
+nmap 3C @k3D
+nmap 4C @k4D
+nmap 5C @k5D
+nmap 6C @k6D
+nmap 7C @k7D
+
 " Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
 
