@@ -1,4 +1,4 @@
 #!/bin/bash
 xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg;
-sleep 99
+sleep 88
 exec balloon
