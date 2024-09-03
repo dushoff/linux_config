@@ -51,6 +51,7 @@ digraphs ~~ 771
 " digraphs -: ÷ division
 " digraphs == ⇔ double left-right arrow
 " digraphs ?2 ≈ approximately equal
+" digraphs In ∫ integral
 
 " XX ✗
 " OK ✓
