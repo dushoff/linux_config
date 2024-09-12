@@ -81,6 +81,7 @@ alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 alias rink="ink && (inkcheck)"
 alias sin="rink"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
+alias presink="vsave; vim ~/.commitnow"
 
 alias qsink="presink && rink"
 alias sink="plansync && dclose && hclose && qsink"
