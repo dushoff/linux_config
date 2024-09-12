@@ -8,6 +8,7 @@ nmap Gh <S-F9>
 nmap Gs <F9>
 " nmap GT touch focal file
 nmap Gv o<ESC>gv
+nmap Gx gx in a new window
 
 " n  gb batcat?
 " n  gB bc
