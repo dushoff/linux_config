@@ -25,6 +25,7 @@ vmap gW "wdmn/Su\><C-M>"wkP'n
 nmap gW VgW
 
 " Why am I having trouble with marks?
+nmap 0D dd1GP@c
 nmap 1D /## Monday/<C-M><C-O>ddn}P<C-O><C-O>
 nmap 2D /## Tuesday/<C-M><C-O>ddn}P<C-O><C-O>
 nmap 3D /## Wednesday/<C-M><C-O>ddn}P<C-O><C-O>
