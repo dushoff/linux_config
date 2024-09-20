@@ -132,6 +132,9 @@ Ignore += meadows
 pushup: meadows.time
 pullup: meadows.get
 
+meadows lakes:
+	$(mkdir)
+
 ######################################################################
 
 ## Makestuff setup
