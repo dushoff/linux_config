@@ -137,4 +137,5 @@ makestuff/Makefile:
 ### Makestuff rules
 
 -include makestuff/git.mk
+-include makestuff/mirror.mk
 -include makestuff/visual.mk
