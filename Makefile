@@ -124,10 +124,13 @@ Dropbox/%.mk:
 
 ## mirror dev
 
+Ignore += lakes
 pushup: lakes.time
 pullup: lakes.get
 
-Ignore += lakes
+Ignore += meadows
+pushup: meadows.time
+pullup: meadows.get
 
 ######################################################################
 
