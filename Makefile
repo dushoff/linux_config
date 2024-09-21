@@ -129,10 +129,11 @@ ms = makestuff
 -include makestuff/os.mk
 
 Ignore += makestuff
-Makefile: makestuff/Makefile
-makestuff/Makefile:
-	git clone $(msrepo)/makestuff
-	ls $@
+Makefile: makestuff/00.stamp
+makestuff/%.stamp:
+	- $(RM) makestuff/*.stamp
+	(cd makestuff && $(MAKE) pull) || git clone --depth 1 $(msrepo)/makestuff
+	touch $@
 
 ### Makestuff rules
 
