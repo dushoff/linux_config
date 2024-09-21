@@ -122,6 +122,21 @@ Dropbox/%.mk:
 
 ######################################################################
 
+## mirror dev
+
+Ignore += lakes
+pushup: lakes.time
+pullup: lakes.get
+
+Ignore += meadows
+pushup: meadows.time
+pullup: meadows.get
+
+meadows lakes:
+	$(mkdir)
+
+######################################################################
+
 ## Makestuff setup
 Sources += Makefile 
 msrepo = https://github.com/dushoff
@@ -138,4 +153,5 @@ makestuff/%.stamp:
 ### Makestuff rules
 
 -include makestuff/git.mk
+-include makestuff/mirror.mk
 -include makestuff/visual.mk
