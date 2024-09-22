@@ -262,8 +262,8 @@ go() { gnome-open "$@" & }
 
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
-fastlake() { ls ~/Dropbox/lakes/* | shuf -n 1| xargs eog -f; }
-dandy() { ls ~/Dropbox/dandy/* | shuf -n 1| xargs eog -f; }
+fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
+meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
@@ -304,7 +304,7 @@ alias newday='(ball) && plansync; reportblank; reportday; reportblank'
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
 alias rest='(ball) && reporttime Rest; reportblank; now;'
-alias leave='(ball) && reporttime "Leave ${HOSTNAME}" && reportblank && plansync && dandy'
+alias leave='(ball) && reporttime "Leave ${HOSTNAME}" && reportblank && plansync && meadow'
 alias stop='reporttime Stop && reportblank && minus; '
 alias fail='reporttime Fail; reportblank; minus; now'
 alias mailbuffers='gvim /tmp/dushoff* &'
