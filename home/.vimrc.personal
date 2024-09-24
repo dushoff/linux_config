@@ -7,6 +7,7 @@ nmap gL gm1G/https*:<C-M>gl
 nmap Gl :s/^[# \t>*]*\s*\(.*\)/ncw "\1"/<C-M>gXu:nohlsearch<C-M>
 nmap GL gm1G/https*:<C-M>Gl
 
+nmap g. /^[<=>]/<C-M>
 com! -nargs=* -complete=file Make make <args> | edit <args>
 
 " Execution from the command line
