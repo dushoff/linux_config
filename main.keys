@@ -12,7 +12,7 @@ google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
 findTab Chrome Calendar <Shift><Alt>c
-pickscreen drops Downloads <Shift><Alt>d
+pickscreen org Downloads <Shift><Alt>d
 pickscreen org Planning "^[" <Shift><Alt>f
 findTab Chrome Meet <Shift><Alt>g
 findTab Chrome Chat <Shift><Alt>h
