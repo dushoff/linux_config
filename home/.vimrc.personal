@@ -186,6 +186,7 @@ nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
 nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
+nmap @D <C-D>I##### 
 
 " paragraph paragraphing
 nmap @C :1,$!cat -s<C-M>
