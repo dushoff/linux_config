@@ -75,7 +75,7 @@ alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias lakecheck="(logcheck && leave && echo lake && fastlake) || squirrel 0; "
-alias inkcheck="(logcheck && (ball) && sunk && plansync && fastlake && echo inkcheck `date`) || squirrel 0"
+alias inkcheck="(logcheck && (ball) && sunk && planup && fastlake && echo inkcheck `date`) || squirrel 0"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
@@ -268,7 +268,9 @@ meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; plansync; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
+upsync() { (cd ~/screens/org/Planning && make report.autoup ); }
 plansync() { (opsync) || (ice 0 && false) }
+planup() { (upsync) || (ice 0 && false) }
 allsync() { (cd ~/screens/ && sink ); }
 
 rtouch() { (touch ~/screens/org/Planning/report.md); }
