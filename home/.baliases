@@ -84,7 +84,7 @@ alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
 
 alias qsink="presink && rink"
-alias sink="plansync && dclose && hclose && qsink"
+alias sink="planup && dclose && hclose && qsink"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
@@ -266,7 +266,7 @@ wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
-sinklake() { reporttime Sunk; plansync; fastlake; }
+sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
 upsync() { (cd ~/screens/org/Planning && make report.autoup ); }
 plansync() { (opsync) || (ice 0 && false) }
@@ -301,13 +301,12 @@ alias reportblank='echo >> ~/report.md'
 
 alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
 alias arrive='(ship) && plansync; wiss; plan; reporttime "Arrive ${HOSTNAME}"'
-## alias arrive='plansync && nopix; plan; reporttime "Arrive ${HOSTNAME}"; wiss;'
 alias newday='(ball) && plansync; reportblank; reportday; reportblank'
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
 alias rest='(ball) && reporttime Rest; reportblank; now;'
-alias leave='(ball) && reporttime "Leave ${HOSTNAME}" && reportblank && plansync && meadow'
+alias leave='(ball) && reporttime "Leave ${HOSTNAME}" && reportblank && planup && meadow'
 alias stop='reporttime Stop && reportblank && minus; '
 alias fail='reporttime Fail; reportblank; minus; now'
 alias mailbuffers='gvim /tmp/dushoff* &'
