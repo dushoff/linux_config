@@ -246,6 +246,7 @@ Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
 alias downput=todown
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }
+downnull() { ls -t ~/Downloads/*.* | head -1 | xargs -i 'rm' "{}"; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
 downlist() { ls -t Downloads/*.* | head -1 ; }
 downloadlist() { ls -t ~/Downloads/*.* | head -1 ; }
