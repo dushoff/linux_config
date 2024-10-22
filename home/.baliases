@@ -270,8 +270,10 @@ meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
 upsync() { (cd ~/screens/org/Planning && make report.autoup ); }
+downsync() { (cd ~/screens/org/Planning && make pullup ); }
 plansync() { (opsync) || (ice 0 && false) }
 planup() { (upsync) || (ice 0 && false) }
+plandown() { (downsync) || (ice 0 && false) }
 allsync() { (cd ~/screens/ && sink ); }
 
 rtouch() { (touch ~/screens/org/Planning/report.md); }
@@ -301,8 +303,8 @@ alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 
 alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
-alias arrive='(ship) && plansync; wiss; plan; reporttime "Arrive ${HOSTNAME}"'
-alias newday='(ball) && plansync; reportblank; reportday; reportblank'
+alias arrive='(ship) && plandown; wiss; plan; reporttime "Arrive ${HOSTNAME}"'
+alias newday='(ball) && plandown; reportblank; reportday; reportblank'
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
