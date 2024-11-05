@@ -75,17 +75,17 @@ alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias logcheck="! (grep $'\t' make.log)"
-alias lakecheck="(logcheck && leave && echo lake && fastlake) || squirrel 0; "
-alias inkcheck="(logcheck && (ball) && sunk && planup && fastlake && echo inkcheck `date`) || squirrel 0"
+alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || squirrel 0"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
-alias sin="rink"
+alias sin="(cd ~/screens && rink && planup && fastlake)"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
 
-alias qsink="presink && rink"
+alias qsink="presink && sin"
 alias sink="planup && dclose && hclose && qsink"
+alias sink="dclose && hclose && qsink"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
