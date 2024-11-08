@@ -82,6 +82,7 @@ alias rink="ink && (inkcheck)"
 alias sin="(cd ~/screens && rink && planup && fastlake)"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
+alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 
 alias qsink="presink && sin"
 alias sink="planup && dclose && hclose && qsink"

@@ -79,7 +79,7 @@ imap <F12> <ESC><F12>
 map gH :!make hupstream<C-M>
 
 " go to google (use whole line)
-nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q= /<C-M>:s/ /+/g<C-M>glH
+nmap gG :s/^[# \t*]*/https:\/\/www.google.ca\/search?q= /<C-M>:s/ /+/g<C-M>GlH
 nmap gC :s/^[# \t*]*/https:\/\/translate.google.com\/?sl=zh-TW&tl=en\&op=translate\&text=/<C-M><ESC>glH
 
 nmap mac 0/[^\/][\/][^\/]/<C-M>a.libaccess.lib.mcmaster.ca<ESC>H
