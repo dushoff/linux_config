@@ -75,7 +75,7 @@ alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias logcheck="! (grep $'\t' make.log)"
-alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || squirrel 0"
+alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || (squirrel 0 && false)"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
