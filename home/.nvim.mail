@@ -1,0 +1,5 @@
+set filetype=mail
+nmap MM :TAT<C-M>
+nmap LL :wall<C-M>1<C-^>:w!~/.lastvim<C-M>:%s/^/<br>/<C-M><S-F9>
+nmap HH :wall<C-M>1<C-^>:w!~/.lastvim<C-M>:1,$!pandoc -t html<C-M><S-F9>
+
