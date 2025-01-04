@@ -1,0 +1,14 @@
+source ~/.vimrc
+set encoding=utf-8
+let g:ghost_port = 5353
+
+" Vim-plug
+call plug#begin()
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+" Plug '/jmcantrell/vim-virtualenv'
+" Plug 'subnut/nvim-ghost.nvim'
+call plug#end()
+
+" filetype plugin on

@@ -22,15 +22,6 @@ log.filemerge: log.md
 
 ######################################################################
 
-## Editor calling?
-## Seems to work! Should be useful.
-
-Ignore += tarcon.simptak
-tarcon.simptak: /proc/uptime
-	vim $@
-
-######################################################################
-
 ## Remarkable config
 
 Sources += rmview.json
@@ -38,10 +29,19 @@ Sources += rmview.json
 
 ######################################################################
 
-## Or by just sourcing from here (home)
+## nvim/ghost stuff
+
+## dushoff@Tellurium:~/screens/tech$ netstat -lntup 
+
+nvimlink: init.vim
+	cd ~/.config/nvim && ln -fs $(CURDIR)/$<
+
+Sources += init.vim
+
+######################################################################
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
-relink: linkmake linkbin linkhome
+relink: linkmake linkbin linkhome nvimlink
 
 ## Stuff for bin
 linkbin:
