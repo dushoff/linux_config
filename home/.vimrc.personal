@@ -228,9 +228,6 @@ if(getcwd() == "/home/dushoff/screens/org/Planning")
 	source ~/.vimrc.focal
 endif
 
-
-" filetype plugin on
-
 " execute pathogen#infect()
 augroup markdown
     au!
