@@ -148,3 +148,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ## source $HOME/.bashrc.local
 ## source $HOME/.rvm/scripts/rvm
+
+## For nvim/python
+XDG_DATA_HOME=/home/dushoff/.local/share/
