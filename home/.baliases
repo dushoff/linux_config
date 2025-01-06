@@ -1,6 +1,8 @@
 ## WHAT is this? 2019 Sep 19 (Thu)
 shopt -s expand_aliases
 
+alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
+
 ## Moving from flow 2019 Jul 14 (Sun)
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
 alias nmr='sudo service network-manager restart'
@@ -92,7 +94,7 @@ alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 
-alias gvim='gvim -f'
+## alias gvim='gvim -f'
 
 alias bark='ls ~/screens/Talks/*/*.*g | shuf -n 1 | xopen'
 alias rld='ls -t Downloads/*.* | head -1'
