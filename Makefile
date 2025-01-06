@@ -33,8 +33,11 @@ Sources += rmview.json
 
 ## dushoff@Tellurium:~/screens/tech$ netstat -lntup 
 
-nvimlink: init.vim
+nvimlink: init.vim ~/.config/nvim
 	cd ~/.config/nvim && ln -fs $(CURDIR)/$<
+
+~/.config/nvim:
+	$(mkdir)
 
 Sources += init.vim
 
