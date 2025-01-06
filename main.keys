@@ -14,7 +14,7 @@ google-chrome <Ctrl><Alt>w
 findTab Chrome Calendar <Shift><Alt>c
 pickscreen org Downloads <Shift><Alt>d
 pickscreen org Planning "^[" <Shift><Alt>f
-findTab Chrome Meet <Shift><Alt>g
+pickscreen tech ghost <Shift><Alt>g
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
@@ -25,7 +25,7 @@ pickscreen tech run <Shift><Alt>r
 findwin term <Shift><Alt>t
 findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
-findwin Zoom <Shift><Alt>z
+findTab Chrome Zoom <Shift><Alt>z
 
 ## FindTab Chrome not good for zoom because zoom not typically in tab title
 ## Find (deep) <Ctrl><Shift>
