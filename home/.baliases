@@ -87,7 +87,6 @@ alias presink="vsave; vim ~/.commitnow"
 alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 
 alias qsink="presink && sin"
-alias sink="planup && dclose && hclose && qsink"
 alias sink="dclose && hclose && qsink"
 
 alias gas="go Dropbox/archive/swati.pdf"
@@ -273,7 +272,7 @@ meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
-upsync() { (cd ~/screens/org/Planning && make report.autoup Downloads.puttime ); }
+upsync() { (cd ~/screens/org/Planning && make report.autoup ); }
 downsync() { (cd ~/screens/org/Planning && make pullup ); }
 plansync() { (opsync) || (ice 0 && false) }
 planup() { (upsync) || (ice 0 && false) }
