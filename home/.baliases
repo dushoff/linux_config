@@ -273,7 +273,7 @@ meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
-upsync() { (cd ~/screens/org/Planning && make report.autoup Downloads.puttime ); }
+upsync() { (cd ~/screens/org/Planning && make report.autoup commit.time ); }
 downsync() { (cd ~/screens/org/Planning && make pullup ); }
 plansync() { (opsync) || (ice 0 && false) }
 planup() { (upsync) || (ice 0 && false) }
