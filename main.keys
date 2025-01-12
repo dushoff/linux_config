@@ -15,6 +15,7 @@ findTab Chrome Calendar <Shift><Alt>c
 pickscreen org Downloads <Shift><Alt>d
 pickscreen org Planning "^[" <Shift><Alt>f
 pickscreen tech ghost <Shift><Alt>g
+
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
