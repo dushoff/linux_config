@@ -160,7 +160,8 @@ com! Space s/ / /g
 com! Pack %s/^\s\s*//
 
 " current mail-trading text-aid-too
-nmap MM :source ~/.vimrc.tat<C-M>gg@@<C-O>
+nmap MG :source ~/.vimrc.tat<C-M>gg@@<C-O>
+nmap MM :TAT<C-M>
 nmap LL gz
 
 " More text manipulation
