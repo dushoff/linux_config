@@ -330,6 +330,7 @@ alias lsd="ls -t --group-directories-first | more"
 ######################################################################
 
 ## Simple quoting finally solved!
+## Now we have app access problems
 gcq() { gcalcli --calendar jdushoff@gmail.com quick "$*" ; }
 gcim() { gcalcli --calendar jdushoff@gmail.com import "$*" ; }
 agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +1d | awk 'BEGIN { FS = "\t"; OFS="\n" } ; { print $2, $5, $6, "" }' ; }

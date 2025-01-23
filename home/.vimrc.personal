@@ -205,6 +205,7 @@ vmap @k d<ESC>@r
 
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
+com! Blank %s/^\s\s*$//
 
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y

@@ -1,7 +1,4 @@
-" This is stupid, it should all be done with nmap pointing to vmap
-" New line-based checklist 
-" vim clash; can probably delete next two lines 2022 Nov 13 (Sun)
-colo darkblue
+" colo darkblue
 
 com! Sf source ~/.vimrc.focal
 
