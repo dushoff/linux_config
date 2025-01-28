@@ -191,9 +191,6 @@ nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 nmap @D <C-D>I##### <ESC>
 
-" paragraph paragraphing
-nmap @C :1,$!cat -s<C-M>
-
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
 nmap <C-K> V<C-K>
@@ -203,9 +200,12 @@ vmap <C-K> d@r
 " Built to indent a one-line ¶ for some reason.
 vmap @k d<ESC>@r
 
+" paragraph paragraphing
+nmap @C :1,$!cat -s<C-M>
 " Clear space-only lines
 nmap @s :%s/^\s\s*$//<C-M>
 com! Blank %s/^\s\s*$//
+com! Clear 1,$!cat -s
 
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
