@@ -33,6 +33,7 @@ Sources += rmview.json
 
 ## dushoff@Tellurium:~/screens/tech$ netstat -lntup 
 
+## neovim start here I guess
 nvimlink: init.vim ~/.config/nvim
 	cd ~/.config/nvim && ln -fs $(CURDIR)/$<
 
