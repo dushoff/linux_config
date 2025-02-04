@@ -1,5 +1,3 @@
-## .vimrc.personal.0dd0a02.oldfile
-## .baliases.16784f42.oldfile
 
 ## Shadow directory for ~
 
@@ -28,6 +26,8 @@ $(ms)/Makefile:
 resting = .pinerc 
 files = .addressbook .aliases .baliases .bashrc .blocal.ubuntu .cshrc .escreenrc .gcvimrc .gmvimrc .gpvimrc .gvimfont .gvimrc .pvimrc .rgvimrc .screenrc .tgvimrc .tvimrc .vimrc .vimrc.basic .vimrc.break .vimrc.iat .vimrc.jdiat .vimrc.make .vimrc.nomake .vimrc.personal .vimrc.prev .vimrc.tat .vimrc.tex .vimrc.twitter .vimrc.windows 
 files += .vimrc.ab .vimrc.dig .vimrc.au .vimrc.newabb .vimrc.focal
+
+## neovim ghost stuff; 
 files += .nvim.ghost .nvim.mail
 
 Sources += $(files)
