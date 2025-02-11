@@ -96,7 +96,7 @@ Sources += $(wildcard *.pl)
 Sources += main.keys
 Ignore += *.conf
 
-## main.load: main.keys
+## main.load: main.keys main.conf
 %.load:  %.conf
 	dconf load / < $<
 
