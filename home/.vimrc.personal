@@ -68,6 +68,7 @@ nmap <C-U> :files<C-M>
 
 " Copy paste
 nn gz ggVG"+x
+nn gZ gg"ddG
 nn gy ggVG"+y
 nn gv "+gP
 nmap <F11> gv
