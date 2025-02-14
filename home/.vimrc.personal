@@ -28,9 +28,6 @@ nmap GT :!touch <cfile><C-M>| " just touch focal file
 " Email quoting stuff
 com! Rv read !cat ~/.lastvim
 
-" Clear blank lines
-vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
-nmap @@ VG@@
 
 "Quote and reformat
 vmap $$ :s/./> &/<C-M>:'<,'>!cat -s<C-M>H
@@ -41,7 +38,7 @@ vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
 nmap >> VG>>
 
 " Unquoting?
-vmap + :s/^[>  	]*//<C-M>
+vmap + :s/^[>  	]*//<C-M>H
 nmap + VG+
 
 nmap @f gg/\<folder<C-M>
@@ -207,6 +204,9 @@ nmap @C :1,$!cat -s<C-M>
 nmap @s :%s/^\s\s*$//<C-M>
 com! Blank %s/^\s\s*$//
 com! Clear 1,$!cat -s
+" Clear blank lines
+vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
+nmap @@ VG@@
 
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
