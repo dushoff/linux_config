@@ -45,6 +45,7 @@ pickscreen research 0 "^[gd" <Ctrl><Shift>w
 findTab Chrome YouTube 12 <Ctrl><Shift>y
 
 ## <Ctrl><Super> not used! 2022 Sep 08 (Thu) and it works.
+## CS 1-4 for move to screen; maybe also use left and right arrows??
 bash -cl wiss <Ctrl><Super>w
 
 ## Trackpad (could be laptop only)
