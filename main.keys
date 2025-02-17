@@ -75,7 +75,7 @@ pickscreen org Planning "^[gkgZgv" <Shift><Super>p
 ## pickscreen org Planning "^[gr" <Super><Shift>d ## unusable (weird)
 findTab Chrome Meet 12 <Shift><Super>g
 findTab Chrome Chat 12 <Shift><Super>h
-## bash -cl leave <Shift><Super>l
+bash -cl leave <Shift><Super>l
 findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen org Planning "^[gr" <Super><Shift>r
 bash -cl stop <Super><Shift>s
