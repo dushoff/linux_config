@@ -37,10 +37,6 @@ nmap $$ VG$$
 vmap >> :g/^<.*>\s*$/d<C-M>:'<,'>s/.*>//<C-M>
 nmap >> VG>>
 
-" Unquoting?
-vmap + :s/^[>  	]*//<C-M>H
-nmap + VG+
-
 nmap @f gg/\<folder<C-M>
 
 " Voice recognition
@@ -154,8 +150,6 @@ imap <C-Y> <ESC>mm<C-Y>`ma
 com! Sf source ~/.vimrc.focal
 
 """"""""""""""" " Non-breaking space stuff (combine with other ascii…)
-com! Space s/ / /g
-com! Pack %s/^\s\s*//
 
 " current mail-trading text-aid-too
 nmap MG :source ~/.vimrc.tat<C-M>gg@@<C-O>
@@ -199,15 +193,15 @@ vmap <C-K> d@r
 " Built to indent a one-line ¶ for some reason.
 vmap @k d<ESC>@r
 
-" paragraph paragraphing
-nmap @C :1,$!cat -s<C-M>
-" Clear space-only lines
-nmap @s :%s/^\s\s*$//<C-M>
-com! Blank %s/^\s\s*$//
-com! Clear 1,$!cat -s
-" Clear blank lines
-vmap @@ :s/^[>  ^I]*$//<C-M>:'<,'>s/[ ]/ /g<C-M>
-nmap @@ VG@@
+" paragraph paragraphing (redo with vmaps called by nmaps some day)
+" Blank seems weird (\s did not work as expected)
+" All a disaster, revisit 2025 Feb 26 (Wed)
+com! BlankOnly .,$s/^\s*$//
+com! Blank .,$s/^[> 	]*$//
+com! Par .,$!cat -s
+com! Space %s/ / /g
+com! Pack %s/^\s*//
+nmap @C mm1G:Blank<C-M>'m:Par<C-M>`m
 
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
