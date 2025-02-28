@@ -20,7 +20,7 @@ pickscreen tech ghost <Shift><Alt>g
 findTab Chrome Chat <Shift><Alt>h
 pickscreen org Planning "^[grG" <Shift><Alt>k
 findTab Chrome Gmail <Shift><Alt>m
-pickscreen tech alpine <Shift><Alt>n
+## pickscreen tech alpine <Shift><Alt>n
 pickscreen 0 0 <Shift><Alt>o
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
@@ -29,8 +29,8 @@ findApp Voice <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
 findTab Chrome Zoom <Shift><Alt>z
 
-## FindTab Chrome not good for zoom because zoom not typically in tab title
 ## Find (deep) <Ctrl><Shift>
+## FindTab Chrome not good for zoom because zoom not typically in tab title
 ## findTab Chrome Docs 12 <Ctrl><Shift>c
 ## DOCS word count <Ctrl><Shift>c
 ## GMAIL discard <Ctrl><Shift>d
