@@ -1,4 +1,10 @@
 
+" Users: You should decide which of these you want and copy them
+" then make your own ~/.vimrc that sources the ones you took
+" Probably you want .basic and .make
+" The others I don't know so much, but they don't hurt much if you want to do some of the weird stuff
+" You could call .personal something else and make your own .personal
+
 " set formatoptions=tcroql
 " set comments=l:#'
 
@@ -13,8 +19,6 @@ source ~/.vimrc.dig " digraphs
 source ~/.vimrc.au " autocmds (mostly don't understand any of this)
 
 " ~/.vimrc.focal
-
-
 " source ~/.vimrc.iat " iat and WW! ☹
 
 
