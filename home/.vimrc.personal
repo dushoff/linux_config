@@ -201,7 +201,7 @@ com! Blank .,$s/^[> 	]*$//
 com! Par .,$!cat -s
 com! Space %s/ / /g
 com! Pack %s/^\s*//
-nmap @C mm1G:Blank<C-M>'m:Par<C-M>`m
+nmap @C mm1G:Blank<C-M>'m:Par<C-M>`mH
 
 let g:netrw_browsex_viewer= "setsid xdg-open"
 vmap Y "+y
