@@ -247,6 +247,7 @@ alias lstm='lst'
 todown() { touch $@; cp "$@" ~/Downloads; }
 Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
 alias downput=todown
+cabinet() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; (dgol) ; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }
 downnull() { ls -t ~/Downloads/*.* | head -1 | xargs -i 'rm' "{}"; }
