@@ -87,7 +87,8 @@ alias presink="vsave; vim ~/.commitnow"
 alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 
 alias qsink="presink && sin"
-alias sink="dclose && hclose && qsink"
+alias stink="dclose && hclose && qsink"
+alias sink="dclose && hclose && sin"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
