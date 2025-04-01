@@ -305,12 +305,15 @@ alias ball="minus; balloon &"
 alias now='pickscreen org Planning'
 alias plan='pickscreen org Planning "^[gj"'
 
-alias reportday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
+alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
+alias reportday='reportblank; rtoday; reportblank'
 
 alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
-alias arrive='(ship) && plandown; wiss; plan; reporttime "Arrive ${HOSTNAME}"'
-alias newday='(ball) && plandown; reportblank; reportday; reportblank'
+alias here='(ship) && plandown; wiss; plan;'
+alias rarrive='reporttime "Arrive ${HOSTNAME}"'
+alias arrive='(here); rarrive'
+alias newday='(here); reportday; rarrive'
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
