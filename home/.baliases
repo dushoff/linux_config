@@ -427,6 +427,18 @@ sbs() {
 	svn $dir/$sub $sub; 
 }
 
+mmdel() { 
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=`dirname "$p"`
+	fn=`basename "$p"`
+	(make $dir.get && rm -f $dir/$fn && make $dir.syncup)
+}
+mdel() { 
+	p=$( echo $1 | perl -pe 's|/*$||' );
+	dir=`dirname "$p"`
+	fn=`basename "$p"`
+	(rm -f $dir/$fn && make $dir.syncup)
+}
 svs() { 
 	p=$( echo $1 | perl -pe 's|/*$||' );
 	dir=`dirname "$p"`
