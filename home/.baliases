@@ -289,6 +289,7 @@ acorns() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; xdg-open ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
 beaver() { (sleep $@; xdg-open ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
+banner() { (xdg-open ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
 
 alias sesh="clear; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
