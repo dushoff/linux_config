@@ -98,6 +98,7 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 
 alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
 alias rld='ls -t Downloads/*.* | head -1'
+alias dld='(cd ~/Downloads/ && dell)'
 alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
