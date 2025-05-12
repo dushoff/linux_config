@@ -170,6 +170,7 @@ com! XPLAIN 1,$!pandoc -t plain --wrap=none
 com! HTMLMD 1,$!pandoc -f html -t markdown_strict
 com! VIMBUF w!~/vimbuf.html
 com! TAT 1,$!perl -pnf ~/bin/tat.pl
+com! DIC 1,$!perl -pnf ~/bin/dic.pl
 
 nmap Mh :wall<C-M>:XHTML<C-M>:VIMBUF<C-M>
 nmap Mt :wall<C-M>:XPLAIN<C-M>
