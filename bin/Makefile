@@ -47,7 +47,9 @@ scripts += textdemon
 scripts += remark
 
 ## Bolker moon script
-scripts += current_moon_phase.sh
+## scripts += current_moon_phase.sh
+
+scripts += $(wildcard *.pl *.sh)
 
 Sources += $(scripts)
 
