@@ -98,6 +98,7 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 ## alias gvim='gvim -f'
 
 alias rPic='ls | shuf -n 1 | tee .rpic | xargs eog --fullscreen "{}" && cat .rpic ;'
+alias qPic='cat .rpic | xargs eog --fullscreen "{}" ;'
 alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
 alias rld='ls -t Downloads/*.* | head -1'
 alias dld='(cd ~/Downloads/ && dell)'
