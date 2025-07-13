@@ -246,6 +246,7 @@ alias lspdf='lsth "*.pdf"'
 
 alias lstpdf='ls -t *.pdf *.PDF |more'
 alias lsath='clear; ls -at |head'
+alias lslth='clear; ls -lt |head'
 alias lst='ls -t |more'
 alias lstm='lst'
 
