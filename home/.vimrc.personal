@@ -64,7 +64,6 @@ nn gz ggVG"+x
 nn gZ gg"ddG
 nn gy ggVG"+y
 nn gv "+gP
-nn gV o<ESC>"+gP
 nmap <F11> gv
 imap <F11> <ESC>a <ESC>gvs
 nmap <F12> o<ESC>gv
@@ -103,7 +102,7 @@ imap <2-LeftMouse> <nop>
 " (S not in my repertoire right now 2021 Mar 21 (Sun)
 vmap gK J<ESC>A <ESC>60A#<ESC>0
 nmap gK VjgK
-nmap S _kO
+" nmap S _kO
 nmap _ o<ESC>O<C-M><ESC>70i-<ESC>
 nmap - mm:g/^-----------------------------/d<C-M>H'm_
 nmap - O<ESC>o<C-M><ESC>70i-<ESC>
