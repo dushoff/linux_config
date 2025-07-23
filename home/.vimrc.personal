@@ -64,6 +64,7 @@ nn gz ggVG"+x
 nn gZ gg"ddG
 nn gy ggVG"+y
 nn gv "+gP
+nn gV o<ESC>"+gP
 nmap <F11> gv
 imap <F11> <ESC>a <ESC>gvs
 nmap <F12> o<ESC>gv
