@@ -255,11 +255,11 @@ Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
 alias downput=todown
 cabinet() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; (dgol) ; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
+downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; ls -t $@ | head -1; }
 downfall() { ls -t ~/Downloads/*.* | head -1 | xargs -i cp "{}" $@; }
 downnull() { ls -t ~/Downloads/*.* | head -1 | xargs -i 'rm' "{}"; }
 downfinal() { ls -t ~/Downloads/* | head -1 | xargs -i mv "{}" $@; }
-downlist() { ls -t Downloads/*.* | head -1 ; }
-downloadlist() { ls -t ~/Downloads/*.* | head -1 ; }
+downlist() { ls -t ~/Downloads/*.* | head -1 ; }
 ## Local- instead of download-focused
 lastmove() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
 lastcall() { ls -t *.* | head -1 | xargs -i mv "{}" $@; }
