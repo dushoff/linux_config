@@ -45,7 +45,7 @@ Sources += init.vim
 ######################################################################
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
-relink: linkmake linkbin linkhome nvimlink
+relink: linkmake linkbin linkhome
 
 newbin:
 	cd ~ && rm bin && mkdir bin
@@ -74,15 +74,8 @@ linkssh: ~/.ssh ~/.ssh/authorized_keys
 
 ######################################################################
 
-## I'm preferring link now, because it allows me to edit the copy when I feel like.
-## relink should solve any problem -- unless we delete _all_ versions of this repo before successfully installing a new location
-
 linkmake:
 	cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
-
-pushmake:
-	$(CPF) tilde.mk ~/Makefile
-	chmod a-w ~/Makefile
 
 Ignore += $(subdirs)
 
