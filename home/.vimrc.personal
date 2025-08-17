@@ -40,7 +40,7 @@ nmap >> VG>>
 nmap @f gg/\<folder<C-M>
 
 " Voice recognition
-vmap & !~/bin/quote.pl<C-M>
+vmap & !~/bin/scr/quote.pl<C-M>
 nmap & VG&
 
 nmap g# :s/[ #]*$//<C-M>H| " Get rid of empty or comment-only lines
@@ -169,8 +169,8 @@ com! HHG 1,$!cat > ~/hhg.html && go ~/hhg.html &
 com! XPLAIN 1,$!pandoc -t plain --wrap=none
 com! HTMLMD 1,$!pandoc -f html -t markdown_strict
 com! VIMBUF w!~/vimbuf.html
-com! TAT 1,$!perl -pnf ~/bin/tat.pl
-com! DIC 1,$!perl -pnf ~/bin/dic.pl
+com! TAT 1,$!perl -pnf ~/bin/scr/tat.pl
+com! DIC 1,$!perl -pnf ~/bin/scr/dic.pl
 
 nmap Mh :wall<C-M>:XHTML<C-M>:VIMBUF<C-M>
 nmap Mt :wall<C-M>:XPLAIN<C-M>
