@@ -49,14 +49,14 @@ Sources += bash.md
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
 relink: linkmake linkbin linkhome
 
-newbin:
+newbin: exec
 	cd ~ && rm bin && mkdir bin
 
 ## Stuff for bin
 linkbin:
 	cd ~/bin && ln -fs $(CURDIR)/scr && ln -fs $(CURDIR)/exe
 
-exec:
+exec: | exe
 	chmod -R a+x exe/
 
 ## There are other files in linux/home that I haven't looked at
