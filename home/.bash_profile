@@ -1,9 +1,4 @@
-## 2025 Aug 17 (Sun)
-## Not currently used, but there is stuff at the bottom that I've now deleted from the active ~/.bash_profile
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Taken over by JD 2025 Aug 17 (Sun), from .profile and ~/.bashrc 
 
 shopt -s expand_aliases
 source ~/.baliases
@@ -31,7 +26,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -129,28 +124,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# OPAM configuration
-# <OCAML stuff from Alejo>
-source /home/dushoff/.opam/opam-init/init.csh >& /dev/null || true
-
-export TEXT_AID_TOO_EDITOR="screen -S main -p 0 -X exec 'sleep 4372 &; vim"
-export TEXT_AID_TOO_EDITOR="~/bin/sleepy"
-export TEXT_AID_TOO_EDITOR="gvim -f"
-export VEDIT="gvim -f"
-export MSEDITOR="gvim -f"
-export MSHOME="~/screens/makestuff"
-export BC_LINE_LENGTH=0
-
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
-# source ~/.rbinit
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-## source $HOME/.bashrc.local
-## source $HOME/.rvm/scripts/rvm
-
-## For nvim/python
-XDG_DATA_HOME=/home/dushoff/.local/share/
+## Add the local paths I am actually trying to use
+PATH="$HOME/bin/scr:$HOME/bin/exe:$PATH"
