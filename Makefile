@@ -47,13 +47,16 @@ Sources += init.vim
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
 relink: linkmake linkbin linkhome nvimlink
 
+newbin:
+	cd ~ && rm bin && mkdir bin
+
 ## Stuff for bin
 linkbin:
-	cd ~ && ln -fs $(CURDIR)/bin
+	cd ~/bin && ln -fs $(CURDIR)/scr && ln -fs $(CURDIR)/exe
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
-subdirs += home bin
+subdirs += home scr
 alldirs += $(subdirs)
 
 linkhome:
@@ -127,7 +130,7 @@ Dropbox/%.mk:
 
 ######################################################################
 
-mirrors += lakes meadows
+mirrors += lakes meadows exe
 
 ######################################################################
 
