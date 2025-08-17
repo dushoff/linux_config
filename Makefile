@@ -56,6 +56,9 @@ newbin:
 linkbin:
 	cd ~/bin && ln -fs $(CURDIR)/scr && ln -fs $(CURDIR)/exe
 
+exec:
+	chmod -R a+x exe/
+
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
 subdirs += home scr
