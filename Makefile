@@ -44,6 +44,8 @@ Sources += init.vim
 
 ######################################################################
 
+Sources += bash.md
+
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
 relink: linkmake linkbin linkhome
 

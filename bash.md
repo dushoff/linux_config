@@ -1,0 +1,1 @@
+I am supposed to be able to ignore ~/.profile and override with ~/.bash_profile. This has not worked for me, so I am going to move back to ~/.profile. Aliases should be in ~/.bashrc (now cached in ~/.baliases), so I am going to do that as well.
