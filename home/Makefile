@@ -25,7 +25,7 @@ $(ms)/Makefile:
 ## Importing and linking from Dropbox 2019 Jan 15 (Tue)
 resting = .pinerc 
 files = .addressbook .aliases .baliases 
-files += .bashrc .bash_profile
+files += .bashrc .profile
 files += .blocal.ubuntu .cshrc .escreenrc .gcvimrc .gmvimrc .gpvimrc .gvimfont .gvimrc .pvimrc .rgvimrc .screenrc .tgvimrc .tvimrc .vimrc .vimrc.basic .vimrc.break .vimrc.iat .vimrc.jdiat .vimrc.make .vimrc.nomake .vimrc.personal .vimrc.prev .vimrc.tat .vimrc.tex .vimrc.twitter .vimrc.windows 
 files += .vimrc.ab .vimrc.dig .vimrc.au .vimrc.newabb .vimrc.focal
 
