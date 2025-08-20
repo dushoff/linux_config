@@ -160,6 +160,8 @@ nmap LL gz
 " HTML to plain loses even bullets and markers
 " HTML to markdown by default keeps shit-tons of html
 " So using TAT (and sometimes typing XPLAIN) until we figure out something trickier
+" Some of these are deleting text as a side effect
+" how hard would it be to work around that?
 com! XHTML 1,$!pandoc -t html
 com! XHG 1,$!pandoc -t html > ~/xhg.html && go ~/xhg.html &
 com! XPG 1,$!pandoc -t pdf > ~/Downloads/xpg.pdf && go ~/Downloads/xpg.pdf &
@@ -168,7 +170,7 @@ com! XTX 1,$!pandoc -f latex -t pdf > ~/xtx.pdf && go ~/xtx.pdf &
 com! HHG 1,$!cat > ~/hhg.html && go ~/hhg.html &
 com! XPLAIN 1,$!pandoc -t plain --wrap=none
 com! HTMLMD 1,$!pandoc -f html -t markdown_strict
-com! VIMBUF w!~/vimbuf.html
+com! VIMBUF w!~/vimbuf.html " tf is this?
 com! TAT 1,$!perl -pnf ~/bin/scr/tat.pl
 com! DIC 1,$!perl -pnf ~/bin/scr/dic.pl
 
@@ -197,6 +199,7 @@ vmap @k d<ESC>@r
 " paragraph paragraphing (redo with vmaps called by nmaps some day)
 " Blank seems weird (\s did not work as expected)
 " All a disaster, revisit 2025 Feb 26 (Wed)
+" @C seems to be what I use; should I add Space to it?
 com! BlankOnly .,$s/^\s*$//
 com! Blank .,$s/^[> 	]*$//
 com! Par .,$!cat -s
