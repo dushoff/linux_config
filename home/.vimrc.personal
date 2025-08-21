@@ -127,6 +127,8 @@ inoremap <c-u> <c-g>u<c-u>
 " Paren stuff
 imap {} {<C-M>}<ESC>O<TAB>
 imap () ( )<ESC>hs
+inoremap [] []()<ESC>"+gPF[a
+" Why do I need this? Just type, right? vnoremap <C-K> a]<ESC>gvoi[
 
 nn Q gq
 nn gm 1<C-^>
