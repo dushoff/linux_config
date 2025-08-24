@@ -84,3 +84,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export VEDIT="gvim -f"
+export MSEDITOR="gvim -f"
+export MSHOME="~/screens/makestuff"
+export BC_LINE_LENGTH=0
