@@ -51,6 +51,7 @@ bash -cl wiss <Ctrl><Super>w
 ## Trackpad (could be laptop only)
 opad <Alt>o
 nopad <Alt>n
+fastmouse <Alt>m
 
 ## <Super>
 ## GNOME <Super>d (desktop something; failed to override)
