@@ -72,12 +72,13 @@ bash -cl play <Super>y
 ## <Shift><Super> Find (deep) or extra planning?
 bash -cl arrive <Shift><Super>a
 findTab Chrome Calendar 12 <Shift><Super>c
-pickscreen org Planning "^[gkgZgvMM" <Shift><Super>p
 ## pickscreen org Planning "^[gr" <Super><Shift>d ## unusable (weird)
 findTab Chrome Meet 12 <Shift><Super>g
 findTab Chrome Chat 12 <Shift><Super>h
 bash -cl leave <Shift><Super>l
 findTab Chrome Gmail 12 <Shift><Super>m
+pickscreen org Planning "^[gkgZgvMM" <Shift><Super>p
+pickscreen org Planning "^[gkGgvMM" <Shift><Super>q
 pickscreen org Planning "^[gr" <Super><Shift>r
 bash -cl stop <Super><Shift>s
 findTab Chrome Voice 12 <Shift><Super>v
