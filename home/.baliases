@@ -309,7 +309,7 @@ alias boat="minus; boatonly &"
 alias ball="minus; balloon &"
 
 alias now='pickscreen org Planning'
-alias plan='pickscreen org Planning "^[gj"'
+alias plan='pickscreen org Planning "^[gj:e"'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
