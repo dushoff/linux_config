@@ -81,7 +81,7 @@ alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || (squirre
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
-alias sin0="(cd ~/screens && rink && planup && fastlake)"
+alias sin0="plandown && (cd ~/screens && rink && planup && fastlake)"
 alias sin="sin0; make logtest"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
