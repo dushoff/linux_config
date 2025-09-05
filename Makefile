@@ -18,7 +18,7 @@ Sources += $(wildcard log/*.log log/*.mac log/token*)
 
 Sources += log.md
 
-log.filemerge: log.md
+Log.filemerge: log.md
 
 ######################################################################
 
