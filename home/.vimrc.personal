@@ -64,9 +64,10 @@ nn gz ggVG"+x
 nn gZ gg"ddG
 nn gy ggVG"+y
 nn gv "+gP
+nn GV o<ESC>"+gP
 nmap <F11> gv
 imap <F11> <ESC>a <ESC>gvs
-nmap <F12> o<ESC>gv
+nmap <F12> GV
 imap <F12> <ESC><F12>
 
 " go to github (makestuff)
