@@ -275,6 +275,7 @@ go() { gnome-open "$@" & }
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
+fastlake() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG | shuf -n 1| xargs eog -f; }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
