@@ -59,8 +59,8 @@ linkbin:
 exec: | exe
 	chmod -R a+x exe/
 
-clean: 
-	rm -fr ~/.local/share/Nextcloud/
+nextclean: 
+	rm -fr ~/.local/share/Nextcloud/ ~/bin/*/Next*
 
 ## There are other files in linux/home that I haven't looked at
 ## cp ~/Dropbox/linux/home/.??* home ##
