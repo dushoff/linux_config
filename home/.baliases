@@ -81,7 +81,7 @@ alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || (squirre
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
-alias sin0="(cd ~/screens && rink && planup && fastlake)"
+alias sin0="(cd ~/screens && rink && planup && sinkshow)"
 alias sin="sin0; make logtest"
 alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
@@ -275,10 +275,12 @@ go() { gnome-open "$@" & }
 ## eog -f ~/Dropbox/archive/lake.jpg ##
 wiss() { (xdg-open ~/Dropbox/archive/old_road.jpg) & }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
-fastlake() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG | shuf -n 1| xargs eog -f; }
 sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Arboretum*/*.JPG \
+	~/Dropbox/family/pix/Pictures/*Amsterdam*/*.JPG \
+	~/Dropbox/family/pix/Pictures/*weitz*/*.jpg \
 ; }
+sinkshow() { sinkpix | shuf -n 1| xargs eog -f; }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
