@@ -90,9 +90,9 @@ alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 ## Work through all of this some time; how did we lose sink??
 alias qsink="presink && sin"
 alias stink="dclose && hclose && qsink"
-alias sink="dclose && hclose && plandown && presink && sin0"
+alias sink="dclose && hclose && presink && plandown && sin0"
 
-alias gas="go Dropbox/archive/swati.pdf"
+alias gas="go ~/Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 
