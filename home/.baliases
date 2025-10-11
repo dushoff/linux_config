@@ -83,14 +83,12 @@ alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 alias rink="ink && (inkcheck)"
 alias sin0="(cd ~/screens && rink && planup && sinkshow)"
 alias sin="sin0; make logtest"
-alias presink="vsave; dropstatus; vim ~/.dropstatus ~/.commitnow"
 alias presink="vsave; vim ~/.commitnow"
 alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 
-## Work through all of this some time; how did we lose sink??
-alias qsink="presink && sin"
 alias stink="dclose && hclose && qsink"
-alias sink="dclose && hclose && plandown && presink && sin0"
+alias qsink="presink && sin"
+alias sink="presink && dclose && hclose && plandown && sin0"
 
 alias gas="go Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
