@@ -16,7 +16,7 @@ nmap gX GCV!bash -l > ~/.cmdresult 2>&1 \|\| true<C-M>:nohlsearch<C-M>
 nmap gE gXO<ESC>:r ~/.cmdresult<C-M>
 nmap ge gEuA ##<ESC>:r !grep bash: ~/.cmdresult \|\| true<C-M>:s/##[ #]*$/##/<C-M>
 nmap ge gXuA ##<ESC>mz:r !grep bash: ~/.cmdresult \|\| true<C-M>'z:s/##[ #]*$/##/<C-M>
-nmap GE gEP
+nmap GE yygEPA ##<ESC>J
 nmap gB GsVyGCIbat <ESC>gE
 
 " pipe to delimit comments?
