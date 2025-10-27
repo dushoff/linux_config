@@ -81,14 +81,14 @@ alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || (squirre
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
 alias rink="ink && (inkcheck)"
-alias sin0="(cd ~/screens && rink && planup && sinkshow)"
-alias sin="sin0; make logtest"
+alias sinonly="(rink && planup && sinkshow)"
+alias sin="sinonly; make logtest"
 alias presink="vsave; vim ~/.commitnow"
 alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
 
 alias stink="dclose && hclose && qsink"
 alias qsink="presink && sin"
-alias sink="dclose && hclose && presink && plandown && sin0"
+alias sink="dclose && hclose && presink && plandown && sinonly"
 
 alias gas="go ~/Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
