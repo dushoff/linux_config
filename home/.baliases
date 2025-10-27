@@ -105,6 +105,7 @@ alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
 
+
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 alias va='vi ~/.baliases'
@@ -364,6 +365,8 @@ Agenda() { gcalcli --calendar jdushoff agenda --tsv --details location now +7d |
 germ() { (git rm -f $1 || rm -f $1) && echo $1: `date +"%F"` >> germ.md; }
 germ() { (git rm -f $1 && echo $1: `date +"%F"` >> germ.md) || rm -f $1; }
 archive() { make archive/$1; }
+
+Vmake() {(make $1.go > make.log || bark) & }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
