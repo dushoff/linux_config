@@ -250,8 +250,8 @@ alias lslth='clear; ls -lt |head'
 alias lst='ls -t |more'
 alias lstm='lst'
 
-todown() { touch $@; cp "$@" ~/Downloads; }
-Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
+todown() { touch $@; /bin/cp "$@" ~/Downloads; }
+Todown() { touch $@ && /bin/cp "$@" ~/Downloads && del $@; }
 alias downput=todown
 cabinet() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; (dgol) ; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
