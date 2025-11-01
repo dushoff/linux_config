@@ -71,7 +71,6 @@ alias vm='vi Makefile'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias dropstatus="dropbox status > ~/.dropstatus"
-alias vdc="vsave; dclose; hclose; dropstatus"
 
 alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
@@ -80,15 +79,14 @@ alias logcheck="! (grep $'\t' make.log)"
 alias inkcheck="(logcheck && (ball) && sunk && echo inkcheck `date`) || (squirrel 0 && false)"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
+alias vimfiles="dclose && hclose && vsave"
 alias rink="ink && (inkcheck)"
-alias sinonly="(rink && planup && sinkshow)"
-alias sin="sinonly; make logtest"
-alias presink="vsave; vim ~/.commitnow"
-alias dup="(cd ~/screens/org/Planning && make Downloads.syncup)"
+alias sinkcheck="(rink && planup && sinkshow)"
+alias vcn="vim ~/.commitnow"
 
-alias stink="dclose && hclose && qsink"
-alias qsink="presink && sin"
-alias sink="dclose && hclose && presink && plandown && sinonly"
+alias sin="sinkcheck; make logtest"
+alias sink="vimfiles && plandown && sinkcheck"
+alias think="vcn && sink"
 
 alias gas="go ~/Dropbox/archive/swati.pdf"
 alias dclose="for instance in \$(vim --serverlist | grep DROP); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
