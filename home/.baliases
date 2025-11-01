@@ -248,8 +248,8 @@ alias lslth='clear; ls -lt |head'
 alias lst='ls -t |more'
 alias lstm='lst'
 
-todown() { touch $@; cp "$@" ~/Downloads; }
-Todown() { touch $@ && cp "$@" ~/Downloads && del $@; }
+todown() { touch $@; /bin/cp "$@" ~/Downloads; }
+Todown() { touch $@ && /bin/cp "$@" ~/Downloads && del $@; }
 alias downput=todown
 cabinet() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; (dgol) ; }
 downcall() { ls -t ~/Downloads/*.* | head -1 | xargs -i mv "{}" $@; }
@@ -365,6 +365,7 @@ germ() { (git rm -f $1 && echo $1: `date +"%F"` >> germ.md) || rm -f $1; }
 archive() { make archive/$1; }
 
 Vmake() {(make $1.go > make.log || bark) & }
+Bmake() {(make $1 > $1.log || bark) & }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ~/report.md; }
 
