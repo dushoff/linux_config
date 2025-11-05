@@ -1,5 +1,5 @@
 
-" Default target makign (see Go below as well)
+" Default target making (see Go below as well)
 map <F2> Go
 map <C-F3> :make! -d pullup > make.log && make exclude && git status<C-M>
 map <F4> go
@@ -10,6 +10,7 @@ map <C-S-F4> :!make vtarget<C-M>
 
 " Look at some of this craziness!
 map <C-F4> :make -d sync > make.log && git status .<C-M>
+map <C-F4> :make sync && git status .<C-M>
 map <F5> :cn<C-M>
 map <C-F5> :make! -d all.time > make.log && git status .<C-M>
 map <S-F5> :!make pdftarget<C-M>
