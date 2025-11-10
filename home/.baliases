@@ -239,10 +239,8 @@ alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
 
 alias nohome='HOME=nonsense'
 
-lsth() { clear; ls -t $@ |head -10; }
-alias lspdf='lsth "*.pdf"'
+lsth() { clear; ls -t "$@" |head -10; }
 
-alias lstpdf='ls -t *.pdf *.PDF |more'
 alias lsath='clear; ls -at |head'
 alias lslth='clear; ls -lt |head'
 alias lst='ls -t |more'
