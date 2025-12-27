@@ -21,6 +21,8 @@ nmap gw Vgw
 vmap gW "wdmn/Su\><C-M>"wkP'n
 nmap gW VgW
 
+" nnoremap <silent> gW :let @/='\<Su\>'<Bar>normal! dd<Bar>execute 'normal! ' . v:count1 . 'nP'<CR>
+
 " Why am I having trouble with marks?
 nmap 0D dd1GP@c
 nmap 1D /## Monday/<C-M><C-O>ddn}P<C-O><C-O>
