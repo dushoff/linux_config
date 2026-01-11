@@ -156,7 +156,7 @@ alias ss='screen -S'
 alias delscr='del /tmp/screens/S-dushoff/*'
 
 alias plainscreen='screen -dm default'
-alias mainscreen='screen -c .escreenrc -dm main; screen -x main'
+alias mainscreen='screen -c ~/.escreenrc -dm main; screen -x main'
 
 alias stx='text-aid-too --editor sleepy'
 alias textstart='psterm textdemon; psterm text-aid; textdemon & '
@@ -403,7 +403,7 @@ dxscreen() { (cd $1; screen -dm $@; ssx $@); }
 
 nxscreen() { (cd $2; screen -dm $1; ssx $1); }
 
-escreen() { screen -c .escreenrc -dm $1; screen -x $1; }
+escreen() { screen -c ~/.escreenrc -dm $1; screen -x $1; }
 groupscreen() { sudo su - $@ -c "screen -dm group"; }
 sdm() { screen -dm $@; }
 sR() { sdm $@; screen -x $@; }
