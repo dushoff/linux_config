@@ -97,7 +97,7 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 
 alias rPic='ls | shuf -n 1 | tee .rpic | xargs eog --fullscreen "{}" && cat .rpic ;'
 alias qPic='cat .rpic | xargs eog --fullscreen "{}" ;'
-alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
+alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | aopen'
 alias rld='ls -t Downloads/*.* | head -1'
 alias dld='(cd ~/Downloads/ && dell)'
 alias tmake='((make target > make.log || true) && bark) &'
@@ -228,6 +228,7 @@ alias lastpo='lastpdf | xargs -i gio open "{}" &'
 alias pdflast='lastpdf | xargs -i touch "{}"'
 alias golp='lastpdf | xargs -i gio open "{}" &'
 alias xopen='xargs -i gio open "{}" &'
+alias aopen='xargs -i alertPic "{}" &'
 
 alias rootdown='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
 alias lastdown='ls -t ../*.* | head -1 | xargs -i mv "{}" .'
