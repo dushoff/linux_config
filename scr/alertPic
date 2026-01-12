@@ -1,0 +1,128 @@
+#!/usr/bin/env bash
+# Open an image in EOG (new instance), then restore focus to the previously active window.
+# Robust against invalid window IDs, uses decimal IDs for xdotool, converts to hex for wmctrl.
+# If another app (e.g., Chrome) steals focus, we force focus by synthetic click.
+# Usage: alert-eog-click.sh /path/to/image.png
+# Requirements: eog, x11-utils (xprop, xwininfo), xdotool, wmctrl
+
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: $0 /path/to/image.png" >&2
+    exit 1
+fi
+img="$1"
+
+# -------- Helpers --------
+
+# Active window in DECIMAL (for xdotool)
+active_dec() {
+    xdotool getactivewindow 2>/dev/null || echo 0
+}
+
+# Convert DEC -> HEX with 0x prefix (for wmctrl -ia)
+dec_to_hex() {
+    local dec="$1"
+    printf '0x%X\n' "$dec"
+}
+
+# Does a DECIMAL window exist? (check via xdotool getwindowname)
+exists_dec() {
+    local dec="$1"
+    [[ "$dec" -gt 0 ]] || return 1
+    xdotool getwindowname "$dec" >/dev/null 2>&1
+}
+
+# Activate/raise window by DECIMAL id
+activate_dec() {
+    local dec="$1"
+    xdotool windowactivate --sync "$dec" 2>/dev/null || true
+    xdotool windowraise "$dec" 2>/dev/null || true
+}
+
+# Get geometry for DECIMAL window (returns x_ul y_ul w h)
+get_geom_dec() {
+    local dec="$1"
+    # xwininfo expects HEX id; convert
+    local hex
+    hex="$(dec_to_hex "$dec")"
+    xwininfo -id "$hex" 2>/dev/null | awk '
+        /Absolute upper-left X:/ {x=$NF}
+        /Absolute upper-left Y:/ {y=$NF}
+        /Width:/ {w=$NF}
+        /Height:/ {h=$NF}
+        END { if (x != "" && y != "" && w != "" && h != "") print x, y, w, h }'
+}
+
+# Focus the window by DECIMAL, trying normal activation, else synthetic click
+force_focus_dec() {
+    local dec="$1"
+
+    # Try normal activation first
+    activate_dec "$dec"
+    sleep 0.08
+    local cur="$(active_dec)"
+    if [[ "$cur" -eq "$dec" ]]; then
+        return 0
+    fi
+
+    # Synthetic click fallback: move mouse to center, click, restore pointer
+    # Save pointer
+    eval "$(xdotool getmouselocation --shell)"
+    local old_x="${X:-0}"
+    local old_y="${Y:-0}"
+
+    # Geometry
+    read -r x_ul y_ul w h <<<"$(get_geom_dec "$dec")" || true
+    if [[ -z "${x_ul:-}" || -z "${y_ul:-}" || -z "${w:-}" || -z "${h:-}" ]]; then
+        # If geometry not available (e.g., window minimized), try repeated activation
+        for _ in $(seq 1 5); do
+            activate_dec "$dec"
+            sleep 0.12
+            cur="$(active_dec)"
+            [[ "$cur" -eq "$dec" ]] && break
+        done
+        xdotool mousemove --sync "$old_x" "$old_y" 2>/dev/null || true
+        return 0
+    fi
+
+    local cx=$(( x_ul + w/2 ))
+    local cy=$(( y_ul + h/2 ))
+
+    xdotool mousemove --sync "$cx" "$cy"
+    xdotool click --clearmodifiers 1
+    sleep 0.1
+    xdotool mousemove --sync "$old_x" "$old_y" 2>/dev/null || true
+}
+
+# -------- Main flow --------
+
+# Record previous active window (DECIMAL)
+prev_dec="$(active_dec)"
+if ! exists_dec "$prev_dec"; then
+    # No valid previous window; still open the alert but nothing to restore
+    eog --new-instance "$img" &
+    wait "$!" || true
+    exit 0
+fi
+
+# Launch EOG as a dedicated process and wait for it to close
+eog --new-instance "$img" &
+eog_pid=$!
+wait "$eog_pid" || true
+
+# If previous window disappeared, bail gracefully
+if ! exists_dec "$prev_dec"; then
+    exit 0
+fi
+
+# Switch to the workspace containing the previous window (wmctrl needs HEX)
+wmctrl -ia "$(dec_to_hex "$prev_dec")" 2>/dev/null || true
+
+# Small settle time to let activation requests drain
+sleep 0.12
+
+# Stubbornly restore focus to the previous window
+force_focus_dec "$prev_dec"
+``
+

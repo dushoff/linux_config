@@ -33,7 +33,7 @@ scripts += n17 nono nopad noscreen o17 opad oscreen pado screeno
 scripts += sdir shiponly boatonly tat.pl vi pdfwin cpdf bat quote.pl balloon
 
 ## Glue # make these scripts use General focus
-scripts += sleepy wakey
+scripts += sleepy wakey alertPic
 
 ## General focus
 scripts += listWins findTab windows pickscreen findApp findwin
