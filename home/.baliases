@@ -271,7 +271,7 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 go() { gnome-open "$@" & }
 
 ## eog -f ~/Dropbox/archive/lake.jpg ##
-wiss() { (eog ~/Dropbox/archive/old_road.jpg) ; }
+wiss() { (alertPic ~/Dropbox/archive/old_road.jpg) ; }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
