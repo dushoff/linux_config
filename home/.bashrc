@@ -89,3 +89,6 @@ export VEDIT="gvim -f"
 export MSEDITOR="gvim -f"
 export MSHOME="~/screens/makestuff"
 export BC_LINE_LENGTH=0
+
+# Created by `pipx` on 2026-01-15 22:16:22
+export PATH="$PATH:/home/dushoff/.local/bin"
