@@ -278,6 +278,7 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Arboretum*/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Amsterdam*/*.JPG \
 	~/Dropbox/family/pix/Pictures/*weitz*/*.jpg \
+	~/screens/org/curate/album/**/*.* \
 ; }
 sinkshow() { sinkpix | shuf -n 1| xargs eog -f; }
 
