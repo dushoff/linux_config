@@ -165,7 +165,7 @@ nmap LL gz
 " Some of these are deleting text as a side effect
 " how hard would it be to work around that?
 com! XHTML 1,$!pandoc -t html
-com! XHG 1,$!pandoc -t html > ~/xhg.html && go ~/xhg.html &
+com! XHG %w !pandoc -t html > ~/xhg.html && go ~/xhg.html &
 com! XPG 1,$!pandoc -t pdf > ~/Downloads/xpg.pdf && go ~/Downloads/xpg.pdf &
 com! THG 1,$!pandoc -f latex -t html > ~/xhg.html && go ~/xhg.html &
 com! XTX 1,$!pandoc -f latex -t pdf > ~/xtx.pdf && go ~/xtx.pdf &
