@@ -15,11 +15,11 @@ foreach my $win (@wins){
 	for (my $i=0;$i<$maxTabs;$i++){
 		## print `xwininfo -id $win`;
 		last if `xwininfo -id $win | grep $tabName`;
-		system ("xdotool windowactivate $win");
+		system("wmctrl -i -R $win") == 0 || system("xdotool windowactivate $win");
 		system("xdotool key --window $win ctrl+Tab");
 	}
 	if (`xwininfo -id $win | grep $tabName`){
-		system ("xdotool windowactivate $win");
+		system("wmctrl -i -R $win") == 0 || system("xdotool windowactivate $win");
 		last;
 	}
 }
