@@ -10,15 +10,34 @@ $tabName = "." unless defined $tabName;
 
 my @wins = split /\s+/, `xdotool search --name $appName`;
 
+# Copilot: helper to get a window's desktop index ---
+sub get_desktop {
+	my ($win) = @_;
+	for my $line (`wmctrl -l`) {
+		# Format: 0xID  DESK  HOST  TITLE...
+		if ($line =~ /^(0x[0-9a-fA-F]+)\s+(-?\d+)\s+/) {
+			my ($id, $desk) = ($1, $2);
+			# Compare hex IDs lexically (wmctrl prints hex; xdotool search returns hex too)
+			return $desk if lc($id) eq lc($win);
+		}
+	}
+	return undef; # couldn't find
+}
+
+
 foreach my $win (@wins){
 	my $title;
+	## Switch tabs if requested; stop if match found
 	for (my $i=0;$i<$maxTabs;$i++){
-		## print `xwininfo -id $win`;
 		last if `xwininfo -id $win | grep $tabName`;
-		system("wmctrl -i -R $win") == 0 || system("xdotool windowactivate $win");
+		system("xdotool windowactivate $win");
 		system("xdotool key --window $win ctrl+Tab");
 	}
 	if (`xwininfo -id $win | grep $tabName`){
+		my $desk = get_desktop($win);
+		if (defined $desk && $desk >= 0) {
+			system("wmctrl -s $desk");			   # go to ITS workspace
+		}
 		system("wmctrl -i -R $win") == 0 || system("xdotool windowactivate $win");
 		last;
 	}
