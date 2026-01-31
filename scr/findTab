@@ -8,7 +8,7 @@ my ($appName, $tabName, $maxTabs) = @ARGV;
 $maxTabs = 0 unless defined $maxTabs;
 $tabName = "." unless defined $tabName;
 
-my @wins = split /\s+/, `xdotool search --desktop 0 --name $appName`;
+my @wins = split /\s+/, `xdotool search --name $appName`;
 
 foreach my $win (@wins){
 	my $title;
