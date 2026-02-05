@@ -59,6 +59,9 @@ linkbin:
 exec: | exe
 	chmod -R a+x exe/
 
+script: | scr
+	chmod -R a+x scr/
+
 nextclean: 
 	rm -fr ~/.local/share/Nextcloud/ ~/bin/*/Next*
 
