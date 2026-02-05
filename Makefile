@@ -88,10 +88,6 @@ linkssh: ~/.ssh ~/.ssh/authorized_keys
 linkmake:
 	cd ~ && ln -fs $(CURDIR)/tilde.mk Makefile
 
-Ignore += $(subdirs)
-
-alldirs += $(subdirs)
-
 malldirs.var:
 
 ######################################################################
@@ -119,8 +115,6 @@ Ignore += .conf
 Ignore += win.list
 win.list: listWins.pl
 	$(PUSH)
-
-Ignore += $(subdirs)
 
 ######################################################################
 
