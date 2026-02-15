@@ -1,89 +1,25 @@
 #! /usr/bin/perl
+## findTab.pl
 ## usage findTab appName tabName maxTabs
 use strict;
-use warnings;
-use 5.10.0;
 
 my ($appName, $tabName, $maxTabs) = @ARGV;
 
-$maxTabs = 1 unless defined $maxTabs;   # your default
-$tabName = 0 unless defined $tabName;   # 0 => no title filter
+$maxTabs = 0 unless defined $maxTabs;
+$tabName = "." unless defined $tabName;
 
-# --- current desktop (for ranking) ---
-my $CURRENT_DESKTOP = `xdotool get_desktop`;
-chomp $CURRENT_DESKTOP;
+my @wins = split /\s+/, `xdotool search --name $appName`;
 
-# --- cache for per-window desktop lookups ---
-my %DESK_CACHE;
-
-sub get_desktop {
-	my ($win) = @_;
-	return $DESK_CACHE{$win} if exists $DESK_CACHE{$win};
-	my $d = `xdotool get_desktop_for_window $win 2>/dev/null`;
-	chomp $d;
-	$DESK_CACHE{$win} = $d;
-	return $d;
-}
-
-# Rank: -1 => current desktop; 0 => sticky (-1); else => desktop number
-sub desktop_rank {
-	my ($win) = @_;
-	my $d = get_desktop($win);
-	return 9999 unless defined $d && length $d;
-	return -1 if $d eq $CURRENT_DESKTOP;
-	return 0  if $d eq '-1';
-	return $d if $d =~ /^-?\d+$/;
-	return 9999;
-}
-
-# Robust activation that mirrors your working sh script
-sub raise_and_focus {
-	my ($w) = @_;
-	return unless defined $w && length $w;
-	system('xdotool', 'windowraise', $w);
-	system('xdotool', 'windowfocus', '--sync', $w);
-	select(undef, undef, undef, 0.10);
-	system('xdotool', 'windowraise', $w);
-	system('xdotool', 'windowfocus', '--sync', $w);
-}
-
-# --- search (keep your choices); de-dup ---
-my @by_name  = split /\s+/, `xdotool search --name	  "$appName" 2>/dev/null`;
-my @by_cname = split /\s+/, `xdotool search --classname "$appName" 2>/dev/null`;
-
-my %seen;
-my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name, @by_cname);
-
-# --- order by your desktop rank ---
-@wins = sort { desktop_rank($a) <=> desktop_rank($b) } @wins;
-
-say join "\t", @wins;  # your debug print
-
-my $matched_win;		# <-- NEW: explicitly remember the chosen window
-my $win;
-
-WIN: foreach $win (@wins){
-	my $info = `xwininfo -id $win`;  # read once per iter
-
-	for (my $i=0; $i<$maxTabs; $i++){
-		raise_and_focus($win);	  # more reliable than windowactivate
-		print "Found" . (join "", (split /\n/, $info)[0..2]) . "\n";
-
-		if (!$tabName || ($info =~ /$tabName/)) {
-			$matched_win = $win;	# <-- capture the actual match
-			last WIN;
-		}
-
-		# Otherwise, cycle and re-check
-		system('xdotool', 'key', '--window', $win, 'ctrl+Tab');
-		select(undef, undef, undef, 0.08);
-		$info = `xwininfo -id $win`;
+foreach my $win (@wins){
+	my $title;
+	for (my $i=0;$i<$maxTabs;$i++){
+		## print `xwininfo -id $win`;
+		last if `xwininfo -id $win | grep $tabName`;
+		system ("xdotool windowactivate $win");
+		system("xdotool key --window $win ctrl+Tab");
 	}
-	# If we drop out of the inner loop without matching, try next window
-}
-
-# Bring to front only if we actually selected a window
-if (defined $matched_win) {
-	raise_and_focus($matched_win);
-	# warn "final matched_win=[$matched_win]\n";  # uncomment if you want proof
+	if (`xwininfo -id $win | grep $tabName`){
+		system ("xdotool windowactivate $win");
+		last;
+	}
 }
