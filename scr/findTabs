@@ -1,0 +1,55 @@
+#! /usr/bin/perl
+## findTab.pl
+## usage findTab appName tabName maxTabs
+use strict;
+
+my ($appName, $tabName, $maxTabs) = @ARGV;
+
+$maxTabs = 0 unless defined $maxTabs;
+$tabName = "." unless defined $tabName;
+
+# Current desktop
+my $current_desktop = `xdotool get_desktop`;
+chomp $current_desktop;
+
+# Gather all candidate windows by name (as before)
+# (quoting $appName helps if it has spaces or regex chars)
+my @wins = split /\s+/, `xdotool search --name "$appName"`;
+
+
+# --- NEW: sort @wins so that: current-desktop first, then sticky (-1), then others
+# We query each window's desktop once and cache it in %desk_of to avoid repeated calls.
+my %desk_of;
+for my $w (@wins) {
+    my $d = `xdotool get_desktop_for_window $w`;
+    chomp $d;
+    $desk_of{$w} = $d;
+}
+
+@wins = sort {
+    # rank: 0 => current desktop; 1 => sticky (-1); 2 => everything else
+    my $ra = ($desk_of{$a} eq $current_desktop) ? 0 : ($desk_of{$a} eq '-1' ? 1 : 2);
+    my $rb = ($desk_of{$b} eq $current_desktop) ? 0 : ($desk_of{$b} eq '-1' ? 1 : 2);
+
+    # primary: rank
+    $ra <=> $rb
+    # secondary (optional): by desktop index for stable ordering among "others"
+    ||
+    (($desk_of{$a} cmp $desk_of{$b}))
+} @wins;
+# --- END NEW ---
+
+
+foreach my $win (@wins){
+    my $title;
+    for (my $i=0;$i<$maxTabs;$i++){
+        ## print `xwininfo -id $win`;
+        last if `xwininfo -id $win | grep $tabName`;
+        system ("xdotool windowactivate $win");
+        system("xdotool key --window $win ctrl+Tab");
+    }
+    if (`xwininfo -id $win | grep $tabName`){
+        system ("xdotool windowactivate $win");
+        last;
+    }
+}
