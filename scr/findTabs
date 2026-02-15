@@ -8,37 +8,45 @@ my ($appName, $tabName, $maxTabs) = @ARGV;
 $maxTabs = 0 unless defined $maxTabs;
 $tabName = "." unless defined $tabName;
 
-# Current desktop
-my $current_desktop = `xdotool get_desktop`;
-chomp $current_desktop;
+# --- current desktop (for ranking) ---
+my $CURRENT_DESKTOP = `xdotool get_desktop`;
+chomp $CURRENT_DESKTOP;
 
-# Gather all candidate windows by name (as before)
-# (quoting $appName helps if it has spaces or regex chars)
-my @wins = split /\s+/, `xdotool search --name "$appName"`;
+# --- cache for per-window desktop lookups ---
+my %DESK_CACHE;
 
-
-# --- NEW: sort @wins so that: current-desktop first, then sticky (-1), then others
-# We query each window's desktop once and cache it in %desk_of to avoid repeated calls.
-my %desk_of;
-for my $w (@wins) {
-    my $d = `xdotool get_desktop_for_window $w`;
+sub get_desktop {
+    my ($win) = @_;
+    return $DESK_CACHE{$win} if exists $DESK_CACHE{$win};
+    my $d = `xdotool get_desktop_for_window $win`;
     chomp $d;
-    $desk_of{$w} = $d;
+    $DESK_CACHE{$win} = $d;
+    return $d;
 }
 
-@wins = sort {
-    # rank: 0 => current desktop; 1 => sticky (-1); 2 => everything else
-    my $ra = ($desk_of{$a} eq $current_desktop) ? 0 : ($desk_of{$a} eq '-1' ? 1 : 2);
-    my $rb = ($desk_of{$b} eq $current_desktop) ? 0 : ($desk_of{$b} eq '-1' ? 1 : 2);
+# Rank: -1 => on current desktop; 0 => sticky (-1); else => that desktop number
+sub desktop_rank {
+    my ($win) = @_;
+    my $d = get_desktop($win);
 
-    # primary: rank
-    $ra <=> $rb
-    # secondary (optional): by desktop index for stable ordering among "others"
-    ||
-    (($desk_of{$a} cmp $desk_of{$b}))
-} @wins;
-# --- END NEW ---
+    # Defensive fallback if parsing fails
+    return 9999 unless defined $d && length $d;
 
+    return -1 if $d eq $CURRENT_DESKTOP;  # current desktop first
+    return 0  if $d eq '-1';              # sticky windows next
+    return $d if $d =~ /^-?\d+$/;         # then actual desktop number
+    return 9999;                          # anything weird goes last
+}
+
+# --- search by both name and class, then de-duplicate ---
+my @by_name  = split /\s+/, `xdotool search --name "$appName" 2>/dev/null`;
+my @by_class = split /\s+/, `xdotool search --class "$appName" 2>/dev/null`;
+
+my %seen;
+my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name, @by_class);
+
+# --- sort: current-desktop first, then sticky, then others by desktop index ---
+@wins = sort { desktop_rank($a) <=> desktop_rank($b) } @wins;
 
 foreach my $win (@wins){
     my $title;
