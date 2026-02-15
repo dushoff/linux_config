@@ -25,7 +25,7 @@ pickscreen 0 0 <Shift><Alt>o
 findwin evince <Shift><Alt>p
 pickscreen tech run <Shift><Alt>r
 findwin term <Shift><Alt>t
-findApp Voice <Shift><Alt>v
+findTab term <Shift><Alt>v
 findTab Chrome <Shift><Alt>w
 findTab Chrome Zoom <Shift><Alt>z
 
