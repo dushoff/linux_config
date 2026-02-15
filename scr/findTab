@@ -1,25 +1,73 @@
 #! /usr/bin/perl
-## findTab.pl
+## findTab
 ## usage findTab appName tabName maxTabs
 use strict;
+use 5.10.0;
 
 my ($appName, $tabName, $maxTabs) = @ARGV;
 
-$maxTabs = 0 unless defined $maxTabs;
-$tabName = "." unless defined $tabName;
+$maxTabs = 1 unless defined $maxTabs;
+$tabName = 0 unless defined $tabName;
 
-my @wins = split /\s+/, `xdotool search --name $appName`;
+# --- current desktop (for ranking) ---
+my $CURRENT_DESKTOP = `xdotool get_desktop`;
+chomp $CURRENT_DESKTOP;
 
-foreach my $win (@wins){
-	my $title;
+# --- cache for per-window desktop lookups ---
+my %DESK_CACHE;
+
+sub get_desktop {
+	my ($win) = @_;
+	return $DESK_CACHE{$win} if exists $DESK_CACHE{$win};
+	my $d = `xdotool get_desktop_for_window $win`;
+	chomp $d;
+	$DESK_CACHE{$win} = $d;
+	return $d;
+}
+
+# Rank: -1 => on current desktop; 0 => sticky (-1); else => that desktop number
+sub desktop_rank {
+	my ($win) = @_;
+	my $d = get_desktop($win);
+
+	# Defensive fallback if parsing fails
+	return 9999 unless defined $d && length $d;
+
+	return -1 if $d eq $CURRENT_DESKTOP;  # current desktop first
+	return 0  if $d eq '-1';		  # sticky windows next
+	return $d if $d =~ /^-?\d+$/;	  # then actual desktop number
+	return 9999;					  # anything weird goes last
+}
+
+# --- search by both name and class, then de-duplicate ---
+my @by_name  = split /\s+/, `xdotool search --onlyvisible --name "$appName" 2>/dev/null`;
+my @by_class = split /\s+/, `xdotool search --onlyvisible --classname "$appName" 2>/dev/null`;
+
+my %seen;
+my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name, @by_class);
+
+# --- sort: current-desktop first, then sticky, then others by desktop index ---
+@wins = sort { desktop_rank($a) <=> desktop_rank($b) } @wins;
+
+say join "\t", @wins;
+
+my ($win, $quinn);
+foreach $win (@wins){
+	$quinn = $win;
 	for (my $i=0;$i<$maxTabs;$i++){
-		## print `xwininfo -id $win`;
-		last if `xwininfo -id $win | grep $tabName`;
 		system ("xdotool windowactivate $win");
+		print "Found" . `xwininfo -id $win | head -3`;
+		last if !$tabName || (`xwininfo -id $win | grep $tabName`);
+	  ## say ("Did not last");
+		## print "Again ". `xwininfo -id $win`;
 		system("xdotool key --window $win ctrl+Tab");
 	}
-	if (`xwininfo -id $win | grep $tabName`){
-		system ("xdotool windowactivate $win");
-		last;
-	}
+	last if !$tabName || (`xwininfo -id $win | grep $tabName`);
 }
+
+say("Activating $win");
+say("Here is $quinn");
+system ("xdotool windowactivate $quinn");
+system ("xdotool windowraise $quinn");
+system ("xdotool windowfocus $quinn");
+
