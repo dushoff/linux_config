@@ -1,6 +1,5 @@
 #!/bin/sh
 ## usage exec topscreen subscreen exectext
-## NOT IMPLEMENTED 2020 May 27 (Wed)
 
 screen -S main -X select $1
 screen -S $1 -X select $2
