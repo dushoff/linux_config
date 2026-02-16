@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/bin/xdotool search --desktop `xdotool get_desktop` --onlyvisible --classname terminal windowactivate windowraise windowfocus \
-|| /usr/bin/xdotool search --onlyvisible --classname terminal windowactivate windowraise windowfocus
+/usr/bin/xdotool search --desktop `xdotool get_desktop` --onlyvisible --classname "$1" windowactivate windowraise windowfocus \
+|| /usr/bin/xdotool search --onlyvisible --classname "$1" windowactivate windowraise windowfocus
