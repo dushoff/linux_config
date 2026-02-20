@@ -41,33 +41,29 @@ sub desktop_rank {
 
 # --- search by both name and class, then de-duplicate ---
 my @by_name  = split /\s+/, `xdotool search --onlyvisible --name "$appName" 2>/dev/null`;
-my @by_class = split /\s+/, `xdotool search --onlyvisible --classname "$appName" 2>/dev/null`;
+## my @by_class = split /\s+/, `xdotool search --onlyvisible --classname "$appName" 2>/dev/null`;
 
 my %seen;
-my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name, @by_class);
+my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name);
 
 # --- sort: current-desktop first, then sticky, then others by desktop index ---
 @wins = sort { desktop_rank($a) <=> desktop_rank($b) } @wins;
 
 say join "\t", @wins;
 
-my ($win, $quinn);
-foreach $win (@wins){
-	$quinn = $win;
+my $curr;
+foreach my $win (@wins){
+	$curr = $win;
 	for (my $i=0;$i<$maxTabs;$i++){
 		system ("xdotool windowactivate $win");
 		print "Found" . `xwininfo -id $win | head -3`;
 		last if !$tabName || (`xwininfo -id $win | grep $tabName`);
-	  ## say ("Did not last");
-		## print "Again ". `xwininfo -id $win`;
 		system("xdotool key --window $win ctrl+Tab");
 	}
 	last if !$tabName || (`xwininfo -id $win | grep $tabName`);
 }
 
-say("Activating $win");
-say("Here is $quinn");
-system ("xdotool windowactivate $quinn");
-system ("xdotool windowraise $quinn");
-system ("xdotool windowfocus $quinn");
+system ("xdotool windowactivate $curr");
+system ("xdotool windowraise $curr");
+system ("xdotool windowfocus $curr");
 
