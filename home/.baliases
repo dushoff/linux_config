@@ -330,6 +330,7 @@ alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
 alias here='(ship) && plandown; plan;'
 alias rarrive='reporttime "Arrive ${HOSTNAME}"'
 alias arrive='(here); rarrive'
+alias arrive='(ship) && findTab Chrome Gmail && plandown && rarrive ;'
 alias newday='(here); reportday; rarrive'
 
 alias play='reporttime Play; now; minus; shiponly &'
