@@ -6,7 +6,7 @@ use 5.10.0;
 
 my ($appName, $tabName, $maxTabs) = @ARGV;
 
-$maxTabs = 1 unless defined $maxTabs;
+$maxTabs = 0 unless defined $maxTabs;
 $tabName = 0 unless defined $tabName;
 
 # --- current desktop (for ranking) ---
