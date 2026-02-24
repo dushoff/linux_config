@@ -269,8 +269,7 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
-## eog -f ~/Dropbox/archive/lake.jpg ##
-wiss() { (alertPic ~/Dropbox/archive/old_road.jpg) ; }
+wiss() { (alertPic ~/screens/tech/linux_config/alerts/old_road.jpg) ; }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
 
@@ -303,7 +302,8 @@ lake() { (sleep $@; alertPic ~/Dropbox/archive/lake.jpg) & }
 swiss() { (sleep $@; alertPic ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
-squirrel() { (sleep $@; alertPic ~/Dropbox/courses/3SS/bolker/lectures/pix/Red_squirrel_with_nut.jpg) & }
+squirrel() { (sleep $@; alertPic ~/screens/tech/linux_config/alerts/Red_squirrel_with_nut.jpg) ; }
+
 beaver() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 banner() { (alertPic ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
 
