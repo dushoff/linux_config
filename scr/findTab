@@ -39,9 +39,11 @@ sub desktop_rank {
 	return 9999;					  # anything weird goes last
 }
 
-# --- search by both name and class, then de-duplicate ---
+## 2026 Mar 01 (Sun)
+# Not finding chat with by_name; acting very weird with by_class
 my @by_name  = split /\s+/, `xdotool search --onlyvisible --name "$appName" 2>/dev/null`;
 ## my @by_class = split /\s+/, `xdotool search --onlyvisible --classname "$appName" 2>/dev/null`;
+## @by_name = (@by_name, @by_class);
 
 my %seen;
 my @wins = grep { $_ ne '' && !$seen{$_}++ } (@by_name);
