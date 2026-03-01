@@ -112,9 +112,9 @@ alias bhash='source ~/.bashrc'
 
 alias cd..='cd ..'
 
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+## alias cp='cp -i'
+## alias mv='mv -i'
+## alias rm='rm -i'
 alias del="'rm' "
 
 alias dir='ls -Fas'
