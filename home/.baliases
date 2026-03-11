@@ -314,7 +314,7 @@ alias nopdf="killall evince"
 
 ## shiponly is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 0.1; killall eog"
-alias minus="(killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
+alias minus="(killall sleep; killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 alias ship="minus; shiponly &"
 alias boat="minus; boatonly &"
 alias ball="minus; balloon &"
