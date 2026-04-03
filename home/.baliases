@@ -279,7 +279,7 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*weitz*/*.jpg \
 	~/screens/org/curate/album/**/*.* \
 ; }
-sinkshow() { sinkpix | shuf -n 1| xargs eog -f; }
+sinkshow() { sinkpix | shuf -n 1| tee .sinkshow | xargs eog -f; }
 
 leavepix() { ls \
 	~/screens/tech/linux_config/meadows/* \
