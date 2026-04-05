@@ -61,7 +61,7 @@ alias dsn='du -s * |sort -n'
 alias dsna='du -s * .??* |sort -n'
 
 ## Vim sessions
-alias vvv='exec bash -cl vvs'
+alias vvv='exec bash -ci vvs'
 alias vvs='(make runscreen && (bash || true)) || make vim_session || vi Makefile target.mk'
 alias vmt='vi Makefile target.mk'
 alias vproj='vi Makefile target.mk README.md notes.md TODO.md'
@@ -395,7 +395,7 @@ qquote() { echo 1: '$1' 2: '$2'; }
 
 
 ssx() { screen -t $@ screen -xRR $@; }
-## ssvs() { screen -t "$1" && screen bash -cl "svs"; }
+## ssvs() { screen -t "$1" && screen bash -ci "svs"; }
 
 ssr() { screen -t $@ screen -r $@; }
 newscreen() { screen -dm $@; }
@@ -420,7 +420,7 @@ tsh() { screen tcsh; }
 sd() { (cd $@ && screen -t "$@"); }
 msd() { mkdir $1; sd $1; } 
 sdn() { (cd $1 && screen -t "$2"); }
-svn() { (cd $1 && screen -t "$2" bash -cl "vvs"); }
+svn() { (cd $1 && screen -t "$2" bash -ci "vvs"); }
 
 vi(){
 	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')
