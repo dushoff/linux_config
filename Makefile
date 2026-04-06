@@ -73,6 +73,18 @@ alldirs += $(subdirs)
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/home/.??* $(CURDIR)/home/*.* .
 
+######################################################################
+
+## Wayland
+
+files += foot.ini sway.config sway.bind
+
+linksway:
+	cd /home/dushoff/.config/sway/ && ln -fs $(CURDIR)/sway.config config
+
+linkfoot:
+	cd ~/.config/foot/ ln -fs $(CURDIR)/foot.ini foot.ini
+
 Sources += ssh.Makefile
 linkssh: ~/.ssh ~/.ssh/authorized_keys
 	cd ~ && ln -fs $(CURDIR)/ssh.Makefile .ssh/Makefile
