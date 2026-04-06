@@ -515,3 +515,4 @@ lsh() { clear; ls -t $1 |head; }
 zarc() { mkdir zzz; mv .* *; mv * $@; }
 source ~/.blocal
 
+

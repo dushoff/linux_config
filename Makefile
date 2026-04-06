@@ -77,7 +77,7 @@ linkhome:
 
 ## Wayland
 
-files += foot.ini sway.config sway.bind
+Sources += foot.ini sway.config sway.bind
 
 linksway:
 	cd /home/dushoff/.config/sway/ && ln -fs $(CURDIR)/sway.config config
