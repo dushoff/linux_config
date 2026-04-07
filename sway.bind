@@ -1,6 +1,5 @@
 bindsym $mod+Return exec $term
 
-## Arrow keys and then repeat with vim keys
 bindsym $mod+Down focus down
 bindsym $mod+Shift+Down move down
 bindsym $mod+Up focus up
@@ -61,3 +60,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
+
+## Alt key
+bindsym Mod1+Shift+t exec swaymsg '[app_id="foot"] focus'
+bindsym Mod1+Shift+x exec swaymsg '[app_id="firefox"] focus'
