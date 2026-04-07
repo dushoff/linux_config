@@ -46,6 +46,7 @@ bindsym $mod+c exec swaymsg '[app_id="google-chrome"] focus'
 bindsym $mod+Shift+c reload
 bindsym $mod+d exec $menu
 bindsym $mod+e layout toggle split
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
 bindsym $mod+r mode "resize"
