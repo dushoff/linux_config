@@ -3,12 +3,12 @@
 
 ## <Ctrl><Alt> Launch 
 gnome-screenshot -a <Ctrl><Alt>a
-bash -cl dgol <Ctrl><Alt>l
+bash -ic dgol <Ctrl><Alt>l
 gnome-control-center <Ctrl><Alt>c
 ## GNOME <Ctrl><Alt>d (desktop something; failed to override) Again!
 gnome-control-center sound  <Ctrl><Alt>s
 ## GNOME terminal <Ctrl><Alt>t 
-## bash -cl voice <Ctrl><Alt>v
+## bash -ic voice <Ctrl><Alt>v
 google-chrome <Ctrl><Alt>w
 
 ## Find (simple) <Shift><Alt>
@@ -46,7 +46,7 @@ findTab Chrome YouTube 12 <Ctrl><Shift>y
 
 ## <Ctrl><Super> not used! 2022 Sep 08 (Thu) and it works.
 ## CS 1-4 for move to screen; maybe also use left and right arrows??
-bash -cl wiss <Ctrl><Super>w
+bash -ic wiss <Ctrl><Super>w
 
 ## Trackpad (could be laptop only)
 opad <Alt>o
@@ -60,26 +60,26 @@ pickscreen org Planning <Super>f
 pickscreen org Planning "^[gj" <Super>j
 ### Does not work (mystery) <Super>n
 ### Does not work (mystery) <Super>p
-bash -cl rest <Super>r
-### bash -cl stop <Super>s
+bash -ic rest <Super>r
+### bash -ic stop <Super>s
 ### Does not work (mystery) <Super>s
-bash -cl meet <Super>t
+bash -ic meet <Super>t
 ## GNOME notifications <Super> v
-bash -cl work <Super>w
-bash -cl minus <Super>x
-bash -cl play <Super>y
+bash -ic work <Super>w
+bash -ic minus <Super>x
+bash -ic play <Super>y
 
 ## <Shift><Super> Find (deep) or extra planning?
-bash -cl arrive <Shift><Super>a
+bash -ic arrive <Shift><Super>a
 findTab Chrome Calendar 12 <Shift><Super>c
 ## pickscreen org Planning "^[gr" <Super><Shift>d ## unusable (weird)
 findTab Chrome Meet 12 <Shift><Super>g
 findTab Chrome Chat 12 <Shift><Super>h
-bash -cl leave <Shift><Super>l
+bash -ic leave <Shift><Super>l
 findTab Chrome Gmail 12 <Shift><Super>m
 pickscreen org Planning "^[gkgZgvMM" <Shift><Super>p
 pickscreen org Planning "^[gkG GVMM" <Shift><Super>q
 pickscreen org Planning "^[gr" <Super><Shift>r
-bash -cl stop <Super><Shift>s
+bash -ic stop <Super><Shift>s
 findTab Chrome Voice 12 <Shift><Super>v
-bash -cl newday <Super><Shift>w
+bash -ic newday <Super><Shift>w
