@@ -7,6 +7,8 @@
 vim_session:
 	bash -ic "vmt main.keys tilde.mk ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
+## sway.config
+
 ######################################################################
 
 Sources += README.md TODO.md

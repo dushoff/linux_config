@@ -47,8 +47,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+d exec $menu
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
-bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+q kill
 bindsym $mod+r mode "resize"
 bindsym $mod+s layout stacking
 bindsym $mod+t exec swaymsg '[app_id="foot"] focus'
