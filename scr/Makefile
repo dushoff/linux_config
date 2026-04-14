@@ -38,6 +38,8 @@ scripts += sleepy wakey alertPic
 ## General focus
 scripts += listWins findTab findTabs windows pickscreen findApp findwin
 
+scripts += goscreen
+
 ## Special focus (deprecate 2020 May 23 (Sat), careful with the first one)
 scripts += term
 scripts += focus jumpy voicewin chromewin mailwin hangwin textcal report 

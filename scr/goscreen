@@ -1,0 +1,12 @@
+#!/bin/sh
+## usage exec topscreen subscreen exectext
+
+if echo "$1" | grep -q '/'; then
+    set -- $(echo "$1" | tr '/' ' ') "$2"
+fi
+
+screen -S main -X select $1
+screen -S $1 -X select $2
+screen -S $1 -X stuff "$3"
+
+exec swaymsg '[app_id="foot"] focus'
