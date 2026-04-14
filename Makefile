@@ -5,7 +5,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -ic "vmt main.keys tilde.mk ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
+	bash -ic "vmt sway.bind.conf sway.config ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
 ## sway.config
 
@@ -81,11 +81,14 @@ linkhome:
 
 Sources += foot.ini sway.config sway.bind.conf
 
-linksway:
-	cd /home/dushoff/.config/sway/ && ln -fs $(CURDIR)/sway.config config
+~/.config/%/:
+	$(mkdir)
 
-linkfoot:
-	cd ~/.config/foot/ ln -fs $(CURDIR)/foot.ini foot.ini
+linksway: | ~/.config/sway/
+	cd $| && ln -fs $(CURDIR)/sway.config config
+
+linkfoot: | ~/.config/foot/ 
+	cd $| && ln -fs $(CURDIR)/foot.ini foot.ini
 
 Sources += ssh.Makefile
 linkssh: ~/.ssh ~/.ssh/authorized_keys
