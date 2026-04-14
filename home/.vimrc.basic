@@ -24,6 +24,7 @@ set formatoptions=tcroql
 set comments=l:#'
 
 nmap H :nohlsearch<C-M>
+" nmap <C-U> :ls<C-M>
 
 " keystrokes (consider moving to a separate file)
 map! <F1> <ESC><F1>

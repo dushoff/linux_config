@@ -57,7 +57,8 @@ imap <C-G> \|>
 nmap <C-J> :s/^$//<C-M>Ji* <ESC>
 
 " Files
-nmap <C-U> :files<C-M>
+nnoremap <C-u> <Cmd>files<CR>
+
 
 " Copy paste
 nn gz ggVG"+x
