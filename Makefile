@@ -80,6 +80,7 @@ linkhome:
 ## Wayland
 
 Sources += foot.ini sway.config sway.bind.conf sway.layout.conf sway.md
+Sources += i3.config
 
 ~/.config/%/:
 	$(mkdir)
