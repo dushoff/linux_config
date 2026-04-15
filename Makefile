@@ -79,7 +79,7 @@ linkhome:
 
 ## Wayland
 
-Sources += foot.ini sway.config sway.bind.conf
+Sources += foot.ini sway.config sway.bind.conf sway.layout.conf sway.md
 
 ~/.config/%/:
 	$(mkdir)
