@@ -77,10 +77,16 @@ linkhome:
 
 ######################################################################
 
+Sources += i3.config
+
+linki3: | ~/.config/i3/
+	cd $| && ln -fs $(CURDIR)/i3.config config
+
+######################################################################
+
 ## Wayland
 
 Sources += foot.ini sway.config sway.bind.conf sway.layout.conf sway.md
-Sources += i3.config
 
 ~/.config/%/:
 	$(mkdir)
