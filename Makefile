@@ -5,7 +5,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -ic "vmt sway.bind.conf sway.config ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
+	bash -ic "vmt i3.bind.conf i3.config ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
 ## sway.config
 
