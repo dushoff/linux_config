@@ -9,4 +9,4 @@ screen -S main -X select $1
 screen -S $1 -X select $2
 screen -S $1 -X stuff "$3"
 
-exec swaymsg '[class="Alacritty"] focus'
+## exec swaymsg '[class="Alacritty"] focus'
