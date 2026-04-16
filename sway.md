@@ -18,6 +18,10 @@ bindsym $mod+1 workspace "1:web" does anything different??
 
 Why should I prefer firefox vs. chrome
 
+vsplit
+setlocal winfixwidth
+vertical resize 72
+
 ----------------------------------------------------------------------
 
 swaymsg -t get_tree

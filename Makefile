@@ -77,7 +77,8 @@ linkhome:
 
 ######################################################################
 
-Sources += i3.config
+## sudo systemctl restart gdm
+Sources += i3.config i3.bind.conf
 
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
