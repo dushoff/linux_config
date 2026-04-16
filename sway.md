@@ -4,9 +4,26 @@ wofi
 
 swayr
 
-How do I bind to a bash alias that I have set up? How do I bind to a script?
+How do I go to a terminal in the current workspace?
+
+How do I control which screen instance gets my screen select command?
+
+How do I set up the clipboard? 
 
 How do I deal with rows in vim? Why are they acting weird now?
+
+How do I navigate to and from floating windows?
+
+bindsym $mod+1 workspace "1:web" does anything different??
+
+Why should I prefer firefox vs. chrome
+
+----------------------------------------------------------------------
+
+swaymsg -t get_tree
+
+
+How do I bind to a bash alias that I have set up? How do I bind to a script?
 
 tridactyl is fancier than vimium-ff
 
