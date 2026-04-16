@@ -1,4 +1,8 @@
-  `workspace back_and_forth`
+`workspace back_and_forth`
+
+wofi
+
+swayr
 
 How do I bind to a bash alias that I have set up? How do I bind to a script?
 
