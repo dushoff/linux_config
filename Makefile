@@ -7,8 +7,6 @@
 vim_session:
 	bash -ic "vmt i3.bind.conf i3.config ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
-## sway.config
-
 ######################################################################
 
 Sources += README.md TODO.md
@@ -77,10 +75,10 @@ linkhome:
 
 ######################################################################
 
-Sources += i3.config i3.bind.conf i3.md
+Sources += i3.md i3.config i3.bind.conf i3.ws.conf
 
-## i3.reload:
-i3.%:
+## i3com.reload:
+i3com.%:
 	i3-msg $*
 
 ~/.config/%/:
