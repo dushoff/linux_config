@@ -286,7 +286,7 @@ leavepix() { ls \
 	~/screens/tech/linux_config/meadows/* \
 	~/screens/tech/linux_config/lakes/* \
 ; }
-leaveshow() { leavepix | shuf -n 1| xargs eog -f; }
+leaveshow() { leavepix | shuf -n 1| xargs eog -f & }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
@@ -331,8 +331,8 @@ alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
 alias here='(ship) && plandown; plan;'
 alias rarrive='reporttime "Arrive ${HOSTNAME}"'
 alias marrive='(ship) && findTab Chrome Gmail ;'
-alias arrive='plandown; rarrive; marrive '
-alias newday='plandown; reportday; rarrive; marrive '
+alias arrive='plandown; rarrive; '
+alias newday='plandown; reportday; rarrive; '
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
