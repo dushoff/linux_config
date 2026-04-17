@@ -77,26 +77,19 @@ linkhome:
 
 ######################################################################
 
-## sudo systemctl restart gdm
-Sources += i3.config i3.bind.conf
+Sources += i3.config i3.bind.conf i3.md
+
+## i3.reload:
+i3.%:
+	i3-msg $*
+
+~/.config/%/:
+	$(mkdir)
 
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
 ######################################################################
-
-## Wayland
-
-Sources += foot.ini sway.config sway.bind.conf sway.layout.conf sway.md
-
-~/.config/%/:
-	$(mkdir)
-
-linksway: | ~/.config/sway/
-	cd $| && ln -fs $(CURDIR)/sway.config config
-
-linkfoot: | ~/.config/foot/ 
-	cd $| && ln -fs $(CURDIR)/foot.ini foot.ini
 
 Sources += ssh.Makefile
 linkssh: ~/.ssh ~/.ssh/authorized_keys
