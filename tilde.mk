@@ -9,6 +9,9 @@ target:
 start setup mainscreen:
 	cd screens && make $@
 
+%.newscreen:
+	cd screens && make $@
+
 relink:
 	cd */*/linux_config && $(MAKE) relink
 
