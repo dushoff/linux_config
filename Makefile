@@ -87,6 +87,12 @@ i3com.%:
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
+
+Sources += *.pactl
+## siX.soundconf: | siX.pactl i3.pactl.conf
+%.soundconf: | %.pactl
+	$(LN) $| i3.pactl.conf
+
 ######################################################################
 
 Sources += ssh.Makefile
