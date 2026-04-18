@@ -76,6 +76,7 @@ linkhome:
 ######################################################################
 
 Sources += i3.md i3.config i3.bind.conf i3.ws.conf
+Sources += workspace.json
 
 ## i3com.reload:
 i3com.%:
