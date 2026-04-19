@@ -18,9 +18,5 @@ source ~/.vimrc.dig " digraphs
 source ~/.vimrc.au " autocmds (mostly don't understand any of this)
 " ~/.vimrc.temp
 
-
 " ~/.vimrc.focal
 " source ~/.vimrc.iat " iat and WW! ☹
-
-
-
