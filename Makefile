@@ -78,6 +78,11 @@ linkhome:
 Sources += i3.md i3.config i3.bind.conf i3.ws.conf
 Sources += workspace.json
 
+i3Check:
+	i3 -C
+
+## Need to run with debugging to use debug well??
+## i3com.restart: ~/.cache/i3-debug.log
 ## i3com.reload:
 i3com.%:
 	i3-msg $*
@@ -87,7 +92,6 @@ i3com.%:
 
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
-
 
 Sources += *.pactl
 ## siX.soundconf: | siX.pactl i3.pactl.conf
