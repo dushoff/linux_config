@@ -8,5 +8,5 @@ autocmd FileType markdown setlocal nowrap
 " autocmd FileType ghmarkdown setlocal wrap
 " autocmd FileType ghmarkdown setlocal columns=72
 
-autocmd VimResized * set lines& columns&
+" autocmd VimResized * set lines& columns&
 
