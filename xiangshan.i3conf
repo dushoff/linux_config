@@ -1,0 +1,1 @@
+exec xinput set-prop "PixArt Dell MS116 USB Optical Mouse" "libinput Natural Scrolling Enabled" 0 ##
