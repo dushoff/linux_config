@@ -8,6 +8,7 @@ autocmd FileType markdown setlocal nowrap
 " autocmd FileType ghmarkdown setlocal wrap
 " autocmd FileType ghmarkdown setlocal columns=72
 
+" Trying to just make it permanent now in ~/.vimrc.break
 " This make white screens in some interaction!!
 " autocmd VimResized * set lines& columns&
 

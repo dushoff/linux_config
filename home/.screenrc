@@ -2,3 +2,7 @@ vbell on
 zombie 'qr' onerror
 deflogin off
 escape a
+bind V split -v
+bind R resize 75
+bindkey -d "V" 
+bindkey -d "R"
