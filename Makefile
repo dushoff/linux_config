@@ -95,6 +95,7 @@ linki3: | ~/.config/i3/
 
 Sources += *.i3conf
 ## siX.i3file: siX.i3conf i3.local.conf
+## fiVe.i3file: fiVe.i3conf i3.local.conf
 
 Ignore += *.local.conf
 ## xiangshan.i3file: xiangshan.i3conf i3.local.conf
