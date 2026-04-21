@@ -5,7 +5,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -ic "vmt i3.bind.conf i3.config ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
+	bash -ic "vmt i3.bind.conf i3.config i3.ws.conf ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
 ######################################################################
 
@@ -101,6 +101,10 @@ Ignore += *.local.conf
 ## xiangshan.i3file: xiangshan.i3conf i3.local.conf
 %.i3file: | %.i3conf
 	$(LN) $| i3.local.conf
+
+Sources += zathurarc
+linkz: | ~/.config/zathura/ zathurarc
+	cd $| && ln -fs $(CURDIR)/zathurarc
 
 ######################################################################
 
