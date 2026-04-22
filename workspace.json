@@ -28,7 +28,7 @@
                        "y": 0
                     },
                     "marks": [],
-                    "name": "dushoff@siX: ~/screens",
+                    "name": "terminal",
                     "percent": 0.333333333333333,
                     "swallows": [
                        {
@@ -57,7 +57,7 @@
                                "y": 72
                             },
                             "marks": [],
-                            "name": "Inbox (16) - jdushoff@gmail.com - Gmail - Google Chrome",
+                            "name": "Chrome",
                             "percent": 1,
                             "swallows": [
                                {
@@ -88,11 +88,11 @@
                                "y": 587
                             },
                             "marks": [],
-                            "name": "1706.03762v7.pdf",
+                            "name": "pdf",
                             "percent": null,
                             "swallows": [
                                {
-                               "class": "^Evince$"
+                               "class": "^Zathura$"
                                }
                             ],
                             "type": "con"

@@ -1,0 +1,21 @@
+# vim: ft=i3config
+
+######################################################################
+## Find speaker
+
+set $sink alsa_output.pci-0000_00_1f.3.analog-stereo
+set $speaker analog-output-speaker
+set $headphones analog-output-headphones
+
+exec --no-startup-id pactl $sink $speaker
+
+######################################################################
+
+## Touchpad
+
+## Not stable, use name instead of id
+exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 1 ##
+## xinput set-prop 9 "libinput Click Method Enabled" 0 1 ##
+
+
+~/.config/rofi/config.rasi
