@@ -1,5 +1,5 @@
-map J scroll half-down
-map K scroll half-up
+map J scroll full-down
+map K scroll full-up
 map j scroll down
 map k scroll up
 map <Down> scroll half-down
