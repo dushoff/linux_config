@@ -13,6 +13,6 @@ exec --no-startup-id pactl $sink $speaker
 
 ## Touchpad
 
-## Not stable, use name instead of id
+## Use name instead of id for stability
 exec xinput set-prop 9 "libinput Natural Scrolling Enabled" 1
-## xinput set-prop 9 "libinput Click Method Enabled" 0 1 ##
+## xinput

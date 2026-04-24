@@ -13,9 +13,15 @@ exec --no-startup-id pactl $sink $speaker
 
 ## Touchpad
 
-## Not stable, use name instead of id
-exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 1 ##
-## xinput set-prop 9 "libinput Click Method Enabled" 0 1 ##
+## Use name instead of id for stability
+exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 0 ##
+## xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 1 ##
+## xinput list-props "DELL097D:00 04F3:311C Touchpad" 
+## xinput ##
 
+## Exploring the cast issue
+## echo $DBUS_SESSION_BUS_ADDRESS
+# systemctl status avahi-daemon ##
+## avahi-browse -a | grep -i cast
+## Check chrome://media-router-internals — this is the key diagnostic page. Compare it between the two machines. You're looking for whether Cast devices appear under "Providers" and whether there are any errors.
 
-~/.config/rofi/config.rasi
