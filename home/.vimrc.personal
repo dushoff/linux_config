@@ -235,12 +235,3 @@ if(getcwd() == "/home/dushoff/screens/org/Planning")
 	source ~/.vimrc.focal
 endif
 
-" execute pathogen#infect()
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
-
-" Set the filetype based on the file's extension
-" "setfiletype foo" is a wimpier version (respects some sort of pre-status)
-au BufRead,BufNewFile *.def set filetype=make

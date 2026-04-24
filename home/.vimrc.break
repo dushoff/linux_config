@@ -2,6 +2,7 @@
 set ruler
 set linebreak textwidth=0 display=lastline showbreak=+\ 
 set lines& columns&
+set wrap
 
 " Use j and k for screen lines, and the arrows for logical lines
 nn j gj

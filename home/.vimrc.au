@@ -1,3 +1,16 @@
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" Set the filetype based on the file's extension
+" "setfiletype foo" is a wimpier version (respects some sort of pre-status)
+au BufRead,BufNewFile *.def set filetype=make
+
+autocmd FileType ghmarkdown setlocal columns=72
+autocmd FileType tex setlocal columns=72
+autocmd FileType txt setlocal columns=72
+
 autocmd FileType markdown setlocal nowrap
 " autocmd FileType markdown setlocal tabstop=16
 " autocmd FileType markdown setlocal columns=80
@@ -6,9 +19,4 @@ autocmd FileType markdown setlocal nowrap
 " autocmd FileType conf setlocal columns=80
 " autocmd FileType ghmarkdown setlocal tabstop=3
 " autocmd FileType ghmarkdown setlocal wrap
-" autocmd FileType ghmarkdown setlocal columns=72
-
-" Trying to just make it permanent now in ~/.vimrc.break
-" This make white screens in some interaction!!
-" autocmd VimResized * set lines& columns&
 
