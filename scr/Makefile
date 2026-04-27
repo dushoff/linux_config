@@ -45,6 +45,8 @@ scripts += term
 scripts += focus jumpy voicewin chromewin mailwin hangwin textcal report 
 scripts += textdemon
 
+## scripts += dictate
+
 ## Do something with reMarkable via wine
 scripts += remark
 
