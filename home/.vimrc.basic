@@ -8,6 +8,7 @@
 " This one is supposed to work with shopt in .bashrc
 " Didn't used to be necessary 2023 Jan 22 (Sun)
 let $BASH_ENV = "~/.baliases"
+let mapleader = " "
 
 set nocompatible
 set encoding=utf-8

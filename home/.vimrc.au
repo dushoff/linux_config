@@ -7,7 +7,7 @@ augroup END
 " "setfiletype foo" is a wimpier version (respects some sort of pre-status)
 au BufRead,BufNewFile *.def set filetype=make
 
-autocmd FileType ghmarkdown setlocal columns=72
+autocmd FileType ghmarkdown setlocal columns=72 wrap
 autocmd FileType tex setlocal columns=72
 autocmd FileType txt setlocal columns=72
 

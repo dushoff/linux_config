@@ -13,3 +13,6 @@ nn Y yg$
 
 " Other commands work on logical lines, to make them work on screen lines, insert "g" in appropriate places (e.g., g0, g$)
 
+let mapleader = " "
+nn <Leader>c :set columns=72<CR>
+nn <Leader>C :set columns&<CR>

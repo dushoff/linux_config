@@ -300,12 +300,12 @@ plandown() { (downsync) || (ice 0 && false) }
 allsync() { (cd ~/screens/ && sink ); }
 
 rtouch() { (touch ~/screens/org/Planning/report.md); }
+
 lake() { (sleep $@; alertPic ~/Dropbox/archive/lake.jpg) & }
-swiss() { (sleep $@; alertPic ~/Dropbox/archive/old_road.jpg) & }
+swiss() { (aPic $@ ~/Dropbox/archive/old_road.jpg) & }
 acorns() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
 ice() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
 squirrel() { (sleep $@; alertPic ~/screens/tech/linux_config/alerts/Red_squirrel_with_nut.jpg) ; }
-
 beaver() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
 banner() { (alertPic ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
 
