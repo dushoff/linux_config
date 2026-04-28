@@ -334,6 +334,7 @@ alias rarrive='reporttime "Arrive ${HOSTNAME}"'
 alias marrive='(ship) && findTab Chrome Gmail ;'
 alias arrive='plandown; rarrive; '
 alias newday='plandown; reportday; rarrive; '
+alias Arrive=newday
 
 alias play='reporttime Play; now; minus; shiponly &'
 alias meet='reporttime Meet; now; minus; boatonly &'
