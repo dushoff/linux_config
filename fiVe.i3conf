@@ -22,6 +22,7 @@ exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrollin
 ## Exploring the cast issue
 ## echo $DBUS_SESSION_BUS_ADDRESS
 # systemctl status avahi-daemon ##
-## avahi-browse -a | grep -i cast
+
+Got SIGINT, quitting.
 ## Check chrome://media-router-internals — this is the key diagnostic page. Compare it between the two machines. You're looking for whether Cast devices appear under "Providers" and whether there are any errors.
 
