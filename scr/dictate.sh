@@ -8,3 +8,4 @@ text=$($whisper/build/bin/whisper-cli \
 	-f "$tmpfile" --no-timestamps 2>/dev/null)
 echo -n "$text" | xclip -selection clipboard
 echo -n "$text" >> $plan/dump.md
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga ##
