@@ -14,7 +14,7 @@ exec --no-startup-id pactl $sink $speaker
 ## Touchpad
 
 ## Use name instead of id for stability
-exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 0 ##
+exec xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 1 ##
 ## xinput set-prop "DELL097D:00 04F3:311C Touchpad" "libinput Natural Scrolling Enabled" 1 ##
 ## xinput list-props "DELL097D:00 04F3:311C Touchpad" 
 ## xinput ##
