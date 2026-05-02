@@ -7,5 +7,6 @@ text=$($whisper/build/bin/whisper-cli \
 	-m $whisper/models/ggml-small.en.bin \
 	-f "$tmpfile" --no-timestamps 2>/dev/null)
 echo -n "$text" | xclip -selection clipboard
-echo -n "$text" >> $plan/dump.md
+printf "%s\n" "$text" >> "$plan/dictate.txt"
+
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga ##
