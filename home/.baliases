@@ -282,13 +282,17 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*weitz*/*.jpg \
 	~/screens/org/curate/album/**/*.* \
 ; }
-sinkshow() { sinkpix | shuf -n 1| tee .sinkshow | xargs eog -f; }
+
+## First one should work even without xargs. So what? Or useful for something else?
+## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | { read -r f; eog -f "$f"; }; }
+sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
+
 
 leavepix() { ls \
 	~/screens/tech/linux_config/meadows/* \
 	~/screens/tech/linux_config/lakes/* \
 ; }
-leaveshow() { leavepix | shuf -n 1| xargs eog -f & }
+leaveshow() { leavepix | shuf -n 1| xargs -d '\n' eog -f & }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
