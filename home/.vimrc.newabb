@@ -1,3 +1,7 @@
+
+" Maybe remap someday using <Leader> for opening directories
+" nnoremap gx :silent !xdg-open <cfile><CR>
+
 " n GD todown
 nn GG G
 nmap Gh <S-F9>
