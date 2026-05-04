@@ -222,6 +222,7 @@ alias firstplay='first | xargs -i mplayer "{}"'
 alias pen='ls -t *.* | head -2 | tail -1 '
 
 alias files='ls *.* > /dev/null'
+alias pic='eog -f'
 alias gol='last | xargs -i gio open "{}" &'
 alias dgol='cd ~/Downloads && (gol)'
 alias ddel='cd ~/Downloads && (lastdel)'
@@ -230,6 +231,10 @@ alias lastpo='lastpdf | xargs -i gio open "{}" &'
 alias pdflast='lastpdf | xargs -i touch "{}"'
 alias golp='lastpdf | xargs -i gio open "{}" &'
 alias xopen='xargs -i gio open "{}" &'
+
+## Couldn't make this one work (supposed to be robust)
+## alias picOpen='xargs -i -d '\\n' echo "{}" &'
+alias picOpen='xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
 
 alias rootdown='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
@@ -272,9 +277,9 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
-wiss() { (alertPic ~/screens/tech/linux_config/alerts/old_road.jpg) ; }
-fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| xargs eog -f; }
-meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| xargs eog -f; }
+wiss() { (pic ~/screens/tech/linux_config/alerts/old_road.jpg) ; }
+fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| picOpen }
+meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| picOpen }
 
 sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Arboretum*/*.JPG \
@@ -286,7 +291,6 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 ## First one should work even without xargs. So what? Or useful for something else?
 ## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | { read -r f; eog -f "$f"; }; }
 sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
-
 
 leavepix() { ls \
 	~/screens/tech/linux_config/meadows/* \
@@ -306,13 +310,14 @@ allsync() { (cd ~/screens/ && sink ); }
 
 rtouch() { (touch ~/screens/org/Planning/report.md); }
 
-lake() { (sleep $@; alertPic ~/Dropbox/archive/lake.jpg) & }
+## Meant to make aPic into an alias for sleep… pic
+lake() { (sleep $@; pic ~/Dropbox/archive/lake.jpg) & }
 swiss() { (aPic $@ ~/Dropbox/archive/old_road.jpg) & }
-acorns() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
-ice() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
-squirrel() { (sleep $@; alertPic ~/screens/tech/linux_config/alerts/Red_squirrel_with_nut.jpg) ; }
-beaver() { (sleep $@; alertPic ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
-banner() { (alertPic ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
+acorns() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
+ice() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
+squirrel() { (sleep $@; pic ~/screens/tech/linux_config/alerts/Red_squirrel_with_nut.jpg) ; }
+beaver() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
+banner() { (pic ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
 
 alias sesh="clear; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
