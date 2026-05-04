@@ -1,6 +1,8 @@
 ## WHAT is this? 2019 Sep 19 (Thu)
 shopt -s expand_aliases
 
+export alert=~/screens/tech/linux_config/alerts
+
 alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
 
 ## Moving from flow 2019 Jul 14 (Sun)
@@ -199,7 +201,7 @@ alias lastconv='last | xargs -i cat "{}" | convert -'
 alias lastdel='dell; last'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 alias lastgunzip='ls -t *.gz *.GZ | head -1 | xargs -i gunzip "{}"'
-alias dellast='lastdel && gol'
+alias dellast='lastdel && gold'
 alias downdel='(cd ~/Downloads/ && dellast)'
 
 alias sendable='ls -t *.send.*'
@@ -221,10 +223,11 @@ alias firstplay='first | xargs -i mplayer "{}"'
 
 alias pen='ls -t *.* | head -2 | tail -1 '
 
-alias files='ls *.* > /dev/null'
 alias pic='eog -f'
-alias gol='last | xargs -i gio open "{}" &'
-alias dgol='cd ~/Downloads && (gol)'
+alias filecheck='ls *.* > /dev/null || pic ${alert}/peacock.jpg'
+alias gol='(filecheck); last | xargs -i gio open "{}" &'
+alias gold='(filecheck); last | xargs -i gio open "{}" &'
+alias dgol='cd ~/Downloads && (gold)'
 alias ddel='cd ~/Downloads && (lastdel)'
 alias gop='pen | xargs -i gio open "{}" &'
 alias lastpo='lastpdf | xargs -i gio open "{}" &'
@@ -277,7 +280,7 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 ## This can be overridden in .blocal
 go() { gnome-open "$@" & }
 
-wiss() { (pic ~/screens/tech/linux_config/alerts/old_road.jpg) ; }
+wiss() { (pic ${alert}/old_road.jpg) ; }
 fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| picOpen }
 meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| picOpen }
 
@@ -311,13 +314,13 @@ allsync() { (cd ~/screens/ && sink ); }
 rtouch() { (touch ~/screens/org/Planning/report.md); }
 
 ## Meant to make aPic into an alias for sleep… pic
-lake() { (sleep $@; pic ~/Dropbox/archive/lake.jpg) & }
-swiss() { (aPic $@ ~/Dropbox/archive/old_road.jpg) & }
-acorns() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/acorns.jpg) & }
-ice() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/ice_shelf.jpg) & }
-squirrel() { (sleep $@; pic ~/screens/tech/linux_config/alerts/Red_squirrel_with_nut.jpg) ; }
-beaver() { (sleep $@; pic ~/Dropbox/courses/Lecture_images/beaver.jpg) & }
-banner() { (pic ~/Dropbox/courses/Lecture_images/peacock.jpg) & }
+lake() { (sleep $@; pic ${alert}/lake.jpg) & }
+swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
+acorns() { (sleep $@; pic ${alert}/acorns.jpg) & }
+ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
+squirrel() { (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) ; }
+beaver() { (sleep $@; pic ${alert}/beaver.jpg) & }
+banner() { (pic ${alert}/peacock.jpg) & }
 
 alias sesh="clear; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
