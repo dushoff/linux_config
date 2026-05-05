@@ -1,4 +1,8 @@
 vbell on
+altscreen on
+defflow off
+unsetenv TERM
+term screen-256color
 zombie 'qr' onerror
 deflogin off
 escape a
