@@ -1,4 +1,3 @@
-
 " Basic parameters
 
 " shellcmdflag is a disaster. shell= seems to work, but doesn't feel right
@@ -14,6 +13,9 @@ set nocompatible
 set encoding=utf-8
 set tabstop=3 shiftwidth=0 autoindent backspace=2 autowrite title history=100 incsearch hlsearch hidden autoread nojoinspaces
 set exrc
+
+" Try again with screen clear
+set t_ut=
 
 nohlsearch
 
