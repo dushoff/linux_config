@@ -1,10 +1,8 @@
-
 set ruler
 set linebreak textwidth=0 display=lastline showbreak=+\ 
 set lines& columns&
 set wrap
 augroup FixColumns
-  autocmd!
   autocmd ShellCmdPost,ShellFilterPost * set columns=72
 augroup END
 

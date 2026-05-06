@@ -16,6 +16,9 @@ set exrc
 
 " Try again with screen clear
 set t_ut=
+set norestorescreen
+set t_ti=
+set t_te=
 
 nohlsearch
 
