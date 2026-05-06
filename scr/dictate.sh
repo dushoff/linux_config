@@ -22,6 +22,7 @@ process_segment() {
 }
 
 trap 'interrupted=1; pkill -SIGINT sox' SIGINT
+trap 'pkill -SIGINT sox; process_segment' SIGHUP
 
 while true; do
 	interrupted=0
