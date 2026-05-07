@@ -75,7 +75,7 @@ linkhome:
 
 ######################################################################
 
-Sources += i3.md i3.config i3.bind.conf i3.ws.conf
+Sources += i3.md i3.config i3.bind.conf i3.ws.conf i3.nws.conf
 Sources += workspace.json
 
 i3Check:
