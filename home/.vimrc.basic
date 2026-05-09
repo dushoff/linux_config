@@ -1,3 +1,4 @@
+
 " Basic parameters
 
 " shellcmdflag is a disaster. shell= seems to work, but doesn't feel right
@@ -7,6 +8,7 @@
 " This one is supposed to work with shopt in .bashrc
 " Didn't used to be necessary 2023 Jan 22 (Sun)
 let $BASH_ENV = "~/.baliases"
+
 let mapleader = " "
 
 set nocompatible
@@ -15,6 +17,7 @@ set tabstop=3 shiftwidth=0 autoindent backspace=2 autowrite title history=100 in
 set exrc
 
 " Try again with screen clear
+" These may be harmful or something, they are from trying to debug the column :! interaction
 set t_ut=
 set norestorescreen
 set t_ti=
@@ -94,4 +97,5 @@ map [21;2~ <S-F10>
 map! [21;2~ <S-F10>
 map [21;6~ <C-S-F10>
 map! [21;6~ <C-S-F10>
+
 
