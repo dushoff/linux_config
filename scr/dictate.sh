@@ -1,11 +1,12 @@
 #!/bin/bash
 whisper=~/screens/tech/linux_setup/whisper.cpp/
-loc=~/
+## ~/dictate.txt
+plan=~/
 segment_secs=15
 accumulated=""
 tmpfile=""
 
-## screen -S org -p Planning -X stuff $'\e:wall\n'
+screen -S org -p Planning -X stuff $'\e:wall\n'
 
 process_segment() {
 	local text
@@ -16,11 +17,12 @@ process_segment() {
 	[ -z "$text" ] && return
 	accumulated="${accumulated}${text} "
 	echo -n "$accumulated" | xclip -selection clipboard
-	printf "%s\n" "$text" >> "$loc/dictate.txt"
-	## screen -S org -p Planning -X stuff $'\e:e\n'
+	printf "%s\n" "$text" >> "$plan/dictate.txt"
+	screen -S org -p Planning -X stuff $'\e:e\n'
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
+## Use k (SIGINT) to accumulate and K (SIGHUP
 trap 'interrupted=1; pkill -SIGINT sox' SIGINT
 trap 'pkill -SIGINT sox; process_segment' SIGHUP
 
