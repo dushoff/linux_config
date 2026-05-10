@@ -59,7 +59,7 @@ linkhome:
 
 ######################################################################
 
-Sources += i3.md i3.config i3.bind.conf i3.ws.conf
+Sources += i3.md i3.config i3.bind.conf i3.ws.conf i3.nws.conf alacritty.toml
 Sources += workspace.json
 
 i3Check:
@@ -76,6 +76,9 @@ i3com.%:
 
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
+
+linkAlac: | ~/.config/alacritty/ alacritty.toml
+	cd $| && ln -fs $(CURDIR)/alacritty.toml
 
 Sources += *.i3conf
 ## siX.i3file: siX.i3conf i3.local.conf

@@ -59,7 +59,6 @@ nmap <C-J> :s/^$//<C-M>Ji* <ESC>
 " Files
 nnoremap <C-u> <Cmd>files<CR>
 
-
 " Copy paste
 nn gz ggVG"+x
 nn gZ gg"ddG

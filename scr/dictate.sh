@@ -1,6 +1,7 @@
 #!/bin/bash
 whisper=~/screens/tech/linux_setup/whisper.cpp/
-plan=~/screens/org/Planning/
+## ~/dictate.txt
+plan=~/
 segment_secs=15
 accumulated=""
 tmpfile=""
@@ -21,7 +22,9 @@ process_segment() {
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
+## Use k (SIGINT) to accumulate and K (SIGHUP
 trap 'interrupted=1; pkill -SIGINT sox' SIGINT
+trap 'pkill -SIGINT sox; process_segment' SIGHUP
 
 while true; do
 	interrupted=0
