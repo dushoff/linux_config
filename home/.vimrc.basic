@@ -24,6 +24,8 @@ set t_ti=
 set t_te=
 
 nohlsearch
+" hi Search ctermfg=black ctermbg=yellow
+hi Search ctermfg=black
 
 " autosave=240
 
@@ -33,6 +35,7 @@ set formatoptions=tcroql
 set comments=l:#'
 
 nmap H :nohlsearch<C-M>
+
 " nmap <C-U> :ls<C-M>
 
 " keystrokes (consider moving to a separate file)
