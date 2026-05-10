@@ -77,8 +77,7 @@ i3com.%:
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
-## linkAlac: | ~/.config/alacritty/ alacritty.toml
-linkAlac: | ~/.config/alacritty/
+linkAlac: | ~/.config/alacritty/ alacritty.toml
 	cd $| && ln -fs $(CURDIR)/alacritty.toml
 
 Sources += *.i3conf
