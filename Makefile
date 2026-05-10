@@ -28,22 +28,6 @@ Sources += rmview.json
 ## /home/dushoff/.config/rmview.json
 
 ######################################################################
-
-## nvim/ghost stuff
-
-## dushoff@Tellurium:~/screens/tech$ netstat -lntup 
-
-## neovim start here I guess
-nvimlink: init.vim ~/.config/nvim
-	cd ~/.config/nvim && ln -fs $(CURDIR)/$<
-
-~/.config/nvim:
-	$(mkdir)
-
-Sources += init.vim
-
-######################################################################
-
 Sources += bash.md
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
@@ -172,6 +156,22 @@ Dropbox/%.mk:
 mirrors += lakes meadows exe alerts
 
 ######################################################################
+
+## nvim/ghost stuff
+
+## dushoff@Tellurium:~/screens/tech$ netstat -lntup 
+
+## neovim start here I guess
+nvimlink: init.vim ~/.config/nvim
+	cd ~/.config/nvim && ln -fs $(CURDIR)/$<
+
+~/.config/nvim:
+	$(mkdir)
+
+Sources += init.vim
+
+######################################################################
+
 
 ## Makestuff setup
 Sources += Makefile 
