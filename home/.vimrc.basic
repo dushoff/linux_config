@@ -24,8 +24,6 @@ set t_ti=
 set t_te=
 
 nohlsearch
-" hi Search ctermfg=black ctermbg=yellow
-" hi Search ctermfg=black
 
 " autosave=240
 
