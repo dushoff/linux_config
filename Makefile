@@ -79,8 +79,9 @@ linki3: | ~/.config/i3/
 
 ## GruvLight.profile: GruvLight.al.toml
 ## GruvDark.profile: GruvDark.al.toml
-%.profile: %.al.toml alacritty.toml
-	$(CP) $^
+## bare.al.profile: bare.al.toml
+%.profile: %.al.toml /home/dushoff/.config/alacritty/alacritty.toml
+	$(CP) $< alacritty.toml
 %.al.toml: | bare.toml
 	$(pipecopy)
 
