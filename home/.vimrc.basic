@@ -77,7 +77,6 @@ map! [1;5S <C-F4>
 map O1;6S <C-S-F4>
 map! O1;6S <C-S-F4>
 map [1;6S <C-S-F4>
-
 map! [1;6S <C-S-F4>
 map [15;5~ <C-F5>
 map [15;5~ <C-F5>
