@@ -81,9 +81,13 @@ Sources += bare.toml $(wildcard *.al.toml)
 Ignore +=  alacritty.toml
 ## GruvLight.profile: GruvLight.al.toml
 ## GruvDark.profile: GruvDark.al.toml
+## tomorrow.profile: tomorrow.al.toml alacolors.md
+## tomorrow_night_eighties.toml TRY THIS
 ## bare.al.profile: bare.al.toml ## Bad for hl; too dark for daytime on allinone
+## tomorrow_night.profile: tomorrow_night.al.toml ## Contrasts acceptable but not good allinone
 %.profile: %.al.toml /home/dushoff/.config/alacritty/alacritty.toml
 	$(CP) $< alacritty.toml
+.PRECIOUS: %.al.toml
 %.al.toml: | bare.toml
 	$(pipecopy)
 
@@ -193,7 +197,7 @@ ms = makestuff
 -include makestuff/os.mk
 
 Ignore += makestuff
-Makefile: makestuff/03.stamp
+Makefile: makestuff/04.stamp
 makestuff/%.stamp:
 	- $(RM) makestuff/*.stamp
 	(cd makestuff && $(MAKE) pull) || git clone --depth 1 $(msrepo)/makestuff
