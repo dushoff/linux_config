@@ -230,7 +230,7 @@ nmap mD ddjV}kS
 nmap ym f<lvt>Y
 
 " Directory-specific stuff; exrc is not recommended
-if(getcwd() == "/home/dushoff/screens/org/Planning")
+if(getcwd() == "/home/dushoff/terminal/dirs/Planning")
 	source ~/.vimrc.focal
 endif
 

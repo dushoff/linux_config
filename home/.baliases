@@ -2,8 +2,11 @@
 shopt -s expand_aliases
 
 export alert=~/terminal/dirs/config/alerts
+export mainterm=~/terminal
+export rdirs=${mainterm}/dirs
 
 alias tms='tmux source-file ~/.tmux.conf'
+alias spin='make -C ${mainterm}'
 
 alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
 
