@@ -81,9 +81,18 @@ Sources += bare.toml $(wildcard *.al.toml)
 Ignore +=  alacritty.toml
 ## tomorrow is current preferred for desktops
 ## tomorrow.profile: tomorrow.al.toml alacolors.md
-## tomorrow_night_eighties.toml TRY THIS for laptops
+## selenized_dark.profile: selenized_dark.al.toml
+
+## Override suggestions from Claude
+## hi_overrides.md
+
+## catppuccin_mocha.profile: catppuccin_mocha.al.toml
+
+## These are not good
+## tomorrow_night_eighties.profile: tomorrow_night_eighties.al.toml 
 ## tomorrow_night.profile: tomorrow_night.al.toml ## Contrasts acceptable but not good allinone
 
+## These are not good
 ## GruvLight.profile: GruvLight.al.toml
 ## GruvDark.profile: GruvDark.al.toml
 
