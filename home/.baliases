@@ -1,7 +1,9 @@
 ## WHAT is this? 2019 Sep 19 (Thu)
 shopt -s expand_aliases
 
-export alert=~/screens/tech/linux_config/alerts
+export alert=~/terminal/dirs/config/alerts
+
+alias tms='tmux source-file ~/.tmux.conf'
 
 alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
 
@@ -165,7 +167,9 @@ alias textstart='psterm textdemon; psterm text-aid; textdemon & '
 alias deskstart='google-chrome & firefox & textstart'
 alias camstart='guvcview -m 960x720 & '
 alias classcam='guvcview -m 480x360 & '
-alias rmvstart='rmview ~/./screens/tech/linux_config/rmview.json &'
+
+## Remarkable something
+alias rmvstart='rmview ~/./terminal/dirs/config/rmview.json &'
 
 alias dropboxd='~/.dropbox-dist/dropboxd &'
 alias pd=dirs
@@ -281,8 +285,8 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 go() { gnome-open "$@" & }
 
 wiss() { (pic ${alert}/old_road.jpg) ; }
-fastlake() { ls ~/screens/tech/linux_config/lakes/* | shuf -n 1| picOpen }
-meadow() { ls ~/screens/tech/linux_config/meadows/* | shuf -n 1| picOpen }
+fastlake() { ls ~/terminal/dirs/config/lakes/* | shuf -n 1| picOpen }
+meadow() { ls ~/terminal/dirs/config/meadows/* | shuf -n 1| picOpen }
 
 sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Arboretum*/*.JPG \
@@ -296,22 +300,19 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
 
 leavepix() { ls \
-	~/screens/tech/linux_config/meadows/* \
-	~/screens/tech/linux_config/lakes/* \
+	~/terminal/dirs/config/meadows/* \
+	~/terminal/dirs/config/lakes/* \
 ; }
 leaveshow() { leavepix | shuf -n 1| xargs -d '\n' eog -f & }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
-opsync() { vsave && (cd ~/screens/org/Planning && make opsync.autosync ); }
-upsync() { (cd ~/screens/org/Planning && make report.autoup ); }
-upsync() { (cd ~/screens/org/Planning && make report.autoup commit.time ); }
-downsync() { (cd ~/screens/org/Planning && make pullup ); }
+opsync() { vsave && (cd ~/terminal/dirs/Planning && make opsync.autosync ); }
+upsync() { (cd ~/terminal/dirs/Planning && make report.autoup ); }
+upsync() { (cd ~/terminal/dirs/Planning && make report.autoup commit.time ); }
+downsync() { (cd ~/terminal/dirs/Planning && make pullup ); }
 plansync() { (opsync) || (ice 0 && false) }
 planup() { (upsync) || (ice 0 && false) }
 plandown() { (downsync) || (ice 0 && false) }
-allsync() { (cd ~/screens/ && sink ); }
-
-rtouch() { (touch ~/screens/org/Planning/report.md); }
 
 ## Meant to make aPic into an alias for sleep… pic
 lake() { (sleep $@; pic ${alert}/lake.jpg) & }
