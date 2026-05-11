@@ -9,7 +9,7 @@ vim_session:
 
 ######################################################################
 
-Sources += $(wilcdard *.md)
+Sources += $(wildcard *.md)
 
 ## TODO.md and README.md seem very old.
  
