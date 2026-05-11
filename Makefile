@@ -77,7 +77,14 @@ i3com.%:
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
-linkAlac: | ~/.config/alacritty/ alacritty.toml
+## GruvLight.profile: GruvLight.al.toml
+## GruvDark.profile: GruvDark.al.toml
+%.profile: %.al.toml alacritty.toml
+	$(CP) $^
+%.al.toml: | bare.toml
+	$(pipecopy)
+
+/home/dushoff/.config/alacritty/alacritty.toml: Makefile | ~/.config/alacritty/
 	cd $| && ln -fs $(CURDIR)/alacritty.toml
 
 Sources += *.i3conf
