@@ -46,6 +46,7 @@ map! <S-F4> <ESC><S-F4>
 map! <C-F4> <ESC><C-F4>
 map! <C-S-F4> <ESC><C-S-F4>
 map! <F5> <ESC><F5>
+map! <C-S-F5> <ESC><C-S-F5>
 map! <F6> <ESC><F6>
 map! <F7> <ESC><F7>
 map! <S-F7> <ESC><S-F7>
@@ -76,6 +77,7 @@ map! [1;5S <C-F4>
 map O1;6S <C-S-F4>
 map! O1;6S <C-S-F4>
 map [1;6S <C-S-F4>
+
 map! [1;6S <C-S-F4>
 map [15;5~ <C-F5>
 map [15;5~ <C-F5>

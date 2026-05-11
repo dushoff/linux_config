@@ -59,7 +59,7 @@ linkhome:
 
 ######################################################################
 
-Sources += i3.md i3.config i3.bind.conf i3.ws.conf i3.nws.conf alacritty.toml
+Sources += i3.md i3.config i3.bind.conf i3.ws.conf i3.nws.conf
 Sources += workspace.json
 
 i3Check:
@@ -77,9 +77,11 @@ i3com.%:
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
+Sources += bare.toml $(wildcard *.al.toml)
+Ignore +=  alacritty.toml
 ## GruvLight.profile: GruvLight.al.toml
 ## GruvDark.profile: GruvDark.al.toml
-## bare.al.profile: bare.al.toml
+## bare.al.profile: bare.al.toml ## Bad for hl; too dark for daytime on allinone
 %.profile: %.al.toml /home/dushoff/.config/alacritty/alacritty.toml
 	$(CP) $< alacritty.toml
 %.al.toml: | bare.toml
