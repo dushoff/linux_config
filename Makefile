@@ -9,10 +9,10 @@ vim_session:
 
 ######################################################################
 
-Sources += README.md TODO.md
+Sources += $(wilcdard *.md)
 
-# Installation logs (see README.md)
-
+## TODO.md and README.md seem very old.
+ 
 ## Logs of how I install things
 Sources += $(wildcard log/*.log log/*.mac log/token*)
 
