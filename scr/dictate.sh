@@ -32,7 +32,7 @@ while true; do
 	paplay /usr/share/sounds/freedesktop/stereo/bell.oga
 	sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
 	wait $!
-	[ "$interrupted" -eq 0 ] && break
 	process_segment
+	[ "$interrupted" -eq 0 ] && break
 done
-paplay /usr/share/sounds/freedesktop/stereo/message.oga ##
+paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
