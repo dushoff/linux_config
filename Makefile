@@ -65,7 +65,7 @@ Sources += workspace.json
 i3Check:
 	i3 -C
 
-## Need to run with debugging to use debug well??
+## Log in with debugging to use this log; not tried 2026 May 12 (Tue)
 ## i3com.restart: ~/.cache/i3-debug.log
 ## i3com.reload:
 i3com.%:
@@ -77,10 +77,26 @@ i3com.%:
 linki3: | ~/.config/i3/
 	cd $| && ln -fs $(CURDIR)/i3.config config
 
+######################################################################
+
+## X
+
+## xdpyinfo | grep resolution
+## cat ~/.Xresources | grep -i dpi
+## grep -r "font" ~/.config/alacritty/
+## echo "Xft.dpi: 120" > ~/.Xresources
+## xrdb -merge ~/.Xresources
+
+######################################################################
+
+## alacritty
+
 Sources += bare.toml $(wildcard *.al.toml)
 Ignore +=  alacritty.toml
 ## tomorrow is current preferred for desktops
 ## tomorrow.profile: tomorrow.al.toml alacolors.md
+## tomorrow_small.profile: tomorrow_small.al.toml alacolors.md
+
 ## selenized_dark.profile: selenized_dark.al.toml
 
 ## Override suggestions from Claude
