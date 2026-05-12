@@ -14,8 +14,8 @@ alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
 alias nmr='sudo service network-manager restart'
 
-alias renow="! screen -list && reboot"
-alias shutnow="! screen -list && shutdown now"
+alias renow="! screen -list && ! tmux list-sessions && reboot"
+alias shutnow="! screen -list && ! tmux list-sessions && shutdown now"
 
 ## Moving windows to the Dumb TV
 alias left='wmctrl -r ":SELECT:" -e 0,0,0,3840,2160'
