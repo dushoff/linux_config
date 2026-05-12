@@ -3,7 +3,7 @@ style = { shape = "Block", blinking = "Always" }
 blink_interval = 750
 
 [font]
-size = 16
+size = 20
 
 ## ~/.config/alacritty/themes/themes/
 
