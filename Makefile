@@ -126,6 +126,10 @@ Sources += *.i3conf
 ## siX.i3file: siX.i3conf i3.local.conf
 ## fiVe.i3file: fiVe.i3conf i3.local.conf
 
+## xclip -o -selection primary
+
+
+
 Ignore += *.local.conf
 ## xiangshan.i3file: xiangshan.i3conf i3.local.conf
 %.i3file: | %.i3conf
