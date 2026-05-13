@@ -3,23 +3,16 @@ whisper=~/screens/tech/linux_setup/whisper.cpp/
 ## ~/dictate.txt
 plan=~/
 segment_secs=15
-accumulated=""
 tmpfile=""
+text=""
 
 screen -S org -p Planning -X stuff $'\e:wall\n'
 
 process_segment() {
-	local text
 	text=$($whisper/build/bin/whisper-cli \
 		-m $whisper/models/ggml-small.en.bin \
 		-f "$tmpfile" --no-timestamps 2>/dev/null)
 	rm -f "$tmpfile"
-	[ -z "$text" ] && return
-	accumulated="${accumulated}${text} "
-	echo -n "$accumulated" | xclip -selection clipboard
-	printf "%s\n" "$text" >> "$plan/dictate.txt"
-	screen -S org -p Planning -X stuff $'\e:e\n'
-	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
 ## Use k (SIGINT) to accumulate and K (SIGHUP
@@ -34,5 +27,13 @@ while true; do
 	wait $!
 	process_segment
 	[ "$interrupted" -eq 0 ] && break
+	text=$(echo "$text" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/[^?.]$/&./; s/$/ /')
+	printf "%s\n" "$text" >> "$plan/dictate.txt"
+	screen -S org -p Planning -X stuff $'\e:e\n'
+	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
-paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+echo -n "$text" | xclip -selection primary
+xclip -o -selection primary
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+
