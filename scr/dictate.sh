@@ -2,9 +2,14 @@
 whisper=~/terminal/dirs/setup/whisper.cpp/
 ## ~/dictate.txt
 plan=~/
-segment_secs=15
+segment_secs=20
 tmpfile=""
 text=""
+
+## This is only called from i3 bindings file
+## It used to actively dump content into the open file in Planning, as well as cache it into dictate and keep the last line in clipboard. Some thought could be applied.
+## Should have a hotkey to kill it permanently, right now it needs to time out
+## Should do that and make segment_secs long
 
 ## screen -S org -p Planning -X stuff $'\e:wall\n'
 
