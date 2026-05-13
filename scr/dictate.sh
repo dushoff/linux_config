@@ -1,12 +1,12 @@
 #!/bin/bash
-whisper=~/screens/tech/linux_setup/whisper.cpp/
+whisper=~/terminal/dirs/setup/whisper.cpp/
 ## ~/dictate.txt
 plan=~/
 segment_secs=15
 tmpfile=""
 text=""
 
-screen -S org -p Planning -X stuff $'\e:wall\n'
+## screen -S org -p Planning -X stuff $'\e:wall\n'
 
 process_segment() {
 	text=$($whisper/build/bin/whisper-cli \
@@ -29,11 +29,10 @@ while true; do
 	[ "$interrupted" -eq 0 ] && break
 	text=$(echo "$text" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/[^?.]$/&./; s/$/ /')
 	printf "%s\n" "$text" >> "$plan/dictate.txt"
-	screen -S org -p Planning -X stuff $'\e:e\n'
+	## screen -S org -p Planning -X stuff $'\e:e\n'
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
 echo -n "$text" | xclip -selection primary
 xclip -o -selection primary
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
-
