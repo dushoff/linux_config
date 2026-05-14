@@ -442,8 +442,11 @@ msd() { mkdir $1; sd $1; }
 sdn() { (cd $1 && screen -t "$2"); }
 svn() { (cd $1 && screen -t "$2" bash -ci "vvs"); }
 
+######################################################################
+
 ## tmux aliases 2026 May 12 (Tue)
 td() { tmux new-window -n "$(basename $1)-s" -c "$1"; }
+td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
 
 vi(){
 	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')
