@@ -5,9 +5,6 @@ export alert=~/terminal/dirs/config/alerts
 export mainterm=~/terminal
 export rdirs=${mainterm}/dirs
 
-alias tms='tmux source-file ~/.tmux.conf'
-alias spin='make -C ${mainterm}'
-
 alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
 
 ## Moving from flow 2019 Jul 14 (Sun)
@@ -447,6 +444,11 @@ svn() { (cd $1 && screen -t "$2" bash -ci "vvs"); }
 ## tmux aliases 2026 May 12 (Tue)
 td() { tmux new-window -n "$(basename $1)-s" -c "$1"; }
 td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
+
+alias tms='tmux source-file ~/.tmux.conf'
+alias spin='make -C ${mainterm}'
+
+alias dw='watch -n -.5 cat ~/dictate.txt'
 
 vi(){
 	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')

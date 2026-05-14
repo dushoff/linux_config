@@ -4,7 +4,8 @@
 
 " <Leader> c columns
 " <Leader> C columns
-nmap <Leader>d :r !cat ~/dictate.txt<CR><Leader>D<Leader>c
+nmap <Leader>d :r !cat ~/dictate.txt<CR><Leader>D
+nn <Leader>D :silent !cat /dev/null > ~/dictate.txt<CR>
 
 " n GD todown
 nn GG G
