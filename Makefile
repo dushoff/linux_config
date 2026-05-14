@@ -89,13 +89,16 @@ linki3: | ~/.config/i3/
 
 ######################################################################
 
-## alacritty
+## alacritty alacolors.md
+
+## Remake the profile if you edit
+## all are currently on tomorrow except siX is on tomorrow_small
 
 Sources += bare.toml $(wildcard *.al.toml)
 Ignore +=  alacritty.toml
 ## tomorrow is current preferred for desktops
 ## tomorrow.profile: tomorrow.al.toml alacolors.md
-## tomorrow_small.profile: tomorrow_small.al.toml alacolors.md
+## tomorrow_small.profile: tomorrow_small.al.toml
 
 ## selenized_dark.profile: selenized_dark.al.toml
 
