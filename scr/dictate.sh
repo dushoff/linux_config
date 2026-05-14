@@ -32,7 +32,7 @@ while true; do
 	wait $!
 	process_segment
 	[ "$interrupted" -eq 0 ] && break
-	text=$(echo "$text" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/[^?.]$/&./; s/$/ /')
+	text=$(echo "$text" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/[^?.]$/&./; s/.$/& /')
 	printf "%s\n" "$text" >> "$plan/dictate.txt"
 	## screen -S org -p Planning -X stuff $'\e:e\n'
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
