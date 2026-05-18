@@ -2,10 +2,12 @@
 whisper=~/terminal/dirs/setup/whisper.cpp/
 ## ~/dictate.txt
 plan=~/
-segment_secs=20
+segment_secs=12
 tmpfile=""
+fill=""
 text=""
-text=""
+acc=""
+nl=$'\n\n'
 
 ## This is only called from i3 bindings file
 ## It used to actively dump content into the open file in Planning, as well as cache it into dictate and keep the last line in clipboard. Some thought could be applied.
@@ -23,26 +25,35 @@ process_segment() {
 		s/^[[:space:]]*//
 		s/[[:space:]]*$//m
 		s/([^)]*)//g
-		s/\[[^\]]*\]//g
+		s/\[[^]]*\]//g
 		s/[^?.]$/&./
 	')
 }
 
-trap 'interrupted=1; pkill -SIGINT sox' SIGHUP
-
-while true; do
-	interrupted=0
+listen()
+{
+	interrupted=0; fill=""
 	tmpfile=$(mktemp /tmp/dictate-XXXXXX.wav)
 	paplay /usr/share/sounds/freedesktop/stereo/bell.oga
 	sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
 	wait $!
+}
+
+trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
+trap 'interrupted=1; fill=$nl; acc=""; pkill -SIGINT sox' SIGINT
+trap 'pkill -SIGINT sox' SIGTERM
+
+while true; do
+	listen
 	process_segment
-	## Close if you get to the end without being interrupted
 	[ "$interrupted" -eq 0 ] && break
-	printf "%s " "$text" >> "$plan/dictate.txt"
+	printf "%s%s" "$text" "$fill" >> "$plan/dictate.txt"
+	acc=$(printf "%s%s%s" "$acc" "$text" "$fill")
+	echo $acc | xclip -selection clipboard
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
+
 echo -n "$text" | xclip -selection primary
-## xclip -o -selection primary
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+
