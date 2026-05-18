@@ -54,7 +54,7 @@ imap <C-D> <ESC>mm<C-D>0"md$dd`m"mpa
 imap <C-G> \|>
 
 " * indent and de-indent
-nmap <C-J> :s/^$//<C-M>Ji* <ESC>
+" nmap <C-J> :s/^$//<C-M>Ji* <ESC>
 
 " Files
 nnoremap <C-u> <Cmd>files<CR>
@@ -65,8 +65,14 @@ nn gZ gg"ddG
 nn gy ggVG"+y
 nn gv "+gP
 nn GV o<ESC>"+gP
+
+vno <C-k> c[<C-r>"](<C-r>+)<Esc>
+nmap <C-j> /(\S\+)<CR>"+yi(H
+
 nmap <F11> gv
 imap <F11> <ESC>a <ESC>gvs
+vn <F11> x:silent @"<CR>
+
 nmap <F12> GV
 imap <F12> <ESC><F12>
 
@@ -188,11 +194,6 @@ nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
 nmap @d <C-D>@t
 nmap @D <C-D>I##### <ESC>
-
-" Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
-nmap @r grGp:w<C-M><C-^>
-nmap <C-K> V<C-K>
-vmap <C-K> d@r
 
 " Time stamped dumping dev again 2021 Mar 21 (Sun)
 " Built to indent a one-line ¶ for some reason.
