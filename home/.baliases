@@ -448,7 +448,7 @@ td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
 alias tms='tmux source-file ~/.tmux.conf'
 alias spin='make -C ${mainterm}'
 
-alias dw='watch -n -.5 cat ~/dictate.txt'
+alias dw='exec watch -n -.5 cat ~/dictate.txt'
 
 vi(){
 	d=$(pwd | perl -pe 's|.*?dushoff/||; s|/.*||; s/^$/home/;')
