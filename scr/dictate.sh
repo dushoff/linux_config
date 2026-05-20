@@ -9,11 +9,6 @@ text=""
 acc=""
 nl=$'\n\n'
 
-## This is only called from i3 bindings file
-## It used to actively dump content into the open file in Planning, as well as cache it into dictate and keep the last line in clipboard. Some thought could be applied.
-## Should have a hotkey to kill it permanently, right now it needs to time out
-## Should do that and make segment_secs long
-
 ## screen -S org -p Planning -X stuff $'\e:wall\n'
 
 process_segment() {
@@ -40,7 +35,7 @@ listen()
 }
 
 trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
-trap 'interrupted=1; fill=$nl; acc=""; pkill -SIGINT sox' SIGINT
+trap 'interrupted=1; fill=$nl; pkill -SIGINT sox' SIGINT
 trap 'pkill -SIGINT sox' SIGTERM
 
 while true; do
@@ -48,8 +43,9 @@ while true; do
 	process_segment
 	[ "$interrupted" -eq 0 ] && break
 	printf "%s%s" "$text" "$fill" >> "$plan/dictate.txt"
-	acc=$(printf "%s%s%s" "$acc" "$text" "$fill")
-	echo $acc | xclip -selection clipboard
+	printf -v acc "%s%s%s" "$acc" "$text" "$fill"
+	printf "%s" "$acc" | xclip -selection clipboard
+
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
 
