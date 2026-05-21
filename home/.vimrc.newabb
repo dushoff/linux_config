@@ -1,11 +1,11 @@
-
 " Maybe remap someday using <Leader> for opening directories
 " nnoremap gx :silent !xdg-open <cfile><CR>
 
 " <Leader> c columns
 " <Leader> C columns
 nmap <Leader>d :r !cat ~/dictate.txt<CR><Leader>D
-nn <Leader>D :silent !cat /dev/null > ~/dictate.txt<CR>
+nn <Leader>D :silent !cat ~/dictate.txt \| xclip -selection primary && truncate -s 0 ~/dictate.txt<CR>
+
 nn <Leader>s :silent !spin <cfile><CR>
 
 " n GD todown
