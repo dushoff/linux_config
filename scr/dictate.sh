@@ -45,7 +45,6 @@ while true; do
 	printf "%s%s" "$text" "$fill" >> "$plan/dictate.txt"
 	printf -v acc "%s%s%s" "$acc" "$text" "$fill"
 	printf "%s" "$acc" | xclip -selection clipboard
-
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
 
