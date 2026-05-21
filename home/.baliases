@@ -230,7 +230,7 @@ alias pen='ls -t *.* | head -2 | tail -1 '
 alias pic='eog -f'
 alias filecheck='ls *.* > /dev/null || pic ${alert}/peacock.jpg'
 alias gol='(filecheck); last | xargs -i gio open "{}" &'
-alias gold='(filecheck); last | xargs -i gio open "{}" &'
+## alias gold='(filecheck); last 
 alias dgol='cd ~/Downloads && (gold)'
 alias ddel='cd ~/Downloads && (lastdel)'
 alias gop='pen | xargs -i gio open "{}" &'
@@ -238,6 +238,9 @@ alias lastpo='lastpdf | xargs -i gio open "{}" &'
 alias pdflast='lastpdf | xargs -i touch "{}"'
 alias golp='lastpdf | xargs -i gio open "{}" &'
 alias xopen='xargs -i gio open "{}" &'
+alias silver='(filecheck); last | xargs -I{} echo "{}"'
+alias gold='(filecheck); last | xargs -I{} focusOpen "{}"'
+focusOpen() { wmctrl -a "$1" || gio open "$1" & }
 
 ## Couldn't make this one work (supposed to be robust)
 ## alias picOpen='xargs -i -d '\\n' echo "{}" &'
