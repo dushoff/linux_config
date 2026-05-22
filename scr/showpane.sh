@@ -13,4 +13,4 @@ tmux split-window -h -t "$current_pane" "exec bash -c '$cmd'"
 
 # Return focus to calling pane
 tmux select-pane -t "$current_pane"
-tmux resize-pane -x 70
+tmux resize-pane -x 72
