@@ -73,8 +73,10 @@ alias vproj='vi Makefile target.mk README.md notes.md TODO.md'
 alias vm='vi Makefile'
 
 ## alias vl='vim --serverlist'
+## These could presumably be modernized with <Esc> and <CR>
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
+alias vcheck="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:checktime\n'; done"
 alias cclose="vclose; exit"
 alias dropstatus="dropbox status > ~/.dropstatus"
 
