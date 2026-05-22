@@ -77,7 +77,7 @@ alias vm='vi Makefile'
 alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wa\n'; done"
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vcheck="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:checktime\n'; done"
-alias cclose="vclose; psterm watch"
+alias cclose="vclose; psterm watch; psterm less"
 alias dropstatus="dropbox status > ~/.dropstatus"
 
 alias vml="vim make.log"
