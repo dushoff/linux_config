@@ -342,26 +342,34 @@ alias ball="minus; balloon &"
 alias now='pickscreen org Planning'
 alias plan='pickscreen org Planning "^[gj:e"'
 
+######################################################################
+
+alias arrive='(cd ${mainterm} && make arrive > arrive.log 2>&1 && meadow) || ice'
+alias leave='(cd ${mainterm} && make leave > leave.log 2>&1 && sinkshow) || beaver'
+
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
 alias reportday='reportblank; rtoday; reportblank'
 
 alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
 alias here='(ship) && plandown; plan;'
-alias rarrive='reporttime "Arrive ${HOSTNAME}"'
-alias marrive='(ship) && findTab Chrome Gmail ;'
-alias arrive='plandown; rarrive; '
-alias newday='plandown; reportday; rarrive; '
-alias Arrive=newday
+## alias rarrive='reporttime "Arrive ${HOSTNAME}"'
+## alias marrive='(ship) && findTab Chrome Gmail ;'
+## alias arrive='plandown; rarrive; '
+## alias newday='plandown; reportday; rarrive; '
+## alias Arrive=newday
 
-alias play='reporttime Play; now; minus; shiponly &'
-alias meet='reporttime Meet; now; minus; boatonly &'
-alias rest='reporttime Rest; reportblank; now;'
-alias leave='reporttime "Leave ${HOSTNAME}" && reportblank && planup && leaveshow'
-alias stop='reporttime Stop && reportblank && minus; '
-alias fail='reporttime Fail; reportblank; minus; now'
-alias mailbuffers='gvim /tmp/dushoff* &'
+## alias play='reporttime Play; now; minus; shiponly &'
+## alias meet='reporttime Meet; now; minus; boatonly &'
+## alias rest='reporttime Rest; reportblank; now;'
+## alias leave='reporttime "Leave ${HOSTNAME}" && reportblank && planup && leaveshow'
+## alias stop='reporttime Stop && reportblank && minus; '
+## alias fail='reporttime Fail; reportblank; minus; now'
+## alias mailbuffers='gvim /tmp/dushoff* &'
 
+######################################################################
+
+## Get a short hash of most recent commit
 alias gtag='git log | head -1 | sed -E "s/commit (......).*/\1/"'
 gcq() { gcalcli --calendar jdushoff@gmail.com quick "$*" ; }
 glast() { git log -- $* | head -1 | sed -E "s/commit (......).*/\1/" ;}
