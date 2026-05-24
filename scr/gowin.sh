@@ -1,5 +1,5 @@
 #!/bin/sh
-## usage exec topscreen subscreen exectext
+## Focus on an rwindow inside a space, making it if necessary, and send keys to it if requested
 
 ## Should redo this script to not depend on rwindow (or redo rwindow to be more general)
 if echo "$1" | grep -q '/'; then
