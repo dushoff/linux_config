@@ -468,7 +468,7 @@ vi(){
 }
 
 spaceless() { showpane.sh less ~/terminal/$1; }
-spacewatch() { showpane.sh watch ~/terminal/$1; }
+spacewatch() { showpane.sh watch cat ~/terminal/$1; }
 
 ######################################################################
 
