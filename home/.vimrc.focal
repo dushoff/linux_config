@@ -41,6 +41,7 @@ nmap 5C @k5D
 nmap 6C @k6D
 nmap 7C @k7D
 
+" Missing @r (from here or from .personal) 2026 May 26 (Tue)
 " Push a ¶ to the report (and delete)
 nmap <C-V> <C-P>@k
 
