@@ -458,7 +458,7 @@ td() { tmux new-window -n "$(basename $1)-s" -c "$1"; }
 td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
 
 alias tms='tmux source-file ~/.tmux.conf'
-alias spin='make -C ${mainterm} > .spin.log'
+alias spin='make -C ${mainterm} > .spin.log 2>&1'
 
 alias dw='exec watch -n -.5 cat ~/dictate.txt'
 
