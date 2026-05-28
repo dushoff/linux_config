@@ -49,6 +49,7 @@ while true; do
 done
 
 echo -n "$text" | xclip -selection primary
+printf "%s%s" "$text" "$fill" > "~/dictate.txt"
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
