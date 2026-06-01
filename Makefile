@@ -131,8 +131,6 @@ Sources += *.i3conf
 
 ## xclip -o -selection primary
 
-
-
 Ignore += *.local.conf
 ## xiangshan.i3file: xiangshan.i3conf i3.local.conf
 %.i3file: | %.i3conf
