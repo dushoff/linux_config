@@ -46,8 +46,8 @@ nmap 7C @k7D
 nmap <C-V> <C-P>@k
 
 " Old ¶-based checklist versions 
-nmap @k }kI* <ESC><C-T>kJV@k
-nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
+" nmap @k }kI* <ESC><C-T>kJV@k
+" nmap @K }kI* <ESC>A kk<ESC><C-T>kJV@k
 " nmap @C }k"cyyI* <ESC>A …<ESC><C-T>kJV@k"cp
 
 " Date navigation (e-vents)
