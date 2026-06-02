@@ -198,8 +198,8 @@ nmap @D <C-D>I##### <ESC>
 
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
-nmap <C-K> V<C-K>
-vmap <C-K> d@r
+" nmap <C-K> V<C-K>
+" vmap <C-K> d@r
 
 " Time stamped dumping dev again 2021 Mar 21 (Sun)
 " Built to indent a one-line ¶ for some reason.
