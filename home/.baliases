@@ -344,8 +344,8 @@ alias plan='pickscreen org Planning "^[gj:e"'
 
 ######################################################################
 
-alias arrive='(cd ${mainterm} && make arrive > arrive.log 2>&1 && meadow) || ice'
-alias leave='(cd ${mainterm} && make leave > leave.log 2>&1 && sinkshow) || beaver'
+alias arrive='(cd ${mainterm} && make arrive > arrive.log 2>&1 && meadow) || gvim arrive.log'
+alias leave='(cd ${mainterm} && make leave > leave.log 2>&1 && sinkshow) || gvim leave.log'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
