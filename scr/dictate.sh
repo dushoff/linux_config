@@ -11,6 +11,7 @@ nl=$'\n\n'
 
 ## screen -S org -p Planning -X stuff $'\e:wall\n'
 
+## Convert audio file into a text chunk (global variable)
 process_segment() {
 	text=$($whisper/build/bin/whisper-cli \
 		-m $whisper/models/ggml-small.en.bin \
@@ -23,8 +24,10 @@ process_segment() {
 		s/\[[^]]*\]//g
 		s/[^?.]$/&./
 	')
+	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
+## Listen until time is up or until interrupted
 listen()
 {
 	interrupted=0; fill=""
@@ -40,16 +43,15 @@ trap 'pkill -SIGINT sox' SIGTERM
 
 while true; do
 	listen
-	process_segment
 	[ "$interrupted" -eq 0 ] && break
+	process_segment
 	printf "%s%s" "$text" "$fill" >> "$store/dictate.txt"
 	printf -v acc "%s%s%s" "$acc" "$text" "$fill"
 	printf "%s" "$acc" | xclip -selection clipboard
-	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 done
 
+paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga
+process_segment
 echo -n "$text" | xclip -selection primary
 printf "%s%s" "$text" "$fill" > "$store/dbuff.txt"
-paplay /usr/share/sounds/freedesktop/stereo/complete.oga
-paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
