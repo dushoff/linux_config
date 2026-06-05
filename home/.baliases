@@ -468,8 +468,9 @@ vi(){
 }
 
 spaceless() { showpane.sh less ~/terminal/$1; }
-spacewatch() { showpane.sh watch ncat.sh ~/terminal/$1; }
+spacewatch() { showpane.sh watch tcat.sh $1; }
 spacecomm() { (cd ~/terminal/ && $*); }
+todo() { todo.sh $1 > /dev/null; }
 
 ######################################################################
 
