@@ -2,7 +2,7 @@
 whisper=~/terminal/dirs/setup/whisper.cpp/
 ## ~/dictate.txt ~/dbuff.txt
 store=~/
-segment_secs=12
+segment_secs=20
 tmpfile=""
 fill=""
 text=""
@@ -39,7 +39,7 @@ listen()
 
 trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
 trap 'interrupted=1; fill=$nl; pkill -SIGINT sox' SIGINT
-trap 'pkill -SIGINT sox' SIGTERM
+## trap 'pkill -SIGINT sox' SIGTERM
 
 while true; do
 	listen
