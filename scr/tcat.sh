@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "${1:23}"
+echo "$1"
 echo " --------------------------"
-cat $1
+cat ${mainterm}/$1
