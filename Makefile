@@ -39,6 +39,9 @@ newbin: exec
 linkbin:
 	cd ~/bin && ln -fs $(CURDIR)/scr && ln -fs $(CURDIR)/exe
 
+sex:
+	chmod a+x scr/*.sh scr/*.pl scr/*.py
+
 exec: | exe
 	chmod -R a+x exe/
 
