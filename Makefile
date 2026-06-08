@@ -5,7 +5,7 @@
 -include makestuff/perl.def
 
 vim_session:
-	bash -ic "vmt i3.bind.conf i3.config i3.ws.conf ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
+	bash -ic "vmt i3.bind.conf i3.config TODO.md ~/.vimrc ~/.vimrc.personal ~/.baliases log.md"
 
 ######################################################################
 
