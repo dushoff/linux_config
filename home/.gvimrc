@@ -1,2 +1,2 @@
-colo morning
+colo darkblue
 source ~/.gvimfont
