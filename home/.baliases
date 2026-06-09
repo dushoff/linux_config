@@ -84,6 +84,7 @@ alias vml="vim make.log"
 alias ink='((make all.time | tee make.log ; test "${PIPESTATUS[0]}" -eq 0) || (ice 0 && false))'
 alias logcheck="! (grep $'\t' make.log || grep 'git pull' make.log)"
 alias logcheck="! (grep $'\t' make.log)"
+alias leavecheck="! (grep $'\t' leave.log)"
 alias inkcheck="(logcheck && sunk && echo inkcheck `date`) || (squirrel 0 && false)"
 alias sunk='reporttime "sunk `basename $PWD` from ${HOSTNAME}" && echo sunk'
 
@@ -346,7 +347,7 @@ alias plan='pickscreen org Planning "^[gj:e"'
 
 alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && meadow) || gvim arrive.log)'
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1 && sinkshow) || (gvim leave.log && false))'
-alias leavetest='cd ${mainterm} && ((leavetest.pl leave.log > leavetest.log 2>&1 && sinkshow) || gvim leavetest.log)'
+alias leavetest='cd ${mainterm} && (leavecheck && sinkshow) || (leavetest.pl leave.log > leavetest.log 2>&1 && gvim leavetest.log)'
 alias leave='leavesync && leavetest'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
