@@ -346,7 +346,7 @@ alias plan='pickscreen org Planning "^[gj:e"'
 
 alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && meadow) || gvim arrive.log)'
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1 && sinkshow) || (gvim leave.log && false))'
-alias leavetest='cd ${mainterm} && ((leavetest.pl > leavetest.log 2>&1 && sinkshow) || gvim leavetest.log)'
+alias leavetest='cd ${mainterm} && ((leavetest.pl leave.log > leavetest.log 2>&1 && sinkshow) || gvim leavetest.log)'
 alias leave='leavesync && leavetest'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
