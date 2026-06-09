@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+## usage leavetest.pl make.log
 use strict;
 use 5.10.0;
 
