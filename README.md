@@ -1,3 +1,17 @@
+
+xrandr --query
+
+xrandr --output HDMI-1 --same-as eDP-1 --auto
+xrandr --output DP-4 --same-as eDP-1 --auto ## 
+
+xrandr --output HDMI-1 --right-of eDP-1 --auto
+
+xrandr --output HDMI-1 --auto --output eDP-1 --off
+
+----------------------------------------------------------------------
+
+pre-i3
+
 # linux_config
 
 Files I maintain for my linux setup
