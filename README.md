@@ -2,7 +2,8 @@
 xrandr --query
 
 xrandr --output HDMI-1 --same-as eDP-1 --auto
-xrandr --output DP-4 --same-as eDP-1 --auto ## 
+
+DP-4-2 connected (normal left inverted right x axis y axis)
 
 xrandr --output HDMI-1 --right-of eDP-1 --auto
 
