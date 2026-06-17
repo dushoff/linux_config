@@ -11,6 +11,8 @@ xrandr --output HDMI-1 --auto --output eDP-1 --off
 
 ----------------------------------------------------------------------
 
+what are advantages of MR compared to MMR vaccine?
+
 pre-i3
 
 # linux_config
