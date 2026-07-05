@@ -77,6 +77,8 @@ vn <F11> x:silent @"<CR>
 nmap <F12> GV
 imap <F12> <ESC><F12>
 
+nn <S-F12> :r !xclip -selection clipboard -t text/html -o \| pandoc -f html -t gfm-raw_html --wrap=none<CR>
+
 " go to github (makestuff)
 map gH :!make hupstream<C-M>
 
