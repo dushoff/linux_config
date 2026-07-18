@@ -461,6 +461,8 @@ svn() { (cd $1 && screen -t "$2" bash -ci "vvs"); }
 td() { tmux new-window -n "$(basename $1)-s" -c "$1"; }
 td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
 
+alias tvan='tmux new-window -n vanilla "R --vanilla"'
+
 alias tms='tmux source-file ~/.tmux.conf'
 alias spin='make -C ${mainterm} > .spin.log'
 
