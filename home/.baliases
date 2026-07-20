@@ -349,7 +349,7 @@ alias viewlog='gvim -c "colorscheme habamax"'
 alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && meadow) || viewlog arrive.log)'
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1) || (viewlog leave.log && false))'
 alias leavetest='cd ${mainterm} && (leavecheck > /dev/null && sinkshow) || (leavetest.pl leave.log > leavetest.log 2>&1 && viewlog leavetest.log)'
-alias leave='leavesync && leavetest'
+alias leave='leavesync && leavesync && leavetest'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ~/report.md'
 alias reportblank='echo >> ~/report.md'
