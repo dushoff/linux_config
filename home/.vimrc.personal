@@ -195,8 +195,8 @@ nmap <C-P> }{V}
 nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
 nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
-nmap @d <C-D>@t
-nmap @D <C-D>I##### <ESC>
+nmap @D <C-D>@t
+nmap @d <C-D>I##### <ESC>
 
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
