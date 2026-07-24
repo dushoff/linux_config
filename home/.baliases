@@ -246,6 +246,7 @@ alias xopen='xargs -i gio open "{}" &'
 
 ## Couldn't make this one work (supposed to be robust)
 ## alias picOpen='xargs -i -d '\\n' echo "{}" &'
+## alias picOpen='xargs -i feh -F "{}" &'
 alias picOpen='xargs -i eog -f "{}" &'
 ## alias picOpen='i3-msg exec xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
