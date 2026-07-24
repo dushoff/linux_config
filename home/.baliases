@@ -103,16 +103,22 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 
 ## alias gvim='gvim -f'
 
+## Pick and examine pix from a directory, not commonly used
 alias rPic='ls | shuf -n 1 | tee .rpic | xargs eog --fullscreen "{}" && cat .rpic ;'
 alias qPic='cat .rpic | xargs eog --fullscreen "{}" ;'
-alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
-alias rld='ls -t Downloads/*.* | head -1'
-alias dld='(cd ~/Downloads/ && dell)'
+
+## Background making with old-fashioned alerting
 alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
+alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+## Not much used
+alias rld='ls -t Downloads/*.* | head -1'
+alias dld='(cd ~/Downloads/ && dell)'
+## 
 
 alias va='vi ~/.baliases'
 alias ahash='source ~/.baliases'
@@ -246,8 +252,8 @@ alias xopen='xargs -i gio open "{}" &'
 
 ## Couldn't make this one work (supposed to be robust)
 ## alias picOpen='xargs -i -d '\\n' echo "{}" &'
-## alias picOpen='xargs -i feh -F "{}" &'
-alias picOpen='xargs -i eog -f "{}" &'
+alias picOpen='xargs -i feh -F "{}" &'
+## alias picOpen='xargs -i eog -f "{}" &'
 ## alias picOpen='i3-msg exec xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
 
