@@ -104,8 +104,8 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 ## alias gvim='gvim -f'
 
 ## Pick and examine pix from a directory, not commonly used
-alias rPic='ls | shuf -n 1 | tee .rpic | xargs eog --fullscreen "{}" && cat .rpic ;'
-alias qPic='cat .rpic | xargs eog --fullscreen "{}" ;'
+alias rPic='ls | shuf -n 1 | tee .rpic | picOpen && cat .rpic ;'
+alias qPic='cat .rpic | picOpen ;'
 
 ## Background making with old-fashioned alerting
 alias tmake='((make target > make.log || true) && bark) &'
@@ -236,7 +236,6 @@ alias firstplay='first | xargs -i mplayer "{}"'
 
 alias pen='ls -t *.* | head -2 | tail -1 '
 
-alias pic='eog -f'
 alias filecheck='ls *.* > /dev/null || pic ${alert}/peacock.jpg'
 alias gol='(filecheck); last | xargs -i gio open "{}" &'
 ## alias gold='(filecheck); last 
@@ -250,12 +249,11 @@ alias golp='lastpdf | xargs -i gio open "{}" &'
 alias xopen='xargs -i gio open "{}" &'
 ## focusOpen() { wmctrl -a "$1" || gio open "$1" & }
 
-## Couldn't make this one work (supposed to be robust)
 ## alias picOpen='xargs -i -d '\\n' echo "{}" &'
 ## alias picOpen='xargs -i eog -f "{}" &'
-alias picOpen='xargs -i feh -F --auto-zoom --start-at "{}" &'
 ## alias picOpen='i3-msg exec xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
+alias picOpen='xargs -i feh -F --auto-zoom --start-at "{}" &'
 
 alias rootdown='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
 alias lastdown='ls -t ../*.* | head -1 | xargs -i mv "{}" .'
@@ -310,13 +308,14 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 
 ## First one should work even without xargs. So what? Or useful for something else?
 ## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | { read -r f; eog -f "$f"; }; }
-sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
+## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
+sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | picOpen }
 
 leavepix() { ls \
 	~/terminal/dirs/config/meadows/* \
 	~/terminal/dirs/config/lakes/* \
 ; }
-leaveshow() { leavepix | shuf -n 1| xargs -d '\n' eog -f & }
+leaveshow() { leavepix | shuf -n 1| picOpen }
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/terminal/dirs/Planning && make opsync.autosync ); }
@@ -342,7 +341,7 @@ alias tesh="squirrel 1400; beaver 2800"
 alias nopdf="killall evince"
 
 ## shiponly is a script which does sesh in a loop showing the ship at the end
-alias nopix="killall sleep; sleep 0.1; killall eog"
+alias nopix="killall sleep; sleep 0.1; killall eog; killall feh"
 alias minus="(killall sleep; killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
 alias ship="minus; shiponly &"
 alias boat="minus; boatonly &"
