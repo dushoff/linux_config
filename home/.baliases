@@ -103,10 +103,6 @@ alias hclose="for instance in \$(vim --serverlist | grep HOME); do vim --servern
 
 ## alias gvim='gvim -f'
 
-## Pick and examine pix from a directory, not commonly used
-alias rPic='ls | shuf -n 1 | tee .rpic | picOpen && cat .rpic ;'
-alias qPic='cat .rpic | picOpen ;'
-
 ## Background making with old-fashioned alerting
 alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
@@ -236,6 +232,7 @@ alias firstplay='first | xargs -i mplayer "{}"'
 
 alias pen='ls -t *.* | head -2 | tail -1 '
 
+alias pic='feh -F --auto-zoom'
 alias filecheck='ls *.* > /dev/null || pic ${alert}/peacock.jpg'
 alias gol='(filecheck); last | xargs -i gio open "{}" &'
 ## alias gold='(filecheck); last 
@@ -253,7 +250,11 @@ alias xopen='xargs -i gio open "{}" &'
 ## alias picOpen='xargs -i eog -f "{}" &'
 ## alias picOpen='i3-msg exec xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
-alias picOpen='xargs -i feh -F --auto-zoom --start-at "{}" &'
+alias picOpen='xargs -i feh -F --auto-zoom --output-dir ~/Downloads --start-at "{}" &'
+
+## Pick and examine pix from a directory, not commonly used
+alias rPic='ls | shuf -n 1 | tee .rpic | picOpen && cat .rpic ;'
+alias qPic='cat .rpic | picOpen ;'
 
 alias rootdown='ls -t ~/*.* | head -1 | xargs -i mv "{}" .'
 alias lastdown='ls -t ../*.* | head -1 | xargs -i mv "{}" .'
