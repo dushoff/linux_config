@@ -1,4 +1,4 @@
-## This is linux_config
+# This is linux_config
 
 -include target.mk
 
