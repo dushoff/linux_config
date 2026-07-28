@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import i3ipc
 
+print("Hello")
+
 i3 = i3ipc.Connection()
 stack = []  # index 0 = most recent focus
 
