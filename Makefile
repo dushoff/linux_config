@@ -145,6 +145,20 @@ linkz: | ~/.config/zathura/ zathurarc
 
 ######################################################################
 
+## rofi config
+
+conflink = cd $| && ln -fs $(CURDIR)/$<
+
+Sources += config.rasi
+
+config.rasi:
+	rofi -dump-config > $@
+
+linkRofi: config.rasi | ~/.config/rofi/
+	$(conflink)
+
+######################################################################
+
 Sources += ssh.Makefile
 linkssh: ~/.ssh ~/.ssh/authorized_keys
 	cd ~ && ln -fs $(CURDIR)/ssh.Makefile .ssh/Makefile
