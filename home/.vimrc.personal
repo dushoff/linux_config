@@ -192,11 +192,12 @@ nmap Mt :wall<C-M>:XPLAIN<C-M>
 nmap <C-P> }{V}
 
 " Title, subtitle, html paragraphing (!!!) and date
+" @t not used because clashes with git markup
 nmap @t :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./=/gH
 nmap @b :s/^[ kb= ]*//g:s/[= ]*$//gyyp:s/./-/gH
 nmap @h :%s/^$/<p>/
-nmap @D <C-D>@t
-nmap @d <C-D>I##### <ESC>
+" nmap @D <C-D>@t
+nmap @d o<C-M>##### <C-D><ESC>H2k:.g/^$/d<C-M>/^###<C-M>o
 
 " Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
@@ -211,12 +212,15 @@ vmap @k d<ESC>@r
 " Blank seems weird (\s did not work as expected)
 " All a disaster, revisit 2025 Feb 26 (Wed)
 " @C seems to be what I use; should I add Space to it?
+" Maybe consider deprecated @D for big crunching
+" Pack is for left-justifying
 com! BlankOnly .,$s/^\s*$//
 com! Blank .,$s/^[> 	]*$//
 com! Par .,$!cat -s
 com! Space %s/ / /g
-com! Pack %s/^\s*//
-nmap @C mm1G:Blank<C-M>:Pack<C-M>'m:Par<C-M>`mH
+com! Pack .,$s/^\s*//
+" nmap @D mm1G:Blank<C-M>:Pack<C-M>'m:Par<C-M>`mH
+nmap @C mm1G:Blank<C-M><C-M>'m:Par<C-M>`mH
 
 " let g:netrw_browsex_viewer= "setsid xdg-open"
 let g:netrw_browsex_viewer = "setsid gio open"
