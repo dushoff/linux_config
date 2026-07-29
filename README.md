@@ -1,4 +1,9 @@
 
+--no-startup-id
+Rarely hurts, less rarely helps. Use if something is being made slowly and showing up on original workspace. 
+
+----------------------------------------------------------------------
+
 xrandr --query
 
 xrandr --output HDMI-1 --same-as eDP-1 --auto
