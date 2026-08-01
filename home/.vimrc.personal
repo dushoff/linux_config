@@ -214,13 +214,14 @@ vmap @k d<ESC>@r
 " @C seems to be what I use; should I add Space to it?
 " Maybe consider deprecated @D for big crunching
 " Pack is for left-justifying
-com! BlankOnly .,$s/^\s*$//
-com! Blank .,$s/^[> 	]*$//
+com! BlankOnly .,$s/^\s*$//e
+com! Blank .,$s/^[> 	]*$//e
 com! Par .,$!cat -s
-com! Space %s/ / /g
-com! Pack .,$s/^\s*//
+com! Space %s/ / /ge
+com! Pack .,$s/^\s*//e
 " nmap @D mm1G:Blank<C-M>:Pack<C-M>'m:Par<C-M>`mH
-nmap @C mm1G:Blank<C-M><C-M>'m:Par<C-M>`mH
+nmap @C mm1G:Blank<C-M>'m:Par<C-M>`mH
+" nmap @C :Par<C-M>
 
 " let g:netrw_browsex_viewer= "setsid xdg-open"
 let g:netrw_browsex_viewer = "setsid gio open"
