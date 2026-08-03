@@ -6,5 +6,14 @@ if echo "$1" | grep -q '/'; then
     set -- $(echo "$1" | tr '/' ' ') "$2"
 fi
 
+get_focused_workspace() {
+    i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name'
+}
+
+$ws = "$1"
+if [[ "$ws" == "." ]]; then
+    ws="$(get_focused_workspace)"
+fi
+
 make -C ~/terminal $1/$2.rwindow.view
 tmux send-keys -t "$1:$2" "$3"
