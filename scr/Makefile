@@ -36,7 +36,7 @@ scripts += sdir shiponly boatonly tat.pl vi pdfwin cpdf bat quote.pl balloon
 scripts += sleepy wakey alertPic
 
 ## General focus
-scripts += listWins findTab findTabs windows pickscreen findApp findwin
+scripts += listWins findTab findTabs windows pickscreen findApp findwin gowin
 
 scripts += goscreen
 
