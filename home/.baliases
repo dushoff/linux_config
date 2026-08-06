@@ -434,9 +434,7 @@ qquote() { echo 1: '$1' 2: '$2'; }
 # ff() { filegrep.pl "$1" ${HOME}/bin/find/files.txt; }
 # ffg() { filegrep.pl "$1" ${HOME}/bin/find/files.txt |xargs grep "$2"; }
 
-
 ssx() { screen -t $@ screen -xRR $@; }
-## ssvs() { screen -t "$1" && screen bash -ci "svs"; }
 
 ssr() { screen -t $@ screen -r $@; }
 newscreen() { screen -dm $@; }
@@ -466,8 +464,11 @@ svn() { (cd $1 && screen -t "$2" bash -ci "vvs"); }
 ######################################################################
 
 ## tmux aliases 2026 May 12 (Tue)
-td() { tmux new-window -n "$(basename $1)-s" -c "$1"; }
 td() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s"); }
+
+## svs has code for doing multiple levels at once
+tv() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" bash -ci "vvs"); }
+ttw() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" make twindow); }
 
 alias tvan='tmux new-window -n vanilla "R --vanilla"'
 
