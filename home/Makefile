@@ -1,4 +1,4 @@
-## Shadow directory for ~
+## Shadow directory for ~ ($(HOME))
 
 current: target
 -include target.mk
