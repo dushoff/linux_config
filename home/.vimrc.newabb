@@ -11,6 +11,7 @@ nn <Leader>s :silent !spin <cfile><CR>
 " n GD todown
 nn GG G
 nmap Gh <S-F9>
+nmap Gk :e dump.txt<C-M>
 " Nmap Gl " gl in a new window
 " nmap GL " gL in a new window
 " nmap Go set target
@@ -36,7 +37,7 @@ nmap Gv o<ESC>gv
 " n  gH hupstream
 " n  gj * 4<C-^>
 " n  gk * 5<C-^>
-" n  gK            transform schedule line
+" n  gK            transform schedule line?? Actually adds 60 #s
 " n  gL            gl on the first hypertext url in the Makefile
 " n  gl            Try to interpret the whole line as a url
 " n  gm * 1<C-^>
