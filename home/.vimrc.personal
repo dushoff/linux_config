@@ -217,7 +217,8 @@ vmap @k d<ESC>@r
 com! BlankOnly .,$s/^\s*$//e
 com! Blank .,$s/^[> 	]*$//e
 com! Par .,$!cat -s
-com! Space %s/ / /ge
+com! WeirdSpace %s/ / /ge
+com! OneSpace %s/  */ /ge
 com! Pack .,$s/^\s*//e
 " nmap @D mm1G:Blank<C-M>:Pack<C-M>'m:Par<C-M>`mH
 nmap @C mm1G:Blank<C-M>'m:Par<C-M>`mH
