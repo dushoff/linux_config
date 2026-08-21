@@ -3,9 +3,16 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
+augroup DumpFileBG
+	autocmd!
+	autocmd BufEnter dump.txt colo peachpuff
+	autocmd BufLeave dump.txt colo default
+augroup END
+
 " Set the filetype based on the file's extension
 " "setfiletype foo" is a wimpier version (respects some sort of pre-status)
 au BufRead,BufNewFile *.def set filetype=make
+au BufRead,BufNewFile *.mk set filetype=make
 
 autocmd FileType ghmarkdown setlocal columns=72 wrap
 autocmd FileType tex setlocal columns=72
