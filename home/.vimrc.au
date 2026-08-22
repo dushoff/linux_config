@@ -18,6 +18,12 @@ autocmd FileType ghmarkdown setlocal columns=72 wrap
 autocmd FileType tex setlocal columns=72
 autocmd FileType txt setlocal columns=72
 
+augroup tsv_truncate
+  autocmd!
+  autocmd FileType tsv setlocal conceallevel=2 tabstop=18 noexpandtab
+  autocmd FileType tsv syntax match TsvOverflow /\(^\|\t\)[^\t]\{15}\zs[^\t]\+/ conceal cchar=…
+augroup END
+
 autocmd FileType markdown setlocal nowrap
 " autocmd FileType markdown setlocal tabstop=16
 " autocmd FileType markdown setlocal columns=80
