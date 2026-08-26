@@ -70,6 +70,7 @@ nn GV o<ESC>"+gP
 vno <C-k> c[<C-r>"](<C-r>+)<Esc>
 nmap <C-j> /(\S\+)<CR>"+yi(H
 
+" imap is supposed to let you keep typing, but can be troublesome if the text has CR.
 nmap <F11> gv
 imap <F11> <ESC>a <ESC>gvs
 vn <F11> x:silent @"<CR>
