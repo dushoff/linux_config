@@ -167,7 +167,7 @@ com! Sf source ~/.vimrc.focal
 """"""""""""""" " Non-breaking space stuff (combine with other ascii…)
 
 " current mail-trading text-aid-too
-nmap MG :source ~/.vimrc.tat<C-M>gg@@<C-O>
+" nmap MG :source ~/.vimrc.tat<C-M>gg@@<C-O>
 nmap MM :TAT<C-M>
 nmap LL gz
 
