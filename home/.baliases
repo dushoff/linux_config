@@ -233,7 +233,6 @@ alias firstplay='first | xargs -i mplayer "{}"'
 
 alias pen='ls -t *.* | head -2 | tail -1 '
 
-alias pic='feh -F --auto-zoom'
 alias filecheck='ls *.* > /dev/null || pic ${alert}/peacock.jpg'
 alias gol='(filecheck); last | xargs -i gio open "{}" &'
 ## alias gold='(filecheck); last 
@@ -252,6 +251,7 @@ alias xopen='xargs -i gio open "{}" &'
 ## alias picOpen='i3-msg exec xargs -i eog -f "{}" &'
 ## alias aopen='xargs -i alertPic "{}" &'
 alias picOpen='xargs -i feh -F --auto-zoom --output-dir ~/Downloads --start-at "{}" &'
+alias pic='feh -F --auto-zoom --start-at'
 
 ## Pick and examine pix from a directory, not commonly used
 alias rPic='ls | shuf -n 1 | tee .rpic | picOpen && cat .rpic ;'
