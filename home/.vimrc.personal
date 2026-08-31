@@ -67,7 +67,12 @@ nn gy ggVG"+y
 nn gv "+gP
 nn GV o<ESC>"+gP
 
-vno <C-k> c[<C-r>"](<C-r>+)<Esc>
+" C-K functionality in markdown
+" vno <C-k> c[<C-r>"](<C-r>+)<Esc>
+" vno <C-k> c[<C-r>"](<C-r>=substitute(@+,'\n\+$','','')<CR>)<Esc>
+vno <C-k> c[<C-r>"](<C-r>=trim(@+)<CR>)<Esc>
+
+" Pull a URL, I don't seem to use this
 nmap <C-j> /(\S\+)<CR>"+yi(H
 
 " imap is supposed to let you keep typing, but can be troublesome if the text has CR.
@@ -179,6 +184,7 @@ nmap LL gz
 " how hard would it be to work around that?
 com! XHTML 1,$!pandoc -t html
 com! XHG %w !pandoc -t html > ~/xhg.html && go ~/xhg.html &
+com! XHC %w !pandoc -t html | xclip -selection clipboard -t text/html
 com! XPG 1,$!pandoc -t pdf > ~/Downloads/xpg.pdf && go ~/Downloads/xpg.pdf &
 com! THG 1,$!pandoc -f latex -t html > ~/xhg.html && go ~/xhg.html &
 com! XTX 1,$!pandoc -f latex -t pdf > ~/xtx.pdf && go ~/xtx.pdf &
@@ -203,8 +209,8 @@ nmap @h :%s/^$/<p>/
 " nmap @D <C-D>@t
 nmap @d o<C-M>##### <C-D><ESC>H2k:.g/^$/d<C-M>/^###<C-M>o
 
-" Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 nmap @r grGp:w<C-M><C-^>
+" Reporting " Used by super-key scripts ?? I doubt this 2021 Mar 21 (Sun)
 " nmap <C-K> V<C-K>
 " vmap <C-K> d@r
 
