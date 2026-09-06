@@ -7,6 +7,7 @@ nmap <Leader>d :silent r !cat ~/dictate.txt<CR><Leader>D
 nn <Leader>D :silent !cat ~/dictate.txt > ~/.dictate.txt && truncate -s 0 ~/dictate.txt<CR>:redraw!<CR>
 
 nn <Leader>s :silent !spin <cfile><CR>
+nn <Leader>t :silent !todo <cfile><CR>
 
 " n GD todown
 nn GG G
