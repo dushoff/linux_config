@@ -8,6 +8,8 @@ fill=""
 text=""
 acc=""
 nl=$'\n\n'
+sep="$nl$(printf -- '-%.0s' {1..70})$nl"
+halt=0
 
 ## screen -S org -p Planning -X stuff $'\e:wall\n'
 
@@ -27,11 +29,6 @@ process_segment() {
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
-## Append a paragraph of 70 dashes to dictate.txt as a hard break
-write_separator() {
-	printf '%s%s%s' "$nl" "$(printf -- '-%.0s' {1..70})" "$nl" >> "$store/dictate.txt"
-}
-
 ## Listen until time is up or until interrupted
 listen()
 {
@@ -44,7 +41,7 @@ listen()
 
 trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
 trap 'interrupted=1; fill=$nl; pkill -SIGINT sox' SIGINT
-trap 'pkill -SIGTERM sox; rm -f "$tmpfile"; write_separator; exit' SIGTERM
+trap 'interrupted=1; fill=$sep; halt=1; pkill -SIGINT sox' SIGTERM
 
 while true; do
 	listen
@@ -53,6 +50,10 @@ while true; do
 	printf "%s%s" "$text" "$fill" >> "$store/dictate.txt"
 	printf -v acc "%s%s%s" "$acc" "$text" "$fill"
 	printf "%s" "$acc" | xclip -selection clipboard
+	if [ "$halt" -eq 1 ]; then
+		paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga
+		exit
+	fi
 done
 
 paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga
