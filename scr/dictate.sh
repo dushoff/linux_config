@@ -27,6 +27,11 @@ process_segment() {
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
+## Append a paragraph of 70 dashes to dictate.txt as a hard break
+write_separator() {
+	printf '%s%s%s' "$nl" "$(printf -- '-%.0s' {1..70})" "$nl" >> "$store/dictate.txt"
+}
+
 ## Listen until time is up or until interrupted
 listen()
 {
@@ -39,7 +44,7 @@ listen()
 
 trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
 trap 'interrupted=1; fill=$nl; pkill -SIGINT sox' SIGINT
-## trap 'pkill -SIGINT sox' SIGTERM
+trap 'pkill -SIGTERM sox; rm -f "$tmpfile"; write_separator; exit' SIGTERM
 
 while true; do
 	listen
