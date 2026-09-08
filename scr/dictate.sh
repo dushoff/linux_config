@@ -39,9 +39,11 @@ listen()
 	wait $!
 }
 
+## fill=$sep to separate dictation sessions, not currently in place? Problem is that we don't want a separator if we're only doing one session at a time.
+## If separators are wanted, consider: putting them first, not sending them to clipboard, trimming the first one on read.
 trap 'interrupted=1; fill=" "; pkill -SIGINT sox' SIGHUP
 trap 'interrupted=1; fill=$nl; pkill -SIGINT sox' SIGINT
-trap 'interrupted=1; fill=$sep; halt=1; pkill -SIGINT sox' SIGTERM
+trap 'interrupted=1; fill=$nl; halt=1; pkill -SIGINT sox' SIGTERM
 
 while true; do
 	listen
@@ -51,7 +53,7 @@ while true; do
 	printf -v acc "%s%s%s" "$acc" "$text" "$fill"
 	printf "%s" "$acc" | xclip -selection clipboard
 	if [ "$halt" -eq 1 ]; then
-		paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga
+		paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 		exit
 	fi
 done
