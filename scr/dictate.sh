@@ -2,7 +2,7 @@
 whisper=~/terminal/dirs/setup/whisper.cpp/
 ## ~/dictate.txt ~/dbuff.txt
 store=~/
-segment_secs=24
+segment_secs=30
 tmpfile=""
 fill=""
 text=""
