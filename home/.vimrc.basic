@@ -12,6 +12,9 @@ let $BASH_ENV = "~/.baliases"
 let mapleader = " "
 
 set belloff=all
+set noerrorbells
+set novisualbell
+set t_vb=
 
 set nocompatible
 set encoding=utf-8
