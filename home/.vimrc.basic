@@ -11,17 +11,20 @@ let $BASH_ENV = "~/.baliases"
 
 let mapleader = " "
 
+set belloff=all
+
 set nocompatible
 set encoding=utf-8
 set tabstop=3 shiftwidth=0 autoindent backspace=2 autowrite title history=100 incsearch hlsearch hidden autoread nojoinspaces
 set exrc
 
+" Suppressed 2026 Sep 09 (Wed) see note
 " Try again with screen clear
 " These may be harmful or something, they are from trying to debug the column :! interaction
-set t_ut=
-set norestorescreen
-set t_ti=
-set t_te=
+" set t_ut=
+" set norestorescreen
+" set t_ti=
+" set t_te=
 
 nohlsearch
 
