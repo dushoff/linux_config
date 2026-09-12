@@ -29,7 +29,6 @@ nmap GT :!touch <cfile><C-M>| " just touch focal file
 " Email quoting stuff
 com! Rv read !cat ~/.lastvim
 
-
 "Quote and reformat
 vmap $$ :s/./> &/<C-M>:'<,'>!cat -s<C-M>H
 nmap $$ VG$$
