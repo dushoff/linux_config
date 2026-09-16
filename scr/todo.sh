@@ -4,6 +4,10 @@
 ## Do not focus the terminal; user can see where they were and then go to terminal
 # else, open a VEDIT of TODO here
 
+if [ -z "$1" ]; then
+	set -- "$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name' | sed 's/^[0-9]*://')"
+fi
+
 base="${1%%.*}"
 
-(spin.sh $base.findspace 2>&1 && tmux select-window -t "$base:vim" && tmux send-keys -t "$base:vim" "gj") || (cd ~/terminal/$base/ && ${VEDIT} TODO.md)
+(spin.sh $base.findspace 2>&1 && tmux select-window -t "$base:vim" && tmux send-keys -t "$base:vim" Escape "gj") || (cd ~/terminal/$base/ && ${VEDIT} TODO.md)
