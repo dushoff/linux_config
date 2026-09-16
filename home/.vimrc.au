@@ -5,8 +5,10 @@ augroup END
 
 augroup DumpFileBG
 	autocmd!
-	autocmd BufEnter dump.txt colo peachpuff
-	autocmd BufLeave dump.txt colo default
+	" dump.txt while in Chinese mode gets its own color (blue) so it's
+	" distinguishable from plain dump.txt (peachpuff) and plain Chinese mode (slate)
+	autocmd BufEnter dump.txt if get(g:, 'chinese_mode', 0) | colo blue | else | colo peachpuff | endif
+	autocmd BufLeave dump.txt if get(g:, 'chinese_mode', 0) | colo slate | else | colo default | endif
 augroup END
 
 " Set the filetype based on the file's extension
