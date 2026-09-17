@@ -10,4 +10,4 @@ fi
 
 base="${1%%.*}"
 
-(spin.sh $base.findspace 2>&1 && tmux select-window -t "$base:vim" && tmux send-keys -t "$base:vim" Escape "gj") || (cd ~/terminal/$base/ && ${VEDIT} TODO.md)
+(spin.sh $base.findspace 2>&1 && tmux select-window -t "$base:0" && tmux send-keys -t "$base:0" Escape "gj") || (cd ~/terminal/$base/ && ${VEDIT} TODO.md)
