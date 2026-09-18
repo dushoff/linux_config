@@ -1,4 +1,7 @@
+We're going to give up on the spacebox target. I'm thinking of a hotkey that I can use after I make .space.
 
-scr/wstab.sh seems complicated, weird and flaky.
+This should call a script called wsmail.sh. That script should:
+find a gmail container in the focused workspace || find any chrome container in the focused workspace || make a new tabbed container and open "google-chrome --new-window https://mail.google.com/mail/u/0/#label/$*"
 
-Can we just drop the third argument altogether? It should either find and focus by class, or it should open the command ins
+where $* represents the focused container
+
