@@ -61,6 +61,6 @@ done
 paplay /usr/share/sounds/freedesktop/stereo/service-logout.oga
 process_segment
 echo -n "$text" | xclip -selection primary
-printf "%s%s" "$text" "$fill" > "$store/dbuff.txt"
+printf "%s%s" "$text" "$fill" >> "$store/dictate.txt"
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
