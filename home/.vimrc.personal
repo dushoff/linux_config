@@ -26,6 +26,8 @@ nmap gD :!downcall <cfile><C-M>| " last Download ⇒ focal file (SHELL)
 nmap GD :!todown <cfile><C-M>| " focal file ⇒ last Download (touch)
 nmap GT :!touch <cfile><C-M>| " just touch focal file
 
+nn yL :let @" = substitute(substitute(trim(system('git remote get-url origin')), '^git@github\.com:', 'https://github.com/', ''), '\.git$', '', '') . '/blob/main/' . expand('<cfile>') <Bar> let @+ = @"<CR>
+
 " Email quoting stuff
 com! Rv read !cat ~/.lastvim
 
