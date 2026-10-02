@@ -188,7 +188,8 @@ nmap LL gz
 " how hard would it be to work around that?
 com! XHTML 1,$!pandoc -t html
 com! XHG %w !pandoc -t html > ~/xhg.html && go ~/xhg.html &
-com! XHC %w !pandoc -t html | xclip -selection clipboard -t text/html
+com! -range=% XHC <line1>,<line2>w !pandoc -t html | xclip -selection clipboard -t text/html
+vnoremap C :XHC<C-M>
 com! XPG 1,$!pandoc -t pdf > ~/Downloads/xpg.pdf && go ~/Downloads/xpg.pdf &
 com! THG 1,$!pandoc -f latex -t html > ~/xhg.html && go ~/xhg.html &
 com! XTX 1,$!pandoc -f latex -t pdf > ~/xtx.pdf && go ~/xtx.pdf &
