@@ -1,5 +1,5 @@
 set ruler
-set linebreak textwidth=0 display=lastline showbreak=+\ 
+set linebreak breakindent textwidth=0 display=lastline showbreak=+\ 
 " set lines& columns&
 set wrap
 
