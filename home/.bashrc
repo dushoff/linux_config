@@ -88,5 +88,6 @@ fi
 
 export VEDIT="gvim -f"
 export MSEDITOR="gvim -f"
+export VISUAL="gvim -f"
 export MSHOME="~/screens/makestuff"
 export BC_LINE_LENGTH=0
