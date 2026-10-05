@@ -35,3 +35,7 @@ autocmd FileType markdown setlocal nowrap
 " autocmd FileType ghmarkdown setlocal tabstop=3
 " autocmd FileType ghmarkdown setlocal wrap
 
+" netrw refreshes directory listings after every shell command (:make, :!),
+" which was wiping undo history (2026 Oct); fastbrowse=2 keeps netrw but never
+" installs that refresh (an autocmd! on AuNetrwEvent fails: the group is created lazily)
+let g:netrw_fastbrowse = 2

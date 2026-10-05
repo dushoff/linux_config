@@ -91,3 +91,6 @@ export MSEDITOR="gvim -f"
 export VISUAL="gvim -f"
 export MSHOME="~/screens/makestuff"
 export BC_LINE_LENGTH=0
+
+# mv, then touch the destination to update its timestamp
+mvt() { mv "$@" && touch "${@: -1}"; }
