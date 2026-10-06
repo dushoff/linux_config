@@ -16,9 +16,9 @@ augroup END
 au BufRead,BufNewFile *.def set filetype=make
 au BufRead,BufNewFile *.mk set filetype=make
 
-autocmd FileType ghmarkdown setlocal columns=72 wrap
-autocmd FileType tex setlocal columns=72
-autocmd FileType txt setlocal columns=72
+" columns=72 used to be set here for ghmarkdown/tex/txt, but columns is global
+" (setlocal doesn't scope it) and broke drawing in panes narrower than 72 (2026 Oct)
+autocmd FileType ghmarkdown setlocal wrap
 
 augroup tsv_truncate
   autocmd!
