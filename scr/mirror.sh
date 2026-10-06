@@ -15,4 +15,9 @@ if [ -z "$SECOND" ]; then
 	exit 1
 fi
 
-xrandr --output "$SECOND" --same-as "$INTERNAL" --auto
+# Optional arguments replace --auto (e.g. mirror.sh --mode 1920x1080)
+if [ $# -eq 0 ]; then
+	set -- --auto
+fi
+
+xrandr --output "$SECOND" --same-as "$INTERNAL" "$@"
