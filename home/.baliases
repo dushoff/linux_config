@@ -581,3 +581,6 @@ zarc() { mkdir zzz; mv .* *; mv * $@; }
 source ~/.blocal
 
 
+
+# mv, then touch the destination to update its timestamp
+mvt() { mv "$@" && touch "${@: -1}"; }

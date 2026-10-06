@@ -1,6 +1,5 @@
 shopt -s expand_aliases
 source ~/.profile
-source ~/.baliases
 
 # If not running interactively, don't do anything
 case $- in
@@ -46,7 +45,7 @@ export PS1="$(current_moon_phase.sh) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debi
 
 if [ $VIM ]
 then
-  PS1="subshell: "
+  PS1="subshell> "
 fi
 
 # enable color support of ls and also add handy aliases
@@ -91,6 +90,3 @@ export MSEDITOR="gvim -f"
 export VISUAL="gvim -f"
 export MSHOME="~/screens/makestuff"
 export BC_LINE_LENGTH=0
-
-# mv, then touch the destination to update its timestamp
-mvt() { mv "$@" && touch "${@: -1}"; }
