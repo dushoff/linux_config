@@ -35,6 +35,13 @@ autocmd FileType markdown setlocal nowrap
 " autocmd FileType ghmarkdown setlocal tabstop=3
 " autocmd FileType ghmarkdown setlocal wrap
 
+" Big files (e.g., XML with one huge line) choke syntax highlighting and wrapping (2026 Oct)
+" BufWinEnter so it runs after filetype detection, which would turn syntax back on
+augroup LargeFile
+	autocmd!
+	autocmd BufWinEnter * if getfsize(expand('<afile>')) > 200000 | setlocal syntax=off nowrap | endif
+augroup END
+
 " netrw refreshes directory listings after every shell command (:make, :!),
 " which was wiping undo history (2026 Oct); fastbrowse=2 keeps netrw but never
 " installs that refresh (an autocmd! on AuNetrwEvent fails: the group is created lazily)
