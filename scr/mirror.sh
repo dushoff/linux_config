@@ -15,9 +15,11 @@ if [ -z "$SECOND" ]; then
 	exit 1
 fi
 
-# Optional arguments replace --auto (e.g. mirror.sh --mode 1920x1080)
+# Optional arguments replace the default (e.g. mirror.sh --mode 1920x1080)
+# --transform none clears scaling left over from --scale-from or --transform
 if [ $# -eq 0 ]; then
-	set -- --auto
+	set -- --auto --transform none
 fi
 
-xrandr --output "$SECOND" --same-as "$INTERNAL" "$@"
+xrandr --output "$INTERNAL" --auto --primary \
+	--output "$SECOND" --same-as "$INTERNAL" "$@"
