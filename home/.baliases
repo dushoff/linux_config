@@ -78,6 +78,24 @@ alias vsave="for instance in \$(vim --serverlist); do vim --servername \$instanc
 alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:wqa\n'; done"
 alias vSv="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:Sv\n'; done"
 alias vcheck="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:checktime\n'; done"
+
+## List modified swap files whose vim is not running (the ones makestuff vimclean leaves behind), anywhere under ~/terminal
+vimfind() {
+	find ~/terminal -type f -name '.*.sw[a-p]' -printf '%h\0' | sort -zu |
+	while IFS= read -r -d '' dir; do
+		(cd "$dir" && vim -r 2>&1) | awk -v d="$dir/" '
+			function f() { if (c && s != "" && m && !r) print d s "  (" n ")"; s = ""; n = ""; m = 0; r = 0 }
+			/^ *In current directory/ { f(); c = 1 }
+			/^ *In directory/ { f(); c = 0 }
+			/^[0-9]+\./ { f(); s = $0; sub(/^[0-9]+\. */, "", s) }
+			/file name:/ { n = $0; sub(/^ *file name: */, "", n) }
+			tolower($0) ~ /modified: *yes/ { m = 1 }
+			/STILL RUNNING/ { r = 1 }
+			END { f() }'
+	done
+}
+## Open the files behind vimfind's swap files in gvim (it will offer to recover each)
+alias vvimfind='vimfind | sed -E "s/.*  \((.*)\)\$/\1/; s|^~(${USER})?/|${HOME}/|" | awk "!seen[\$0]++" | tr "\n" "\0" | xargs -0 -r gvim'
 alias cclose="vclose; psterm watch; psterm less"
 alias dropstatus="dropbox status > ~/.dropstatus"
 
@@ -351,7 +369,7 @@ alias boat="minus; boatonly &"
 alias ball="minus; balloon &"
 
 alias now='pickscreen org Planning'
-alias plan='pickscreen org Planning "^[gj:e"'
+alias plan='pickscreen org Planning "^[gj:e^M"'
 
 ######################################################################
 
