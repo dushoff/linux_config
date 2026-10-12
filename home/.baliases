@@ -288,10 +288,10 @@ alias largo='ls -t *.R | head -1 | xargs -i make "{}"out.go'
 
 alias nohome='HOME=nonsense'
 
-lsth() { clear; ls -t "$@" |head -10; }
+lsth() { clear -x; ls -t "$@" |head -10; }
 
-alias lsath='clear; ls -at |head'
-alias lslth='clear; ls -lt |head'
+alias lsath='clear -x; ls -at |head'
+alias lslth='clear -x; ls -lt |head'
 alias lst='ls -t |more'
 alias lstm='lst'
 
@@ -357,7 +357,7 @@ squirrel() { (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) ; }
 beaver() { (sleep $@; pic ${alert}/beaver.jpg) & }
 banner() { (pic ${alert}/peacock.jpg) & }
 
-alias sesh="clear; date; nopix; ice 484; squirrel 961; beaver 1444"
+alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 
 alias nopdf="killall evince"
@@ -595,7 +595,7 @@ sctms() { scp -r $@ dushoff@ms.mcmaster.ca:; }
 scz() { scp dushoff@zebra.sharcnet.ca:$@; }
 sctz() { scp $@ dushoff@zebra.sharcnet.ca:; }
 
-lsh() { clear; ls -t $1 |head; }
+lsh() { clear -x; ls -t $1 |head; }
 
 zarc() { mkdir zzz; mv .* *; mv * $@; }
 source ~/.blocal
