@@ -79,21 +79,30 @@ alias vclose="for instance in \$(vim --serverlist); do vim --servername \$instan
 alias vSv="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:Sv\n'; done"
 alias vcheck="for instance in \$(vim --serverlist); do vim --servername \$instance --remote-send \$'\e:checktime\n'; done"
 
-## List files with a modified swap file whose vim is not running (the ones makestuff vimclean leaves behind), anywhere under ~/terminal
-vimfind() {
-	find ~/terminal -type f -name '.*.sw[a-p]' -printf '%h\0' | sort -zu |
+## Swap files whose vim is not running, anywhere under $1 (default ~/terminal), as lines of
+## modified|stale <TAB> swap file <TAB> file it belongs to
+_vimswaps() {
+	find "${1:-$HOME/terminal}" -type f -name '.*.sw[a-p]' -printf '%h\0' | sort -zu |
 	while IFS= read -r -d '' dir; do
-		(cd "$dir" && vim -r 2>&1) | awk -v h="$HOME" -v u="$USER" '
-			function f() { if (c && e && m && !r) print n; e = 0; n = ""; m = 0; r = 0 }
+		(cd "$dir" && vim -r 2>&1) | awk -v d="$dir/" -v h="$HOME" -v u="$USER" '
+			function f() { if (c && s != "" && !r) print (m ? "modified" : "stale") "\t" d s "\t" n; s = ""; n = ""; m = 0; r = 0 }
 			{ gsub(/\r/, "") }  # vim -r ends lines with CRLF when run from a terminal
 			/^ *In current directory/ { f(); c = 1 }
 			/^ *In directory/ { f(); c = 0 }
-			/^[0-9]+\./ { f(); e = 1 }
+			/^[0-9]+\./ { f(); s = $0; sub(/^[0-9]+\. */, "", s) }
 			/file name:/ { n = $0; sub(/^ *file name: */, "", n); sub("^~(" u ")?/", h "/", n) }
 			tolower($0) ~ /modified: *yes/ { m = 1 }
 			/STILL RUNNING/ { r = 1 }
 			END { f() }'
-	done | awk '!seen[$0]++'
+	done
+}
+## List files with a modified swap file whose vim is not running (the ones makestuff vimclean leaves behind)
+vimfind() {
+	_vimswaps "$@" | awk -F '\t' '$1 == "modified" && !seen[$3]++ { print $3 }'
+}
+## Delete unmodified swap files whose vim is not running (makestuff vimclean, recursively)
+vimcleanall() {
+	_vimswaps "$@" | awk -F '\t' '$1 == "stale" { printf "%s\0", $2 }' | xargs -0 -r rm -v --
 }
 ## Open the files vimfind lists in gvim (it will offer to recover each)
 alias vvimfind='vimfind | tr "\n" "\0" | xargs -0 -r gvim'
