@@ -37,6 +37,12 @@ Sources += $(files)
 linkhome:
 	cd ~ && ln -fs $(CURDIR)/.??* $(CURDIR)/*.* .
 
+## List managed files in ~ that are no longer links to here (e.g., after sed -i)
+checklinks:
+	@for f in $(files); do \
+		[ "$$(readlink ~/$$f)" = "$(CURDIR)/$$f" ] || echo "not linked: ~/$$f"; \
+	done
+
 ubuntu:
 	cd ~ && ln -fs $(CURDIR)/.blocal.ubuntu .blocal
 
