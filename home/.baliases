@@ -123,7 +123,7 @@ alias sinkcheck="(rink && planup && sinkshow)"
 alias vcn="vim ~/.commitnow"
 
 alias sin="sinkcheck; make logtest"
-alias sink="vimfiles && plandown && sinkcheck"
+alias sink="vimfiles && plandown && sinkcheck && reporttime sunk"
 alias think="vcn && sink"
 
 alias gas="go ~/Dropbox/archive/swati.pdf"
@@ -362,8 +362,8 @@ lake() { (sleep $@; pic ${alert}/lake.jpg) & }
 swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
 acorns() { (sleep $@; pic ${alert}/acorns.jpg) & }
 ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
-squirrel() { (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) ; }
-beaver() { (sleep $@; pic ${alert}/beaver.jpg) & }
+squirrel() { reporttime "squirrel $@" && (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) & }
+beaver() { reporttime "beaver $@" && (sleep $@; pic ${alert}/beaver.jpg) & }
 banner() { (pic ${alert}/peacock.jpg) & }
 
 alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
@@ -384,7 +384,7 @@ alias plan='pickscreen org Planning "^[gj:e^M"'
 ######################################################################
 
 alias viewlog='gvim -c "colorscheme habamax"'
-alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && sleep 0.5 && meadow) || viewlog arrive.log)'
+alias arrive='cd ${mainterm} && reportday && ((make arrive > arrive.log 2>&1 && sleep 0.5 && meadow && reporttime arrived) || viewlog arrive.log)'
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1) || (viewlog leave.log && false))'
 alias leavetest='cd ${mainterm} && (leavecheck > /dev/null && sinkshow) || (leavetest.pl leave.log > leavetest.log 2>&1 && viewlog leavetest.log)'
 alias doleave='leavesync && leavesync && leavetest'
