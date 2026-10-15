@@ -327,8 +327,10 @@ lext() { ls -t *.$1 | head -1 | xargs -i make "{}".go; }
 go() { gnome-open "$@" & }
 
 wiss() { (pic ${alert}/old_road.jpg) ; }
-fastlake() { ls ~/terminal/dirs/config/lakes/* | shuf -n 1| picOpen }
-meadow() { ls ~/terminal/dirs/config/meadows/* | shuf -n 1| picOpen }
+fastlake() { ls ~/terminal/dirs/config/lakes/* | shuf -n 1| picOpen
+}
+meadow() { ls ~/terminal/dirs/config/meadows/* | shuf -n 1| picOpen
+}
 
 sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 	~/Dropbox/family/pix/Pictures/*Arboretum*/*.JPG \
@@ -340,13 +342,15 @@ sinkpix() { ls ~/Dropbox/family/pix/Pictures/*Tommy/*.JPG \
 ## First one should work even without xargs. So what? Or useful for something else?
 ## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | { read -r f; eog -f "$f"; }; }
 ## sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | xargs -d '\n' eog -f; }
-sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | picOpen }
+sinkshow() { sinkpix | shuf -n 1 | tee .sinkshow | picOpen
+}
 
 leavepix() { ls \
 	~/terminal/dirs/config/meadows/* \
 	~/terminal/dirs/config/lakes/* \
 ; }
-leaveshow() { leavepix | shuf -n 1| picOpen }
+leaveshow() { leavepix | shuf -n 1| picOpen
+}
 
 sinklake() { reporttime Sunk; planup; fastlake; }
 opsync() { vsave && (cd ~/terminal/dirs/Planning && make opsync.autosync ); }
