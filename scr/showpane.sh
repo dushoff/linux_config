@@ -1,4 +1,7 @@
 #!/bin/bash
+# -e: skip the 72-column resize (caller will even out the layout)
+resize=1
+if [ "$1" = "-e" ]; then resize=; shift; fi
 cmd="$*"
 current_pane=$(tmux display-message -p '#{pane_id}')
 current_window=$(tmux display-message -p '#{window_id}')
@@ -13,4 +16,4 @@ tmux split-window -h -t "$current_pane" "exec bash -c '$cmd'"
 
 # Return focus to calling pane
 tmux select-pane -t "$current_pane"
-tmux resize-pane -x 72
+if [ "$resize" ]; then tmux resize-pane -x 72; fi
