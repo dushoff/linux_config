@@ -35,7 +35,8 @@ listen()
 	interrupted=0; fill=""
 	tmpfile=$(mktemp /tmp/dictate-XXXXXX.wav)
 	paplay /usr/share/sounds/freedesktop/stereo/bell.oga
-	sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
+	## sox's default ALSA path lags ~2s, and SIGINT discards the buffered tail
+	AUDIODRIVER=pulseaudio PULSE_LATENCY_MSEC=30 sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
 	wait $!
 }
 
