@@ -365,11 +365,12 @@ plandown() { (downsync) || (ice 0 && false) }
 ## Meant to make aPic into an alias for sleep… pic
 lake() { (sleep $@; pic ${alert}/lake.jpg) & }
 swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
-acorns() { (sleep $@; pic ${alert}/acorns.jpg) & }
 ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
+banner() { (pic ${alert}/peacock.jpg) & }
+
+acorns() { reporttime "acorns $@" && (sleep $@; pic ${alert}/acorns.jpg) & }
 squirrel() { reporttime "squirrel $@" && (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) & }
 beaver() { reporttime "beaver $@" && (sleep $@; pic ${alert}/beaver.jpg) & }
-banner() { (pic ${alert}/peacock.jpg) & }
 
 alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
@@ -392,7 +393,7 @@ alias viewlog='gvim -c "colorscheme habamax"'
 alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && sleep 0.5 && meadow && reportblank && reportstamp arrived) || viewlog arrive.log)'
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1) || (viewlog leave.log && false))'
 alias leavetest='cd ${mainterm} && ((leavecheck > /dev/null && sinkshow) || (leavetest.pl leave.log > leavetest.log 2>&1 && viewlog leavetest.log))'
-alias doleave='reporttime leaving… && leavesync && leavesync && leavetest' ## stamp before syncing
+alias doleave='reporthost leaving… && leavesync && leavesync && leavetest' ## stamp before syncing
 alias leave='(test -s ~/dictate.txt && gvim ~/dictate.txt) || wmctrl -x -a gvim.gvim || (doleave)'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ${report}' ## unused 2026 Oct 17 (Sat)
@@ -447,6 +448,9 @@ Bmake() {(make $1 > $1.log || bark) & }
 
 reporttime() { vsave; echo $1: `date +"%H:%M"` >> ${report}; }
 reportstamp() { vsave; echo "$1 ${HOSTNAME%%.*}: `date +"%Y %b %d (%a) %H:%M"`" >> ${report}; }
+reporttime() { vsave; echo $1: `date +"%H:%M"` >> ${report}; }
+reporthost() { vsave; echo "$1 ${HOSTNAME%%.*}: `date +"%H:%M"`" >> ${report}; }
+reportdate() { vsave; echo "$1 ${HOSTNAME%%.*}: `date +"%Y %b %d (%a) %H:%M"`" >> ${report}; }
 
 ga() { grep -i $@ ~/.baliases ~/.blocal; }
 gvm() { gvim -U ~/.gmvimrc Makefile $@ & }
