@@ -36,7 +36,11 @@ listen()
 	tmpfile=$(mktemp /tmp/dictate-XXXXXX.wav)
 	paplay /usr/share/sounds/freedesktop/stereo/bell.oga
 	## sox's default ALSA path lags ~2s, and SIGINT discards the buffered tail
-	AUDIODRIVER=pulseaudio PULSE_LATENCY_MSEC=30 sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
+	## Use pulse when available (needs libsox-fmt-pulse)
+	if sox -h 2>/dev/null | grep -q '^AUDIO DEVICE DRIVERS:.*pulseaudio'; then
+		export AUDIODRIVER=pulseaudio PULSE_LATENCY_MSEC=30
+	fi
+	sox -d -r 16000 -c 1 "$tmpfile" trim 0 $segment_secs &
 	wait $!
 }
 
