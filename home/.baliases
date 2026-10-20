@@ -141,11 +141,6 @@ alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
-## Not much used
-alias rld='ls -t Downloads/*.* | head -1'
-alias dld='(cd ~/Downloads/ && dell)'
-## 
-
 alias va='vi ~/.baliases'
 alias ahash='source ~/.baliases'
 alias bhash='source ~/.bashrc'
@@ -232,16 +227,17 @@ alias lastxzf='last | xargs -i tar xzf "{}"'
 alias lasttotem='last | xargs -i totem "{}"'
 alias lastmp='last | xargs -i mplayer "{}"'
 alias lastfile='ls -t *.* | head -1 | xargs -i file "{}"'
-alias dell='last | xargs -i rm -f "{}"'
 alias lastright='last | xargs -i convert -rotate 270 "{}" right_"{}"'
 alias lastleft='last | xargs -i convert -rotate 90 "{}" left_"{}"'
 alias lastcat='last | xargs -i cat "{}"'
 alias lastconv='last | xargs -i cat "{}" | convert -'
-alias lastdel='dell; lsth'
-alias lastgel='dellast'
+alias dl='last | xargs -i rm -f "{}"'
+alias lastdel='dl; lsth'
+alias dellast='lastdel'
+alias lastgel='lastdel && gold'
+alias gellast='lastgel'
 alias lastunzip='ls -t *.zip *.ZIP | head -1 | xargs -i unzip "{}"'
 alias lastgunzip='ls -t *.gz *.GZ | head -1 | xargs -i gunzip "{}"'
-alias dellast='lastdel && gold'
 alias downdel='(cd ~/Downloads/ && dellast)'
 
 alias sendable='ls -t *.send.*'
