@@ -9,7 +9,7 @@ vim_session:
 
 ######################################################################
 
-Sources += $(wikwunMkwunMi20
+Sources += $(wildcard *.md)
 ## TODO.md and README.md seem very old.
  
 ## Logs of how I install things
