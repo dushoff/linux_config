@@ -6,8 +6,6 @@ export mainterm=~/terminal
 export rdirs=${mainterm}/dirs
 export report=${rdirs}/Planning/report.md
 
-alias vnvim='source ~/screens/tech/linux_setup/venv/bin/activate && nvim'
-
 ## Moving from flow 2019 Jul 14 (Sun)
 alias voice='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hfknjgplnkgjihghcidajejfmldhibfm'
 alias nmr='sudo service network-manager restart'
@@ -138,6 +136,7 @@ alias tmake='((make target > make.log || true) && bark) &'
 alias vmake='(make vtarget > make.log || bark) &'
 alias pmake='(make pdftarget > make.log || bark) &'
 alias bark='ls ~/screens/Talks/*/webpix/*.* | grep -v thumb | shuf -n 1 | xopen'
+alias bark='fastlake'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
