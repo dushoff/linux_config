@@ -18,4 +18,8 @@ fi
 echo $ws > ~/make.log
 
 make -C ~/terminal $ws/$2.rwindow.view
-tmux send-keys -t "$ws:$2" "$3"
+## Send keys to the primary (left) pane
+if [ -n "$3" ]; then
+	tmux select-pane -t "$ws:$2.0"
+	tmux send-keys -t "$ws:$2.0" "$3"
+fi
