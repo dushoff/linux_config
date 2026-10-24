@@ -1,3 +1,8 @@
+
+Ignore stuff in Dropbox. That's also deprecated. Delete the whole venv directory, it can be remade at the right time. Delete Nextcloud.desktop and MSHOME.
+
+----------------------------------------------------------------------
+
 Move the "core" vimrc here
 
 Make rule to make a ~/7054 with the vimrc _and_ the dictionary
