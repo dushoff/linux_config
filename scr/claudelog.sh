@@ -1,11 +1,17 @@
 #!/bin/bash
 ## Render the most recently active claude session transcript as text and open it in vim
 ## In vim, :R re-renders (to catch up with a running session)
+## Usage: claudelog.sh [--render] [dir]
+## Uses the newest session for dir (default: current directory), else the newest overall
 
-out=/tmp/claude-session.txt
+[ "$1" = --render ] && { mode=render; shift; }
+dir=${1:-$PWD}
+proj=$(echo "$dir" | sed 's/[^A-Za-z0-9]/-/g')
+out=/tmp/claude-session$proj.txt
 
 render() {
-	f=$(ls -t ~/.claude/projects/*/*.jsonl | head -1)
+	f=$(ls -t ~/.claude/projects/"$proj"/*.jsonl 2>/dev/null | head -1)
+	[ -z "$f" ] && f=$(ls -t ~/.claude/projects/*/*.jsonl | head -1)
 	jq -r '
 		def clip: if length > 1500 then .[0:1500] + "\n  [... clipped]" else . end;
 		select(.type == "user" or .type == "assistant")
@@ -25,5 +31,6 @@ render() {
 }
 
 render
-[ "$1" = --render ] && exit
-exec vim -c "command! R call system('$0 --render') | edit! | \$" + $out
+[ "$mode" = render ] && exit
+export CLAUDELOG_DIR=$dir
+exec vim -c "command! R call system('$0 --render ' . shellescape(\$CLAUDELOG_DIR)) | edit! | \$" + "$out"
