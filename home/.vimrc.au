@@ -13,12 +13,18 @@ augroup END
 
 " Set the filetype based on the file's extension
 " "setfiletype foo" is a wimpier version (respects some sort of pre-status)
-au BufRead,BufNewFile *.def set filetype=make
-au BufRead,BufNewFile *.mk set filetype=make
+augroup makeFiletype
+	autocmd!
+	autocmd BufRead,BufNewFile *.def set filetype=make
+	autocmd BufRead,BufNewFile *.mk set filetype=make
+augroup END
 
 " columns=72 used to be set here for ghmarkdown/tex/txt, but columns is global
 " (setlocal doesn't scope it) and broke drawing in panes narrower than 72 (2026 Oct)
-autocmd FileType ghmarkdown setlocal wrap
+augroup ghmarkdownWrap
+	autocmd!
+	autocmd FileType ghmarkdown setlocal wrap
+augroup END
 
 augroup tsv_truncate
   autocmd!
@@ -26,7 +32,10 @@ augroup tsv_truncate
   autocmd FileType tsv syntax match TsvOverflow /\(^\|\t\)[^\t]\{15}\zs[^\t]\+/ conceal cchar=…
 augroup END
 
-autocmd FileType markdown setlocal nowrap
+augroup markdownNowrap
+	autocmd!
+	autocmd FileType markdown setlocal nowrap
+augroup END
 " autocmd FileType markdown setlocal tabstop=16
 " autocmd FileType markdown setlocal columns=80
 " autocmd FileType conf setlocal tabstop=16
