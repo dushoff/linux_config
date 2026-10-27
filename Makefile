@@ -30,7 +30,11 @@ Sources += rmview.json
 Sources += bash.md
 
 ## These need to be redone for major reshuffles 2019 Aug 30 (Fri)
-relink: linkmake linkbin linkhome
+relink: linkmake linkbin linkhome linkclaude
+
+Sources += claude.global.md
+linkclaude:
+	mkdir -p ~/.claude && ln -fs $(CURDIR)/claude.global.md ~/.claude/CLAUDE.md
 
 newbin: exec
 	cd ~ && rm bin && mkdir bin
