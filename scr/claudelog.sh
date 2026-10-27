@@ -33,4 +33,4 @@ render() {
 render
 [ "$mode" = render ] && exit
 export CLAUDELOG_DIR=$dir
-exec vim -c "command! R call system('$0 --render ' . shellescape(\$CLAUDELOG_DIR)) | edit! | \$" + "$out"
+exec vim -n -c "command! R call system('$0 --render ' . shellescape(\$CLAUDELOG_DIR)) | edit! | \$" + "$out"

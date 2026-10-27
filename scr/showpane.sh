@@ -6,6 +6,15 @@ cmd="$*"
 current_pane=$(tmux display-message -p '#{pane_id}')
 current_window=$(tmux display-message -p '#{window_id}')
 
+# Refuse if any other pane is running something besides a disposable command
+busy=$(tmux list-panes -t "$current_window" -F '#{pane_id} #{pane_current_command}' \
+  | grep -v "^${current_pane} " \
+  | grep -vE ' (bash|sh|zsh|watch|less|man)$')
+if [ "$busy" ]; then
+  tmux display-message "showpane: other pane busy ($(echo "$busy" | awk '{print $2}' | paste -sd' ')); not killing"
+  exit 1
+fi
+
 # Close all other panes in this window
 tmux list-panes -t "$current_window" -F '#{pane_id}' \
   | grep -v "^${current_pane}$" \
