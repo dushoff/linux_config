@@ -505,7 +505,7 @@ mtd() { mkdir $1; td $1; }
 
 ## svs has code for doing multiple levels at once
 tv() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" bash -ci "vvs"); }
-ttw() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" make twindow); }
+tw() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" make twindow); }
 
 alias tvan='tmux new-window -n vanilla "R --vanilla"'
 
