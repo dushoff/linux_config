@@ -363,9 +363,11 @@ swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
 ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
 banner() { (pic ${alert}/peacock.jpg) & }
 
-acorns() { reporttime "acorns $@" && (sleep $@; pic ${alert}/acorns.jpg) & }
-squirrel() { reporttime "squirrel $@" && (sleep $@; pic ${alert}/Red_squirrel_with_nut.jpg) & }
-beaver() { reporttime "beaver $@" && (sleep $@; pic ${alert}/beaver.jpg) & }
+## critter name seconds picture: log it, then after the wait raise a persistent (critical) notification and the picture
+critter() { reporttime "$1 $2" && (local set=`date +%H:%M`; sleep $2; notify-send -u critical "$1 $2" "set at $set"; pic ${alert}/$3) & }
+acorns() { critter acorns $1 acorns.jpg; }
+squirrel() { critter squirrel $1 Red_squirrel_with_nut.jpg; }
+beaver() { critter beaver $1 beaver.jpg; }
 
 alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
