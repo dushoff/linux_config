@@ -369,6 +369,15 @@ acorns() { critter acorns $1 acorns.jpg; }
 squirrel() { critter squirrel $1 Red_squirrel_with_nut.jpg; }
 beaver() { critter beaver $1 beaver.jpg; }
 
+## alarm HHMM command…: at the next HH:MM (wall clock, checked every 10s so suspend can't delay it), run the command with bash -ic
+alarm() {
+	[[ $1 =~ ^([01][0-9]|2[0-3])([0-5][0-9])$ ]] || { echo "usage: alarm HHMM command…" >&2; return 1; }
+	local end=`date -d "${1:0:2}:${1:2:2}" +%s`
+	[ $end -gt $(( `date +%s` - 60 )) ] || end=`date -d "tomorrow ${1:0:2}:${1:2:2}" +%s`
+	shift
+	(while [ `date +%s` -lt $end ]; do sleep 10; done; bash -ic "$*") &
+}
+
 alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
 alias tesh="squirrel 1400; beaver 2800"
 
