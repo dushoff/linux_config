@@ -7,6 +7,11 @@ case $- in
       *) return;;
 esac
 
+# Interactive shells are often launched from make (tmux twindow, vim_session);
+# don't let make's exported variables leak into them (makestuff exports Ignore,
+# which then piles up in every make run from here)
+unset Ignore MAKELEVEL MAKEFLAGS MFLAGS MAKEOVERRIDES
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
