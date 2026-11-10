@@ -24,14 +24,23 @@ nmap gW VgW
 " nnoremap <silent> gW :let @/='\<Su\>'<Bar>normal! dd<Bar>execute 'normal! ' . v:count1 . 'nP'<CR>
 
 " Why am I having trouble with marks?
-nmap 0D dd1GP
-nmap 1D /## Monday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 2D /## Tuesday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 3D /## Wednesday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 4D /## Thursday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 5D /## Friday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 6D /## Saturday/<C-M><C-O>ddn}P<C-O><C-O>
-nmap 7D /## Sunday/<C-M><C-O>ddn}P<C-O><C-O>
+" vmaps move the selection (use vip for a ¶); nmaps move the current line
+vmap 0D d1GP
+vmap 1D d/## Monday/<C-M>}P<C-O><C-O>
+vmap 2D d/## Tuesday/<C-M>}P<C-O><C-O>
+vmap 3D d/## Wednesday/<C-M>}P<C-O><C-O>
+vmap 4D d/## Thursday/<C-M>}P<C-O><C-O>
+vmap 5D d/## Friday/<C-M>}P<C-O><C-O>
+vmap 6D d/## Saturday/<C-M>}P<C-O><C-O>
+vmap 7D d/## Sunday/<C-M>}P<C-O><C-O>
+nmap 0D V0D
+nmap 1D V1D
+nmap 2D V2D
+nmap 3D V3D
+nmap 4D V4D
+nmap 5D V5D
+nmap 6D V6D
+nmap 7D V7D
 
 nmap 1C @k1D
 nmap 2C @k2D
