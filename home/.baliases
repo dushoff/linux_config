@@ -47,6 +47,7 @@ alias sup='sup-mail'
 
 alias vanilla='R --vanilla'
 alias svan='screen -t vanilla R --vanilla'
+alias tvan='tmux new-window -n vanilla "R --vanilla"'
 
 alias yushan='ssh yushan.mcmaster.ca'
 alias sjd='screen -t yushan ssh yushan.mcmaster.ca'
@@ -363,11 +364,11 @@ swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
 ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
 banner() { (pic ${alert}/peacock.jpg) & }
 
-## critter name seconds picture: log it, then after the wait raise a persistent (critical) notification and the picture
-critter() { reporttime "$1 $2" && (local set=`date +%H:%M`; sleep $2; notify-send -u critical "$1 $2" "set at $set"; pic ${alert}/$3) & }
-acorns() { critter acorns $1 acorns.jpg; }
-squirrel() { critter squirrel $1 Red_squirrel_with_nut.jpg; }
-beaver() { critter beaver $1 beaver.jpg; }
+## NAME seconds [text…]: see scr/critter (logs, waits, shows the picture, logs "NAME done"); leave kills pending ones
+acorns() { command critter acorns ${alert}/acorns.jpg "$@" & }
+squirrel() { command critter squirrel ${alert}/Red_squirrel_with_nut.jpg "$@" & }
+beaver() { command critter beaver ${alert}/beaver.jpg "$@" & }
+alias nocritter='pkill -x critter'
 
 ## alarm HHMM command…: at the next HH:MM (wall clock, checked every 10s so suspend can't delay it), run the command with bash -ic
 alarm() {
@@ -400,7 +401,7 @@ alias arrive='cd ${mainterm} && ((make arrive > arrive.log 2>&1 && sleep 0.5 && 
 alias leavesync='cd ${mainterm} && ((make leave > leave.log 2>&1) || (viewlog leave.log && false))'
 alias leavetest='cd ${mainterm} && ((leavecheck > /dev/null && sinkshow) || (leavetest.pl leave.log > leavetest.log 2>&1 && viewlog leavetest.log))'
 alias doleave='reporthost leaving… && leavesync && leavesync && leavetest' ## stamp before syncing
-alias leave='(test -s ~/dictate.txt && gvim ~/dictate.txt) || wmctrl -x -a gvim.gvim || (doleave)'
+alias leave='nocritter; (test -s ~/dictate.txt && gvim ~/dictate.txt) || wmctrl -x -a gvim.gvim || (doleave)'
 
 alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ${report}' ## unused 2026 Oct 17 (Sat)
 alias reportblank='echo >> ${report}'
@@ -517,8 +518,6 @@ mtd() { mkdir $1; td $1; }
 ## svs has code for doing multiple levels at once
 tv() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" bash -ci "vvs"); }
 tw() { (cd "$@" && tmux new-window -c "$PWD" -n "$(basename $PWD)-s" make twindow); }
-
-alias tvan='tmux new-window -n vanilla "R --vanilla"'
 
 alias tms='tmux source-file ~/.tmux.conf'
 alias spin='make -C ${mainterm} > .spin.log'
