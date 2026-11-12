@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-# screens.sh laptop|external|mirror|extend [xrandr args for mirror]
+# screens.sh laptop|external|mirror|extend [xrandr args for mirror | output for extend]
 # Each mode quietly does nothing if the needed displays aren't present,
 # so the same i3 bindings are safe on a desktop or an undocked laptop.
 
