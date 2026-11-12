@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-# screens.sh laptop|external|mirror [xrandr args for mirror]
+# screens.sh laptop|external|mirror|extend [xrandr args for mirror]
 # Each mode quietly does nothing if the needed displays aren't present,
 # so the same i3 bindings are safe on a desktop or an undocked laptop.
 
-usage() { echo "usage: $0 laptop|external|mirror [xrandr args]" >&2; exit 2; }
+usage() { echo "usage: $0 laptop|external|mirror|extend [args]" >&2; exit 2; }
 [ $# -ge 1 ] || usage
 MODE=$1; shift
 
@@ -43,6 +43,20 @@ mirror)
 	[ $# -gt 0 ] || set -- --auto --transform none
 	xrandr --output "$INTERNAL" --auto --primary \
 		--output "$EXTERNAL" --same-as "$INTERNAL" "$@"
+	;;
+extend)
+	# Panel plus external side by side; external is primary.
+	# Optional argument names the output (e.g. HDMI-1); default is first found.
+	# i3 leaves existing workspaces where they are and opens a new one there.
+	[ -n "$INTERNAL" ] || skip "no laptop panel"
+	if [ $# -gt 0 ]; then
+		grep -q -x -F "$1" <<<"$CONNECTED" || skip "$1 not connected"
+		EXTERNAL=$1
+	fi
+	[ -n "$EXTERNAL" ] || skip "no external display"
+	xrandr --output "$INTERNAL" --auto --transform none \
+		--output "$EXTERNAL" --auto --primary --transform none \
+		--right-of "$INTERNAL"
 	;;
 *) usage ;;
 esac
