@@ -1,5 +1,0 @@
-#!/bin/bash
-echo sesh | bash -i
-sleep 1500
-alertPic ~/Dropbox/courses/Lecture_images/ship.jpg;
-exec shiponly

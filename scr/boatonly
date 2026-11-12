@@ -1,6 +1,0 @@
-#!/bin/bash
-echo tesh | bash -login
-sleep 3200
-alertPic ~/Dropbox/courses/Lecture_images/ship.jpg;
-exec shiponly
-

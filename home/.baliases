@@ -370,26 +370,18 @@ squirrel() { command critter squirrel ${alert}/Red_squirrel_with_nut.jpg "$@" & 
 beaver() { command critter beaver ${alert}/beaver.jpg "$@" & }
 alias nocritter='pkill -x critter'
 
-## alarm HHMM command…: at the next HH:MM (wall clock, checked every 10s so suspend can't delay it), run the command with bash -ic
+## alarm HHMM command…: at the next HH:MM (wall clock, checked every 10s so suspend can't delay it), run the command (aliases and functions work)
 alarm() {
 	[[ $1 =~ ^([01][0-9]|2[0-3])([0-5][0-9])$ ]] || { echo "usage: alarm HHMM command…" >&2; return 1; }
 	local end=`date -d "${1:0:2}:${1:2:2}" +%s`
 	[ $end -gt $(( `date +%s` - 60 )) ] || end=`date -d "tomorrow ${1:0:2}:${1:2:2}" +%s`
 	shift
-	(while [ `date +%s` -lt $end ]; do sleep 10; done; bash -ic "$*") &
+	(while [ `date +%s` -lt $end ]; do sleep 10; done; eval "$*") &  ## not bash -ic: a backgrounded interactive shell gets stopped (SIGTTIN)
 }
-
-alias sesh="clear -x; date; nopix; ice 484; squirrel 961; beaver 1444"
-alias tesh="squirrel 1400; beaver 2800"
 
 alias nopdf="killall evince"
 
-## shiponly is a script which does sesh in a loop showing the ship at the end
 alias nopix="killall sleep; sleep 0.1; killall eog; killall feh"
-alias minus="(killall sleep; killall shiponly; killall boat; killall balloon; nopix) > /dev/null 2>&1"
-alias ship="minus; shiponly &"
-alias boat="minus; boatonly &"
-alias ball="minus; balloon &"
 
 alias now='pickscreen org Planning'
 alias plan='pickscreen org Planning "^[gj:e^M"'
@@ -407,8 +399,6 @@ alias rtoday='vsave; echo "######## " `date +"%Y %b %d (%a)"` >> ${report}' ## u
 alias reportblank='echo >> ${report}'
 alias reportday='reportblank; rtoday; reportblank' ## unused 2026 Oct 17 (Sat)
 
-alias work='reporttime Work; minus; shiponly & sleep 0.1; plan'
-alias here='(ship) && plandown; plan;'
 ## alias rarrive='reporttime "Arrive ${HOSTNAME}"'
 ## alias marrive='(ship) && findTab Chrome Gmail ;'
 ## alias arrive='plandown; rarrive; '
