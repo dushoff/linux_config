@@ -48,7 +48,9 @@ augroup END
 " BufWinEnter so it runs after filetype detection, which would turn syntax back on
 augroup LargeFile
 	autocmd!
-	autocmd BufWinEnter * if getfsize(expand('<afile>')) > 200000 | setlocal syntax=off nowrap | endif
+	autocmd BufWinEnter * if getfsize(expand('<afile>')) > 200000 | setlocal syntax=off | endif
+	" nowrap on BufReadPost (before modelines) so a modeline can turn wrap back on
+	autocmd BufReadPost * if getfsize(expand('<afile>')) > 200000 | setlocal nowrap | endif
 augroup END
 
 " netrw refreshes directory listings after every shell command (:make, :!),
