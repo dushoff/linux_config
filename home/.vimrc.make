@@ -1,4 +1,8 @@
 
+" Skip make's "[file:line: target] Error N (ignored)" lines (from -recipes);
+" default efm misparses them into bogus buffers like "make[1]: [makestuff/git.mk"
+set errorformat^=%-G%.%#\ (ignored)
+
 " Default target making (see Go below as well)
 map <F2> Go
 map <C-F3> :make! -d pullup > make.log && make exclude && git status<C-M>
