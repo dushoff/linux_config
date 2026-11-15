@@ -364,11 +364,11 @@ swiss() { (sleep $@; pic ${alert}/old_road.jpg) & }
 ice() { (sleep $@; pic ${alert}/ice_shelf.jpg) & }
 banner() { (pic ${alert}/peacock.jpg) & }
 
-## NAME seconds [text…]: see scr/critter (logs, waits, shows the picture, logs "NAME done"); leave kills pending ones
-acorns() { command critter acorns ${alert}/acorns.jpg "$@" & }
-squirrel() { command critter squirrel ${alert}/Red_squirrel_with_nut.jpg "$@" & }
-beaver() { command critter beaver ${alert}/beaver.jpg "$@" & }
-alias nocritter='pkill -x critter'
+## NAME seconds [text…]: see scr/critter.sh (logs, waits, shows the picture, logs "NAME done"); leave kills pending ones
+acorns() { command critter.sh acorns ${alert}/acorns.jpg "$@" & }
+squirrel() { command critter.sh squirrel ${alert}/Red_squirrel_with_nut.jpg "$@" & }
+beaver() { command critter.sh beaver ${alert}/beaver.jpg "$@" & }
+alias nocritter='pkill -x critter.sh'
 
 ## alarm HHMM [command…]: at the next HH:MM (wall clock, checked every 10s so suspend can't delay it), run the command (aliases and functions work; default bark)
 alarm() {
