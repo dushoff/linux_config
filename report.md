@@ -50,7 +50,7 @@ Commands that already log:
   checks in `leave` (open `dictate.txt`, raise gvim) run before this. If
   they stop the leave, nothing is written.
 * `work`: `reporttime Work`
-* `acorns`/`squirrel`/`beaver N [text…]` (script `scr/critter`): writes `squirrel N text: HH:MM`,
+* `acorns`/`squirrel`/`beaver N [text…]` (script `scr/critter.sh`): writes `squirrel N text: HH:MM`,
   then after N seconds shows the alert picture and writes `squirrel done: HH:MM`.
   `leave` kills any pending ones first thing (`nocritter`), so no picture and no `done`.
 * `sink`: `reporttime sunk`. `sunk`: `reporttime "sunk <dir> from <host>"`
