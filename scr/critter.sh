@@ -1,35 +1,27 @@
 #!/bin/bash
-## critter.sh NAME PICTURE SECONDS [text…]
-## Log "NAME SECONDS text: HH:MM" to the report, wait, then log "NAME done: HH:MM",
-## raise a persistent notification and show the picture.
-## Killing it while it waits (pkill -x critter.sh; see nocritter/leave) means no picture and no "done".
+## critter name image seconds [text…]
+## Log "name seconds text: HH:MM" to the report, wait, then raise a critical
+## notification and the image, and log "name done: HH:MM".
+## Starting a critter cancels any pending one; leave runs `pkill -x critter` (nocritter) too.
 
-set -u
+[ $# -ge 3 ] || { echo "usage: critter name image seconds [text…]" >&2; exit 1; }
+name=$1; image=$2; secs=$3; shift 3
 
-usage() { echo "usage: critter.sh NAME PICTURE SECONDS [text…]" >&2; exit 1; }
-[ $# -ge 3 ] || usage
-name=$1; picture=$2; secs=$3; shift 3
-[[ $secs =~ ^[0-9]+$ ]] || usage
-text="$*"
-: "${report:?report is not set}"
+## nocritter, sparing ourselves: a new critter replaces any pending one
+pgrep -x critter | grep -vx $$ | xargs -r kill
+label="$name $secs${*:+ $*}"
 
-## Save open vim buffers first, so a buffer showing the report doesn't clobber our line
-vsave() {
-	for instance in $(vim --serverlist 2>/dev/null); do
-		vim --servername "$instance" --remote-send $'\e:wa\n'
+## Same as vsave + reporttime in .baliases (functions/aliases aren't visible here)
+reporttime() {
+	for instance in $(vim --serverlist); do
+		vim --servername $instance --remote-send $'\e:wa\n'
 	done
+	echo "$1: $(date +%H:%M)" >> "${report:-$HOME/terminal/dirs/Planning/report.md}"
 }
 
-logline() { vsave; echo "$1: $(date +%H:%M)" >> "$report"; }
-
-logline "$name $secs${text:+ $text}"
+reporttime "$label"
 set=$(date +%H:%M)
-
-## Sleep in the background so a TERM from pkill kills the sleep too
-trap 'kill $sleeper 2>/dev/null; exit 0' TERM INT HUP
-sleep "$secs" & sleeper=$!
-wait $sleeper
-
-logline "$name done"
-notify-send -u critical "$name $secs${text:+ $text}" "set at $set"
-exec feh -F --auto-zoom --start-at "$picture"  ## exec: nocritter won't close a picture already up
+sleep "$secs"
+notify-send -u critical "$label" "set at $set"
+feh -F --auto-zoom --start-at "$image" &
+reporttime "$name done"
