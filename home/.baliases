@@ -377,7 +377,7 @@ alarm() {
 	[ $end -gt $(( `date +%s` - 60 )) ] || end=`date -d "tomorrow ${1:0:2}:${1:2:2}" +%s`
 	shift
 	[ $# -gt 0 ] || set -- bark
-	(while [ `date +%s` -lt $end ]; do sleep 10; done; eval "$*") &  ## not bash -ic: a backgrounded interactive shell gets stopped (SIGTTIN)
+	(while [ `date +%s` -lt $end ]; do sleep 10; done; shopt -s expand_aliases; eval "$*") &  ## not bash -ic: a backgrounded interactive shell gets stopped (SIGTTIN); shopt because bash turns aliases off in background subshells of interactive shells
 }
 
 alias nopdf="killall evince"
